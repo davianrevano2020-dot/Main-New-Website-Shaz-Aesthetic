@@ -124,7 +124,6 @@ interface ClientHomePageProps {
 
 export default function ClientHomePage({ initialContent = {} }: ClientHomePageProps) {
   const [siteContent, setSiteContent] = useState<any>(initialContent);
-  const [mounted, setMounted] = useState(false);
 
   const carouselRef = useRef<HTMLDivElement>(null);
   const scrollTransformations = (direction: 'left' | 'right') => {
@@ -136,7 +135,6 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
   };
 
   useEffect(() => {
-    setMounted(true);
     // If initial content was not provided or empty, fallback to client fetch
     if (!initialContent || Object.keys(initialContent).length === 0) {
       const fetchContent = async () => {
@@ -579,7 +577,7 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
 
             <div className="mt-16 flex justify-center">
               <a 
-                href={siteContent.doctors_button_link || "#"}
+                href={siteContent.doctors_button_link && siteContent.doctors_button_link !== '#' ? siteContent.doctors_button_link : "/doctor"}
                 className="px-8 py-3.5 rounded-full border border-[#4C5C44] text-[#4C5C44] text-sm font-semibold hover:bg-[#4C5C44] hover:text-white transition-colors"
               >
                 {siteContent.doctors_button_text || "View All Doctors"}
