@@ -42,11 +42,11 @@ export default function HeaderMenuSettings() {
           } else {
              // defaults
              setMenuItems([
-               { id: '1', label: 'About', url: '#about', newTab: false },
-               { id: '2', label: 'Treatments', url: '#treatments', newTab: false },
-               { id: '3', label: 'Packages', url: '#packages', newTab: false },
-               { id: '4', label: 'Doctors', url: '#doctors', newTab: false },
-               { id: '5', label: 'Reviews', url: '#reviews', newTab: false },
+               { id: '1', label: 'About', url: '/about', newTab: false },
+               { id: '2', label: 'Treatments', url: '/#treatments', newTab: false },
+               { id: '3', label: 'Packages', url: '/#packages', newTab: false },
+               { id: '4', label: 'Doctors', url: '/#doctors', newTab: false },
+               { id: '5', label: 'Reviews', url: '/#reviews', newTab: false },
              ]);
           }
         }

@@ -31,7 +31,34 @@ export function getFallbackData(): Record<string, any> {
     experience_image1: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
     experience_image2: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop",
     experience_image3: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
-    experience_image4: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"
+    experience_image4: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop",
+    // About Page defaults
+    about_hero_badge: "ABOUT SHAZ CLINIC & SALON",
+    about_hero_title: "Where Medical Science Meets Luxury Artistry",
+    about_hero_subtitle: "Bali's premier destination for advanced medical aesthetics, bespoke dermatological treatments, and luxury salon experiences.",
+    about_hero_image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop",
+    about_story_badge: "OUR STORY & PHILOSOPHY",
+    about_story_title: "Redefining Aesthetic Wellness in Seminyak",
+    about_story_p1: "At SHAZ, we believe that true beauty begins with health, balance, and confidence. Founded by medical aesthetic physicians with a vision for uncompromising quality, our clinic merges evidence-based dermatology with refined, sensory indulgence.",
+    about_story_p2: "Every treatment protocol is tailored to your unique anatomical harmony. We never adopt a one-size-fits-all approach—instead, our certified doctors utilize precision diagnostics and world-class technology to achieve subtle, natural, and timeless results.",
+    about_story_image1: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop",
+    about_story_image2: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop",
+    about_values_badge: "OUR CORE VALUES",
+    about_values_title: "The 4 Pillars of the SHAZ Standard",
+    about_team_badge: "MEDICAL EXPERTISE",
+    about_team_title: "Meet Our Certified Physicians & Specialists",
+    about_team_subtitle: "Passionate doctors dedicated to clinical excellence, evidence-based dermatology, and personalized care.",
+    about_facility_badge: "OUR SANCTUARY",
+    about_facility_title: "Designed for Tranquility and Clinical Precision",
+    about_facility_description: "Step into our serene, air-conditioned private suites equipped with cutting-edge aesthetic devices, ergonomic treatment beds, and calming aromatherapeutic touches.",
+    about_facility_image1: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop",
+    about_facility_image2: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop",
+    about_facility_image3: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop",
+    about_cta_badge: "EXPERIENCE SHAZ",
+    about_cta_title: "Ready to Begin Your Aesthetic Journey?",
+    about_cta_subtitle: "Book a comprehensive consultation with our medical doctors in Seminyak, Bali or chat directly with our client care team.",
+    about_cta_button_text: "Book Consultation via WhatsApp",
+    about_cta_button_link: "https://wa.link/o7f5yk"
   };
 }
 

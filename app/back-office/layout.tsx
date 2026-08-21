@@ -10,7 +10,8 @@ import {
   PanelLeftOpen, 
   LogOut,
   Globe,
-  Menu
+  Menu,
+  Info
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -23,6 +24,7 @@ export default function BackOfficeLayout({
 
   const menuItems = [
     { icon: LayoutDashboard, label: 'Home Page', href: '/back-office' },
+    { icon: Info, label: 'About Page', href: '/back-office/about' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'Lihat Website', href: '/' },

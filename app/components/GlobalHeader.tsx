@@ -3,15 +3,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const WA_LINK = "https://wa.link/o7f5yk";
 const DEFAULT_LOGO = "https://thinkgenc.com/image-file/shaz-logo-transparan.svg";
 const DEFAULT_MENU = [
-  { id: '1', label: 'About', url: '#about', newTab: false },
-  { id: '2', label: 'Treatments', url: '#treatments', newTab: false },
-  { id: '3', label: 'Packages', url: '#packages', newTab: false },
-  { id: '4', label: 'Doctors', url: '#doctors', newTab: false },
-  { id: '5', label: 'Reviews', url: '#reviews', newTab: false },
+  { id: '1', label: 'About', url: '/about', newTab: false },
+  { id: '2', label: 'Treatments', url: '/#treatments', newTab: false },
+  { id: '3', label: 'Packages', url: '/#packages', newTab: false },
+  { id: '4', label: 'Doctors', url: '/#doctors', newTab: false },
+  { id: '5', label: 'Reviews', url: '/#reviews', newTab: false },
 ];
 
 interface GlobalHeaderProps {
@@ -87,13 +88,13 @@ export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <a href="#" aria-label="SHAZ Home" className="relative z-50">
+        <Link href="/" aria-label="SHAZ Home" className="relative z-50">
           <img 
             src={logo} 
             alt="SHAZ Logo" 
             className={`w-auto object-contain ${isScrolled ? "h-7 md:h-8" : "h-8 md:h-10 transition-all duration-500"}`} 
           />
-        </a>
+        </Link>
         
         <nav className="hidden lg:flex items-center gap-10 text-xs font-bold tracking-widest uppercase">
           {menuItems.map(item => (

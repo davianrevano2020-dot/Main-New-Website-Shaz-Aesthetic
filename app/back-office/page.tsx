@@ -1501,7 +1501,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Link Google Maps ("See More Reviews")</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Link Google Maps (&quot;See More Reviews&quot;)</label>
                   <input
                     type="text"
                     name="reviews_link"
