@@ -14,48 +14,71 @@ const DEFAULT_MENU = [
   { id: '5', label: 'Reviews', url: '#reviews', newTab: false },
 ];
 
-export default function GlobalHeader() {
+interface GlobalHeaderProps {
+  initialContent?: Record<string, any>;
+}
+
+export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
+  let initLogo = DEFAULT_LOGO;
+  let initMenuItems = DEFAULT_MENU;
+  let initCtaText = 'Book Consultation';
+  let initCtaLink = WA_LINK;
+
+  if (initialContent) {
+    if (initialContent.global_logo) initLogo = initialContent.global_logo;
+    if (initialContent.global_cta_text) initCtaText = initialContent.global_cta_text;
+    if (initialContent.global_cta_link) initCtaLink = initialContent.global_cta_link;
+    if (initialContent.global_menu) {
+      try {
+        const parsed = typeof initialContent.global_menu === 'string' ? JSON.parse(initialContent.global_menu) : initialContent.global_menu;
+        if (Array.isArray(parsed) && parsed.length > 0) initMenuItems = parsed;
+      } catch (e) {}
+    }
+  }
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logo, setLogo] = useState(DEFAULT_LOGO);
-  const [menuItems, setMenuItems] = useState(DEFAULT_MENU);
-  const [ctaText, setCtaText] = useState('Book Consultation');
-  const [ctaLink, setCtaLink] = useState(WA_LINK);
+  const [logo, setLogo] = useState(initLogo);
+  const [menuItems, setMenuItems] = useState(initMenuItems);
+  const [ctaText, setCtaText] = useState(initCtaText);
+  const [ctaLink, setCtaLink] = useState(initCtaLink);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     
-    // Fetch global content
-    fetch('/api/content')
-      .then(res => res.json())
-      .then(json => {
-        if (json.status === 'success' && json.data) {
-          if (json.data.global_logo) {
-            setLogo(json.data.global_logo);
-          }
-          if (json.data.global_cta_text) {
-            setCtaText(json.data.global_cta_text);
-          }
-          if (json.data.global_cta_link) {
-            setCtaLink(json.data.global_cta_link);
-          }
-          if (json.data.global_menu) {
-            try {
-              const parsed = JSON.parse(json.data.global_menu);
-              if (Array.isArray(parsed) && parsed.length > 0) {
-                setMenuItems(parsed);
+    // Only fetch if initialContent wasn't provided
+    if (!initialContent) {
+      fetch('/api/content')
+        .then(res => res.json())
+        .then(json => {
+          if (json.status === 'success' && json.data) {
+            if (json.data.global_logo) {
+              setLogo(json.data.global_logo);
+            }
+            if (json.data.global_cta_text) {
+              setCtaText(json.data.global_cta_text);
+            }
+            if (json.data.global_cta_link) {
+              setCtaLink(json.data.global_cta_link);
+            }
+            if (json.data.global_menu) {
+              try {
+                const parsed = JSON.parse(json.data.global_menu);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                  setMenuItems(parsed);
+                }
+              } catch (e) {
+                console.error("Failed to parse global_menu", e);
               }
-            } catch (e) {
-              console.error("Failed to parse global_menu", e);
             }
           }
-        }
-      })
-      .catch(err => console.log("Using default header data (fetch failed)"));
+        })
+        .catch(err => console.log("Using default header data (fetch failed)"));
+    }
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [initialContent]);
 
   return (
     <header 

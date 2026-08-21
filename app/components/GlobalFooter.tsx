@@ -2,23 +2,29 @@
 
 import React, { useState, useEffect } from 'react';
 
-export default function GlobalFooter() {
-  const [content, setContent] = useState<any>({});
+interface GlobalFooterProps {
+  initialContent?: Record<string, any>;
+}
+
+export default function GlobalFooter({ initialContent }: GlobalFooterProps) {
+  const [content, setContent] = useState<any>(initialContent || {});
 
   useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const res = await fetch('/api/content');
-        const json = await res.json();
-        if (json.status === 'success' && json.data) {
-          setContent(json.data);
+    if (!initialContent) {
+      const fetchContent = async () => {
+        try {
+          const res = await fetch('/api/content');
+          const json = await res.json();
+          if (json.status === 'success' && json.data) {
+            setContent(json.data);
+          }
+        } catch (err) {
+          console.log('Using default footer content');
         }
-      } catch (err) {
-        console.log('Using default footer content');
-      }
-    };
-    fetchContent();
-  }, []);
+      };
+      fetchContent();
+    }
+  }, [initialContent]);
 
   return (
     <footer className="w-full">
