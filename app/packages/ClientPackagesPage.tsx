@@ -245,20 +245,22 @@ export const DEFAULT_PACKAGE_CATEGORIES: PackageCategory[] = [
 
 export default function ClientPackagesPage({ initialContent }: { initialContent: any }) {
   const [activeCategoryModal, setActiveCategoryModal] = useState<PackageCategory | null>(null);
-  const [categories, setCategories] = useState<PackageCategory[]>(DEFAULT_PACKAGE_CATEGORIES);
 
-  useEffect(() => {
+  // Initialize state directly from props to avoid useEffect syncing
+  const [categories, setCategories] = useState<PackageCategory[]>(() => {
     if (initialContent?.package_categories) {
       try {
         const parsed = JSON.parse(initialContent.package_categories);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setCategories(parsed);
+          return parsed;
         }
       } catch (e) {
         console.error('Error parsing package_categories', e);
       }
     }
-  }, [initialContent]);
+    return DEFAULT_PACKAGE_CATEGORIES;
+  });
+
 
 
   // Prevent body scroll when modal is open

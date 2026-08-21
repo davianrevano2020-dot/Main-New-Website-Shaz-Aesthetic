@@ -15,7 +15,8 @@ import {
   Info,
   Stethoscope,
   Sparkles,
-  Gift
+  Gift,
+  Tag
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -32,6 +33,7 @@ export default function BackOfficeLayout({
     { icon: Stethoscope, label: 'Doctor', href: '/back-office/doctor' },
     { icon: Sparkles, label: 'Treatment', href: '/back-office/treatment' },
     { icon: Gift, label: 'Packages', href: '/back-office/packages' },
+    { icon: Tag, label: 'Promotion', href: '/back-office/promotion' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
