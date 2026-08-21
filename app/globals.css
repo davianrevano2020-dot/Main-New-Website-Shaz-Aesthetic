@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-brand-charcoal: #3A3632;
+  --color-brand-white: #F9F8F6;
+  --color-brand-sage: #7C8B76;
+  --color-brand-forest: #445938;
+  --color-brand-brown: #8A6B58;
+  --color-brand-beige: #EAE6E1;
+  --color-brand-gold: #C5A880;
+  
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+body {
+  @apply bg-brand-white text-brand-charcoal;
+}
+
+/* Hide scrollbar for carousels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// Enum untuk Role User
+enum Role {
+  ADMIN
+  SANTRI
+}
+
+// Model untuk User (Admin/Santri)
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  phone     String   @unique // Nomor HP digunakan untuk login (Sesuai konteks Pesantren Mart)
+  password  String   // Password yang di-hash
+  role      Role     @default(SANTRI)
+  balance   Float    @default(0) // Saldo untuk transaksi PPOB
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  transactions Transaction[]
+}
+
+// Model untuk Konten Website (CMS)
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique // Contoh: 'hero_title', 'hero_subtitle'
+  value     String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  id               String   @id @default(cuid())
+  userId           String
+  transaction_type String   // e.g., 'PREPAID', 'POSTPAID'
+  sku_code         String   // Kode produk dari Digiflazz
+  amount           Float    // Harga / Nominal potong saldo
+  status           String   @default("PENDING") // PENDING, SUCCESS, FAILED
+  ref_id           String   @unique // ID Referensi unik untuk Inquiry/Payment
+  provider_response String? @db.Text // JSON response dari Digiflazz
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id])
+}

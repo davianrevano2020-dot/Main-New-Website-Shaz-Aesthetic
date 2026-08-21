@@ -1,0 +1,61 @@
+name: Deploy to DomaiNesia via FTP
+
+on:
+  push:
+    branches:
+      - main # Ubah ke branch utama Anda (misalnya: main atau master)
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Disamakan dengan versi Node.js di DomaiNesia (20.20.2)
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Generate Prisma Client
+        run: npx prisma generate
+        
+      - name: Build Project
+        run: npm run build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        
+      # ----------------------------------------------------------------------
+      # OPSI 1: Deploy untuk Node.js App di cPanel DomaiNesia
+      # Mengunggah semua file (kecuali node_modules) agar bisa di-run via Passenger
+      # ----------------------------------------------------------------------
+      - name: Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: / # Gunakan / jika akun FTP sudah langsung mengarah ke folder subdomain
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.next/cache/**
+            .env.example
+
+      # ----------------------------------------------------------------------
+      # OPSI 2: Deploy untuk Static Export (Jika Next.js di set output: 'export')
+      # Hapus komentar di bawah ini dan hapus Opsi 1 jika Anda menggunakan Static Export
+      # ----------------------------------------------------------------------
+      # - name: Sync static files via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #   with:
+      #     server: ${{ secrets.FTP_SERVER }}
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: ./out/
+      #     server-dir: /
