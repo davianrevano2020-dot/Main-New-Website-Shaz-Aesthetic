@@ -12,7 +12,8 @@ import {
   Globe,
   Menu,
   Info,
-  Stethoscope
+  Stethoscope,
+  Sparkles
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -27,6 +28,7 @@ export default function BackOfficeLayout({
     { icon: LayoutDashboard, label: 'Home Page', href: '/back-office' },
     { icon: Info, label: 'About Page', href: '/back-office/about' },
     { icon: Stethoscope, label: 'Doctor', href: '/back-office/doctor' },
+    { icon: Sparkles, label: 'Treatment', href: '/back-office/treatment' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
