@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -13,7 +14,8 @@ import {
   Menu,
   Info,
   Stethoscope,
-  Sparkles
+  Sparkles,
+  Gift
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -29,6 +31,7 @@ export default function BackOfficeLayout({
     { icon: Info, label: 'About Page', href: '/back-office/about' },
     { icon: Stethoscope, label: 'Doctor', href: '/back-office/doctor' },
     { icon: Sparkles, label: 'Treatment', href: '/back-office/treatment' },
+    { icon: Gift, label: 'Packages', href: '/back-office/packages' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
