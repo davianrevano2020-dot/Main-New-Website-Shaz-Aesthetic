@@ -13,13 +13,15 @@ import {
   Sparkles,
   Award,
   Building,
-  HeartHandshake
+  HeartHandshake,
+  Loader2
 } from 'lucide-react';
 
 export default function BackOfficeAbout() {
   const [activeTab, setActiveTab] = useState<'hero' | 'story' | 'pillars' | 'facilities' | 'cta'>('hero');
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [uploadingField, setUploadingField] = useState<string | null>(null);
   const [saveStatus, setSaveStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   // Form states
@@ -123,6 +125,10 @@ export default function BackOfficeAbout() {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    const inputTarget = e.target;
+    setUploadingField(fieldName);
+    setSaveStatus(null);
+
     const data = new FormData();
     data.append('file', file);
 
@@ -132,15 +138,19 @@ export default function BackOfficeAbout() {
         body: data
       });
       const json = await res.json();
-      if (json.status === 'success' && json.url) {
+      if ((json.success || json.status === 'success') && json.url) {
         setFormData(prev => ({ ...prev, [fieldName]: json.url }));
-        setSaveStatus({ type: 'success', message: 'Foto berhasil diunggah!' });
-        setTimeout(() => setSaveStatus(null), 3000);
+        setSaveStatus({ type: 'success', message: 'Foto berhasil diunggah! Jangan lupa klik "Simpan Perubahan".' });
+        setTimeout(() => setSaveStatus(null), 4000);
       } else {
-        setSaveStatus({ type: 'error', message: 'Gagal mengunggah foto.' });
+        setSaveStatus({ type: 'error', message: json.message || 'Gagal mengunggah foto.' });
       }
     } catch (err) {
+      console.error('Upload error', err);
       setSaveStatus({ type: 'error', message: 'Terjadi kesalahan saat upload foto.' });
+    } finally {
+      setUploadingField(null);
+      if (inputTarget) inputTarget.value = '';
     }
   };
 
@@ -334,12 +344,21 @@ export default function BackOfficeAbout() {
                     placeholder="https://..."
                     className="w-full px-4 py-2 rounded-xl border border-brand-beige text-xs font-mono"
                   />
-                  <label className="inline-flex items-center gap-2 px-4 py-2 bg-brand-beige hover:bg-brand-sage hover:text-white rounded-xl text-xs font-semibold cursor-pointer transition-colors">
-                    <Upload className="w-3.5 h-3.5" />
-                    <span>Upload Foto Banner</span>
+                  <label className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold cursor-pointer transition-colors ${
+                    uploadingField === 'about_hero_image' 
+                      ? 'bg-brand-sage/20 text-brand-forest cursor-not-allowed opacity-75' 
+                      : 'bg-brand-beige hover:bg-brand-sage hover:text-white'
+                  }`}>
+                    {uploadingField === 'about_hero_image' ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <Upload className="w-3.5 h-3.5" />
+                    )}
+                    <span>{uploadingField === 'about_hero_image' ? 'Mengunggah...' : 'Upload Foto Banner'}</span>
                     <input 
                       type="file" 
                       accept="image/*" 
+                      disabled={uploadingField === 'about_hero_image'}
                       className="hidden" 
                       onChange={(e) => handleFileUpload(e, 'about_hero_image')} 
                     />
@@ -428,10 +447,24 @@ export default function BackOfficeAbout() {
                           onChange={handleInputChange}
                           className="w-full px-3 py-1.5 rounded-lg border text-xs font-mono"
                         />
-                        <label className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-beige hover:bg-brand-sage hover:text-white rounded-lg text-xs font-semibold cursor-pointer">
-                          <Upload className="w-3 h-3" />
-                          <span>Upload</span>
-                          <input type="file" accept="image/*" className="hidden" onChange={(e) => handleFileUpload(e, 'about_story_image1')} />
+                        <label className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer ${
+                          uploadingField === 'about_story_image1' 
+                            ? 'bg-brand-sage/20 text-brand-forest cursor-not-allowed opacity-75' 
+                            : 'bg-brand-beige hover:bg-brand-sage hover:text-white'
+                        }`}>
+                          {uploadingField === 'about_story_image1' ? (
+                            <Loader2 className="w-3 h-3 animate-spin" />
+                          ) : (
+                            <Upload className="w-3 h-3" />
+                          )}
+                          <span>{uploadingField === 'about_story_image1' ? 'Mengunggah...' : 'Upload'}</span>
+                          <input 
+                            type="file" 
+                            accept="image/*" 
+                            disabled={uploadingField === 'about_story_image1'}
+                            className="hidden" 
+                            onChange={(e) => handleFileUpload(e, 'about_story_image1')} 
+                          />
                         </label>
                       </div>
                     </div>
@@ -451,10 +484,24 @@ export default function BackOfficeAbout() {
                           onChange={handleInputChange}
                           className="w-full px-3 py-1.5 rounded-lg border text-xs font-mono"
                         />
-                        <label className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-beige hover:bg-brand-sage hover:text-white rounded-lg text-xs font-semibold cursor-pointer">
-                          <Upload className="w-3 h-3" />
-                          <span>Upload</span>
-                          <input type="file" accept="image/*" className="hidden" onChange={(e) => handleFileUpload(e, 'about_story_image2')} />
+                        <label className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer ${
+                          uploadingField === 'about_story_image2' 
+                            ? 'bg-brand-sage/20 text-brand-forest cursor-not-allowed opacity-75' 
+                            : 'bg-brand-beige hover:bg-brand-sage hover:text-white'
+                        }`}>
+                          {uploadingField === 'about_story_image2' ? (
+                            <Loader2 className="w-3 h-3 animate-spin" />
+                          ) : (
+                            <Upload className="w-3 h-3" />
+                          )}
+                          <span>{uploadingField === 'about_story_image2' ? 'Mengunggah...' : 'Upload'}</span>
+                          <input 
+                            type="file" 
+                            accept="image/*" 
+                            disabled={uploadingField === 'about_story_image2'}
+                            className="hidden" 
+                            onChange={(e) => handleFileUpload(e, 'about_story_image2')} 
+                          />
                         </label>
                       </div>
                     </div>
@@ -692,12 +739,21 @@ export default function BackOfficeAbout() {
                     onChange={handleInputChange}
                     className="w-full px-3 py-1.5 text-xs font-mono border rounded-lg"
                   />
-                  <label className="inline-flex items-center justify-center gap-1.5 w-full py-2 bg-brand-beige hover:bg-brand-sage hover:text-white rounded-lg text-xs font-semibold cursor-pointer transition-colors">
-                    <Upload className="w-3.5 h-3.5" />
-                    <span>Upload Foto</span>
+                  <label className={`inline-flex items-center justify-center gap-1.5 w-full py-2 rounded-lg text-xs font-semibold cursor-pointer transition-colors ${
+                    uploadingField === item.name 
+                      ? 'bg-brand-sage/20 text-brand-forest cursor-not-allowed opacity-75' 
+                      : 'bg-brand-beige hover:bg-brand-sage hover:text-white'
+                  }`}>
+                    {uploadingField === item.name ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <Upload className="w-3.5 h-3.5" />
+                    )}
+                    <span>{uploadingField === item.name ? 'Mengunggah...' : 'Upload Foto'}</span>
                     <input 
                       type="file" 
                       accept="image/*" 
+                      disabled={uploadingField === item.name}
                       className="hidden" 
                       onChange={(e) => handleFileUpload(e, item.name)} 
                     />
