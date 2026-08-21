@@ -76,12 +76,12 @@ export default function FooterSettings() {
       
       if (data.success) {
         setContent(prev => ({ ...prev, [fieldName]: data.url }));
-        setMessage({ type: 'success', text: 'Logo berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Logo uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah logo' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload logo' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'Error occurred during upload' });
     } finally {
       setIsUploading(false);
     }
@@ -103,12 +103,12 @@ export default function FooterSettings() {
 
       const result = await res.json();
       if (result.status === 'success') {
-        setMessage({ type: 'success', text: 'Pengaturan Footer berhasil disimpan!' });
+        setMessage({ type: 'success', text: 'Footer settings saved successfully!' });
       } else {
-        setMessage({ type: 'error', text: 'Gagal menyimpan pengaturan.' });
+        setMessage({ type: 'error', text: 'Failed to save settings.' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan sistem.' });
+      setMessage({ type: 'error', text: 'System error occurred.' });
     } finally {
       setIsSaving(false);
     }
@@ -125,8 +125,8 @@ export default function FooterSettings() {
   return (
     <div className="max-w-4xl">
       <div className="mb-8">
-        <h1 className="text-3xl font-serif text-brand-charcoal mb-2">Pengaturan Footer</h1>
-        <p className="text-gray-500">Kelola konten dan tautan yang muncul di bagian bawah website Anda.</p>
+        <h1 className="text-3xl font-serif text-brand-charcoal mb-2">Footer Settings</h1>
+        <p className="text-gray-500">Manage content and links displayed at the bottom of your website.</p>
       </div>
 
       {message.text && (
@@ -142,11 +142,11 @@ export default function FooterSettings() {
         
         {/* 1. TOP CTA SECTION */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">1. Bagian Atas (Call to Action)</h2>
+          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">1. Top Section (Call to Action)</h2>
           
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Judul (contoh: Your SHAZ Experience Begins Here.)</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Title (e.g. Your SHAZ Experience Begins Here.)</label>
               <input
                 type="text"
                 name="footer_title"
@@ -156,7 +156,7 @@ export default function FooterSettings() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Subjudul</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Subtitle Description</label>
               <textarea
                 name="footer_subtitle"
                 value={content.footer_subtitle}
@@ -167,7 +167,7 @@ export default function FooterSettings() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Teks Tombol (contoh: BOOK CONSULTATION)</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Button Text (e.g. BOOK CONSULTATION)</label>
                 <input
                   type="text"
                   name="footer_button_text"
@@ -177,7 +177,7 @@ export default function FooterSettings() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Link Tombol</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Button Link</label>
                 <input
                   type="text"
                   name="footer_button_link"
@@ -192,7 +192,7 @@ export default function FooterSettings() {
 
         {/* 2. BRAND & EXPLORE */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">2. Logo & Tautan Explore</h2>
+          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">2. Logo & Explore Links</h2>
           
           <div className="space-y-6">
             <div className="flex items-start gap-6">
@@ -203,7 +203,7 @@ export default function FooterSettings() {
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                       <label className="cursor-pointer text-white flex flex-col items-center">
                         <Upload className="w-5 h-5 mb-1" />
-                        <span className="text-xs font-semibold">Ubah</span>
+                        <span className="text-xs font-semibold">Change</span>
                         <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'footer_logo')} className="hidden" disabled={isUploading} />
                       </label>
                     </div>
@@ -211,13 +211,13 @@ export default function FooterSettings() {
                 ) : (
                   <label className="cursor-pointer text-gray-400 hover:text-brand-forest transition-colors flex flex-col items-center p-2">
                     <Upload className="w-6 h-6 mb-2" />
-                    <span className="text-xs font-medium text-center">Upload Logo (Putih)</span>
+                    <span className="text-xs font-medium text-center">Upload Logo (White)</span>
                     <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'footer_logo')} className="hidden" disabled={isUploading} />
                   </label>
                 )}
               </div>
               <div className="flex-1">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Slogan / Tagline (contoh: Refined by Medical Expertise.)</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Tagline (e.g. Refined by Medical Expertise.)</label>
                 <input
                   type="text"
                   name="footer_tagline"
@@ -228,55 +228,55 @@ export default function FooterSettings() {
               </div>
             </div>
 
-            <h3 className="font-semibold text-gray-700 mt-6 border-t pt-4">Tautan Explore</h3>
+            <h3 className="font-semibold text-gray-700 mt-6 border-t pt-4">Explore Links</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" name="footer_explore_1_text" value={content.footer_explore_1_text} onChange={handleChange} placeholder="Teks Tautan 1 (Treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_1_link" value={content.footer_explore_1_link} onChange={handleChange} placeholder="Link Tautan 1 (#treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_2_text" value={content.footer_explore_2_text} onChange={handleChange} placeholder="Teks Tautan 2 (Packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_2_link" value={content.footer_explore_2_link} onChange={handleChange} placeholder="Link Tautan 2 (#packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_3_text" value={content.footer_explore_3_text} onChange={handleChange} placeholder="Teks Tautan 3 (Our Doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_3_link" value={content.footer_explore_3_link} onChange={handleChange} placeholder="Link Tautan 3 (#doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_1_text" value={content.footer_explore_1_text} onChange={handleChange} placeholder="Link 1 Label (Treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_1_link" value={content.footer_explore_1_link} onChange={handleChange} placeholder="Link 1 URL (#treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_2_text" value={content.footer_explore_2_text} onChange={handleChange} placeholder="Link 2 Label (Packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_2_link" value={content.footer_explore_2_link} onChange={handleChange} placeholder="Link 2 URL (#packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_3_text" value={content.footer_explore_3_text} onChange={handleChange} placeholder="Link 3 Label (Our Doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+              <input type="text" name="footer_explore_3_link" value={content.footer_explore_3_link} onChange={handleChange} placeholder="Link 3 URL (#doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
             </div>
           </div>
         </div>
 
         {/* 3. CONTACT & SOCIAL */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">3. Kontak & Media Sosial</h2>
+          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">3. Contact & Social Media</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h3 className="font-semibold text-gray-700">Info Kontak</h3>
+              <h3 className="font-semibold text-gray-700">Contact Info</h3>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Teks WhatsApp</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">WhatsApp Label</label>
                 <input type="text" name="footer_contact_whatsapp" value={content.footer_contact_whatsapp} onChange={handleChange} placeholder="WhatsApp Us" className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Link WhatsApp</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">WhatsApp URL</label>
                 <input type="text" name="footer_contact_whatsapp_link" value={content.footer_contact_whatsapp_link} onChange={handleChange} placeholder="https://wa.link/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Alamat Email</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">Email Address</label>
                 <input type="text" name="footer_contact_email" value={content.footer_contact_email} onChange={handleChange} placeholder="hello@shazaestheticbali.com" className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Nomor Telepon</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">Phone Number</label>
                 <input type="text" name="footer_contact_phone" value={content.footer_contact_phone} onChange={handleChange} placeholder="+62 811 388 999 9" className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
             </div>
 
             <div className="space-y-4">
-              <h3 className="font-semibold text-gray-700">Tautan Sosial Media</h3>
+              <h3 className="font-semibold text-gray-700">Social Media Links</h3>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Link Instagram</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">Instagram URL</label>
                 <input type="text" name="footer_social_instagram_link" value={content.footer_social_instagram_link} onChange={handleChange} placeholder="https://instagram.com/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Link TikTok</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">TikTok URL</label>
                 <input type="text" name="footer_social_tiktok_link" value={content.footer_social_tiktok_link} onChange={handleChange} placeholder="https://tiktok.com/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Link Facebook</label>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">Facebook URL</label>
                 <input type="text" name="footer_social_facebook_link" value={content.footer_social_facebook_link} onChange={handleChange} placeholder="https://facebook.com/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
             </div>
@@ -285,11 +285,11 @@ export default function FooterSettings() {
 
         {/* 4. COPYRIGHT */}
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">4. Hak Cipta & Kebijakan</h2>
+          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">4. Copyright & Legal</h2>
           
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Teks Hak Cipta (Copyright)</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Copyright Text</label>
               <input
                 type="text"
                 name="footer_copyright"
@@ -301,7 +301,7 @@ export default function FooterSettings() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Link Privacy Policy</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Privacy Policy Link</label>
                 <input
                   type="text"
                   name="footer_privacy_link"
@@ -312,7 +312,7 @@ export default function FooterSettings() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Link Terms of Service</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Terms of Service Link</label>
                 <input
                   type="text"
                   name="footer_terms_link"
@@ -333,7 +333,7 @@ export default function FooterSettings() {
             className="bg-brand-forest text-white px-8 py-3 rounded-xl font-semibold hover:bg-brand-sage transition-colors disabled:opacity-50 flex items-center gap-2 shadow-sm"
           >
             {isSaving ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
-            {isSaving ? 'Menyimpan...' : 'Simpan Perubahan'}
+            {isSaving ? 'Saving...' : 'Save Changes'}
           </button>
         </div>
       </form>

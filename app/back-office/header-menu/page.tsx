@@ -108,7 +108,7 @@ export default function HeaderMenuSettings() {
       if (data.success) {
         setGlobalLogo(data.url);
       } else {
-        alert('Upload gagal');
+        alert('Upload failed');
       }
     } catch (error) {
       console.error('Upload error', error);
@@ -157,7 +157,7 @@ export default function HeaderMenuSettings() {
       <div className="mb-8 flex justify-between items-end">
         <div>
           <h1 className="text-3xl font-bold text-brand-charcoal font-serif">Header & Menu</h1>
-          <p className="text-brand-charcoal/60 mt-2">Kelola logo dan navigasi header global.</p>
+          <p className="text-brand-charcoal/60 mt-2">Manage logo and global navigation items.</p>
         </div>
         <button
           onClick={handleSave}
@@ -165,27 +165,27 @@ export default function HeaderMenuSettings() {
           className="bg-brand-forest text-white px-6 py-2 rounded-full font-semibold hover:bg-brand-charcoal transition-colors disabled:opacity-70 flex items-center gap-2"
         >
           {isSaving ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
-          {isSaving ? 'Menyimpan...' : 'Simpan Perubahan'}
+          {isSaving ? 'Saving...' : 'Save Changes'}
         </button>
       </div>
 
       {saveStatus === 'success' && (
         <div className="mb-6 p-4 bg-green-50 text-green-700 rounded-lg flex items-center gap-3 border border-green-200">
           <CheckCircle2 className="w-5 h-5" />
-          <p>Perubahan berhasil disimpan! Perubahan akan otomatis tampil di semua halaman.</p>
+          <p>Changes saved successfully! Updates are automatically reflected across all pages.</p>
         </div>
       )}
 
       {saveStatus === 'error' && (
         <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-lg flex items-center gap-3 border border-red-200">
           <AlertCircle className="w-5 h-5" />
-          <p>Gagal menyimpan perubahan. Silakan coba lagi.</p>
+          <p>Failed to save changes. Please try again.</p>
         </div>
       )}
 
       {/* Preview Section */}
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-beige mb-8">
-        <h2 className="text-lg font-bold mb-4">Preview Header</h2>
+        <h2 className="text-lg font-bold mb-4">Header Preview</h2>
         <div className="border border-brand-beige rounded-lg p-4 bg-brand-white/50 flex items-center justify-between">
           <div>
             {globalLogo ? (
@@ -209,7 +209,7 @@ export default function HeaderMenuSettings() {
 
       {/* Logo Settings */}
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-beige mb-8">
-        <h2 className="text-lg font-bold mb-4">Logo Global</h2>
+        <h2 className="text-lg font-bold mb-4">Global Logo</h2>
         <div className="flex gap-6 items-start">
           <div className="w-48 h-32 bg-gray-50 border-2 border-dashed border-gray-200 rounded-lg flex flex-col items-center justify-center relative overflow-hidden">
             {globalLogo ? (
@@ -223,20 +223,20 @@ export default function HeaderMenuSettings() {
                 </button>
               </>
             ) : (
-              <span className="text-sm text-gray-400">Belum ada logo</span>
+              <span className="text-sm text-gray-400">No logo uploaded</span>
             )}
           </div>
           <div className="flex-1">
-            <label className="block text-sm font-medium text-brand-charcoal mb-2">Unggah Logo Baru</label>
+            <label className="block text-sm font-medium text-brand-charcoal mb-2">Upload New Logo</label>
             <input 
               type="file" 
               accept="image/*" 
               onChange={handleImageUpload}
               className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-beige file:text-brand-charcoal hover:file:bg-brand-beige/80 cursor-pointer"
             />
-            <p className="text-xs text-gray-500 mt-2">Disarankan menggunakan format PNG transparan dengan resolusi tinggi. Tinggi logo pada header akan disesuaikan secara otomatis.</p>
+            <p className="text-xs text-gray-500 mt-2">Transparent PNG format with high resolution is recommended. Logo height on the header will adjust automatically.</p>
             <div className="mt-4">
-              <label className="block text-sm font-medium text-brand-charcoal mb-2">Atau gunakan URL Logo</label>
+              <label className="block text-sm font-medium text-brand-charcoal mb-2">Or Direct Logo URL</label>
               <input
                 type="text"
                 value={globalLogo}
@@ -251,26 +251,26 @@ export default function HeaderMenuSettings() {
 
       {/* CTA Settings */}
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-beige mb-8">
-        <h2 className="text-lg font-bold mb-4">Tombol Call-to-Action (CTA)</h2>
+        <h2 className="text-lg font-bold mb-4">Call-to-Action (CTA) Button</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-brand-charcoal mb-2">Teks Tombol</label>
+            <label className="block text-sm font-medium text-brand-charcoal mb-2">Button Text</label>
             <input
               type="text"
               value={ctaText}
               onChange={(e) => setCtaText(e.target.value)}
               className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-              placeholder="Contoh: Book Consultation"
+              placeholder="e.g. Book Consultation"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-brand-charcoal mb-2">Tautan (URL)</label>
+            <label className="block text-sm font-medium text-brand-charcoal mb-2">Button Link (URL)</label>
             <input
               type="text"
               value={ctaLink}
               onChange={(e) => setCtaLink(e.target.value)}
               className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-              placeholder="Contoh: https://wa.link/..."
+              placeholder="e.g. https://wa.link/..."
             />
           </div>
         </div>
@@ -280,20 +280,20 @@ export default function HeaderMenuSettings() {
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-brand-beige">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <h2 className="text-lg font-bold">Menu Navigasi</h2>
-            <p className="text-sm text-brand-charcoal/60">Atur tautan yang akan tampil di header.</p>
+            <h2 className="text-lg font-bold">Navigation Menu</h2>
+            <p className="text-sm text-brand-charcoal/60">Configure links displayed in the header.</p>
           </div>
           <button 
             onClick={addMenuItem}
             className="flex items-center gap-2 text-sm bg-brand-beige/50 hover:bg-brand-beige px-4 py-2 rounded-lg font-medium transition-colors"
           >
-            <Plus className="w-4 h-4" /> Tambah Menu
+            <Plus className="w-4 h-4" /> Add Menu Item
           </button>
         </div>
 
         <div className="space-y-4">
           {menuItems.length === 0 && (
-            <p className="text-center py-8 text-gray-400 text-sm">Belum ada menu navigasi.</p>
+            <p className="text-center py-8 text-gray-400 text-sm">No navigation items added yet.</p>
           )}
           {menuItems.map((item, index) => (
             <div key={item.id} className="flex gap-4 items-center bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -308,23 +308,23 @@ export default function HeaderMenuSettings() {
               
               <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">Label Menu</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Menu Label</label>
                   <input
                     type="text"
                     value={item.label}
                     onChange={(e) => updateMenuItem(item.id, 'label', e.target.value)}
                     className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                    placeholder="Contoh: About Us"
+                    placeholder="e.g. About Us"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-gray-500 mb-1">Tautan / URL</label>
+                  <label className="block text-xs font-medium text-gray-500 mb-1">Link / URL</label>
                   <input
                     type="text"
                     value={item.url}
                     onChange={(e) => updateMenuItem(item.id, 'url', e.target.value)}
                     className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                    placeholder="Contoh: #about atau /contact"
+                    placeholder="e.g. #about or /contact"
                   />
                 </div>
               </div>
@@ -337,13 +337,13 @@ export default function HeaderMenuSettings() {
                   onChange={(e) => updateMenuItem(item.id, 'newTab', e.target.checked)}
                   className="rounded border-gray-300 text-brand-forest focus:ring-brand-forest"
                 />
-                <label htmlFor={`newtab-${item.id}`} className="text-xs text-gray-600 cursor-pointer">Tab Baru</label>
+                <label htmlFor={`newtab-${item.id}`} className="text-xs text-gray-600 cursor-pointer">New Tab</label>
               </div>
 
               <button 
                 onClick={() => removeMenuItem(item.id)}
                 className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                title="Hapus Menu"
+                title="Delete Menu"
               >
                 <Trash2 className="w-5 h-5" />
               </button>

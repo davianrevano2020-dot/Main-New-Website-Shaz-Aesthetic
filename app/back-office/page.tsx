@@ -203,12 +203,12 @@ export default function BackOffice() {
       
       if (data.success) {
         setContent(prev => ({ ...prev, [key]: data.url }));
-        setMessage({ type: 'success', text: 'Gambar berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Image uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -258,12 +258,12 @@ export default function BackOffice() {
         const newTreatments = [...treatments];
         newTreatments[index].img = data.url;
         setTreatments(newTreatments);
-        setMessage({ type: 'success', text: 'Gambar treatment berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Treatment image uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -348,12 +348,12 @@ export default function BackOffice() {
         const newDoctors = [...doctors];
         newDoctors[index].img = data.url;
         setDoctors(newDoctors);
-        setMessage({ type: 'success', text: 'Gambar dokter berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Doctor photo uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -378,12 +378,12 @@ export default function BackOffice() {
         const newPackages = [...packages];
         newPackages[index].img = data.url;
         setPackages(newPackages);
-        setMessage({ type: 'success', text: 'Gambar package berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Package image uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -433,12 +433,12 @@ export default function BackOffice() {
         const newT = [...transformations];
         newT[index].img = data.url;
         setTransformations(newT);
-        setMessage({ type: 'success', text: 'Gambar transformation berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Transformation image uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -485,12 +485,12 @@ export default function BackOffice() {
         const newC = [...clinics];
         newC[index].img = data.url;
         setClinics(newC);
-        setMessage({ type: 'success', text: 'Gambar klinik berhasil diunggah!' });
+        setMessage({ type: 'success', text: 'Clinic image uploaded successfully!' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal mengunggah gambar' });
+        setMessage({ type: 'error', text: data.message || 'Failed to upload image' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan saat mengunggah' });
+      setMessage({ type: 'error', text: 'An error occurred while uploading' });
     } finally {
       setIsUploading(false);
     }
@@ -514,7 +514,7 @@ export default function BackOffice() {
 
   const fetchGoogleReviews = async () => {
     if (!content.reviews_google_place_id || !content.reviews_google_api_key) {
-      setMessage({ type: 'error', text: 'Silakan masukkan Place ID dan API Key Google Maps.' });
+      setMessage({ type: 'error', text: 'Please enter both Google Maps Place ID and API Key.' });
       return;
     }
     setIsFetchingGoogle(true);
@@ -541,12 +541,12 @@ export default function BackOffice() {
           }));
           setReviews(fetchedReviews);
         }
-        setMessage({ type: 'success', text: 'Data ulasan Google Maps berhasil ditarik. Jangan lupa klik Simpan.' });
+        setMessage({ type: 'success', text: 'Google Maps reviews fetched successfully. Don\'t forget to click Save Changes.' });
       } else {
-        setMessage({ type: 'error', text: data.message || 'Gagal menarik ulasan dari Google Maps' });
+        setMessage({ type: 'error', text: data.message || 'Failed to fetch reviews from Google Maps' });
       }
     } catch (e: any) {
-      setMessage({ type: 'error', text: e.message || 'Terjadi kesalahan jaringan saat menarik ulasan' });
+      setMessage({ type: 'error', text: e.message || 'Network error occurred while fetching reviews' });
     } finally {
       setIsFetchingGoogle(false);
     }
@@ -577,12 +577,12 @@ export default function BackOffice() {
       
       const json = await res.json();
       if (json.status === 'success') {
-        setMessage({ type: 'success', text: 'Perubahan berhasil disimpan!' });
+        setMessage({ type: 'success', text: 'Changes saved successfully!' });
       } else {
-        setMessage({ type: 'error', text: json.message || 'Gagal menyimpan perubahan.' });
+        setMessage({ type: 'error', text: json.message || 'Failed to save changes.' });
       }
     } catch (err) {
-      setMessage({ type: 'error', text: 'Terjadi kesalahan jaringan.' });
+      setMessage({ type: 'error', text: 'Network error occurred.' });
     } finally {
       setIsSaving(false);
     }
@@ -609,12 +609,12 @@ export default function BackOffice() {
         
         {/* Section: Hero Banner */}
         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-brand-beige">
-            <h2 className="text-xl font-serif font-bold text-brand-charcoal mb-6 pb-2 border-b border-brand-beige">1. Hero Banner Utama</h2>
+            <h2 className="text-xl font-serif font-bold text-brand-charcoal mb-6 pb-2 border-b border-brand-beige">1. Main Hero Banner</h2>
             
             <div className="space-y-5">
               {/* Image Upload */}
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Foto Banner Utama</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Main Banner Photo</label>
                 <div className="flex items-center gap-6">
                   {content.hero_image && (
                     <div className="relative w-32 h-20 rounded-lg overflow-hidden border border-brand-beige shrink-0">
@@ -624,7 +624,7 @@ export default function BackOffice() {
                   <div className="flex-1">
                     <label className="cursor-pointer bg-brand-white/50 border border-brand-beige rounded-lg px-4 py-3 flex items-center justify-center gap-2 hover:bg-brand-sage/10 transition-colors text-brand-charcoal">
                       {isUploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Upload className="w-5 h-5" />}
-                      <span className="font-medium">{isUploading ? 'Mengunggah...' : 'Pilih File Gambar'}</span>
+                      <span className="font-medium">{isUploading ? 'Uploading...' : 'Choose Image File'}</span>
                       <input 
                         type="file" 
                         accept="image/*"
@@ -633,22 +633,22 @@ export default function BackOffice() {
                         disabled={isUploading}
                       />
                     </label>
-                    <p className="text-xs text-brand-charcoal/50 mt-2">Format disarankan: JPG/PNG, ukuran horizontal (Landscape).</p>
+                    <p className="text-xs text-brand-charcoal/50 mt-2">Recommended format: JPG/PNG, horizontal landscape ratio.</p>
                   </div>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Headline Utama (Hero Title)</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Main Headline (Hero Title)</label>
                 <input 
                   type="text" 
                   name="hero_title"
                   value={content.hero_title}
                   onChange={handleChange}
-                  placeholder="Contoh: Timeless Beauty, Elevated by Science."
+                  placeholder="e.g. Timeless Beauty, Elevated by Science."
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
-                <p className="text-xs text-brand-charcoal/50 mt-2">Gunakan tag &lt;br/&gt; jika ingin membuat baris baru paksa.</p>
+                <p className="text-xs text-brand-charcoal/50 mt-2">Use &lt;br/&gt; tag for manual line breaks if desired.</p>
               </div>
 
               <div>
@@ -658,7 +658,7 @@ export default function BackOffice() {
                   value={content.hero_subtitle}
                   onChange={handleChange}
                   rows={3}
-                  placeholder="Contoh: Experience the pinnacle of non-invasive aesthetic treatments in Bali..."
+                  placeholder="e.g. Experience the pinnacle of non-invasive aesthetic treatments in Bali..."
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
@@ -667,26 +667,26 @@ export default function BackOffice() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4 border-t border-brand-beige/50">
                 {/* Button 1 */}
                 <div className="space-y-3">
-                  <h3 className="font-bold text-sm text-brand-charcoal">Tombol 1 (Utama)</h3>
+                  <h3 className="font-bold text-sm text-brand-charcoal">Button 1 (Primary)</h3>
                   <div>
-                    <label className="block text-xs text-brand-charcoal/80 mb-1">Teks Tombol</label>
+                    <label className="block text-xs text-brand-charcoal/80 mb-1">Button Text</label>
                     <input 
                       type="text" 
                       name="hero_button1_text"
                       value={content.hero_button1_text || ''}
                       onChange={handleChange}
-                      placeholder="Contoh: Book a Consultation"
+                      placeholder="e.g. Book a Consultation"
                       className="w-full px-4 py-2 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-sm text-brand-charcoal"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-brand-charcoal/80 mb-1">Tautan (Link)</label>
+                    <label className="block text-xs text-brand-charcoal/80 mb-1">Link URL</label>
                     <input 
                       type="text" 
                       name="hero_button1_link"
                       value={content.hero_button1_link || ''}
                       onChange={handleChange}
-                      placeholder="Contoh: https://wa.me/..."
+                      placeholder="e.g. https://wa.me/..."
                       className="w-full px-4 py-2 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-sm text-brand-charcoal"
                     />
                   </div>
@@ -694,26 +694,26 @@ export default function BackOffice() {
 
                 {/* Button 2 */}
                 <div className="space-y-3">
-                  <h3 className="font-bold text-sm text-brand-charcoal">Tombol 2 (Sekunder)</h3>
+                  <h3 className="font-bold text-sm text-brand-charcoal">Button 2 (Secondary)</h3>
                   <div>
-                    <label className="block text-xs text-brand-charcoal/80 mb-1">Teks Tombol</label>
+                    <label className="block text-xs text-brand-charcoal/80 mb-1">Button Text</label>
                     <input 
                       type="text" 
                       name="hero_button2_text"
                       value={content.hero_button2_text || ''}
                       onChange={handleChange}
-                      placeholder="Contoh: View Treatments"
+                      placeholder="e.g. View Treatments"
                       className="w-full px-4 py-2 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-sm text-brand-charcoal"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-brand-charcoal/80 mb-1">Tautan (Link)</label>
+                    <label className="block text-xs text-brand-charcoal/80 mb-1">Link URL</label>
                     <input 
                       type="text" 
                       name="hero_button2_link"
                       value={content.hero_button2_link || ''}
                       onChange={handleChange}
-                      placeholder="Contoh: #treatments"
+                      placeholder="e.g. #treatments"
                       className="w-full px-4 py-2 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-sm text-brand-charcoal"
                     />
                   </div>
@@ -725,29 +725,29 @@ export default function BackOffice() {
 
           {/* Section: Tentang Kami */}
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-brand-beige">
-            <h2 className="text-xl font-serif font-bold text-brand-charcoal mb-6 pb-2 border-b border-brand-beige">2. Tentang Kami (Philosophy)</h2>
+            <h2 className="text-xl font-serif font-bold text-brand-charcoal mb-6 pb-2 border-b border-brand-beige">2. About Us (Philosophy)</h2>
             
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Judul Bagian</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Section Title</label>
                 <input 
                   type="text" 
                   name="about_title"
                   value={content.about_title}
                   onChange={handleChange}
-                  placeholder="Contoh: The SHAZ Philosophy"
+                  placeholder="e.g. The SHAZ Philosophy"
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Deskripsi</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Description</label>
                 <textarea 
                   name="about_description"
                   value={content.about_description}
                   onChange={handleChange}
                   rows={5}
-                  placeholder="Tulis deskripsi filosofi klinik..."
+                  placeholder="Write philosophy description..."
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
@@ -760,44 +760,44 @@ export default function BackOffice() {
             
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Kicker (Sub Judul Kecil)</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Kicker (Subtitle Tag)</label>
                 <input 
                   type="text" 
                   name="experience_kicker"
                   value={content.experience_kicker}
                   onChange={handleChange}
-                  placeholder="Contoh: The Experience"
+                  placeholder="e.g. The Experience"
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Judul Utama</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Main Title</label>
                 <input 
                   type="text" 
                   name="experience_title"
                   value={content.experience_title}
                   onChange={handleChange}
-                  placeholder="Contoh: A Sanctuary for Your Transformation."
+                  placeholder="e.g. A Sanctuary for Your Transformation."
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Deskripsi</label>
+                <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Description</label>
                 <textarea 
                   name="experience_description"
                   value={content.experience_description}
                   onChange={handleChange}
                   rows={4}
-                  placeholder="Deskripsi..."
+                  placeholder="Description..."
                   className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Teks Tombol</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Button Text</label>
                   <input 
                     type="text" 
                     name="experience_button_text"
@@ -808,7 +808,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Tautan Tombol (Link)</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Button Link (URL)</label>
                   <input 
                     type="text" 
                     name="experience_button_link"
@@ -824,7 +824,7 @@ export default function BackOffice() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 {[1, 2, 3, 4].map((num) => (
                   <div key={num} className="border border-brand-beige p-4 rounded-xl">
-                    <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Foto Kolase {num}</label>
+                    <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Collage Photo {num}</label>
                     <div className="flex flex-col gap-4">
                       {content[`experience_image${num}` as keyof typeof content] && (
                         <div className="relative w-full h-32 rounded-lg overflow-hidden border border-brand-beige">
@@ -833,7 +833,7 @@ export default function BackOffice() {
                       )}
                       <label className="cursor-pointer bg-brand-white/50 border border-brand-beige rounded-lg px-4 py-2 flex items-center justify-center gap-2 hover:bg-brand-sage/10 transition-colors text-brand-charcoal text-sm">
                         <Upload className="w-4 h-4" />
-                        <span className="font-medium">Ganti Foto {num}</span>
+                        <span className="font-medium">Change Photo {num}</span>
                         <input 
                           type="file" 
                           accept="image/*"
@@ -848,9 +848,7 @@ export default function BackOffice() {
               </div>
 
             </div>
-          </div>
-
-          {/* Section: Our Treatments */}
+          </div>          {/* Section: Our Treatments */}
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-brand-beige">
             <div className="flex justify-between items-center mb-6 pb-2 border-b border-brand-beige">
               <h2 className="text-xl font-serif font-bold text-brand-charcoal">4. Our Treatments</h2>
@@ -859,43 +857,43 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Teks Tombol CTA</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">CTA Button Text</label>
                   <input 
                     type="text" 
                     name="treatments_button_text"
                     value={content.treatments_button_text || ''}
                     onChange={handleChange}
-                    placeholder="Contoh: Explore Full Menu"
+                    placeholder="e.g. Explore Full Menu"
                     className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Tautan Tombol (Link)</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Button Link (URL)</label>
                   <input 
                     type="text" 
                     name="treatments_button_link"
                     value={content.treatments_button_link || ''}
                     onChange={handleChange}
-                    placeholder="Contoh: https://wa.link/..."
+                    placeholder="e.g. https://wa.link/..."
                     className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                   />
                 </div>
               </div>
 
               <div className="flex items-center justify-between pt-4">
-                <h3 className="font-bold text-brand-charcoal">Daftar Treatment</h3>
+                <h3 className="font-bold text-brand-charcoal">Treatment List</h3>
                 <button 
-                  type="button"
+                  type="button" 
                   onClick={addTreatment}
                   className="flex items-center gap-2 text-sm bg-brand-beige/50 hover:bg-brand-beige px-4 py-2 rounded-lg font-medium transition-colors text-brand-charcoal"
                 >
-                  <Plus className="w-4 h-4" /> Tambah Treatment
+                  <Plus className="w-4 h-4" /> Add Treatment
                 </button>
               </div>
 
               <div className="space-y-4">
                 {treatments.length === 0 && (
-                  <p className="text-center py-8 text-gray-400 text-sm">Belum ada treatment. Klik tambah untuk memulai.</p>
+                  <p className="text-center py-8 text-gray-400 text-sm">No treatments yet. Click add to start.</p>
                 )}
                 {treatments.map((treatment, index) => (
                   <div key={treatment.id || index} className="flex flex-col md:flex-row gap-4 items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -913,7 +911,7 @@ export default function BackOffice() {
                         <>
                           <img src={treatment.img} alt="Preview" className="w-full h-full object-cover" />
                           <label className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center cursor-pointer transition-opacity text-white text-xs font-medium">
-                            Ubah Foto
+                            Change Photo
                             <input 
                               type="file" 
                               accept="image/*"
@@ -926,7 +924,7 @@ export default function BackOffice() {
                       ) : (
                         <label className="cursor-pointer flex flex-col items-center justify-center h-full w-full text-brand-charcoal/50 hover:text-brand-charcoal transition-colors text-xs p-2 text-center">
                           <Upload className="w-5 h-5 mb-1" />
-                          Upload Foto
+                          Upload Photo
                           <input 
                             type="file" 
                             accept="image/*"
@@ -945,7 +943,7 @@ export default function BackOffice() {
                           value={treatment.name}
                           onChange={(e) => updateTreatment(index, 'name', e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Nama Treatment (Contoh: Skin Perfection)"
+                          placeholder="Treatment Name (e.g. Skin Perfection)"
                         />
                       </div>
                       <div>
@@ -954,7 +952,7 @@ export default function BackOffice() {
                           value={treatment.desc}
                           onChange={(e) => updateTreatment(index, 'desc', e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Deskripsi Singkat (1 baris)"
+                          placeholder="Short Description (1 line)"
                         />
                       </div>
                     </div>
@@ -963,7 +961,7 @@ export default function BackOffice() {
                       type="button"
                       onClick={() => removeTreatment(index)}
                       className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors shrink-0"
-                      title="Hapus Treatment"
+                      title="Delete Treatment"
                     >
                       <Trash2 className="w-5 h-5" />
                     </button>
@@ -982,43 +980,43 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Sub Judul</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Subtitle</label>
                   <input 
                     type="text" 
                     name="packages_subtitle"
                     value={content.packages_subtitle || ""}
                     onChange={handleChange}
-                    placeholder="Contoh: Curated Experiences"
+                    placeholder="e.g. Curated Experiences"
                     className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Judul Utama</label>
+                  <label className="block text-sm font-bold text-brand-charcoal/80 mb-2">Main Title</label>
                   <input 
                     type="text" 
                     name="packages_title"
                     value={content.packages_title || ""}
                     onChange={handleChange}
-                    placeholder="Contoh: Featured Packages"
+                    placeholder="e.g. Featured Packages"
                     className="w-full px-4 py-3 bg-brand-white/50 border border-brand-beige rounded-lg focus:ring-2 focus:ring-brand-sage focus:border-transparent outline-none transition-all text-brand-charcoal"
                   />
                 </div>
               </div>
 
               <div className="flex items-center justify-between pt-4">
-                <h3 className="font-bold text-brand-charcoal">Daftar Package</h3>
+                <h3 className="font-bold text-brand-charcoal">Package List</h3>
                 <button 
-                  type="button"
+                  type="button" 
                   onClick={addPackage}
                   className="flex items-center gap-2 text-sm bg-brand-beige/50 hover:bg-brand-beige px-4 py-2 rounded-lg font-medium transition-colors text-brand-charcoal"
                 >
-                  <Plus className="w-4 h-4" /> Tambah Package
+                  <Plus className="w-4 h-4" /> Add Package
                 </button>
               </div>
 
               <div className="space-y-4">
                 {packages.length === 0 && (
-                  <p className="text-center py-8 text-gray-400 text-sm">Belum ada package. Klik tambah untuk memulai.</p>
+                  <p className="text-center py-8 text-gray-400 text-sm">No packages yet. Click add to start.</p>
                 )}
                 {packages.map((pkg, index) => (
                   <div key={pkg.id || index} className="flex flex-col gap-4 items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -1037,7 +1035,7 @@ export default function BackOffice() {
                           <>
                             <img src={pkg.img} alt="Preview" className="w-full h-full object-cover" />
                             <label className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center cursor-pointer transition-opacity text-white text-xs font-medium">
-                              Ubah Foto
+                              Change Photo
                               <input 
                                 type="file" 
                                 accept="image/*"
@@ -1050,7 +1048,7 @@ export default function BackOffice() {
                         ) : (
                           <label className="cursor-pointer flex flex-col items-center justify-center h-full w-full text-brand-charcoal/50 hover:text-brand-charcoal transition-colors text-xs p-2 text-center">
                             <Upload className="w-5 h-5 mb-1" />
-                            Upload Foto
+                            Upload Photo
                             <input 
                               type="file" 
                               accept="image/*"
@@ -1068,14 +1066,14 @@ export default function BackOffice() {
                           value={pkg.name}
                           onChange={(e) => updatePackage(index, "name", e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Nama Package (Contoh: ExoMind)"
+                          placeholder="Package Name (e.g. ExoMind)"
                         />
                         <input
                           type="text"
                           value={pkg.desc}
                           onChange={(e) => updatePackage(index, "desc", e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Deskripsi Singkat"
+                          placeholder="Short Description"
                         />
                         <div className="flex gap-3">
                           <input
@@ -1083,14 +1081,14 @@ export default function BackOffice() {
                             value={pkg.priceLabel}
                             onChange={(e) => updatePackage(index, "priceLabel", e.target.value)}
                             className="w-1/3 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                            placeholder="Label Harga (Contoh: STARTING FROM)"
+                            placeholder="Price Label (e.g. STARTING FROM)"
                           />
                           <input
                             type="text"
                             value={pkg.price}
                             onChange={(e) => updatePackage(index, "price", e.target.value)}
                             className="w-2/3 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                            placeholder="Harga (Contoh: IDR 4,000,000)"
+                            placeholder="Price (e.g. IDR 4,000,000)"
                           />
                         </div>
                       </div>
@@ -1099,7 +1097,7 @@ export default function BackOffice() {
                         type="button"
                         onClick={() => removePackage(index)}
                         className="p-2 h-fit text-red-500 hover:bg-red-50 rounded-lg transition-colors shrink-0"
-                        title="Hapus Package"
+                        title="Delete Package"
                       >
                         <Trash2 className="w-5 h-5" />
                       </button>
@@ -1130,14 +1128,14 @@ export default function BackOffice() {
                           value={pkg.ctaText || ""}
                           onChange={(e) => updatePackage(index, "ctaText", e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Teks Tombol (Contoh: Book Now)"
+                          placeholder="Button Text (e.g. Book Now)"
                         />
                         <input
                           type="text"
                           value={pkg.ctaLink || ""}
                           onChange={(e) => updatePackage(index, "ctaLink", e.target.value)}
                           className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                          placeholder="Link Tombol (Kosong = Default WA)"
+                          placeholder="Button Link (Empty = Default WhatsApp)"
                         />
                       </div>
                     </div>
@@ -1154,7 +1152,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker / Subtitle (contoh: Medical Expertise)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker / Subtitle (e.g. Medical Expertise)</label>
                   <input
                     type="text"
                     name="doctors_subtitle"
@@ -1164,7 +1162,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul Utama (contoh: Meet Our Doctors)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Main Title (e.g. Meet Our Doctors)</label>
                   <input
                     type="text"
                     name="doctors_title"
@@ -1177,19 +1175,19 @@ export default function BackOffice() {
 
               <div className="pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center mb-4">
-                  <label className="block text-sm font-semibold text-gray-700">Daftar Dokter</label>
+                  <label className="block text-sm font-semibold text-gray-700">Doctor List</label>
                   <button 
                     type="button" 
                     onClick={addDoctor}
                     className="flex items-center gap-2 bg-brand-forest/10 text-brand-forest px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-forest/20 transition-colors"
                   >
-                    <Plus className="w-4 h-4" /> Tambah
+                    <Plus className="w-4 h-4" /> Add Doctor
                   </button>
                 </div>
                 
                 <div className="space-y-4">
                   {doctors.length === 0 && (
-                    <p className="text-center py-8 text-gray-400 text-sm">Belum ada dokter. Klik tambah untuk memulai.</p>
+                    <p className="text-center py-8 text-gray-400 text-sm">No doctors yet. Click add to start.</p>
                   )}
                   {doctors.map((doc, index) => (
                     <div key={doc.id || index} className="flex flex-col gap-4 items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -1208,7 +1206,7 @@ export default function BackOffice() {
                             <>
                               <img src={doc.img} alt="Preview" className="w-full h-full object-cover" />
                               <label className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center cursor-pointer transition-opacity text-white text-xs font-medium">
-                                Ubah Foto
+                                Change Photo
                                 <input 
                                   type="file" 
                                   accept="image/*"
@@ -1221,7 +1219,7 @@ export default function BackOffice() {
                           ) : (
                             <label className="cursor-pointer flex flex-col items-center justify-center h-full w-full text-brand-charcoal/50 hover:text-brand-charcoal transition-colors text-xs p-2 text-center">
                               <Upload className="w-5 h-5 mb-1" />
-                              Upload Foto
+                              Upload Photo
                               <input 
                                 type="file" 
                                 accept="image/*"
@@ -1239,21 +1237,21 @@ export default function BackOffice() {
                             value={doc.name}
                             onChange={(e) => updateDoctor(index, "name", e.target.value)}
                             className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                            placeholder="Nama Dokter (Contoh: Dr. Elisabeth Zora)"
+                            placeholder="Doctor Name (e.g. Dr. Elisabeth Zora)"
                           />
                           <input
                             type="text"
                             value={doc.title}
                             onChange={(e) => updateDoctor(index, "title", e.target.value)}
                             className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                            placeholder="Spesialisasi (Contoh: AESTHETIC PHYSICIAN)"
+                            placeholder="Specialty (e.g. AESTHETIC PHYSICIAN)"
                           />
                           <input
                             type="text"
                             value={doc.desc}
                             onChange={(e) => updateDoctor(index, "desc", e.target.value)}
                             className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
-                            placeholder="Deskripsi Singkat (Contoh: Enhancing Natural Beauty...)"
+                            placeholder="Short Description (e.g. Enhancing Natural Beauty...)"
                           />
                         </div>
 
@@ -1261,7 +1259,7 @@ export default function BackOffice() {
                           type="button"
                           onClick={() => removeDoctor(index)}
                           className="p-2 h-fit text-red-500 hover:bg-red-50 rounded-lg transition-colors shrink-0"
-                          title="Hapus Dokter"
+                          title="Delete Doctor"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1274,24 +1272,24 @@ export default function BackOffice() {
               <div className="pt-6 border-t border-gray-100">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Teks Tombol CTA</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">CTA Button Text</label>
                     <input
                       type="text"
                       name="doctors_button_text"
                       value={content.doctors_button_text}
                       onChange={handleChange}
-                      placeholder="contoh: View All Doctors"
+                      placeholder="e.g. View All Doctors"
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Link Tombol CTA (opsional)</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">CTA Button Link (optional)</label>
                     <input
                       type="text"
                       name="doctors_button_link"
                       value={content.doctors_button_link}
                       onChange={handleChange}
-                      placeholder="/doctors"
+                      placeholder="/doctor"
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                     />
                   </div>
@@ -1308,7 +1306,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul Utama</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Main Title</label>
                   <input
                     type="text"
                     name="reasons_title"
@@ -1320,7 +1318,7 @@ export default function BackOffice() {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <label className="block text-sm font-semibold text-gray-700 mb-4">Daftar Keunggulan</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-4">Reasons List</label>
                 
                 <div className="grid grid-cols-1 gap-4">
                   {reasons.map((reason, index) => (
@@ -1342,7 +1340,7 @@ export default function BackOffice() {
                           value={reason.title}
                           onChange={(e) => updateReason(index, "title", e.target.value)}
                           className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm"
-                          placeholder="Judul Keunggulan"
+                          placeholder="Reason Title"
                         />
                       </div>
                       <input
@@ -1350,7 +1348,7 @@ export default function BackOffice() {
                         value={reason.desc}
                         onChange={(e) => updateReason(index, "desc", e.target.value)}
                         className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm ml-10"
-                        placeholder="Deskripsi..."
+                        placeholder="Description..."
                         style={{ width: 'calc(100% - 2.5rem)' }}
                       />
                     </div>
@@ -1367,7 +1365,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker / Subtitle (contoh: BEFORE & AFTER)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker / Subtitle (e.g. BEFORE & AFTER)</label>
                   <input
                     type="text"
                     name="transformations_subtitle"
@@ -1377,7 +1375,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul Utama (contoh: Transformations)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Main Title (e.g. Transformations)</label>
                   <input
                     type="text"
                     name="transformations_title"
@@ -1390,19 +1388,19 @@ export default function BackOffice() {
 
               <div className="pt-4 border-t border-gray-100">
                 <div className="flex justify-between items-center mb-4">
-                  <label className="block text-sm font-semibold text-gray-700">Daftar Foto Before & After</label>
+                  <label className="block text-sm font-semibold text-gray-700">Before & After Photo List</label>
                   <button 
                     type="button" 
                     onClick={addTransformation}
                     className="flex items-center gap-2 bg-brand-forest/10 text-brand-forest px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-forest/20 transition-colors"
                   >
-                    <Plus className="w-4 h-4" /> Tambah
+                    <Plus className="w-4 h-4" /> Add Photo
                   </button>
                 </div>
                 
                 <div className="space-y-4">
                   {transformations.length === 0 && (
-                    <p className="text-center py-8 text-gray-400 text-sm">Belum ada foto. Klik tambah untuk memulai.</p>
+                    <p className="text-center py-8 text-gray-400 text-sm">No photos yet. Click add to start.</p>
                   )}
                   {transformations.map((trans, index) => (
                     <div key={trans.id || index} className="flex flex-col gap-4 items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -1421,7 +1419,7 @@ export default function BackOffice() {
                             <>
                               <img src={trans.img} alt="Preview" className="w-full h-full object-cover" />
                               <label className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center cursor-pointer transition-opacity text-white text-xs font-medium">
-                                Ubah Foto
+                                Change Photo
                                 <input 
                                   type="file" 
                                   accept="image/*"
@@ -1434,7 +1432,7 @@ export default function BackOffice() {
                           ) : (
                             <label className="cursor-pointer flex flex-col items-center justify-center h-full w-full text-brand-charcoal/50 hover:text-brand-charcoal transition-colors text-xs p-2 text-center">
                               <Upload className="w-5 h-5 mb-1" />
-                              Upload Foto
+                              Upload Photo
                               <input 
                                 type="file" 
                                 accept="image/*"
@@ -1451,7 +1449,7 @@ export default function BackOffice() {
                             type="button"
                             onClick={() => removeTransformation(index)}
                             className="p-2 h-fit text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                            title="Hapus Foto"
+                            title="Delete Photo"
                           >
                             <Trash2 className="w-5 h-5" />
                           </button>
@@ -1471,7 +1469,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Subjudul (contoh: CLIENT STORIES)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Subtitle (e.g. CLIENT STORIES)</label>
                   <input
                     type="text"
                     name="reviews_subtitle"
@@ -1481,7 +1479,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul (contoh: Real Experiences)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Title (e.g. Real Experiences)</label>
                   <input
                     type="text"
                     name="reviews_title"
@@ -1491,7 +1489,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Overall Rating (contoh: 4.9)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Overall Rating (e.g. 4.9)</label>
                   <input
                     type="text"
                     name="reviews_overall_rating"
@@ -1501,7 +1499,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Link Google Maps (&quot;See More Reviews&quot;)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Google Maps Link (&quot;See More Reviews&quot;)</label>
                   <input
                     type="text"
                     name="reviews_link"
@@ -1513,15 +1511,15 @@ export default function BackOffice() {
               </div>
 
               <div className="bg-brand-sage/10 p-4 rounded-xl border border-brand-sage/30 mt-6">
-                <h4 className="font-semibold text-brand-forest mb-2">Tarik Otomatis dari Google Maps (Opsional)</h4>
-                <p className="text-sm text-gray-600 mb-4">Anda dapat memasukkan Place ID dan API Key untuk menarik ulasan secara otomatis.</p>
+                <h4 className="font-semibold text-brand-forest mb-2">Auto-sync from Google Maps (Optional)</h4>
+                <p className="text-sm text-gray-600 mb-4">You can enter Place ID and API Key to fetch reviews automatically.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <input
                     type="text"
                     name="reviews_google_place_id"
                     value={content.reviews_google_place_id}
                     onChange={handleChange}
-                    placeholder="Masukkan Google Place ID"
+                    placeholder="Enter Google Place ID"
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                   />
                   <input
@@ -1529,7 +1527,7 @@ export default function BackOffice() {
                     name="reviews_google_api_key"
                     value={content.reviews_google_api_key}
                     onChange={handleChange}
-                    placeholder="Masukkan Google API Key"
+                    placeholder="Enter Google API Key"
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                   />
                 </div>
@@ -1540,30 +1538,30 @@ export default function BackOffice() {
                   className="bg-brand-forest text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-brand-sage transition-colors disabled:opacity-50 flex items-center gap-2"
                 >
                   {isFetchingGoogle ? <Loader2 className="w-4 h-4 animate-spin" /> : <RefreshCw className="w-4 h-4" />}
-                  {isFetchingGoogle ? 'Menarik data...' : 'Tarik Data'}
+                  {isFetchingGoogle ? 'Fetching data...' : 'Fetch Data'}
                 </button>
               </div>
 
               <div className="pt-6 border-t border-gray-100">
                 <div className="flex justify-between items-center mb-4">
-                  <label className="block text-sm font-semibold text-gray-700">Daftar Ulasan</label>
+                  <label className="block text-sm font-semibold text-gray-700">Reviews List</label>
                   <button 
                     type="button" 
                     onClick={addReview}
                     className="flex items-center gap-2 bg-brand-forest/10 text-brand-forest px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-forest/20 transition-colors"
                   >
-                    <Plus className="w-4 h-4" /> Tambah Ulasan
+                    <Plus className="w-4 h-4" /> Add Review
                   </button>
                 </div>
                 
                 <div className="space-y-4">
                   {reviews.length === 0 && (
-                    <p className="text-center py-8 text-gray-400 text-sm">Belum ada ulasan. Klik tambah untuk memulai.</p>
+                    <p className="text-center py-8 text-gray-400 text-sm">No reviews yet. Click add to start.</p>
                   )}
                   {reviews.map((rev, index) => (
                     <div key={rev.id || index} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
                       <div className="md:col-span-3">
-                        <label className="block text-xs font-semibold text-gray-500 mb-1">Nama Pasien</label>
+                        <label className="block text-xs font-semibold text-gray-500 mb-1">Patient Name</label>
                         <input
                           type="text"
                           value={rev.name}
@@ -1571,7 +1569,7 @@ export default function BackOffice() {
                           className="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm"
                         />
                         
-                        <label className="block text-xs font-semibold text-gray-500 mt-3 mb-1">Bintang (1-5)</label>
+                        <label className="block text-xs font-semibold text-gray-500 mt-3 mb-1">Rating (1-5)</label>
                         <input
                           type="number"
                           min="1"
@@ -1582,7 +1580,7 @@ export default function BackOffice() {
                         />
                       </div>
                       <div className="md:col-span-8">
-                        <label className="block text-xs font-semibold text-gray-500 mb-1">Teks Ulasan</label>
+                        <label className="block text-xs font-semibold text-gray-500 mb-1">Review Text</label>
                         <textarea
                           rows={4}
                           value={rev.text}
@@ -1595,7 +1593,7 @@ export default function BackOffice() {
                           type="button"
                           onClick={() => removeReview(index)}
                           className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                          title="Hapus"
+                          title="Delete"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1614,7 +1612,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker (contoh: LIMITED TIME OFFER)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Kicker (e.g. LIMITED TIME OFFER)</label>
                   <input
                     type="text"
                     name="promo_kicker"
@@ -1624,7 +1622,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul (contoh: Botox – 10% OFF)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Title (e.g. Botox – 10% OFF)</label>
                   <input
                     type="text"
                     name="promo_title"
@@ -1634,7 +1632,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Promosi</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Promotion Description</label>
                   <textarea
                     name="promo_description"
                     value={content.promo_description}
@@ -1644,7 +1642,7 @@ export default function BackOffice() {
                   ></textarea>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Teks Masa Berlaku (contoh: VALID UNTIL 31 AUGUST 2026)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Validity Text (e.g. VALID UNTIL 31 AUGUST 2026)</label>
                   <input
                     type="text"
                     name="promo_validity"
@@ -1655,7 +1653,7 @@ export default function BackOffice() {
                 </div>
                 <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Teks Tombol (contoh: Claim Offer)</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Button Text (e.g. Claim Offer)</label>
                     <input
                       type="text"
                       name="promo_button_text"
@@ -1665,7 +1663,7 @@ export default function BackOffice() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Link Tombol Promosi</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Promotion Button Link</label>
                     <input
                       type="text"
                       name="promo_button_link"
@@ -1678,7 +1676,7 @@ export default function BackOffice() {
               </div>
 
               <div className="pt-4 border-t border-gray-100">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Foto Promo</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Promo Photo</label>
                 <div className="flex items-start gap-6">
                   <div className="w-48 h-48 bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden shrink-0 relative">
                     {content.promo_image ? (
@@ -1687,7 +1685,7 @@ export default function BackOffice() {
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                           <label className="cursor-pointer text-white flex flex-col items-center">
                             <Upload className="w-6 h-6 mb-1" />
-                            <span className="text-xs font-semibold">Ubah Foto</span>
+                            <span className="text-xs font-semibold">Change Photo</span>
                             <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'promo_image')} className="hidden" disabled={isUploading} />
                           </label>
                         </div>
@@ -1695,14 +1693,14 @@ export default function BackOffice() {
                     ) : (
                       <label className="cursor-pointer text-gray-400 hover:text-brand-forest transition-colors flex flex-col items-center">
                         <Upload className="w-8 h-8 mb-2" />
-                        <span className="text-sm font-medium text-center">Upload Foto</span>
+                        <span className="text-sm font-medium text-center">Upload Photo</span>
                         <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'promo_image')} className="hidden" disabled={isUploading} />
                       </label>
                     )}
                   </div>
                   <div className="flex-1 text-sm text-gray-500">
-                    <p className="mb-2"><strong>Rekomendasi ukuran:</strong> 800 x 800 pixel (Rasio persegi atau potrait).</p>
-                    <p>Format yang didukung: JPG, PNG, WEBP.</p>
+                    <p className="mb-2"><strong>Recommended dimensions:</strong> 800 x 800 px (Square or portrait ratio).</p>
+                    <p>Supported formats: JPG, PNG, WEBP.</p>
                   </div>
                 </div>
               </div>
@@ -1716,7 +1714,7 @@ export default function BackOffice() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Subjudul (contoh: OUR CLINICS)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Subtitle (e.g. OUR CLINICS)</label>
                   <input
                     type="text"
                     name="clinics_subtitle"
@@ -1726,7 +1724,7 @@ export default function BackOffice() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Judul (contoh: Experience SHAZ.)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Title (e.g. Experience SHAZ.)</label>
                   <input
                     type="text"
                     name="clinics_title"
@@ -1739,13 +1737,13 @@ export default function BackOffice() {
 
               <div className="pt-6 border-t border-gray-100">
                 <div className="flex justify-between items-center mb-4">
-                  <label className="block text-sm font-semibold text-gray-700">Daftar Klinik</label>
+                  <label className="block text-sm font-semibold text-gray-700">Clinics List</label>
                   <button 
                     type="button" 
                     onClick={addClinic}
                     className="flex items-center gap-2 bg-brand-forest/10 text-brand-forest px-4 py-2 rounded-lg text-sm font-semibold hover:bg-brand-forest/20 transition-colors"
                   >
-                    <Plus className="w-4 h-4" /> Tambah Klinik
+                    <Plus className="w-4 h-4" /> Add Clinic
                   </button>
                 </div>
                 
@@ -1760,7 +1758,7 @@ export default function BackOffice() {
                               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <label className="cursor-pointer text-white flex flex-col items-center">
                                   <Upload className="w-6 h-6 mb-1" />
-                                  <span className="text-xs font-semibold">Ubah Foto</span>
+                                  <span className="text-xs font-semibold">Change Photo</span>
                                   <input type="file" accept="image/*" onChange={(e) => handleClinicImageUpload(e, index)} className="hidden" disabled={isUploading} />
                                 </label>
                               </div>
@@ -1768,7 +1766,7 @@ export default function BackOffice() {
                           ) : (
                             <label className="cursor-pointer text-gray-400 hover:text-brand-forest transition-colors flex flex-col items-center p-4">
                               <Upload className="w-6 h-6 mb-2" />
-                              <span className="text-xs font-medium text-center">Upload Foto</span>
+                              <span className="text-xs font-medium text-center">Upload Photo</span>
                               <input type="file" accept="image/*" onChange={(e) => handleClinicImageUpload(e, index)} className="hidden" disabled={isUploading} />
                             </label>
                           )}
@@ -1777,7 +1775,7 @@ export default function BackOffice() {
                       
                       <div className="md:col-span-8 space-y-3">
                         <div>
-                          <label className="block text-xs font-semibold text-gray-500 mb-1">Nama Klinik</label>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">Clinic Name</label>
                           <input
                             type="text"
                             value={clinic.name}
@@ -1786,7 +1784,7 @@ export default function BackOffice() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-gray-500 mb-1">Alamat (beserta peta)</label>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">Address (with map info)</label>
                           <input
                             type="text"
                             value={clinic.address}
@@ -1795,7 +1793,7 @@ export default function BackOffice() {
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-gray-500 mb-1">Link Google Maps (GET DIRECTIONS)</label>
+                          <label className="block text-xs font-semibold text-gray-500 mb-1">Google Maps Link (GET DIRECTIONS)</label>
                           <input
                             type="text"
                             value={clinic.link}
@@ -1810,7 +1808,7 @@ export default function BackOffice() {
                           type="button"
                           onClick={() => removeClinic(index)}
                           className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors mt-6"
-                          title="Hapus"
+                          title="Delete"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1822,7 +1820,7 @@ export default function BackOffice() {
             </div>
           </div>
 
-          {/* Tombol Simpan */}
+          {/* Save Button */}
           <div className="flex justify-end pt-4">
             <button 
               type="submit" 
@@ -1830,7 +1828,7 @@ export default function BackOffice() {
               className="bg-brand-forest text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-sage transition-colors flex items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg"
             >
               {isSaving ? <Loader2 className="w-5 h-5 animate-spin" /> : <Save className="w-5 h-5" />}
-              {isSaving ? 'Menyimpan...' : 'Simpan Perubahan'}
+              {isSaving ? 'Saving Changes...' : 'Save Changes'}
             </button>
           </div>
 

@@ -251,159 +251,145 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
 
       <main className="flex-1">
         {/* ----------------------------------------------------------------------
-            01. HERO BANNER (Architectural & Editorial Medical Faculty Showcase)
+            01. HERO BANNER (Refined Editorial & Architectural Layout - Light Warm Canvas)
         ---------------------------------------------------------------------- */}
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#FAF8F5] overflow-hidden border-b border-brand-beige/60">
-          {/* Subtle Ambient Architectural Elements */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
-            <div className="absolute top-12 left-1/4 w-96 h-96 rounded-full bg-brand-beige/40 blur-3xl" />
-            <div className="absolute top-20 right-1/4 w-80 h-80 rounded-full bg-[#4C5C44]/5 blur-3xl" />
-          </div>
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-[#FAF8F5] overflow-hidden border-b border-brand-beige/60">
+          {/* Subtle Ambient Background Gradients (Neutral/Warm) */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#EBE7DF]/40 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+          <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#E8ECE5]/30 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-            {/* Header Narrative Section */}
-            <div className="max-w-4xl mx-auto text-center flex flex-col items-center mb-12 md:mb-16">
-              {/* Breadcrumb Navigation */}
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-brand-charcoal/50 mb-5">
-                <Link href="/" className="hover:text-brand-forest transition-colors">Home</Link>
-                <ChevronRight className="w-3.5 h-3.5 text-brand-charcoal/30" />
-                <span className="text-brand-forest">Medical Faculty</span>
-              </div>
-
-              {/* Kicker Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#4C5C44]/10 border border-[#4C5C44]/20 text-brand-forest text-xs font-bold tracking-[0.2em] uppercase mb-6"
-              >
-                <Stethoscope className="w-3.5 h-3.5 text-brand-forest" />
-                <span>{content.doctor_hero_badge || "CERTIFIED MEDICAL EXPERTS"}</span>
-              </motion.div>
-
-              {/* Main Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="font-serif text-4xl sm:text-5xl md:text-6xl text-brand-charcoal leading-[1.12] mb-6"
-              >
-                {content.doctor_hero_title || "Meet Our Certified Physicians & Dermatologists"}
-              </motion.h1>
-
-              {/* Subheading */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-base sm:text-lg md:text-xl text-brand-charcoal/70 font-light leading-relaxed max-w-3xl mb-8"
-              >
-                {content.doctor_hero_subtitle || "Bali's leading aesthetic practitioners combining evidence-based medical science, anatomical mastery, and delicate artistic precision."}
-              </motion.p>
-
-              {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
-              >
-                <a
-                  href={content.doctor_cta_button_link || WA_DEFAULT}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-[#4C5C44] text-white px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-brand-charcoal transition-all duration-300 flex items-center justify-center gap-3 shadow-md shadow-[#4C5C44]/20"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>{content.doctor_cta_button_text || "Book Consultation"}</span>
-                </a>
-                <a
-                  href="#specialists"
-                  className="w-full sm:w-auto bg-white border border-brand-beige text-brand-charcoal px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:border-brand-sage hover:bg-brand-beige/30 transition-all duration-300 flex items-center justify-center"
-                >
-                  <span>Lihat Semua Spesialis</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </motion.div>
+            {/* Breadcrumb Navigation */}
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-brand-charcoal/50 mb-6">
+              <Link href="/" className="hover:text-brand-forest transition-colors">Home</Link>
+              <ChevronRight className="w-3.5 h-3.5 text-brand-charcoal/30" />
+              <span className="text-brand-forest">Medical Faculty</span>
             </div>
 
-            {/* Editorial Visual Showcase Triptych Frame */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="relative rounded-[2.5rem] overflow-hidden bg-white p-3 sm:p-4 border border-brand-beige/80 shadow-lg shadow-black/5"
-            >
-              <div className="relative w-full h-[260px] sm:h-[340px] md:h-[400px] rounded-[2rem] overflow-hidden">
-                <img
-                  src={content.doctor_hero_image || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop"}
-                  alt="SHAZ Aesthetic Clinic Doctors & Specialists"
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            {/* Two-Column Hero Composition */}
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
+              {/* Left Column: Narrative & CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="lg:col-span-7 flex flex-col items-start"
+              >
+                {/* Badge Kicker */}
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-beige/80 border border-brand-beige text-brand-charcoal/80 text-[11px] font-bold tracking-[0.2em] uppercase mb-6 shadow-sm">
+                  <Stethoscope className="w-3.5 h-3.5 text-brand-forest" />
+                  <span>{content.doctor_hero_badge || "CERTIFIED MEDICAL EXPERTS"}</span>
+                </div>
 
-                {/* Floating Bottom Info Pill */}
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shrink-0">
-                      <Stethoscope className="w-5 h-5" />
+                {/* Main Headline */}
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-charcoal leading-[1.12] mb-6">
+                  {content.doctor_hero_title || "Meet Our Certified Physicians & Dermatologists"}
+                </h1>
+
+                {/* Subtitle */}
+                <p className="text-base sm:text-lg text-brand-charcoal/70 font-light leading-relaxed mb-8 max-w-xl">
+                  {content.doctor_hero_subtitle || "Bali's leading aesthetic practitioners combining evidence-based medical science, anatomical mastery, and delicate artistic precision."}
+                </p>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
+                  <a
+                    href={content.doctor_cta_button_link || WA_DEFAULT}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#4C5C44] text-white px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-brand-charcoal transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md shadow-[#4C5C44]/20"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>{content.doctor_cta_button_text || "Book Consultation"}</span>
+                  </a>
+                  <a
+                    href="#specialists"
+                    className="bg-white border border-brand-beige text-brand-charcoal px-7 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:border-brand-sage hover:bg-brand-beige/40 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <span>Browse Doctors</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Right Column: Hero Visual with Overlaid Floating Trust Badges */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="lg:col-span-5 relative"
+              >
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/5] w-full rounded-[2rem] overflow-hidden bg-neutral-100 border border-brand-beige/80 shadow-xl shadow-black/5">
+                  <img
+                    src={content.doctor_hero_image || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop"}
+                    alt="SHAZ Aesthetic Clinic Doctors & Specialists"
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+                  {/* Overlaid Bottom Card */}
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/40 shadow-md">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-brand-forest/10 flex items-center justify-center text-brand-forest shrink-0">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-xs font-bold uppercase tracking-wider text-brand-charcoal truncate">
+                          100% Medical Doctors
+                        </div>
+                        <div className="text-[11px] text-brand-charcoal/60 truncate">
+                          Indonesian Medical Association (IDI) Registered
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-xs font-bold tracking-widest uppercase text-brand-beige">SHAZ Medical Faculty</div>
-                      <div className="text-sm font-semibold text-white">Seminyak Bali • Aesthetic, Dermatology & Lasers</div>
-                    </div>
-                  </div>
-                  <div className="hidden md:flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/25 px-4 py-2 rounded-full text-xs font-medium">
-                    <ShieldCheck className="w-4 h-4 text-brand-beige" />
-                    <span>Registered Indonesian Medical Doctors (IDI)</span>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Clinical Trust Highlights Bar (4 Pillars) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10"
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 pt-8 border-t border-brand-beige/60"
             >
-              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige flex items-start gap-3">
+              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige/80 flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl bg-brand-forest/10 flex items-center justify-center text-brand-forest shrink-0">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">100% Certified</div>
-                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Licensed Medical Doctors</div>
+                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Certified Doctors</div>
+                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Licensed IDI Physicians</div>
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige flex items-start gap-3">
+              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige/80 flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl bg-brand-forest/10 flex items-center justify-center text-brand-forest shrink-0">
                   <Award className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Global Masters</div>
-                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Seoul & London Trained</div>
+                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Global Training</div>
+                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Seoul & London Fellowships</div>
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige flex items-start gap-3">
+              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige/80 flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl bg-brand-forest/10 flex items-center justify-center text-brand-forest shrink-0">
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Anatomical Harmony</div>
-                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Natural Rejuvenation</div>
+                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Natural Harmony</div>
+                  <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Facial Architecture</div>
                 </div>
               </div>
 
-              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige flex items-start gap-3">
+              <div className="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-brand-beige/80 flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl bg-brand-forest/10 flex items-center justify-center text-brand-forest shrink-0">
                   <HeartHandshake className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">Bespoke 1-on-1</div>
+                  <div className="font-bold text-xs uppercase tracking-wider text-brand-charcoal">1-on-1 Consultation</div>
                   <div className="text-[11px] text-brand-charcoal/60 leading-snug mt-0.5">Personalized Diagnostics</div>
                 </div>
               </div>
@@ -412,31 +398,31 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
         </section>
 
         {/* ----------------------------------------------------------------------
-            02. DOCTOR LISTING & FILTER BAR (Clean Vertical Portrait Cards)
+            02. DOCTOR LISTING & FILTER BAR (Responsive Cards, No Overlapping)
         ---------------------------------------------------------------------- */}
         <section id="specialists" className="py-16 md:py-24 max-w-7xl mx-auto px-6 lg:px-12 scroll-mt-24">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
             <span className="text-brand-forest font-bold tracking-[0.2em] text-xs uppercase mb-2 block">
               OUR SPECIALISTS
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-brand-charcoal leading-tight mb-4">
-              Pilih Dokter Spesialis Sesuai Kebutuhan Anda
+              Select Your Aesthetic Physician & Specialist
             </h2>
-            <p className="text-sm sm:text-base text-brand-charcoal/70 font-light">
-              Konsultasikan kondisi kulit, estetika wajah, atau kontur tubuh dengan dokter ahli kami di Seminyak, Bali.
+            <p className="text-sm sm:text-base text-brand-charcoal/70 font-light max-w-2xl mx-auto">
+              Consult your skin conditions, facial aesthetics, or body contouring with our certified medical team in Seminyak, Bali.
             </p>
           </div>
 
           {/* Controls Bar: Filters & Search */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-5 mb-12 pb-6 border-b border-brand-beige">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-brand-beige">
             {/* Filter Tabs */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 w-full md:w-auto">
               {specializations.map(spec => (
                 <button
                   key={spec}
                   onClick={() => setSelectedSpecialty(spec)}
-                  className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all ${
+                  className={`px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all whitespace-nowrap ${
                     selectedSpecialty === spec
                       ? 'bg-brand-forest text-white shadow-sm'
                       : 'bg-white text-brand-charcoal/70 border border-brand-beige hover:border-brand-sage hover:text-brand-charcoal'
@@ -452,10 +438,10 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-charcoal/40" />
               <input
                 type="text"
-                placeholder="Cari nama dokter atau treatment..."
+                placeholder="Search doctor or treatment..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-brand-beige rounded-full text-xs placeholder:text-brand-charcoal/40 focus:outline-none focus:border-brand-forest focus:ring-1 focus:ring-brand-forest transition-all"
+                className="w-full pl-10 pr-8 py-2.5 bg-white border border-brand-beige rounded-full text-xs placeholder:text-brand-charcoal/40 focus:outline-none focus:border-brand-forest focus:ring-1 focus:ring-brand-forest transition-all"
               />
               {searchQuery && (
                 <button 
@@ -468,23 +454,23 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
             </div>
           </div>
 
-          {/* Doctors Grid - Vertical Responsive Card Architecture */}
+          {/* Doctors Grid - Anti-Stacking Tablet/Mobile Optimized Card Layout */}
           {filteredDoctors.length === 0 ? (
-            <div className="text-center py-20 bg-white rounded-3xl border border-brand-beige p-8">
+            <div className="text-center py-16 bg-white rounded-3xl border border-brand-beige p-8">
               <Stethoscope className="w-12 h-12 text-brand-forest/30 mx-auto mb-4" />
-              <h3 className="font-serif text-2xl text-brand-charcoal mb-2">Tidak ada dokter yang ditemukan</h3>
+              <h3 className="font-serif text-2xl text-brand-charcoal mb-2">No Specialists Found</h3>
               <p className="text-sm text-brand-charcoal/60 max-w-md mx-auto mb-6">
-                Coba sesuaikan kata kunci pencarian atau pilih kategori spesialisasi yang lain.
+                Try adjusting your search terms or select another specialty filter.
               </p>
               <button
                 onClick={() => { setSelectedSpecialty('All'); setSearchQuery(''); }}
                 className="px-6 py-2.5 bg-brand-forest text-white rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-charcoal transition-colors"
               >
-                Reset Filter
+                Reset Filters
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {filteredDoctors.map((doctor, index) => {
                 const treatments = Array.isArray(doctor.signatureTreatments)
                   ? doctor.signatureTreatments
@@ -493,23 +479,24 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
                 return (
                   <motion.div
                     key={doctor.id || index}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="bg-white rounded-[2rem] p-5 sm:p-6 border border-brand-beige shadow-sm hover:shadow-xl hover:border-brand-sage/40 transition-all duration-500 flex flex-col justify-between group h-full"
+                    className="bg-white rounded-3xl p-5 sm:p-6 border border-brand-beige shadow-sm hover:shadow-lg hover:border-brand-sage/40 transition-all duration-300 flex flex-col justify-between h-full group"
                   >
-                    {/* Top: Photo with Badges */}
+                    {/* Top Section: Photo & Header Badges */}
                     <div>
-                      <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-brand-sage/10 mb-5">
+                      {/* Photo Container */}
+                      <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-neutral-100 mb-5">
                         <img
                           src={doctor.img}
                           alt={doctor.name}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                          className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500 ease-out"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
 
-                        {/* Top Left: Certified Stamp */}
+                        {/* Top Left: Certified Doctor Stamp */}
                         <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-brand-forest shadow-sm flex items-center gap-1.5">
                           <CheckCircle2 className="w-3.5 h-3.5 text-brand-forest" />
                           <span>Certified Doctor</span>
@@ -517,41 +504,41 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
 
                         {/* Bottom Right: Experience Badge */}
                         {doctor.experience && (
-                          <div className="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide">
+                          <div className="absolute bottom-3 right-3 bg-black/75 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-semibold tracking-wide">
                             {doctor.experience}
                           </div>
                         )}
                       </div>
 
-                      {/* Content Details */}
-                      <div>
+                      {/* Doctor Credentials & Description */}
+                      <div className="space-y-3">
                         {/* Specialization Kicker */}
-                        <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.15em] text-brand-sage uppercase block mb-1">
+                        <span className="text-[11px] font-bold tracking-[0.15em] text-brand-sage uppercase block">
                           {doctor.specialization || "Aesthetic & Medical Specialist"}
                         </span>
 
                         {/* Doctor Name */}
-                        <h3 className="font-serif text-xl sm:text-2xl text-brand-charcoal leading-snug group-hover:text-brand-forest transition-colors mb-1.5">
+                        <h3 className="font-serif text-xl sm:text-2xl text-brand-charcoal leading-snug group-hover:text-brand-forest transition-colors">
                           {doctor.name}
                         </h3>
 
-                        {/* Title / Position */}
+                        {/* Clinical Title */}
                         {doctor.title && (
-                          <p className="text-xs font-semibold text-brand-forest/90 mb-3">
+                          <p className="text-xs font-semibold text-brand-forest/90">
                             {doctor.title}
                           </p>
                         )}
 
-                        {/* Short Bio / Intro */}
-                        <p className="text-brand-charcoal/70 text-xs sm:text-sm font-light leading-relaxed mb-4 line-clamp-3">
+                        {/* Short Intro */}
+                        <p className="text-brand-charcoal/70 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
                           {doctor.shortIntro || doctor.biography}
                         </p>
 
-                        {/* Signature Treatments Chips */}
+                        {/* Focus Treatments */}
                         {treatments.length > 0 && (
-                          <div className="mb-4">
+                          <div className="pt-2">
                             <div className="text-[10px] font-bold tracking-widest text-brand-charcoal/50 uppercase mb-2">
-                              Fokus Treatment:
+                              Focus Treatments:
                             </div>
                             <div className="flex flex-wrap gap-1.5">
                               {treatments.slice(0, 3).map((tr, tIdx) => (
@@ -571,25 +558,25 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
                           </div>
                         )}
 
-                        {/* Schedule Line (if available) */}
+                        {/* Consultation Schedule */}
                         {doctor.schedule && (
-                          <div className="text-[11px] text-brand-charcoal/60 flex items-center gap-1.5 pt-3 pb-2 border-t border-brand-beige/60 mb-2">
-                            <span className="font-semibold text-brand-forest">Praktek:</span>
-                            <span className="truncate">{doctor.schedule}</span>
+                          <div className="text-[11px] text-brand-charcoal/60 flex items-start gap-1.5 pt-3 pb-1 border-t border-brand-beige/60">
+                            <span className="font-semibold text-brand-forest shrink-0">Schedule:</span>
+                            <span className="leading-snug">{doctor.schedule}</span>
                           </div>
                         )}
                       </div>
                     </div>
 
-                    {/* Bottom Action Button: WhatsApp Booking */}
-                    <div className="pt-3">
+                    {/* Bottom Action: WhatsApp Consultation Booking (No View Profile button) */}
+                    <div className="pt-5 mt-4 border-t border-brand-beige/40">
                       <a
                         href={getBookingUrl(doctor.name)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-brand-forest text-white text-center py-3.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-charcoal transition-all duration-300 flex items-center justify-center gap-2 shadow-sm group-hover:shadow-md"
+                        className="w-full bg-[#4C5C44] text-white text-center py-3.5 px-4 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-brand-charcoal transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                       >
-                        <MessageCircle className="w-3.5 h-3.5" />
+                        <MessageCircle className="w-4 h-4" />
                         <span>Book with This Doctor</span>
                       </a>
                     </div>

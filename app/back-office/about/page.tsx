@@ -140,14 +140,14 @@ export default function BackOfficeAbout() {
       const json = await res.json();
       if ((json.success || json.status === 'success') && json.url) {
         setFormData(prev => ({ ...prev, [fieldName]: json.url }));
-        setSaveStatus({ type: 'success', message: 'Foto berhasil diunggah! Jangan lupa klik "Simpan Perubahan".' });
+        setSaveStatus({ type: 'success', message: 'Photo uploaded successfully! Remember to click "Save Changes".' });
         setTimeout(() => setSaveStatus(null), 4000);
       } else {
-        setSaveStatus({ type: 'error', message: json.message || 'Gagal mengunggah foto.' });
+        setSaveStatus({ type: 'error', message: json.message || 'Failed to upload photo.' });
       }
     } catch (err) {
       console.error('Upload error', err);
-      setSaveStatus({ type: 'error', message: 'Terjadi kesalahan saat upload foto.' });
+      setSaveStatus({ type: 'error', message: 'Error occurred during photo upload.' });
     } finally {
       setUploadingField(null);
       if (inputTarget) inputTarget.value = '';
@@ -172,12 +172,12 @@ export default function BackOfficeAbout() {
       });
       const json = await res.json();
       if (json.status === 'success') {
-        setSaveStatus({ type: 'success', message: 'Konten Halaman About berhasil disimpan!' });
+        setSaveStatus({ type: 'success', message: 'About page content saved successfully!' });
       } else {
-        setSaveStatus({ type: 'error', message: json.message || 'Gagal menyimpan konten.' });
+        setSaveStatus({ type: 'error', message: json.message || 'Failed to save content.' });
       }
     } catch (err) {
-      setSaveStatus({ type: 'error', message: 'Terjadi kesalahan jaringan.' });
+      setSaveStatus({ type: 'error', message: 'Network error occurred.' });
     } finally {
       setIsSaving(false);
       setTimeout(() => setSaveStatus(null), 4000);
@@ -198,7 +198,7 @@ export default function BackOfficeAbout() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-brand-beige shadow-sm">
         <div>
           <h1 className="text-2xl font-serif font-bold text-brand-charcoal">About Page Management</h1>
-          <p className="text-sm text-brand-charcoal/60">Kelola teks, foto banner, pilar nilai, fasilitas klinik, dan CTA halaman About.</p>
+          <p className="text-sm text-brand-charcoal/60">Manage copy, banner images, value pillars, clinic facilities, and CTA sections.</p>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -209,12 +209,12 @@ export default function BackOfficeAbout() {
             {isSaving ? (
               <>
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                <span>Menyimpan...</span>
+                <span>Saving...</span>
               </>
             ) : (
               <>
                 <Save className="w-4 h-4" />
-                <span>Simpan Perubahan</span>
+                <span>Save Changes</span>
               </>
             )}
           </button>
@@ -297,7 +297,7 @@ export default function BackOfficeAbout() {
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                Hero Title (Mendukung HTML format seperti &lt;span class=&quot;italic font-light text-[#7C8B76]&quot;&gt;)
+                Hero Title (Supports HTML formatting like &lt;span class=&quot;italic font-light text-[#7C8B76]&quot;&gt;)
               </label>
               <textarea
                 name="about_hero_title"
@@ -354,7 +354,7 @@ export default function BackOfficeAbout() {
                     ) : (
                       <Upload className="w-3.5 h-3.5" />
                     )}
-                    <span>{uploadingField === 'about_hero_image' ? 'Mengunggah...' : 'Upload Foto Banner'}</span>
+                    <span>{uploadingField === 'about_hero_image' ? 'Uploading...' : 'Upload Banner Photo'}</span>
                     <input 
                       type="file" 
                       accept="image/*" 
@@ -406,7 +406,7 @@ export default function BackOfficeAbout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                      Paragraf 1
+                      Paragraph 1
                     </label>
                     <textarea
                       name="about_story_p1"
@@ -419,7 +419,7 @@ export default function BackOfficeAbout() {
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                      Paragraf 2
+                      Paragraph 2
                     </label>
                     <textarea
                       name="about_story_p2"
@@ -435,7 +435,7 @@ export default function BackOfficeAbout() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-brand-beige">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                      Foto Kolase 1 (Atas/Kiri)
+                      Collage Photo 1 (Top / Left)
                     </label>
                     <div className="flex gap-3 items-center">
                       <img src={formData.about_story_image1} alt="Story 1" className="w-16 h-16 rounded-xl object-cover border" />
@@ -457,7 +457,7 @@ export default function BackOfficeAbout() {
                           ) : (
                             <Upload className="w-3 h-3" />
                           )}
-                          <span>{uploadingField === 'about_story_image1' ? 'Mengunggah...' : 'Upload'}</span>
+                          <span>{uploadingField === 'about_story_image1' ? 'Uploading...' : 'Upload'}</span>
                           <input 
                             type="file" 
                             accept="image/*" 
@@ -472,7 +472,7 @@ export default function BackOfficeAbout() {
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                      Foto Kolase 2 (Bawah/Kanan)
+                      Collage Photo 2 (Bottom / Right)
                     </label>
                     <div className="flex gap-3 items-center">
                       <img src={formData.about_story_image2} alt="Story 2" className="w-16 h-16 rounded-xl object-cover border" />
@@ -494,7 +494,7 @@ export default function BackOfficeAbout() {
                           ) : (
                             <Upload className="w-3 h-3" />
                           )}
-                          <span>{uploadingField === 'about_story_image2' ? 'Mengunggah...' : 'Upload'}</span>
+                          <span>{uploadingField === 'about_story_image2' ? 'Uploading...' : 'Upload'}</span>
                           <input 
                             type="file" 
                             accept="image/*" 
@@ -514,13 +514,13 @@ export default function BackOfficeAbout() {
             {/* Statistics Counters */}
             <div className="pt-6 border-t border-brand-beige">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-base font-serif font-bold text-brand-charcoal">Statistik Kredibilitas (4 Items)</h3>
+                <h3 className="text-base font-serif font-bold text-brand-charcoal">Credibility Statistics (4 Items)</h3>
                 <button
                   type="button"
-                  onClick={() => setStatsList([...statsList, { id: Date.now().toString(), number: '99+', label: 'Statistik Baru', desc: 'Deskripsi' }])}
+                  onClick={() => setStatsList([...statsList, { id: Date.now().toString(), number: '99+', label: 'New Statistic', desc: 'Description' }])}
                   className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-beige text-brand-charcoal text-xs font-semibold rounded-lg hover:bg-brand-sage hover:text-white transition-colors"
                 >
-                  <Plus className="w-3.5 h-3.5" /> Tambah Stat
+                  <Plus className="w-3.5 h-3.5" /> Add Stat
                 </button>
               </div>
 
@@ -535,7 +535,7 @@ export default function BackOfficeAbout() {
                       <Trash2 className="w-4 h-4" />
                     </button>
                     <div>
-                      <label className="block text-[11px] font-bold text-brand-charcoal/60 uppercase">Angka (ex: 10+, 15K+, 4.9 ★)</label>
+                      <label className="block text-[11px] font-bold text-brand-charcoal/60 uppercase">Number (e.g. 10+, 15K+, 4.9 ★)</label>
                       <input
                         type="text"
                         value={stat.number}
@@ -561,7 +561,7 @@ export default function BackOfficeAbout() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-bold text-brand-charcoal/60 uppercase">Keterangan Singkat</label>
+                      <label className="block text-[11px] font-bold text-brand-charcoal/60 uppercase">Short Description</label>
                       <input
                         type="text"
                         value={stat.desc}
@@ -602,7 +602,7 @@ export default function BackOfficeAbout() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                  Judul Section
+                  Section Title
                 </label>
                 <input
                   type="text"
@@ -639,7 +639,7 @@ export default function BackOfficeAbout() {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="md:col-span-1">
-                      <label className="block text-xs font-bold text-brand-charcoal/60 uppercase mb-1">Judul Pilar</label>
+                      <label className="block text-xs font-bold text-brand-charcoal/60 uppercase mb-1">Pillar Title</label>
                       <input
                         type="text"
                         value={val.title}
@@ -653,7 +653,7 @@ export default function BackOfficeAbout() {
                     </div>
 
                     <div className="md:col-span-2">
-                      <label className="block text-xs font-bold text-brand-charcoal/60 uppercase mb-1">Uraian / Deskripsi</label>
+                      <label className="block text-xs font-bold text-brand-charcoal/60 uppercase mb-1">Description</label>
                       <textarea
                         rows={2}
                         value={val.desc}
@@ -693,7 +693,7 @@ export default function BackOfficeAbout() {
 
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                  Judul Section
+                  Section Title
                 </label>
                 <input
                   type="text"
@@ -707,7 +707,7 @@ export default function BackOfficeAbout() {
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
-                Deskripsi Suasana & Fasilitas
+                Atmosphere & Facility Description
               </label>
               <textarea
                 name="about_facility_description"
@@ -721,9 +721,9 @@ export default function BackOfficeAbout() {
             {/* 3 Facility Photos */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-brand-beige">
               {[
-                { label: 'Foto Fasilitas 1 (Lobby)', name: 'about_facility_image1' },
-                { label: 'Foto Fasilitas 2 (Treatment Suite)', name: 'about_facility_image2' },
-                { label: 'Foto Fasilitas 3 (Medical Grade Devices)', name: 'about_facility_image3' }
+                { label: 'Facility Photo 1 (Lobby)', name: 'about_facility_image1' },
+                { label: 'Facility Photo 2 (Treatment Suite)', name: 'about_facility_image2' },
+                { label: 'Facility Photo 3 (Medical Grade Devices)', name: 'about_facility_image3' }
               ].map((item, idx) => (
                 <div key={idx} className="space-y-3">
                   <label className="block text-xs font-bold text-brand-charcoal/70 uppercase">
@@ -749,7 +749,7 @@ export default function BackOfficeAbout() {
                     ) : (
                       <Upload className="w-3.5 h-3.5" />
                     )}
-                    <span>{uploadingField === item.name ? 'Mengunggah...' : 'Upload Foto'}</span>
+                    <span>{uploadingField === item.name ? 'Uploading...' : 'Upload Photo'}</span>
                     <input 
                       type="file" 
                       accept="image/*" 

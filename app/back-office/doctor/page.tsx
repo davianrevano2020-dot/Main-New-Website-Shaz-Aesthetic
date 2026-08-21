@@ -300,14 +300,14 @@ export default function BackOfficeDoctor() {
       });
       const json = await res.json();
       if (json.status === 'success') {
-        setStatusMessage({ type: 'success', text: 'Semua perubahan berhasil disimpan ke database!' });
+        setStatusMessage({ type: 'success', text: 'All changes saved successfully to the database!' });
         setTimeout(() => setStatusMessage(null), 4000);
       } else {
-        setStatusMessage({ type: 'error', text: json.message || 'Gagal menyimpan perubahan.' });
+        setStatusMessage({ type: 'error', text: json.message || 'Failed to save changes.' });
       }
     } catch (err) {
       console.error(err);
-      setStatusMessage({ type: 'error', text: 'Terjadi kesalahan saat menyimpan.' });
+      setStatusMessage({ type: 'error', text: 'An error occurred while saving.' });
     } finally {
       setIsSaving(false);
     }
@@ -340,14 +340,14 @@ export default function BackOfficeDoctor() {
         } else if (fieldKey) {
           setPageSettings(prev => ({ ...prev, [fieldKey]: json.url }));
         }
-        setStatusMessage({ type: 'success', text: 'Foto berhasil diunggah! Jangan lupa klik "Simpan Perubahan".' });
+        setStatusMessage({ type: 'success', text: 'Photo uploaded successfully! Remember to click "Save Changes".' });
         setTimeout(() => setStatusMessage(null), 4000);
       } else {
-        setStatusMessage({ type: 'error', text: json.message || 'Gagal mengunggah foto.' });
+        setStatusMessage({ type: 'error', text: json.message || 'Failed to upload photo.' });
       }
     } catch (err) {
       console.error('Upload error', err);
-      setStatusMessage({ type: 'error', text: 'Terjadi kesalahan saat upload foto.' });
+      setStatusMessage({ type: 'error', text: 'An error occurred while uploading the photo.' });
     } finally {
       setUploadingField(null);
       if (inputTarget) inputTarget.value = '';
@@ -358,18 +358,18 @@ export default function BackOfficeDoctor() {
   const handleAddDoctor = () => {
     const newDoc: DoctorItem = {
       id: `dr-${Date.now()}`,
-      name: 'Dr. Nama Dokter Baru, Sp.D.V.E',
+      name: 'Dr. New Specialist, Sp.D.V.E',
       title: 'Aesthetic Physician',
       specialization: 'Facial Harmonization & Clinical Aesthetics',
-      shortIntro: 'Deskripsi singkat keahlian dan fokus klinis dokter.',
+      shortIntro: 'Brief summary of the doctor clinical expertise and focus areas.',
       experience: '5+ Years Clinical Experience',
-      biography: 'Biografi lengkap dokter, riwayat praktik, keahlian khusus, dan pendekatan perawatan kepada pasien.',
-      education: ['Fakultas Kedokteran, Universitas Indonesia (Dokter Umum)', 'Master of Aesthetic Medicine'],
-      certifications: ['IDI (Ikatan Dokter Indonesia)', 'Certified Master Injector'],
+      biography: 'Comprehensive biography covering medical training, clinical practice, key specialties, and patient care philosophy.',
+      education: ['Faculty of Medicine (MD)', 'Master of Aesthetic Medicine'],
+      certifications: ['Indonesian Medical Association (IDI)', 'Certified Master Injector'],
       languages: ['English', 'Indonesian'],
       signatureTreatments: ['Facial Harmonization', 'Skin Rejuvenation', 'Precision Lasers'],
-      treatmentPhilosophy: 'Memberikan perawatan estetika medis yang aman, presisi, dan proporsional sesuai keunikan wajah pasien.',
-      schedule: 'Senin – Jumat: 10:00 – 18:00 WITA',
+      treatmentPhilosophy: 'Providing safe, evidence-based medical aesthetics that elevate natural facial balance.',
+      schedule: 'Monday – Friday: 10:00 – 18:00 WITA',
       img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop',
       published: true,
       order: doctors.length + 1
@@ -380,7 +380,7 @@ export default function BackOfficeDoctor() {
 
   // Delete doctor
   const handleDeleteDoctor = (index: number) => {
-    if (confirm('Apakah Anda yakin ingin menghapus profil dokter ini?')) {
+    if (confirm('Are you sure you want to delete this doctor profile?')) {
       const filtered = doctors.filter((_, i) => i !== index);
       setDoctors(filtered);
       if (editingDoctorIndex === index) {
@@ -427,7 +427,7 @@ export default function BackOfficeDoctor() {
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center space-y-3">
           <Loader2 className="w-8 h-8 animate-spin text-brand-forest mx-auto" />
-          <p className="text-sm font-sans text-brand-charcoal/60">Memuat data Dokter...</p>
+          <p className="text-sm font-sans text-brand-charcoal/60">Loading Doctor data...</p>
         </div>
       </div>
     );
@@ -443,11 +443,11 @@ export default function BackOfficeDoctor() {
               <Stethoscope className="w-5 h-5" />
             </span>
             <h1 className="text-2xl font-serif font-bold text-brand-charcoal">
-              Manajemen Halaman Doctor
+              Doctor Page Management
             </h1>
           </div>
           <p className="text-sm text-brand-charcoal/60">
-            Kelola profil dokter, foto, kredensial medis, jadwal konsultasi, dan konten halaman <span className="font-semibold text-brand-forest">/doctor</span>.
+            Manage doctor profiles, photos, medical credentials, consultation schedules, and <span className="font-semibold text-brand-forest">/doctor</span> page content.
           </p>
         </div>
 
@@ -458,7 +458,7 @@ export default function BackOfficeDoctor() {
             className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-brand-forest/30 text-brand-forest text-xs font-semibold hover:bg-brand-forest/5 transition-colors"
           >
             <ExternalLink className="w-3.5 h-3.5" />
-            <span>Lihat Halaman /doctor</span>
+            <span>View /doctor Page</span>
           </Link>
           <button
             onClick={handleSave}
@@ -468,12 +468,12 @@ export default function BackOfficeDoctor() {
             {isSaving ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Menyimpan...</span>
+                <span>Saving...</span>
               </>
             ) : (
               <>
                 <Save className="w-4 h-4" />
-                <span>Simpan Perubahan</span>
+                <span>Save Changes</span>
               </>
             )}
           </button>
@@ -501,7 +501,7 @@ export default function BackOfficeDoctor() {
           }`}
         >
           <Stethoscope className="w-4 h-4" />
-          <span>Daftar Profil Dokter ({doctors.length})</span>
+          <span>Doctor Profiles ({doctors.length})</span>
         </button>
         <button
           onClick={() => setActiveTab('page_settings')}
@@ -512,7 +512,7 @@ export default function BackOfficeDoctor() {
           }`}
         >
           <Sparkles className="w-4 h-4" />
-          <span>Header, Banner & Konten Page</span>
+          <span>Header, Banner & Page Content</span>
         </button>
       </div>
 
@@ -522,10 +522,10 @@ export default function BackOfficeDoctor() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-brand-beige shadow-sm">
             <div>
               <h2 className="text-base font-serif font-bold text-brand-charcoal">
-                Daftar Dokter & Spesialis SHAZ
+                SHAZ Doctors & Specialists List
               </h2>
               <p className="text-xs text-brand-charcoal/60">
-                Atur urutan tampilan, status publish, unggah foto, dan edit detail profil medis masing-masing dokter.
+                Manage display order, publication status, photos, and medical profile details for each doctor.
               </p>
             </div>
             <button
@@ -533,7 +533,7 @@ export default function BackOfficeDoctor() {
               onClick={handleAddDoctor}
               className="flex items-center gap-1.5 px-4 py-2.5 bg-brand-forest text-white text-xs font-bold rounded-xl hover:bg-brand-charcoal transition-colors shadow-sm self-start sm:self-auto"
             >
-              <Plus className="w-4 h-4" /> Tambah Dokter Baru
+              <Plus className="w-4 h-4" /> Add New Doctor
             </button>
           </div>
 
@@ -592,7 +592,7 @@ export default function BackOfficeDoctor() {
                           onClick={() => handleMoveDoctor(idx, 'up')}
                           disabled={idx === 0}
                           className="p-1.5 text-brand-charcoal/70 hover:text-brand-forest hover:bg-brand-beige/40 rounded disabled:opacity-30"
-                          title="Geser ke atas"
+                          title="Move up"
                         >
                           <ArrowUp className="w-3.5 h-3.5" />
                         </button>
@@ -601,7 +601,7 @@ export default function BackOfficeDoctor() {
                           onClick={() => handleMoveDoctor(idx, 'down')}
                           disabled={idx === doctors.length - 1}
                           className="p-1.5 text-brand-charcoal/70 hover:text-brand-forest hover:bg-brand-beige/40 rounded disabled:opacity-30"
-                          title="Geser ke bawah"
+                          title="Move down"
                         >
                           <ArrowDown className="w-3.5 h-3.5" />
                         </button>
@@ -616,7 +616,7 @@ export default function BackOfficeDoctor() {
                             ? 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100' 
                             : 'bg-neutral-100 border-neutral-200 text-neutral-600 hover:bg-neutral-200'
                         }`}
-                        title={doc.published ? 'Klik untuk Unpublish' : 'Klik untuk Publish'}
+                        title={doc.published ? 'Click to Unpublish' : 'Click to Publish'}
                       >
                         {doc.published ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
                         <span className="hidden sm:inline">{doc.published ? 'Active' : 'Hidden'}</span>
@@ -633,7 +633,7 @@ export default function BackOfficeDoctor() {
                         }`}
                       >
                         <Edit3 className="w-3.5 h-3.5" />
-                        <span>{isEditing ? 'Tutup Form' : 'Edit Profil'}</span>
+                        <span>{isEditing ? 'Close Form' : 'Edit Profile'}</span>
                       </button>
 
                       {/* Delete */}
@@ -641,7 +641,7 @@ export default function BackOfficeDoctor() {
                         type="button"
                         onClick={() => handleDeleteDoctor(idx)}
                         className="p-2 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded-lg transition-colors"
-                        title="Hapus Dokter"
+                        title="Delete Doctor"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -651,12 +651,12 @@ export default function BackOfficeDoctor() {
                   {/* Expanded Edit Form */}
                   {isEditing && (
                     <div className="p-6 bg-brand-white/40 space-y-6 animate-in fade-in">
-                      {/* Row 1: Foto & Identitas Utama */}
+                      {/* Row 1: Photo & Core Identity */}
                       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                        {/* Foto Upload & Preview */}
+                        {/* Photo Upload & Preview */}
                         <div className="lg:col-span-4 bg-white p-4 rounded-xl border border-brand-beige space-y-3">
                           <label className="block text-xs font-bold text-brand-charcoal uppercase">
-                            Foto Dokter
+                            Doctor Photo
                           </label>
                           <div className="aspect-[4/5] rounded-xl overflow-hidden bg-neutral-100 border relative">
                             <img src={doc.img} alt={doc.name} className="w-full h-full object-cover" />
@@ -673,7 +673,7 @@ export default function BackOfficeDoctor() {
                               ) : (
                                 <Upload className="w-3.5 h-3.5" />
                               )}
-                              <span>{uploadingField === `doc-${idx}` ? 'Mengunggah...' : 'Upload Foto Baru'}</span>
+                              <span>{uploadingField === `doc-${idx}` ? 'Uploading...' : 'Upload New Photo'}</span>
                               <input
                                 type="file"
                                 accept="image/*"
@@ -685,7 +685,7 @@ export default function BackOfficeDoctor() {
 
                             <input
                               type="text"
-                              placeholder="URL Foto Langsung (https://...)"
+                              placeholder="Direct Photo URL (https://...)"
                               value={doc.img}
                               onChange={(e) => {
                                 const updated = [...doctors];
@@ -697,12 +697,12 @@ export default function BackOfficeDoctor() {
                           </div>
                         </div>
 
-                        {/* Nama, Gelar, Spesialisasi, Pengalaman */}
+                        {/* Name, Title, Specialization, Experience */}
                         <div className="lg:col-span-8 bg-white p-5 rounded-xl border border-brand-beige space-y-4">
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                               <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                                Nama Lengkap & Gelar Medis *
+                                Full Name & Medical Degrees *
                               </label>
                               <input
                                 type="text"
@@ -713,13 +713,13 @@ export default function BackOfficeDoctor() {
                                   setDoctors(updated);
                                 }}
                                 className="w-full px-3.5 py-2 rounded-xl border font-serif font-bold text-brand-forest text-sm"
-                                placeholder="Contoh: Dr. Elisabeth Zora, M.Biomed (AAM)"
+                                placeholder="e.g., Dr. Elisabeth Zora, M.Biomed (AAM)"
                               />
                             </div>
 
                             <div>
                               <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                                Posisi / Jabatan Klinis
+                                Clinical Title / Position
                               </label>
                               <input
                                 type="text"
@@ -730,7 +730,7 @@ export default function BackOfficeDoctor() {
                                   setDoctors(updated);
                                 }}
                                 className="w-full px-3.5 py-2 rounded-xl border text-xs font-semibold uppercase"
-                                placeholder="Contoh: Head Aesthetic Physician & Master Injector"
+                                placeholder="e.g., Head Aesthetic Physician & Master Injector"
                               />
                             </div>
                           </div>
@@ -738,7 +738,7 @@ export default function BackOfficeDoctor() {
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                               <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                                Spesialisasi / Fokus Medis
+                                Medical Specialization / Focus
                               </label>
                               <input
                                 type="text"
@@ -749,13 +749,13 @@ export default function BackOfficeDoctor() {
                                   setDoctors(updated);
                                 }}
                                 className="w-full px-3.5 py-2 rounded-xl border text-xs"
-                                placeholder="Contoh: Facial Harmonization & Structural Injectables"
+                                placeholder="e.g., Facial Harmonization & Structural Injectables"
                               />
                             </div>
 
                             <div>
                               <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                                Pengalaman Klinis (Badge)
+                                Clinical Experience (Badge)
                               </label>
                               <input
                                 type="text"
@@ -766,14 +766,14 @@ export default function BackOfficeDoctor() {
                                   setDoctors(updated);
                                 }}
                                 className="w-full px-3.5 py-2 rounded-xl border text-xs"
-                                placeholder="Contoh: 12+ Years Clinical Experience"
+                                placeholder="e.g., 12+ Years Clinical Experience"
                               />
                             </div>
                           </div>
 
                           <div>
                             <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                              Ringkasan Profil Singkat (Tampil di Card)
+                              Short Profile Summary (Displayed on Card)
                             </label>
                             <textarea
                               rows={2}
@@ -784,13 +784,13 @@ export default function BackOfficeDoctor() {
                                 setDoctors(updated);
                               }}
                               className="w-full px-3.5 py-2 rounded-xl border text-xs leading-relaxed"
-                              placeholder="Deskripsi ringkas 1-2 kalimat untuk kartu dokter..."
+                              placeholder="Brief 1-2 sentence description for the doctor card..."
                             />
                           </div>
 
                           <div>
                             <label className="block text-[11px] font-bold text-brand-charcoal/70 uppercase mb-1">
-                              Biografi Lengkap & Latar Belakang Medis
+                              Full Biography & Medical Background
                             </label>
                             <textarea
                               rows={4}
@@ -801,20 +801,20 @@ export default function BackOfficeDoctor() {
                                 setDoctors(updated);
                               }}
                               className="w-full px-3.5 py-2 rounded-xl border text-xs leading-relaxed"
-                              placeholder="Ceritakan riwayat klinis, spesialisasi, dan pengalaman dokter secara mendalam..."
+                              placeholder="Describe clinical background, training, specializations, and patient care approach..."
                             />
                           </div>
                         </div>
                       </div>
 
-                      {/* Row 2: Kredensial, Edukasi, Sertifikasi, Treatment */}
+                      {/* Row 2: Credentials, Education, Certifications, Treatments */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-5 rounded-xl border border-brand-beige">
-                        {/* Edukasi */}
+                        {/* Education */}
                         <div>
                           <div className="flex items-center gap-1.5 mb-2">
                             <GraduationCap className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Riwayat Pendidikan (1 baris per institusi)
+                              Education Background (1 line per institution)
                             </label>
                           </div>
                           <textarea
@@ -826,16 +826,16 @@ export default function BackOfficeDoctor() {
                               setDoctors(updated);
                             }}
                             className="w-full px-3.5 py-2 rounded-xl border text-xs font-sans"
-                            placeholder="Faculty of Medicine, Universitas Udayana (MD)&#10;Master of Clinical Dermatology, London"
+                            placeholder="Faculty of Medicine, Udayana University (MD)&#10;Master of Clinical Dermatology, London"
                           />
                         </div>
 
-                        {/* Sertifikasi */}
+                        {/* Certifications */}
                         <div>
                           <div className="flex items-center gap-1.5 mb-2">
                             <Award className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Sertifikasi & Lisensi (1 baris per sertifikat)
+                              Certifications & Licenses (1 line per certificate)
                             </label>
                           </div>
                           <textarea
@@ -856,7 +856,7 @@ export default function BackOfficeDoctor() {
                           <div className="flex items-center gap-1.5 mb-2">
                             <Sparkles className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Signature Treatments (Pisahkan dengan koma atau baris baru)
+                              Signature Treatments (Separate by comma or new line)
                             </label>
                           </div>
                           <textarea
@@ -877,7 +877,7 @@ export default function BackOfficeDoctor() {
                           <div className="flex items-center gap-1.5 mb-2">
                             <HeartHandshake className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Filosofi Perawatan (Treatment Philosophy)
+                              Treatment Philosophy
                             </label>
                           </div>
                           <textarea
@@ -889,16 +889,16 @@ export default function BackOfficeDoctor() {
                               setDoctors(updated);
                             }}
                             className="w-full px-3.5 py-2 rounded-xl border text-xs font-sans italic"
-                            placeholder="Kutipan filosofi pendekatan medis dokter kepada pasien..."
+                            placeholder="Quote reflecting doctor's clinical philosophy and patient care approach..."
                           />
                         </div>
 
-                        {/* Jadwal Konsultasi */}
+                        {/* Consultation Schedule */}
                         <div>
                           <div className="flex items-center gap-1.5 mb-2">
                             <Clock className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Jadwal Praktek & Konsultasi
+                              Practice & Consultation Schedule
                             </label>
                           </div>
                           <input
@@ -910,16 +910,16 @@ export default function BackOfficeDoctor() {
                               setDoctors(updated);
                             }}
                             className="w-full px-3.5 py-2 rounded-xl border text-xs"
-                            placeholder="Senin – Jumat: 10:00 – 18:00 WITA | Sabtu: 10:00 – 15:00 WITA"
+                            placeholder="Monday – Friday: 10:00 – 18:00 WITA | Saturday: 10:00 – 15:00 WITA"
                           />
                         </div>
 
-                        {/* Bahasa */}
+                        {/* Languages */}
                         <div>
                           <div className="flex items-center gap-1.5 mb-2">
                             <Languages className="w-4 h-4 text-brand-forest" />
                             <label className="text-xs font-bold text-brand-charcoal uppercase">
-                              Bahasa yang Dikuasai (Pisahkan dengan koma)
+                              Languages Spoken (Separate with comma)
                             </label>
                           </div>
                           <input
@@ -943,7 +943,7 @@ export default function BackOfficeDoctor() {
                           onClick={() => setEditingDoctorIndex(null)}
                           className="px-4 py-2 rounded-xl border border-brand-beige text-xs font-semibold text-brand-charcoal/70 hover:bg-brand-beige/40"
                         >
-                          Selesai Edit
+                          Close Form
                         </button>
                         <button
                           type="button"
@@ -952,7 +952,7 @@ export default function BackOfficeDoctor() {
                           className="px-5 py-2 bg-brand-forest text-white rounded-xl text-xs font-bold hover:bg-brand-charcoal flex items-center gap-1.5"
                         >
                           <Save className="w-3.5 h-3.5" />
-                          <span>Simpan Sekarang</span>
+                          <span>Save Now</span>
                         </button>
                       </div>
                     </div>
@@ -970,7 +970,7 @@ export default function BackOfficeDoctor() {
           {/* Section 1: Hero Banner */}
           <div className="bg-white p-6 rounded-2xl border border-brand-beige space-y-6">
             <h2 className="text-lg font-serif font-bold text-brand-charcoal border-b border-brand-beige pb-3">
-              1. Hero Header Halaman /doctor
+              1. Hero Header (/doctor Page)
             </h2>
 
             <div className="space-y-4">
@@ -1003,12 +1003,12 @@ export default function BackOfficeDoctor() {
                   value={pageSettings.doctor_hero_subtitle}
                   onChange={(e) => setPageSettings({ ...pageSettings, doctor_hero_subtitle: e.target.value })}
                   className="w-full px-4 py-2 rounded-xl border border-brand-beige text-sm"
-                  placeholder="Deskripsi komprehensif keunggulan dokter klinis..."
+                  placeholder="Comprehensive description of clinical doctor excellence..."
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Background Image Banner</label>
+                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Banner Background Image</label>
                 <div className="flex gap-4 items-center">
                   <input
                     type="text"
@@ -1026,7 +1026,7 @@ export default function BackOfficeDoctor() {
                     ) : (
                       <Upload className="w-3.5 h-3.5" />
                     )}
-                    <span>{uploadingField === 'doctor_hero_image' ? 'Mengunggah...' : 'Upload Banner'}</span>
+                    <span>{uploadingField === 'doctor_hero_image' ? 'Uploading...' : 'Upload Banner'}</span>
                     <input
                       type="file"
                       accept="image/*"
@@ -1076,7 +1076,7 @@ export default function BackOfficeDoctor() {
                   value={pageSettings.doctor_trust_description}
                   onChange={(e) => setPageSettings({ ...pageSettings, doctor_trust_description: e.target.value })}
                   className="w-full px-4 py-2 rounded-xl border border-brand-beige text-sm leading-relaxed"
-                  placeholder="Penjelasan standar medis, kualifikasi dokter, dan jaminan keamanan..."
+                  placeholder="Explanation of clinical standards, doctor qualifications, and safety assurance..."
                 />
               </div>
             </div>
@@ -1085,7 +1085,7 @@ export default function BackOfficeDoctor() {
           {/* Section 3: Bottom CTA Section */}
           <div className="bg-white p-6 rounded-2xl border border-brand-beige space-y-6">
             <h2 className="text-lg font-serif font-bold text-brand-charcoal border-b border-brand-beige pb-3">
-              3. CTA Banner Bagian Bawah
+              3. Bottom CTA Section
             </h2>
 
             <div className="space-y-4">
@@ -1124,7 +1124,7 @@ export default function BackOfficeDoctor() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Teks Tombol CTA</label>
+                  <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">CTA Button Text</label>
                   <input
                     type="text"
                     value={pageSettings.doctor_cta_button_text}
@@ -1135,7 +1135,7 @@ export default function BackOfficeDoctor() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Link WhatsApp / URL Booking</label>
+                  <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">WhatsApp Link / Booking URL</label>
                   <input
                     type="text"
                     value={pageSettings.doctor_cta_button_link}
