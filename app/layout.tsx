@@ -18,6 +18,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'SHAZ Clinic & Salon | Beauty, Refined by Medical Expertise',
   description: 'Personalized aesthetic treatments and premium salon experiences designed around your unique beauty goals in Seminyak, Bali.',
+  icons: {
+    icon: 'https://shazaestheticbali.com/public/uploads/shaz-favico.jpg',
+    shortcut: 'https://shazaestheticbali.com/public/uploads/shaz-favico.jpg',
+    apple: 'https://shazaestheticbali.com/public/uploads/shaz-favico.jpg',
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en" className={`scroll-smooth ${montserrat.variable} ${playfair.variable}`}>
+      <head>
+        <link rel="icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" type="image/jpeg" />
+        <link rel="shortcut icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" />
+      </head>
       <body className="font-sans bg-brand-white text-brand-charcoal antialiased" suppressHydrationWarning>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-G8N9PTDF15" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
