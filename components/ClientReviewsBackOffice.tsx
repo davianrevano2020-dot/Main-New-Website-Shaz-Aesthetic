@@ -30,6 +30,7 @@ const DEFAULT_VIDEO_TESTIMONIALS = [
     title: "My Acne Scar Journey",
     name: "Jessica M.",
     thumbnail: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+    videoUrl: "",
   }
 ];
 
@@ -52,7 +53,7 @@ export default function ClientReviewsBackOffice() {
   const [isUploading, setIsUploading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, callback: (url: string) => void) => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, callback: (url: string) => void) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -233,7 +234,7 @@ export default function ClientReviewsBackOffice() {
                           }}
                           className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal bg-white h-24"
                         />
-                      ) : key === 'image' || key === 'thumbnail' ? (
+                      ) : key === 'image' || key === 'thumbnail' || key === 'videoUrl' ? (
                         <div className="flex gap-2">
                           <input
                             type="text"
@@ -247,11 +248,7 @@ export default function ClientReviewsBackOffice() {
                           />
                           <label className={`flex items-center justify-center px-4 py-2 bg-[#F9F8F6] border border-brand-beige rounded-lg hover:bg-brand-beige/50 cursor-pointer transition-colors ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}>
                             {isUploading ? <Loader2 className="w-5 h-5 animate-spin text-brand-charcoal/60" /> : <Upload className="w-5 h-5 text-brand-charcoal/60" />}
-                            <input 
-                              type="file" 
-                              accept="image/*" 
-                              className="hidden" 
-                              onChange={(e) => handleImageUpload(e, (url) => {
+                            <input type="file" accept={key === 'videoUrl' ? 'video/*' : 'image/*'} className="hidden" onChange={(e) => handleFileUpload(e, (url) => {
                                 const newItems = [...items];
                                 newItems[index] = { ...newItems[index], [key]: url };
                                 setItems(newItems);
@@ -393,7 +390,7 @@ export default function ClientReviewsBackOffice() {
                       type="file" 
                       accept="image/*" 
                       className="hidden" 
-                      onChange={(e) => handleImageUpload(e, (url) => setPageSettings({ ...pageSettings, reviews_hero_image: url }))} 
+                      onChange={(e) => handleFileUpload(e, (url) => setPageSettings({ ...pageSettings, reviews_hero_image: url }))} 
                     />
                   </label>
                 </div>
@@ -417,7 +414,7 @@ export default function ClientReviewsBackOffice() {
         videoTestimonials, 
         setVideoTestimonials, 
         'Video Testimonials', 
-        { title: '', name: '', thumbnail: '' }
+        { title: '', name: '', thumbnail: '', videoUrl: '' }
       )}
 
       {activeTab === 'success_cases' && renderList(

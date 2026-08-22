@@ -359,7 +359,9 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
 
       {/* Video Modal (Mock) */}
       <AnimatePresence>
-        {activeVideo !== null && (
+        {activeVideo !== null && (() => {
+          const video = parsedVideoTestimonials.find((v: any) => v.id === activeVideo);
+          return (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -380,12 +382,19 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
                 <X className="w-5 h-5" />
               </button>
               
-              <Play className="w-16 h-16 mb-4 opacity-50 text-white" />
-              <h3 className="text-2xl font-serif text-white mb-2">Video playback integration</h3>
-              <p className="text-white/50">In a production environment, this would embed a YouTube, Vimeo, or HTML5 video player.</p>
+              {video?.videoUrl ? (
+                <video src={video.videoUrl} controls autoPlay className="w-full h-full object-contain bg-black" />
+              ) : (
+                <>
+                  <Play className="w-16 h-16 mb-4 opacity-50 text-white" />
+                  <h3 className="text-2xl font-serif text-white mb-2">Video playback integration</h3>
+                  <p className="text-white/50">Upload a video in the Back-Office to see it play here.</p>
+                </>
+              )}
             </motion.div>
           </motion.div>
-        )}
+          );
+        })()}
       </AnimatePresence>
 
     </div>
