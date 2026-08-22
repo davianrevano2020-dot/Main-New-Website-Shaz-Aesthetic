@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Save, Plus, Trash2, ArrowUp, ArrowDown, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Save, Plus, Trash2, ArrowUp, ArrowDown, CheckCircle2, AlertCircle, Loader2, Upload } from 'lucide-react';
 
 const DEFAULT_GOOGLE_REVIEWS = [
   {
@@ -49,7 +49,35 @@ export default function ClientReviewsBackOffice() {
   const [activeTab, setActiveTab] = useState<'page_settings' | 'google_reviews' | 'video_testimonials' | 'success_cases'>('page_settings');
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, callback: (url: string) => void) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsUploading(true);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        callback(data.url);
+      } else {
+        alert('Upload failed: ' + data.message);
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Upload error');
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
   const [pageSettings, setPageSettings] = useState({
     reviews_hero_badge: 'CLIENT EXPERIENCES',
@@ -205,6 +233,32 @@ export default function ClientReviewsBackOffice() {
                           }}
                           className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal bg-white h-24"
                         />
+                      ) : key === 'image' || key === 'thumbnail' ? (
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            value={item[key]}
+                            onChange={(e) => {
+                              const newItems = [...items];
+                              newItems[index] = { ...newItems[index], [key]: e.target.value };
+                              setItems(newItems);
+                            }}
+                            className="flex-1 px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal bg-white"
+                          />
+                          <label className={`flex items-center justify-center px-4 py-2 bg-[#F9F8F6] border border-brand-beige rounded-lg hover:bg-brand-beige/50 cursor-pointer transition-colors ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}>
+                            {isUploading ? <Loader2 className="w-5 h-5 animate-spin text-brand-charcoal/60" /> : <Upload className="w-5 h-5 text-brand-charcoal/60" />}
+                            <input 
+                              type="file" 
+                              accept="image/*" 
+                              className="hidden" 
+                              onChange={(e) => handleImageUpload(e, (url) => {
+                                const newItems = [...items];
+                                newItems[index] = { ...newItems[index], [key]: url };
+                                setItems(newItems);
+                              })} 
+                            />
+                          </label>
+                        </div>
                       ) : (
                         <input
                           type={key === 'rating' ? 'number' : 'text'}
@@ -326,12 +380,23 @@ export default function ClientReviewsBackOffice() {
               </div>
               <div className="col-span-1 md:col-span-2">
                 <label className="block text-sm font-medium text-brand-charcoal mb-2">Hero Background Image URL</label>
-                <input
-                  type="text"
-                  value={pageSettings.reviews_hero_image}
-                  onChange={(e) => setPageSettings({ ...pageSettings, reviews_hero_image: e.target.value })}
-                  className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal"
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={pageSettings.reviews_hero_image}
+                    onChange={(e) => setPageSettings({ ...pageSettings, reviews_hero_image: e.target.value })}
+                    className="flex-1 px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal"
+                  />
+                  <label className={`flex items-center justify-center px-4 py-2 bg-[#F9F8F6] border border-brand-beige rounded-lg hover:bg-brand-beige/50 cursor-pointer transition-colors ${isUploading ? 'opacity-50 pointer-events-none' : ''}`}>
+                    {isUploading ? <Loader2 className="w-5 h-5 animate-spin text-brand-charcoal/60" /> : <Upload className="w-5 h-5 text-brand-charcoal/60" />}
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      className="hidden" 
+                      onChange={(e) => handleImageUpload(e, (url) => setPageSettings({ ...pageSettings, reviews_hero_image: url }))} 
+                    />
+                  </label>
+                </div>
                 <div className="mt-4 aspect-[21/9] rounded-lg overflow-hidden bg-brand-beige relative border border-brand-beige">
                   <img src={pageSettings.reviews_hero_image} alt="Preview" className="w-full h-full object-cover" />
                 </div>
