@@ -428,10 +428,10 @@ export default function ClientPackagesPage({ initialContent }: { initialContent:
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 15 }}
               transition={{ type: "spring", duration: 0.45 }}
-              className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-brand-beige overflow-hidden z-10 max-h-[92vh] sm:h-[86vh] flex flex-col md:flex-row"
+              className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-brand-beige overflow-y-auto md:overflow-hidden z-10 max-h-[92vh] sm:h-[86vh] flex flex-col md:flex-row"
             >
               {/* Left Column (Desktop Visual & Context Panel / Mobile Header) */}
-              <div className="md:w-5/12 lg:w-4/12 bg-[#FAF8F5] border-b md:border-b-0 md:border-r border-brand-beige/80 flex flex-col shrink-0 overflow-y-auto">
+              <div className="md:w-5/12 lg:w-4/12 bg-[#FAF8F5] border-b md:border-b-0 md:border-r border-brand-beige/80 flex flex-col shrink-0 md:overflow-y-auto">
                 {/* Visual Image Header */}
                 <div className="relative h-36 sm:h-44 md:h-52 w-full shrink-0 overflow-hidden bg-neutral-200">
                   <img
@@ -494,7 +494,7 @@ export default function ClientPackagesPage({ initialContent }: { initialContent:
               </div>
 
               {/* Right Column (Spacious Scrollable Packages List) */}
-              <div className="md:w-7/12 lg:w-8/12 flex-1 flex flex-col bg-white overflow-hidden">
+              <div className="md:w-7/12 lg:w-8/12 flex-1 flex flex-col bg-white md:overflow-hidden">
                 {/* Header Bar */}
                 <div className="px-6 py-4 border-b border-brand-beige flex items-center justify-between bg-white shrink-0">
                   <div>
@@ -517,7 +517,7 @@ export default function ClientPackagesPage({ initialContent }: { initialContent:
                 </div>
 
                 {/* Main Scrollable Content */}
-                <div className="flex-1 overflow-y-auto p-5 sm:p-7 space-y-4 sm:space-y-5 bg-white">
+                <div className="flex-1 md:overflow-y-auto p-5 sm:p-7 space-y-4 sm:space-y-5 bg-white">
                   {activeCategoryModal.packages.map((pkg, idx) => (
                     <div
                       key={idx}
