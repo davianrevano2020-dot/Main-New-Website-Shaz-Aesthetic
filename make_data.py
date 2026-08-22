@@ -1,0 +1,1552 @@
+import sys
+
+data = """
+SKIN (25 Treatments)
+1. Glass & Glow Therapy (Skin Boost)
+Service Name Glass & Glow Therapy (Skin Boost)
+Treatment Category Skin
+Duration 45 Mins
+Tag (Optional) Most Popular
+Description Skin Boost Therapy delivers a powerful surge of hydration, deeply nourishing the
+skin to enhance its texture and overall quality. Stimulates collagen and elastin
+production for long-term improvements in texture, tone, and resilience.
+Suitable For Dull, dehydrated skin lacking elasticity
+Procedure Consultation, cleansing, hydration-boosting injectable/serum application, soothing
+mask
+Downtime Minimal downtime, slight redness possible
+Expected Results Hydrated, radiant skin with improved elasticity over following weeks
+Price Price on consultation
+Key Benefits Deep hydration, Collagen stimulation, Improved elasticity, Reduced fine lines
+
+2. Age Reverse Therapy
+Service Name Age Reverse Therapy
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description A premier treatment designed to reduce the appearance of fine lines and wrinkles
+by relaxing targeted facial muscles, softening expression lines and rejuvenating the
+skin's overall look.
+Suitable For Fine lines, wrinkles, expression lines
+Procedure Consultation, targeted muscle-relaxing injections
+Downtime Minimal downtime, possible mild swelling
+Expected Results Smoother, more youthful complexion within days
+Price Price on consultation
+Key Benefits Softened expression lines, Natural-looking results, Non-surgical
+
+3. Deep Focus Intensif Face
+Service Name Deep Focus Intensif Face
+Treatment Category Skin
+Duration 60 Mins
+Tag (Optional) -
+Description An advanced treatment with RF microneedling technology designed to target and
+smooth deep lines and wrinkles. Infused with DNA and Hyaluronic Acid (HA) to
+promote skin repair, hydration, and relax facial muscles for expression lines.
+Suitable For Deep wrinkles, expression lines, scars
+Procedure Numbing, RF microneedling pass, DNA/HA infusion
+Downtime 1-2 days mild redness
+Expected Results Long-lasting facial rejuvenation, smoother contours
+Price Rp 4.500.000
+Key Benefits RF microneedling, Deep hydration, Facial contouring
+
+4. Deep Focus Fractional Acne
+Service Name Deep Focus Fractional Acne
+Treatment Category Skin
+Duration 45 Mins
+Tag (Optional) -
+Description Uses EndyMed's RF microneedling technology to effectively target and treat acne
+and acne scars, stimulating collagen production and promoting faster healing.
+Suitable For Active acne and acne scars
+Procedure Cleansing, numbing, RF microneedling
+Downtime 1-3 days redness/peeling
+Expected Results Reduced breakouts, improved texture, minimized scarring
+Price Rp 3.000.000 / Rp 6.500.000 (Set of 3)
+Key Benefits Collagen stimulation, Scar reduction, Faster healing
+
+5. Acne Injection
+Service Name Acne Injection
+Treatment Category Skin
+Duration 15 Mins
+Tag (Optional) -
+Description A quick and effective way to reduce inflammation and speed up the healing process
+of stubborn breakouts, delivering immediate relief by reducing swelling and
+redness.
+Suitable For Inflamed, stubborn breakouts (1-5 spots)
+Procedure Spot injection into acne lesion(s)
+Downtime No downtime
+Expected Results Visible reduction in swelling/redness within 24-48 hours
+Price Rp 250.000 (1-5 Spot)
+Key Benefits Fast relief, Reduced inflammation, Targeted treatment
+
+6. Subcision (Subsicion)
+Service Name Subcision (Subsicion)
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description A minimally invasive treatment designed to break down the fibrotic tissue beneath
+acne scars, releasing the skin and allowing it to smooth out naturally.
+Suitable For Depressed / rolling acne scars
+Procedure Numbing, subcision needle technique under scars
+Downtime 2-5 days bruising/swelling possible
+Expected Results Smoother, more even skin texture over following weeks
+Price Start from Rp 1.000.000
+Key Benefits Targets root cause, Improved texture, Reduced scar depth
+
+7. TCA Cross
+Service Name TCA Cross
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description Occurs during a TCA chemical peel, where the skin turns white as the acid
+penetrates, causing controlled protein coagulation. Signals the peel is actively
+exfoliating the skin, revealing smoother, more even-toned skin beneath.
+Suitable For Acne scars, textured skin
+Procedure Cleansing, targeted TCA application to scars
+Downtime 3-7 days peeling
+Expected Results Reduced fine lines, improved texture, diminished acne scars
+Price Rp 350.000 (Small) / Rp 500.000 (Medium) / Rp 600.000 (Large)
+Key Benefits Deep exfoliation, Scar improvement, Even tone
+
+8. Keloid Therapy
+Service Name Keloid Therapy
+Treatment Category Skin
+Duration 20 Mins
+Tag (Optional) -
+Description Uses triamcinolone in intralesional injections to reduce the size and thickness of
+keloid scars, softening and flattening raised scars while minimizing discomfort.
+Suitable For Keloid / hypertrophic scars
+Procedure Intralesional triamcinolone injection
+Downtime No downtime, may repeat over sessions
+Expected Results Gradual reduction in keloid prominence over weeks
+Price Rp 500.000 (Small) / Rp 1.500.000 (Medium) / Rp 3.000.000 (Large)
+Key Benefits Softens raised scars, Improves comfort, Minimal downtime
+
+9. Allure Facial – Calm & Balance
+Service Name Allure Facial – Calm & Balance
+Treatment Category Skin
+Duration 60 Mins
+Tag (Optional) -
+Description Designed to promote a calm, balanced complexion, offering gentle and soothing
+care for easily irritated or reactive skin types, reducing redness and inflammation
+while deeply hydrating.
+Suitable For Sensitive, reactive skin
+Procedure Cleansing, gentle exfoliation, calming serum, mask
+Downtime No downtime
+Expected Results Refreshed, soothed complexion with reduced irritation
+Price Rp 600.000 / Rp 1.500.000 (Set of 3)
+Key Benefits Calms redness, Deep hydration, Gentle formulation
+
+10. Hermosa Facial – Balance & Clarity
+Service Name Hermosa Facial – Balance & Clarity
+Treatment Category Skin
+Duration 60 Mins
+Tag (Optional) -
+Description Crafted to balance oil production, reduce inflammation, and promote clearer,
+healthier skin. Targets clogged pores and helps calm irritated, oily/acne-prone skin.
+Suitable For Oily, acne-prone skin
+Procedure Cleansing, extraction, oil-balancing treatment, mask
+Downtime No downtime
+Expected Results Reduced shine, minimized breakouts, healthier glow
+Price Rp 600.000 / Rp 1.500.000 (Set of 3)
+Key Benefits Oil control, Pore clarity, Reduced breakouts
+
+11. Palma Facial
+Service Name Palma Facial
+Treatment Category Skin
+Duration 60 Mins
+Tag (Optional) -
+Description Achieve a visibly younger look with Palma Facial. Specialized formula works to
+reduce the appearance of fine lines and wrinkles, leaving skin revitalized, smoother,
+and more radiant.
+Suitable For Early signs of aging, dull skin
+Procedure Cleansing, anti-aging serum infusion, massage, mask
+Downtime No downtime
+Expected Results Smoother, more radiant, revitalized skin
+Price Rp 700.000 / Rp 1.800.000 (Set of 3)
+Key Benefits Reduces fine lines, Revitalizing, Radiance boost
+
+12. Exosome Facial
+Service Name Exosome Facial
+Treatment Category Skin
+Duration 75 Mins
+Tag (Optional) Advanced
+Description An innovative skin rejuvenation treatment combining gentle exfoliation, deep
+cleansing, and infusion of plant-derived antioxidants using nutrient-rich botanical
+exosomes to stimulate natural cellular regeneration.
+Suitable For All skin types seeking regeneration
+Procedure Cleansing, exfoliation, exosome serum infusion, LED/mask
+Downtime No downtime
+Expected Results Smoother, radiant, youthful-looking skin
+Price Rp 950.000 / Rp 2.250.000 (Set of 3)
+Key Benefits Cellular regeneration, Antioxidant protection, Suitable for all skin types
+
+13. Black Diamond Facial
+Service Name Black Diamond Facial
+Treatment Category Skin
+Duration 75 Mins
+Tag (Optional) Most Popular
+Description A luxurious, high-performance treatment designed to combat signs of aging. Infused
+with shea butter and micro magnets, delivering intense nourishment while
+promoting skin rejuvenation and firmness.
+Suitable For Aging, dull, dehydrated skin
+Procedure Deep cleansing, exfoliation, micro-magnet massage, hydration mask
+Downtime No downtime
+Expected Results Deeply hydrated, smooth, youthful, radiant complexion
+Price Rp 850.000 / Rp 2.100.000 (Set of 3)
+Key Benefits Deep cleansing, Intense nourishment, Anti-aging
+
+14. Uplifting Facial with EndyMed
+Service Name Uplifting Facial with EndyMed
+Treatment Category Skin
+Duration 60 Mins
+Tag (Optional) -
+Description Uses advanced radiofrequency technology to lift, tighten, and firm the skin.
+Stimulates collagen production, improving elasticity and reducing the appearance of
+sagging.
+Suitable For Sagging skin, loss of firmness
+Procedure Cleansing, EndyMed RF facial pass, soothing mask
+Downtime No downtime, mild warmth/redness
+Expected Results More sculpted, lifted contour with firmer skin
+Price Rp 1.800.000 / Rp 4.500.000 (Set of 3)
+Key Benefits Skin tightening, Collagen boost, Lifted contour
+
+15. Exosome Endymed Uplifting Facial
+Service Name Exosome Endymed Uplifting Facial
+Treatment Category Skin
+Duration 75 Mins
+Tag (Optional) -
+Description A facial with exosome to enhance healing followed by a picosecond laser treatment
+— a powerful combination for skin rejuvenation, evening out skin tone, breaking
+down pigmentation and boosting collagen and elastin production.
+Suitable For Uneven tone, pigmentation, aging skin
+Procedure Exosome application, picosecond laser pass
+Downtime Minimal, slight redness
+Expected Results Rejuvenated, even-toned skin with boosted collagen
+Price Rp 2.000.000 / Rp 5.000.000 (Set of 3)
+Key Benefits Combined exosome + laser, Even skin tone, Collagen boost
+
+16. Exosome Picosecond Facial
+Service Name Exosome Picosecond Facial
+Treatment Category Skin
+Duration 75 Mins
+Tag (Optional) -
+Description A facial with exosome to enhance healing followed by a picosecond laser treatment
+— a powerful combination for skin rejuvenation, evening out skin tone, breaking
+down pigmentation and boosting collagen and elastin production.
+Suitable For Pigmentation, uneven tone, aging skin
+Procedure Exosome application, picosecond laser pass
+Downtime Minimal, slight redness
+Expected Results Rejuvenated, even-toned, youthful skin
+Price Rp 3.000.000 / Rp 8.500.000 (Set of 3)
+Key Benefits Advanced regeneration, Pigmentation reduction, Collagen boost
+
+17. Facial Acupressure Massage
+Service Name Facial Acupressure Massage
+Treatment Category Skin
+Duration 45 Mins
+Tag (Optional) -
+Description A soothing treatment that stimulates key pressure points to promote circulation,
+reduce tension, and restore balance to the skin, improving lymphatic drainage and
+detoxifying the complexion.
+Suitable For Tension, dull skin, poor circulation
+Procedure Pressure-point facial massage sequence
+Downtime No downtime
+Expected Results Refreshed, rejuvenated skin with natural glow, deep relaxation
+Price Rp 250.000
+Key Benefits Improved circulation, Lymphatic drainage, Relaxation
+
+18. Mandelage Platinum Peel
+Service Name Mandelage Platinum Peel
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description A refined peeling therapy that combines the power of mandelic acid to gently
+exfoliate and renew the skin. Ideal for sensitive skin types, helps reduce mild acne
+and improve texture.
+Suitable For Sensitive, acne-prone skin
+Procedure Cleansing, mandelic acid peel application, neutralization
+Downtime Minimal, slight flaking possible
+Expected Results Smoother, more even complexion with healthy glow
+Price Rp 700.000
+Key Benefits Gentle exfoliation, Reduces mild acne, Suitable for sensitive skin
+
+19. Youth Skin Peel
+Service Name Youth Skin Peel
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description An advanced peeling therapy designed to rejuvenate and refresh the complexion,
+utilizing a blend of potent ingredients to exfoliate dead skin cells and reveal a
+brighter, more youthful layer.
+Suitable For Dull skin, fine lines, uneven texture
+Procedure Cleansing, chemical peel application, soothing finish
+Downtime 1-3 days mild peeling
+Expected Results Smoother, luminous complexion with renewed elasticity
+Price Rp 800.000
+Key Benefits Cellular turnover, Diminishes fine lines, Enhanced vitality
+
+20. Bright Advance Peel
+Service Name Bright Advance Peel
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description An advanced peeling treatment designed to improve skin tone, texture, and early
+signs of aging. Formulated with glycolic acid, phytic acid, and prickly pear flower
+extract to reduce hyperpigmentation and soften fine lines.
+Suitable For Rosacea-prone skin, hyperpigmentation
+Procedure Cleansing, layered acid peel application
+Downtime Minimal, mild redness
+Expected Results Smoother, more radiant, refreshed, even-looking complexion
+Price Rp 800.000
+Key Benefits Reduces hyperpigmentation, Soothes rosacea, Brightening
+
+21. Body Peel
+Service Name Body Peel
+Treatment Category Skin
+Duration 45 Mins
+Tag (Optional) -
+Description An effective peeling therapy designed to address mild to severe acne, uneven
+complexion, brightening, and fine lines on the body by exfoliating the skin's surface
+and promoting cellular turnover.
+Suitable For Body acne, uneven tone (back)
+Procedure Cleansing, body chemical peel application
+Downtime 2-5 days peeling
+Expected Results Clearer, more radiant complexion with reduced blemishes
+Price Rp 1.000.000 (Half Back) / Rp 1.300.000 (Full Back)
+Key Benefits Full-body exfoliation, Reduces blemishes, Improved texture
+
+22. Booty Peel
+Service Name Booty Peel
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) -
+Description Achieve smoother, brighter, and more even-toned skin with the Booty Peel
+treatment, specifically formulated for the delicate skin on the booty area, gently
+exfoliating and removing dead skin cells.
+Suitable For Uneven complexion, acne on booty area
+Procedure Cleansing, targeted peel application
+Downtime 2-4 days peeling
+Expected Results Revitalized, glowing, more even-toned skin
+Price Rp 1.000.000
+Key Benefits Even tone, Smooths texture, Long-lasting results
+
+23. Body Extraction
+Service Name Body Extraction
+Treatment Category Skin
+Duration 45 Mins
+Tag (Optional) -
+Description Focused on white and blackhead extractions, designed to deeply cleanse and purify
+the skin, effectively targeting clogged pores and breakouts through gentle
+exfoliation and impurity removal.
+Suitable For Body acne, congested pores
+Procedure Steam, manual extraction, soothing application
+Downtime 1-2 days mild redness
+Expected Results Refreshed, revitalized skin with visibly reduced blemishes
+Price Rp 600.000
+Key Benefits Deep pore cleansing, Prevents future breakouts, Smoother texture
+
+24. Cauter Therapy
+Service Name Cauter Therapy
+Treatment Category Skin
+Duration 20 Mins
+Tag (Optional) -
+Description A specialized procedure designed to remove skin imperfections such as warts, skin
+tags, and other benign lesions using heat-based technology, targeting unwanted
+growths without damaging surrounding skin.
+Suitable For Warts, skin tags, benign lesions
+Procedure Local prep, cauterization of lesion(s)
+Downtime 3-7 days scabbing/healing
+Expected Results Clearer, more refined complexion with removed lesions
+Price Rp 450.000 (Small) / Rp 850.000 (Medium) / Rp 1.200.000 (Large)
+Key Benefits Precise removal, Minimal scarring, Fast procedure
+
+25. ExoMind Mind Therapy
+Service Name ExoMind Mind Therapy
+Treatment Category Skin
+Duration 30 Mins
+Tag (Optional) New in Bali
+Description A non-invasive neuromodulation treatment using advanced Transcranial Magnetic
+Stimulation (TMS) technology to stimulate targeted brain areas associated with
+mood, focus, motivation, and emotional well-being.
+Suitable For Stress, low focus, mood support (non-clinical wellness use)
+Procedure Seated TMS session with magnetic pulse delivery
+Downtime No downtime, return to activities immediately
+Expected Results Improved mental clarity, reduced stress, enhanced focus
+Price Rp 4.000.000 (Single) / Rp 10.000.000 (Set of 3) / Rp 16.000.000 (Set of 6)
+Key Benefits FDA-cleared TMS technology, Non-invasive, No downtime
+
+INJECTABLES (27 Treatments)
+1. Innertrue Collagen Boost
+Service Name Innertrue Collagen Boost
+Treatment Category Injectables
+Duration 45 Mins
+Tag (Optional) Premium
+Description Designed to revitalize your skin from within, promoting elasticity, hydration, and a
+natural glow. Supports the body's collagen production, reducing fine lines and
+wrinkles while enhancing overall skin health.
+Suitable For Aging skin needing deep collagen support
+Procedure Consultation, injectable collagen-stimulating treatment
+Downtime Minimal, slight swelling possible
+Expected Results Smoother, more youthful complexion over following weeks
+Price Rp 10.000.000
+Key Benefits Collagen stimulation, Elasticity boost, Hydration
+
+2. Profhilo (Super Hydration)
+Service Name Profhilo (Super Hydration)
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) Most Popular
+Description A breakthrough treatment designed to stimulate collagen and elastin production,
+providing intense hydration and restoring skin firmness for a natural, lifted look.
+Suitable For Dehydrated, sagging skin
+Procedure Consultation, bio-remodeling injections (BAP-technique points)
+Downtime Minimal, small bumps resolve within hours-days
+Expected Results Smoother, plumper, more youthful skin over 4-6 weeks
+Price Rp 7.700.000 / Rp 21.300.000 (Set of 3)
+Key Benefits Deep hydration, Skin firmness, Natural lifted look
+
+3. Nucleofill Strong
+Service Name Nucleofill Strong
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A powerful bio-stimulating treatment enriched with polynucleotide (PN), designed
+to deeply regenerate, lift, and protect the skin by stimulating collagen production
+and revitalizing skin cells.
+Suitable For Aging skin needing structural support
+Procedure Consultation, PN injections across target area
+Downtime Minimal, slight swelling/redness
+Expected Results Smoother, more youthful appearance with improved firmness
+Price Rp 5.500.000 / Rp 13.500.000 (Set of 3)
+Key Benefits Bio-stimulation, Improved elasticity, Fewer injections needed
+
+4. Mesomelasma
+Service Name Mesomelasma
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A specialized mesotherapy treatment designed to target melasma and other forms
+of hyperpigmentation by delivering potent skin-brightening agents directly into
+affected areas.
+Suitable For Melasma, hyperpigmentation
+Procedure Consultation, mesotherapy micro-injections
+Downtime Minimal, slight redness
+Expected Results Lightened dark spots, more even skin tone over sessions
+Price Rp 1.500.000
+Key Benefits Targets melasma, Brightening, Even skin tone
+
+5. Growth Factor Therapy
+Service Name Growth Factor Therapy
+Treatment Category Injectables
+Duration 45 Mins
+Tag (Optional) -
+Description A cutting-edge treatment that stimulates the skin's natural healing and regeneration
+process. Introduces bioactive proteins that promote cell renewal, boost collagen,
+and address anti-aging, scars, hyperpigmentation, dermatitis, and hair loss.
+Suitable For Anti-aging, scars, hyperpigmentation, hair thinning
+Procedure Consultation, growth factor micro-injections
+Downtime Minimal, slight redness
+Expected Results Improved texture, radiance, and regeneration over weeks
+Price Rp 3.000.000
+Key Benefits Cell renewal, Collagen boost, Multi-concern treatment
+
+6. Restylane Vital Light
+Service Name Restylane Vital Light
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A hyaluronic acid-based treatment designed to restore the skin's natural hydration
+and radiance, delivering a subtle, natural-looking glow while smoothing fine lines.
+Effective for face, neck, and hands.
+Suitable For Dehydrated skin on face, neck, hands
+Procedure Consultation, HA micro-injections
+Downtime Minimal, slight swelling
+Expected Results Hydrated, plumper, more youthful-looking skin
+Price Rp 4.800.000
+Key Benefits Deep hydration, Natural glow, Works on delicate areas
+
+7. Glow and Shine Therapy
+Service Name Glow and Shine Therapy
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Encompasses a range of skin treatments designed to enhance radiance and
+luminosity, boosting hydration and addressing dullness for a healthier, more vibrant
+appearance.
+Suitable For Dull, lackluster skin
+Procedure Consultation, hydrating/brightening injectable treatment
+Downtime Minimal
+Expected Results Healthier, more vibrant, radiant appearance
+Price Rp 2.500.000
+Key Benefits Radiance boost, Hydration, Addresses dullness
+
+8. DNA Salmon PDRN + HA Meso Rejuve
+Service Name DNA Salmon PDRN + HA Meso Rejuve
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Combines the regenerative power of salmon DNA with hyaluronic acid to deliver
+exceptional skin rejuvenation, promoting deep hydration, stimulating collagen
+production, and enhancing skin elasticity.
+Suitable For Aging, dull, dehydrated skin
+Procedure Consultation, PDRN + HA mesotherapy injections
+Downtime Minimal, slight redness
+Expected Results Improved texture, reduced fine lines, radiant complexion
+Price Rp 1.500.000
+Key Benefits Regenerative PDRN, Deep hydration, Collagen stimulation
+
+9. Jelly Glow
+Service Name Jelly Glow
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A complex rejuvenator for intensive anti-aging, formulated with Defined Cell Culture
+Media 4 (DCCM4), Polynucleotide (PN), and Hyaluronic Acid (HA). Activates skin
+self-rejuvenation and improves elasticity and density.
+Suitable For Intensive anti-aging needs
+Procedure Consultation, DCCM4/PN/HA injections
+Downtime Minimal, slight redness
+Expected Results Smoother, repaired texture with improved density
+Price Rp 4.000.000
+Key Benefits Triple-action formula, Deep moisture, Collagen stimulation
+
+10. Botox Allergan
+Service Name Botox Allergan
+Treatment Category Injectables
+Duration 20 Mins
+Tag (Optional) Premium
+Description A renowned treatment designed to diminish the appearance of fine lines and
+wrinkles by temporarily relaxing muscles responsible for facial expressions —
+forehead, crow's feet, and frown lines.
+Suitable For Forehead lines, crow's feet, frown lines
+Procedure Consultation, targeted muscle-relaxing injections
+Downtime Minimal, avoid lying down for 4 hours
+Expected Results Smoother, more youthful appearance within 3-7 days
+Price Rp 95.000 (1 Unit)
+Key Benefits Premium brand, Precise results, Minimal downtime
+
+11. Botox Korea
+Service Name Botox Korea
+Treatment Category Injectables
+Duration 20 Mins
+Tag (Optional) -
+Description Korean botulinum toxin often used in aesthetic procedures, working by inhibiting
+nerve signals that move muscles, producing a smoothing and relaxing effect on the
+treated area.
+Suitable For Fine lines, wrinkles, expression lines
+Procedure Consultation, targeted muscle-relaxing injections
+Downtime Minimal, avoid lying down for 4 hours
+Expected Results Reduced fine lines and wrinkles within days
+Price Rp 50.000 (1 Unit)
+Key Benefits Budget-friendly option, Smoothing effect, Minimal downtime
+
+12. No Sweat Therapy – Underarm
+Service Name No Sweat Therapy – Underarm
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A highly effective solution for managing underarm hyperhidrosis using Botox
+injections that temporarily block nerve signals responsible for overactive sweat
+glands.
+Suitable For Underarm hyperhidrosis (excessive sweating)
+Procedure Consultation, targeted Botox injections in underarm area
+Downtime No downtime
+Expected Results Dramatic decrease in sweating lasting months
+Price Rp 4.000.000
+Key Benefits Long-lasting relief, No downtime, Confidence boost
+
+13. No Sweat Therapy – Hand
+Service Name No Sweat Therapy – Hand
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description An effective solution for palmar hyperhidrosis, using Botox injections that target
+overactive sweat glands in the palms by blocking nerve signals responsible for
+excess sweat production.
+Suitable For Palmar hyperhidrosis (sweaty hands)
+Procedure Consultation, targeted Botox injections in palms
+Downtime Minimal downtime
+Expected Results Noticeably drier hands with lasting results
+Price Rp 4.500.000
+Key Benefits Improved comfort, Enhanced confidence, Lasting results
+
+14. No Sweat Therapy – Feet
+Service Name No Sweat Therapy – Feet
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description An effective treatment for plantar hyperhidrosis, using Botox injections to target
+overactive sweat glands in the feet, temporarily blocking nerve signals responsible
+for excess sweat production.
+Suitable For Plantar hyperhidrosis (sweaty feet)
+Procedure Consultation, targeted Botox injections in feet
+Downtime Minimal discomfort
+Expected Results Significantly drier feet with long-lasting results
+Price Rp 4.500.000
+Key Benefits Long-lasting results, Improved comfort in shoes, Boosted confidence
+
+15. Restylane Kysse (Lip Filler)
+Service Name Restylane Kysse (Lip Filler)
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) Most Popular
+Description A dermal filler designed to enhance lip volume and smooth lines around the mouth,
+providing natural-looking, fuller lips while maintaining soft, flexible movement.
+Suitable For Thin lips, lip asymmetry, lip lines
+Procedure Consultation, numbing, lip filler injection
+Downtime 1-3 days swelling
+Expected Results Beautifully plump, natural-finish lips
+Price Rp 4.800.000
+Key Benefits Natural movement, Long-lasting, Defined lip shape
+
+16. Restylane Lyft
+Service Name Restylane Lyft
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description A dermal filler designed to restore volume and lift to the cheeks and midface,
+smoothing wrinkles and providing a subtle lift to enhance facial contours.
+Suitable For Volume loss in cheeks/midface
+Procedure Consultation, numbing, filler injection
+Downtime 1-3 days swelling/bruising possible
+Expected Results Natural-looking volume and youthful contour
+Price Rp 5.000.000
+Key Benefits Volume restoration, Facial contouring, Long-lasting
+
+17. Teosyal RHA – Ultra Deep
+Service Name Teosyal RHA – Ultra Deep
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) Premium
+Description A premium dermal filler featuring Resilient Hyaluronic Acid technology, specially
+designed for deep facial areas, providing natural-looking volume while adapting to
+facial movements.
+Suitable For Deep volume loss areas
+Procedure Consultation, numbing, deep-plane filler injection
+Downtime 1-3 days swelling possible
+Expected Results Natural-looking volume lasting up to 15 months
+Price Rp 6.000.000
+Key Benefits Long-lasting up to 15 months, Adapts to movement, Minimal downtime
+
+18. Teosyal RHA 4
+Service Name Teosyal RHA 4
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Premium dermal filler with Resilient Hyaluronic Acid technology for deep facial
+areas, providing natural-looking volume that adapts to facial movements.
+Suitable For Deep volume loss areas
+Procedure Consultation, numbing, filler injection
+Downtime 1-3 days swelling possible
+Expected Results Natural-looking volume, long-lasting results
+Price Rp 5.500.000
+Key Benefits Natural adaptability, Long-lasting, Minimal downtime
+
+19. Teosyal RHA 3
+Service Name Teosyal RHA 3
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Premium dermal filler with Resilient Hyaluronic Acid technology, providing
+natural-looking volume with adaptability to facial expressions for moderate depth
+areas.
+Suitable For Moderate volume loss areas
+Procedure Consultation, numbing, filler injection
+Downtime 1-3 days swelling possible
+Expected Results Natural-looking volume, long-lasting results
+Price Rp 5.300.000
+Key Benefits Natural adaptability, Long-lasting, Minimal downtime
+
+20. Teosyal RHA 2
+Service Name Teosyal RHA 2
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Premium dermal filler with Resilient Hyaluronic Acid technology, ideal for finer lines
+and lighter volume correction with natural movement.
+Suitable For Fine lines, lighter volume correction
+Procedure Consultation, numbing, filler injection
+Downtime 1-2 days swelling possible
+Expected Results Natural, subtle volume correction
+Price Rp 5.000.000
+Key Benefits Subtle natural results, Long-lasting, Minimal downtime
+
+21. Filler Dissolve – Small
+Service Name Filler Dissolve – Small
+Treatment Category Injectables
+Duration 20 Mins
+Tag (Optional) -
+Description Uses hyaluronidase to safely and effectively dissolve unwanted dermal fillers. Ideal
+for minor adjustments, targeting small areas to refine and restore natural look.
+Suitable For Minor filler correction
+Procedure Consultation, hyaluronidase injection
+Downtime Minimal, slight swelling
+Expected Results Smooth transition back to natural contours
+Price Rp 900.000
+Key Benefits Precise correction, Quick procedure, Restores natural look
+
+22. Filler Dissolve – Medium
+Service Name Filler Dissolve – Medium
+Treatment Category Injectables
+Duration 20 Mins
+Tag (Optional) -
+Description Uses hyaluronidase to safely dissolve unwanted dermal fillers, suitable for moderate
+adjustments providing comprehensive removal for a balanced appearance.
+Suitable For Moderate filler correction
+Procedure Consultation, hyaluronidase injection
+Downtime Minimal, slight swelling
+Expected Results Balanced, natural appearance restored
+Price Rp 1.500.000
+Key Benefits Comprehensive removal, Balanced results, Minimally invasive
+
+23. Filler Dissolve – Large
+Service Name Filler Dissolve – Large
+Treatment Category Injectables
+Duration 30 Mins
+Tag (Optional) -
+Description Uses hyaluronidase to safely dissolve unwanted dermal fillers, suitable for moderate
+to large adjustments providing comprehensive removal for a balanced appearance.
+Suitable For Large-area filler correction
+Procedure Consultation, hyaluronidase injection
+Downtime Minimal, slight swelling
+Expected Results Comprehensive correction, balanced appearance
+Price Rp 2.000.000
+Key Benefits Comprehensive removal, Full correction, Precise and tailored
+
+24. Thread Lift – Premium
+Service Name Thread Lift – Premium
+Treatment Category Injectables
+Duration 60 Mins
+Tag (Optional) Premium
+Description A sophisticated non-surgical procedure designed to rejuvenate and enhance
+appearance by lifting and tightening sagging skin, using dissolvable threads to
+stimulate natural collagen production.
+Suitable For Sagging skin on face, neck, jawline
+Procedure Consultation, numbing, thread insertion (2 pcs)
+Downtime 3-5 days mild swelling/bruising
+Expected Results Refined, youthful contour with improved firmness
+Price Rp 2.500.000 (2 pcs)
+Key Benefits Immediate lift, Collagen stimulation, Long-lasting
+
+25. Nose Thread Lift
+Service Name Nose Thread Lift
+Treatment Category Injectables
+Duration 45 Mins
+Tag (Optional) -
+Description An advanced thread lift option offering a more pronounced lift and long-lasting
+results, designed to restore volume, improve skin elasticity, and create a more
+defined nose contour.
+Suitable For Nose contouring, bridge definition
+Procedure Consultation, numbing, thread insertion
+Downtime 3-5 days mild swelling
+Expected Results More defined, lifted nose contour
+Price Rp 4.000.000
+Key Benefits Non-surgical nose lift, Long-lasting, Minimal downtime
+
+26. PRP Injection
+Service Name PRP Injection
+Treatment Category Injectables
+Duration 45 Mins
+Tag (Optional) -
+Description A natural and effective way to revitalize skin using platelets derived from your own
+blood, stimulating collagen production and accelerating healing to smooth fine lines
+and improve texture.
+Suitable For Fine lines, dull or tired-looking skin
+Procedure Blood draw, centrifuge separation, PRP injection
+Downtime 1-2 days mild swelling
+Expected Results Firmer, brighter, more radiant skin
+Price Rp 3.500.000 (Single) / Rp 6.000.000 (Set of 3)
+Key Benefits Uses your own natural growth factors, Minimal downtime, Non-invasive
+
+27. PRP RF Microneedling
+Service Name PRP RF Microneedling
+Treatment Category Injectables
+Duration 60 Mins
+Tag (Optional) -
+Description Deep Focus Fractional PRP Treatment combines advanced microneedling with PRP
+to rejuvenate and repair skin, using EndyMed's RF microneedling technology
+alongside PRP for accelerated healing.
+Suitable For Fine lines, uneven texture, dullness
+Procedure Blood draw, RF microneedling, PRP application
+Downtime 1-3 days redness
+Expected Results Smoother, more youthful appearance with firmer skin
+Price Rp 5.000.000 (Single) / Rp 12.000.000 (Set of 3)
+Key Benefits Combined RF + PRP, Collagen stimulation, Enhanced healing
+
+LASER (6 Treatments)
+1. Pico Laser – Rejuvenation
+Service Name Pico Laser – Rejuvenation
+Treatment Category Laser
+Duration 30 Mins
+Tag (Optional) Most Popular
+Description Offers a gentle yet powerful solution to revitalize skin. By targeting fine lines,
+pigmentation, and uneven texture, the laser stimulates collagen production and
+restores a youthful glow.
+Suitable For Fine lines, pigmentation, uneven texture
+Procedure Cleansing, pico laser passes, soothing gel/mask
+Downtime Minimal, mild redness a few hours
+Expected Results Smoother, brighter, more radiant skin
+Price Rp 3.000.000 (Single) / Rp 8.000.000 (Set of 3) / Rp 10.000.000 (Set of 5)
+Key Benefits Collagen stimulation, Minimal downtime, Improved radiance
+
+2. Pico Laser – Melasma
+Service Name Pico Laser – Melasma
+Treatment Category Laser
+Duration 30 Mins
+Tag (Optional) -
+Description An advanced solution for treating melasma, effectively targeting and breaking down
+excess pigmentation without harming surrounding skin, reducing dark patches and
+restoring even skin tone.
+Suitable For Melasma, dark patches
+Procedure Cleansing, targeted pico laser passes
+Downtime Minimal discomfort
+Expected Results Clearer, brighter, more even skin over sessions
+Price Rp 3.000.000 (Single) / Rp 9.000.000 (Set of 3) / Rp 12.500.000 (Set of 5)
+Key Benefits Targets melasma specifically, Minimal downtime, Even skin tone
+
+3. Pico Laser – Tattoo Removal (Extra Small)
+Service Name Pico Laser – Tattoo Removal (Extra Small)
+Treatment Category Laser
+Duration 30 Mins
+Tag (Optional) -
+Description Uses ultrashort pulses to break down ink particles with precision, gradually fading
+unwanted tattoos while minimizing damage to surrounding skin.
+Suitable For Small/extra-small tattoos
+Procedure Cleansing, pico laser passes over tattoo area
+Downtime Minimal, scabbing possible
+Expected Results Gradual tattoo fading over multiple sessions
+Price Rp 800.000 (Single) / Rp 1.800.000 (Set of 3)
+Key Benefits Precise ink breakdown, Fewer sessions needed, Minimal downtime
+
+4. Pico Laser – Tattoo Removal (Small)
+Service Name Pico Laser – Tattoo Removal (Small)
+Treatment Category Laser
+Duration 30 Mins
+Tag (Optional) -
+Description Uses ultrashort pulses to break down ink particles with precision, gradually fading
+unwanted tattoos while minimizing damage to surrounding skin.
+Suitable For Small tattoos
+Procedure Cleansing, pico laser passes over tattoo area
+Downtime Minimal, scabbing possible
+Expected Results Gradual tattoo fading over multiple sessions
+Price Rp 1.500.000 (Single) / Rp 3.850.000 (Set of 3)
+Key Benefits Precise ink breakdown, Efficient fading, Minimal downtime
+
+5. Pico Laser – Tattoo Removal (Medium)
+Service Name Pico Laser – Tattoo Removal (Medium)
+Treatment Category Laser
+Duration 45 Mins
+Tag (Optional) -
+Description Uses ultrashort pulses to break down ink particles with precision, gradually fading
+unwanted tattoos while minimizing damage to surrounding skin.
+Suitable For Medium-sized tattoos
+Procedure Cleansing, pico laser passes over tattoo area
+Downtime Minimal, scabbing possible
+Expected Results Gradual tattoo fading over multiple sessions
+Price Rp 2.500.000 (Single) / Rp 6.400.000 (Set of 3)
+Key Benefits Precise ink breakdown, Efficient fading, Minimal downtime
+
+6. Pico Laser – Tattoo Removal (Large)
+Service Name Pico Laser – Tattoo Removal (Large)
+Treatment Category Laser
+Duration 60 Mins
+Tag (Optional) -
+Description Uses ultrashort pulses to break down ink particles with precision, gradually fading
+unwanted tattoos while minimizing damage to surrounding skin.
+Suitable For Large tattoos
+Procedure Cleansing, pico laser passes over tattoo area
+Downtime Minimal, scabbing possible
+Expected Results Gradual tattoo fading over multiple sessions
+Price Rp 3.500.000 (Single) / Rp 8.950.000 (Set of 3)
+Key Benefits Precise ink breakdown, Efficient fading, Minimal downtime
+
+BODY (20 Treatments)
+1. EMS Body Sculpting (Tummy, Booty, Arms)
+Service Name EMS Body Sculpting (Tummy, Booty, Arms)
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) Most Popular
+Description EMS treatment effectively tones and sculpts the tummy, booty, and arms by
+stimulating muscle contractions, enhancing definition, and improving strength
+without downtime.
+Suitable For Muscle toning, body contouring
+Procedure EMS device application over target muscle groups
+Downtime No downtime
+Expected Results Firmer, more contoured body visible within a few sessions
+Price Rp 850.000 (Single) / Rp 2.400.000 (Set of 3) / Rp 3.500.000 (Set of 5) / Rp 6.500.000
+(Set of 10)
+Key Benefits Non-invasive muscle toning, No downtime, Visible results in weeks
+
+2. Deep Focus Full Face Contouring
+Service Name Deep Focus Full Face Contouring
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description Powered by the EndyMed machine, offers a non-invasive way to lift and sculpt the
+face using radiofrequency technology, tightening skin and enhancing facial contours.
+Suitable For Facial sagging, loss of definition
+Procedure Cleansing, EndyMed RF pass over full face
+Downtime No downtime, mild warmth
+Expected Results More youthful, defined facial contour
+Price Rp 1.700.000 (Single) / Rp 4.500.000 (Set of 3) / Rp 6.000.000 (Set of 5)
+Key Benefits Non-invasive lifting, Improved elasticity, Defined contours
+
+3. Deep Focus Half/Lower Face Contouring
+Service Name Deep Focus Half/Lower Face Contouring
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) -
+Description Non-invasive radiofrequency contouring focused on the lower/half face to tighten
+skin and enhance jawline and lower facial definition.
+Suitable For Lower face sagging, jawline definition
+Procedure Cleansing, EndyMed RF pass over lower/half face
+Downtime No downtime
+Expected Results More defined jawline and lower facial contour
+Price Rp 1.500.000 (Single) / Rp 3.600.000 (Set of 3) / Rp 5.000.000 (Set of 5)
+Key Benefits Targeted contouring, Non-invasive, No downtime
+
+4. Deep Focus Neck Contouring
+Service Name Deep Focus Neck Contouring
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) -
+Description Non-invasive radiofrequency treatment targeting the neck area to tighten skin,
+reduce sagging, and improve overall neck contour.
+Suitable For Neck sagging, loose skin
+Procedure Cleansing, EndyMed RF pass over neck
+Downtime No downtime
+Expected Results Tighter, more defined neck contour
+Price Rp 1.500.000 (Single) / Rp 4.000.000 (Set of 3)
+Key Benefits Neck-specific tightening, Non-invasive, No downtime
+
+5. Deep Focus Decolletage Contouring
+Service Name Deep Focus Decolletage Contouring
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) -
+Description Non-invasive radiofrequency treatment for the decolletage area to tighten skin and
+improve texture and firmness.
+Suitable For Decolletage sagging, uneven texture
+Procedure Cleansing, EndyMed RF pass over decolletage
+Downtime No downtime
+Expected Results Firmer, smoother decolletage skin
+Price Rp 1.100.000 (Single) / Rp 2.950.000 (Set of 3)
+Key Benefits Targeted decolletage care, Non-invasive, No downtime
+
+6. Deep Focus Body Contouring (Abs/Thigh/Arms/Butt/Calf)
+Service Name Deep Focus Body Contouring (Abs/Thigh/Arms/Butt/Calf)
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description Uses advanced radiofrequency technology to tighten skin and reduce stubborn fat in
+targeted areas, giving smoother, firmer skin and a more contoured silhouette with
+immediate results.
+Suitable For Localized fat, loose skin on body
+Procedure EndyMed RF pass over target body area
+Downtime No downtime
+Expected Results 1-3 cm reduction in treated area, smoother contour
+Price Rp 2.500.000 (Single) / Rp 6.600.000 (Set of 3) / Rp 10.000.000 (Set of 5) / Rp
+15.000.000 (Set of 10)
+Key Benefits Immediate 1-3cm reduction, Non-invasive, Firmer skin
+
+7. Deep Focus Brafat / Love Handle Contouring
+Service Name Deep Focus Brafat / Love Handle Contouring
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) -
+Description Targeted radiofrequency body contouring designed for stubborn brafat and love
+handle areas, tightening skin and reducing localized fat for a more sculpted
+silhouette.
+Suitable For Brafat, love handles
+Procedure EndyMed RF pass over target area
+Downtime No downtime
+Expected Results Smoother, more sculpted silhouette
+Price Rp 1.500.000 (Single) / Rp 4.000.000 (Set of 3) / Rp 5.500.000 (Set of 5) / Rp
+9.000.000 (Set of 10)
+Key Benefits Targeted fat reduction, Non-invasive, No downtime
+
+8. Diamond Contour / Meso Lipo – Contour Prime
+Service Name Diamond Contour / Meso Lipo – Contour Prime
+Treatment Category Body
+Duration 30 Mins
+Tag (Optional) -
+Description Acts as a powerful fat burner targeting localized fat deposits through precise
+micro-injections that deliver active ingredients directly into problem areas,
+promoting fat cell breakdown.
+Suitable For Localized fat deposits
+Procedure Consultation, micro-injection lipolytic treatment
+Downtime Minimal, slight swelling
+Expected Results Slimmer, more sculpted silhouette over sessions
+Price Rp 900.000
+Key Benefits Targeted fat breakdown, Non-invasive, Body contouring
+
+9. Diamond Contour / Meso Lipo – Contour Platinum
+Service Name Diamond Contour / Meso Lipo – Contour Platinum
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description An enhanced version of the Meso Lipo fat-burning treatment, using precise
+micro-injections for more comprehensive localized fat reduction and body
+contouring.
+Suitable For Larger localized fat deposits
+Procedure Consultation, micro-injection lipolytic treatment
+Downtime Minimal, slight swelling
+Expected Results Slimmer, more sculpted silhouette over sessions
+Price Rp 2.500.000
+Key Benefits Enhanced fat breakdown, Body contouring, Confidence boost
+
+10. Diamond Contour / Meso Lipo – Contour Super Platinum
+Service Name Diamond Contour / Meso Lipo – Contour Super Platinum
+Treatment Category Body
+Duration 60 Mins
+Tag (Optional) Premium
+Description The most intensive Meso Lipo option for maximum localized fat reduction, using
+precise micro-injections delivering active ingredients for comprehensive body
+contouring.
+Suitable For Significant localized fat deposits
+Procedure Consultation, extensive micro-injection lipolytic treatment
+Downtime Minimal, slight swelling
+Expected Results Maximum slimming and sculpting effect over sessions
+Price Rp 3.000.000
+Key Benefits Maximum fat reduction, Comprehensive contouring, Confident silhouette
+
+11. Foot Reflexology
+Service Name Foot Reflexology
+Treatment Category Body
+Duration 30/60/90 Mins
+Tag (Optional) -
+Description A therapeutic treatment that focuses on stimulating specific pressure points on the
+feet corresponding to different areas of the body, promoting relaxation and
+improving circulation.
+Suitable For Stress, tension, poor circulation
+Procedure Foot pressure-point massage sequence
+Downtime No downtime
+Expected Results Calm, balanced feeling with reduced stress
+Price Rp 150.000 (30 Min) / Rp 250.000 (60 Min) / Rp 400.000 (90 Min)
+Key Benefits Improved circulation, Deep relaxation, Stress relief
+
+12. Balinese Massage
+Service Name Balinese Massage
+Treatment Category Body
+Duration 30/60/90/120 Mins
+Tag (Optional) Most Popular
+Description Combines gentle stretches, acupressure, and aromatherapy to restore balance and
+harmony to the body, working deeply to release tension and improve circulation.
+Suitable For Muscle tension, stress, relaxation
+Procedure Traditional Balinese massage technique with aromatherapy oils
+Downtime No downtime
+Expected Results Deep relaxation, eased muscle stiffness, renewed vitality
+Price Rp 180.000 (30 Min) / Rp 350.000 (60 Min) / Rp 450.000 (90 Min) / Rp 600.000 (120
+Min)
+Key Benefits Traditional technique, Aromatherapy, Deep relaxation
+
+13. Sport Massage
+Service Name Sport Massage
+Treatment Category Body
+Duration 60/90 Mins
+Tag (Optional) -
+Description A targeted therapy designed to relieve muscle tension, improve flexibility, and aid in
+the recovery process after physical activity, working to prevent injury and reduce
+soreness.
+Suitable For Athletes, active individuals, muscle recovery
+Procedure Deep tissue massage technique targeting muscle groups
+Downtime No downtime
+Expected Results Improved mobility, reduced fatigue, faster recovery
+Price Rp 450.000 (60 Min) / Rp 650.000 (90 Min)
+Key Benefits Deep tissue relief, Injury prevention, Faster recovery
+
+14. IV Drip – Jet Lag Recovery
+Service Name IV Drip – Jet Lag Recovery
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description An IV drip therapy specifically designed to combat fatigue and disorientation from
+long-distance travel, delivering fluids, vitamins, and electrolytes to restore balance
+and boost energy.
+Suitable For Post-travel fatigue
+Procedure IV line insertion, vitamin/electrolyte infusion
+Downtime No downtime
+Expected Results Refreshed, recharged, improved alertness
+Price Rp 1.100.000
+Key Benefits Rapid rehydration, Boosted energy, Restored balance
+
+15. IV Drip – Pre-Party Boost
+Service Name IV Drip – Pre-Party Boost
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description An invigorating IV drip therapy designed to prepare you for a night of celebration,
+delivering vitamins, minerals, and hydration to enhance energy and vitality.
+Suitable For Pre-event energy boost
+Procedure IV line insertion, customized vitamin infusion
+Downtime No downtime
+Expected Results Revitalized, luminous complexion, increased stamina
+Price Rp 1.100.000
+Key Benefits Energy boost, Luminous complexion, Increased stamina
+
+16. IV Drip – Hangover Recovery
+Service Name IV Drip – Hangover Recovery
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) Most Popular
+Description An effective IV drip therapy designed to alleviate discomfort of post-celebration
+fatigue, replenishing fluids, electrolytes, and vitamins to combat dehydration.
+Suitable For Hangover, dehydration
+Procedure IV line insertion, restorative electrolyte/vitamin infusion
+Downtime No downtime
+Expected Results Rapid relief from headaches and fatigue
+Price Rp 1.300.000
+Key Benefits Fast relief, Rehydration, Renewed clarity
+
+17. IV Drip – Bali Belly Recovery
+Service Name IV Drip – Bali Belly Recovery
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description An essential IV drip therapy tailored to alleviate discomfort of digestive issues often
+experienced while traveling, delivering fluids, electrolytes, and nutrients to
+rehydrate the body.
+Suitable For Digestive upset, traveler's illness
+Procedure IV line insertion, rehydration/electrolyte infusion
+Downtime No downtime
+Expected Results Reduced nausea and bloating, restored energy
+Price Rp 1.500.000
+Key Benefits Digestive relief, Rehydration, Restored energy
+
+18. IV Drip – Forever Young
+Service Name IV Drip – Forever Young
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description A rejuvenating IV drip therapy designed to promote vitality and enhance natural
+glow, combining antioxidants, vitamins, and hydration to support skin health and
+combat aging.
+Suitable For Anti-aging, skin vitality support
+Procedure IV line insertion, antioxidant/vitamin infusion
+Downtime No downtime
+Expected Results Invigorated feeling with radiant complexion
+Price Rp 900.000
+Key Benefits Antioxidant boost, Radiant complexion, Youthful enthusiasm
+
+19. IV Drip – Active Fit Boost
+Service Name IV Drip – Active Fit Boost
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description A dynamic IV drip therapy tailored for those seeking to enhance physical
+performance and recovery, delivering essential nutrients, electrolytes, and
+hydration to support muscle function.
+Suitable For Athletes, active lifestyle support
+Procedure IV line insertion, nutrient/electrolyte infusion
+Downtime No downtime
+Expected Results Increased energy, reduced fatigue, improved recovery
+Price Rp 800.000
+Key Benefits Muscle function support, Reduced fatigue, Faster recovery
+
+20. IV Drip – Slim & Fit
+Service Name IV Drip – Slim & Fit
+Treatment Category Body
+Duration 45 Mins
+Tag (Optional) -
+Description A specialized IV drip therapy designed to support weight management and fitness
+journey, combining vitamins, minerals, and nutrients that promote metabolism and
+boost energy.
+Suitable For Weight management support
+Procedure IV line insertion, metabolism-supporting infusion
+Downtime No downtime
+Expected Results Revitalized, improved stamina, renewed focus
+Price Rp 850.000
+Key Benefits Metabolism support, Boosted energy, Hydration
+
+HAIR (20 Treatments)
+1. Laser Hair Removal – Areola
+Service Name Laser Hair Removal – Areola
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) -
+Description Laser Hair Removal offers a long-lasting solution to unwanted hair, using precise
+laser technology to target and reduce hair growth at the root for smoother, silkier
+skin over time.
+Suitable For Unwanted hair on areola area
+Procedure Skin prep, targeted laser passes over area
+Downtime No downtime, mild redness possible
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+2. Laser Hair Removal – Belly Button
+Service Name Laser Hair Removal – Belly Button
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces hair growth at the root around the belly
+button area, leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted hair around belly button
+Procedure Skin prep, targeted laser passes over area
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+3. Laser Hair Removal – Chin
+Service Name Laser Hair Removal – Chin
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted chin hair growth at the root,
+leaving skin smoother and reducing ingrown hairs over time.
+Suitable For Unwanted chin hair
+Procedure Skin prep, targeted laser passes over chin
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+4. Laser Hair Removal – Upper Lip
+Service Name Laser Hair Removal – Upper Lip
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) Most Popular
+Description Laser Hair Removal targets and reduces unwanted upper lip hair growth at the root,
+leaving skin smoother with a sleek, hair-free look.
+Suitable For Unwanted upper lip hair
+Procedure Skin prep, targeted laser passes over upper lip
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 400.000 (Single) / Rp 1.125.000 (Set 3) / Rp 1.750.000 (Set 5) / Rp 3.000.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+5. Laser Hair Removal – Upper Lip & Chin
+Service Name Laser Hair Removal – Upper Lip & Chin
+Treatment Category Hair
+Duration 20 Mins
+Tag (Optional) -
+Description Combined laser hair removal for upper lip and chin, targeting and reducing hair
+growth at the root for smoother, hair-free skin.
+Suitable For Unwanted upper lip and chin hair
+Procedure Skin prep, targeted laser passes over both areas
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 500.000 (Single) / Rp 1.350.000 (Set 3) / Rp 2.000.000 (Set 5) / Rp 3.500.000 (Set
+10)
+Key Benefits Combined treatment value, Long-lasting reduction, Minimal maintenance
+
+6. Laser Hair Removal – Lower Face
+Service Name Laser Hair Removal – Lower Face
+Treatment Category Hair
+Duration 20 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted hair growth across the lower face
+at the root, leaving skin smoother and more refined.
+Suitable For Unwanted lower face hair
+Procedure Skin prep, targeted laser passes over lower face
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 650.000 (Single) / Rp 1.650.000 (Set 3) / Rp 2.500.000 (Set 5) / Rp 4.200.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+7. Laser Hair Removal – Full Face
+Service Name Laser Hair Removal – Full Face
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted hair growth across the full face at
+the root, leaving skin smoother with a sleek, hair-free look.
+Suitable For Unwanted full face hair
+Procedure Skin prep, targeted laser passes over full face
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 850.000 (Single) / Rp 2.400.000 (Set 3) / Rp 3.650.000 (Set 5) / Rp 6.500.000 (Set
+10)
+Key Benefits Long-lasting reduction, Complete coverage, Minimal maintenance
+
+8. Laser Hair Removal – Underarm Woman
+Service Name Laser Hair Removal – Underarm Woman
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) Most Popular
+Description Laser Hair Removal targets and reduces unwanted underarm hair growth at the
+root, leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted underarm hair (woman)
+Procedure Skin prep, targeted laser passes over underarms
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 400.000 (Single) / Rp 1.100.000 (Set 3) / Rp 1.700.000 (Set 5) / Rp 3.000.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+9. Laser Hair Removal – Underarm Man
+Service Name Laser Hair Removal – Underarm Man
+Treatment Category Hair
+Duration 15 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted underarm hair growth at the
+root, leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted underarm hair (man)
+Procedure Skin prep, targeted laser passes over underarms
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 400.000 (Single) / Rp 1.100.000 (Set 3) / Rp 1.700.000 (Set 5) / Rp 3.000.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+10. Laser Hair Removal – Bikini Line Woman/Man
+Service Name Laser Hair Removal – Bikini Line Woman/Man
+Treatment Category Hair
+Duration 20 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted bikini line hair growth at the root,
+leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted bikini line hair
+Procedure Skin prep, targeted laser passes over bikini area
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 800.000 (Single) / Rp 2.250.000 (Set 3) / Rp 3.500.000 (Set 5) / Rp 6.000.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+11. Laser Hair Removal – Brazilian Woman/Man
+Service Name Laser Hair Removal – Brazilian Woman/Man
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal offers complete Brazilian-area hair reduction, targeting hair
+growth at the root for smoother, longer-lasting results than traditional hair removal
+methods.
+Suitable For Unwanted Brazilian-area hair
+Procedure Skin prep, targeted laser passes over full area
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.000.000 (Single) / Rp 2.700.000 (Set 3) / Rp 4.250.000 (Set 5) / Rp 7.500.000
+(Set 10)
+Key Benefits Complete coverage, Long-lasting reduction, Minimal maintenance
+
+12. Laser Hair Removal – Chest Male
+Service Name Laser Hair Removal – Chest Male
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted chest hair growth at the root,
+leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted chest hair (male)
+Procedure Skin prep, targeted laser passes over chest
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.000.000 (Single) / Rp 2.850.000 (Set 3) / Rp 4.500.000 (Set 5) / Rp 7.500.000
+(Set 10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+13. Laser Hair Removal – Abs Male
+Service Name Laser Hair Removal – Abs Male
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted abdominal hair growth at the
+root, leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted abs/stomach hair (male)
+Procedure Skin prep, targeted laser passes over abdomen
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.200.000 (Single) / Rp 3.300.000 (Set 3) / Rp 5.000.000 (Set 5) / Rp 9.000.000
+(Set 10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+14. Laser Hair Removal – Back
+Service Name Laser Hair Removal – Back
+Treatment Category Hair
+Duration 40 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted back hair growth at the root,
+leaving skin smoother with fewer ingrown hairs over time.
+Suitable For Unwanted back hair
+Procedure Skin prep, targeted laser passes over back
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.700.000 (Single) / Rp 4.500.000 (Set 3) / Rp 7.000.000 (Set 5) / Rp 12.000.000
+(Set 10)
+Key Benefits Full back coverage, Long-lasting reduction, Minimal maintenance
+
+15. Laser Hair Removal – Half Arm
+Service Name Laser Hair Removal – Half Arm
+Treatment Category Hair
+Duration 20 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted arm hair growth at the root,
+leaving skin smoother and silkier over time.
+Suitable For Unwanted half-arm hair
+Procedure Skin prep, targeted laser passes over half arm
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 850.000 (Single) / Rp 2.400.000 (Set 3) / Rp 3.600.000 (Set 5) / Rp 6.500.000 (Set
+10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+16. Laser Hair Removal – Full Arm
+Service Name Laser Hair Removal – Full Arm
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted arm hair growth at the root
+across the full arm, leaving skin smoother and silkier over time.
+Suitable For Unwanted full-arm hair
+Procedure Skin prep, targeted laser passes over full arm
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.500.000 (Single) / Rp 4.000.000 (Set 3) / Rp 6.000.000 (Set 5) / Rp 10.000.000
+(Set 10)
+Key Benefits Full coverage, Long-lasting reduction, Minimal maintenance
+
+17. Laser Hair Removal – Full Leg
+Service Name Laser Hair Removal – Full Leg
+Treatment Category Hair
+Duration 45 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted leg hair growth at the root across
+the full leg, leaving skin smoother and silkier over time.
+Suitable For Unwanted full-leg hair
+Procedure Skin prep, targeted laser passes over full leg
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 2.500.000 (Single) / Rp 6.500.000 (Set 3) / Rp 10.000.000 (Set 5) / Rp 18.000.000
+(Set 10)
+Key Benefits Full coverage, Long-lasting reduction, Minimal maintenance
+
+18. Laser Hair Removal – Half Leg
+Service Name Laser Hair Removal – Half Leg
+Treatment Category Hair
+Duration 30 Mins
+Tag (Optional) -
+Description Laser Hair Removal targets and reduces unwanted leg hair growth at the root,
+leaving skin smoother and silkier over time.
+Suitable For Unwanted half-leg hair
+Procedure Skin prep, targeted laser passes over half leg
+Downtime No downtime
+Expected Results Reduced hair growth, smoother skin over sessions
+Price Rp 1.500.000 (Single) / Rp 3.600.000 (Set 3) / Rp 5.500.000 (Set 5) / Rp 9.500.000
+(Set 10)
+Key Benefits Long-lasting reduction, Precise targeting, Minimal maintenance
+
+19. Laser Hair Removal – Full Body Man
+Service Name Laser Hair Removal – Full Body Man
+Treatment Category Hair
+Duration 90 Mins
+Tag (Optional) Premium
+Description Comprehensive Laser Hair Removal covering the full body for men, targeting and
+reducing hair growth at the root for smoother, silkier skin with results that last much
+longer than traditional methods.
+Suitable For Full-body hair reduction (male)
+Procedure Skin prep, targeted laser passes across full body
+Downtime No downtime
+Expected Results Reduced hair growth across the body, smoother skin over sessions
+Price Rp 7.000.000 (Single) / Rp 20.400.000 (Set 3) / Rp 32.500.000 (Set 5) / Rp
+50.000.000 (Set 10)
+Key Benefits Complete full-body coverage, Long-lasting reduction, Minimal maintenance
+
+20. Laser Hair Removal – Full Body Woman
+Service Name Laser Hair Removal – Full Body Woman
+Treatment Category Hair
+Duration 90 Mins
+Tag (Optional) Premium
+Description Comprehensive Laser Hair Removal covering the full body for women, targeting and
+reducing hair growth at the root for smoother, silkier skin with results that last much
+longer than traditional methods.
+Suitable For Full-body hair reduction (female)
+Procedure Skin prep, targeted laser passes across full body
+Downtime No downtime
+Expected Results Reduced hair growth across the body, smoother skin over sessions
+Price Rp 6.000.000 (Single) / Rp 17.400.000 (Set 3) / Rp 27.500.000 (Set 5) / Rp
+40.000.000 (Set 10)
+Key Benefits Complete full-body coverage, Long-lasting reduction, Minimal maintenance
+
+SALON (5 Treatments)
+1. Bronze Membership Package
+Service Name Bronze Membership Package
+Treatment Category Salon
+Duration Membership
+Tag (Optional) Package
+Description An exclusive membership package valued at 16 million (total worth 20 million+),
+bundling facial and machine treatments with gym access and salon credit for
+ongoing value.
+Suitable For Clients wanting bundled treatment + lifestyle perks
+Procedure 1 Facial Treatment, 1 Machine Treatment, 1-Month Gym Membership, 500K Shaz
+Salon Voucher, 20% OFF Raw Café
+Downtime N/A (package)
+Expected Results Ongoing access to treatments, gym, salon credit, and café discount
+Price Rp 15.000.000
+Key Benefits Best value bundle, Gym access, Salon voucher included, Café discount
+
+2. Silver Membership Package
+Service Name Silver Membership Package
+Treatment Category Salon
+Duration Membership
+Tag (Optional) Package
+Description An exclusive membership package valued at 27 million (total worth 32 million+),
+bundling facial and machine treatments with extended gym access and higher salon
+credit.
+Suitable For Clients wanting bundled treatment + lifestyle perks
+Procedure 1 Facial Treatment, 1 Machine Treatment, 3-Month Gym Membership, 1 Mil Shaz
+Salon Voucher, 20% OFF Raw Café
+Downtime N/A (package)
+Expected Results Ongoing access to treatments, gym, salon credit, and café discount
+Price Rp 25.000.000
+Key Benefits Extended gym access, Higher salon voucher, Great value, Café discount
+
+3. Gold Membership Package
+Service Name Gold Membership Package
+Treatment Category Salon
+Duration Membership
+Tag (Optional) Package
+Description An exclusive membership package valued at 38 million (total worth 48 million+),
+bundling multiple facial and machine treatments with 6-month gym access and
+generous salon credit.
+Suitable For Clients wanting premium bundled treatment + lifestyle perks
+Procedure 2 Facial Treatments, 2 Machine Treatments, 6-Month Gym Membership, 2 Mil Shaz
+Salon Voucher, 20% OFF Raw Café
+Downtime N/A (package)
+Expected Results Ongoing access to treatments, gym, salon credit, and café discount
+Price Rp 35.000.000
+Key Benefits More treatments included, 6-month gym access, Generous salon voucher, Café
+discount
+
+4. Platinum Membership Package
+Service Name Platinum Membership Package
+Treatment Category Salon
+Duration Membership
+Tag (Optional) Package
+Description An exclusive membership package valued at 55 million (total worth 75 million+),
+bundling multiple facial and machine treatments with a full year of gym access and
+personal training sessions.
+Suitable For Clients wanting comprehensive treatment + fitness bundle
+Procedure 3 Facial Treatments, 3 Machine Treatments, 1-Year Gym Membership, 5 Personal
+Training Sessions, 3 Mil Shaz Salon Voucher, 20% OFF Raw Café
+Downtime N/A (package)
+Expected Results Full-year access to treatments, gym, personal training, and salon credit
+Price Rp 50.000.000
+Key Benefits 1-year gym membership, Personal training included, High-value bundle, Café
+discount
+
+5. Royal Membership Package
+Service Name Royal Membership Package
+Treatment Category Salon
+Duration Membership
+Tag (Optional) Package · Best Value
+Description The most exclusive membership package valued at 82 million (total worth 120
+million+), bundling extensive facial and machine treatments with 2 years of gym
+access and 10 personal training sessions.
+Suitable For Clients wanting the ultimate treatment + fitness bundle
+Procedure 5 Facial Treatments, 6 Machine Treatments, 2-Year Gym Membership, 10 Personal
+Training Sessions, 5 Mil Shaz Salon Voucher, 20% OFF Raw Café
+Downtime N/A (package)
+Expected Results 2-year access to treatments, gym, personal training, and salon credit
+Price Rp 75.000.000
+Key Benefits Maximum treatments included, 2-year gym membership, 10 PT sessions, Highest
+value bundle
+"""
+
+with open('data.txt', 'w') as f:
+    f.write(data)
+

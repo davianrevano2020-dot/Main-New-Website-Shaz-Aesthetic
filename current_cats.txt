@@ -1,0 +1,227 @@
+
+  {
+    id: 'facial',
+    slug: 'facial',
+    name: 'Facial',
+    badge: 'Medical Skin Health',
+    shortDesc: 'Advanced medical facials, deep pore detox, exosome cellular infusions, and bespoke hydration therapies for clear, glowing, and resilient skin.',
+    fullDesc: 'Our medical-grade facials combine deep extraction, advanced peptide infusions, and exosome cellular therapies tailored to your skin barrier, acne profile, and hydration needs in tropical climates.',
+    img: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '6 Signature Protocols',
+    whatsappMessage: 'Hello SHAZ Clinic, I would like to inquire and book a consultation for Facial treatments.',
+    featuredTreatments: [
+      {
+        name: 'Signature Glass Skin Protocol',
+        desc: 'Deep multi-layer hydration, lactic acid gentle peel, and antioxidant infusion to achieve a translucent, poreless glow.',
+        duration: '75 Mins',
+        keyBenefits: ['Deep pore refinement', 'Intense moisture lock', 'Immediate luminosity'],
+        tag: 'Most Popular',
+        suitableFor: 'Dull, dehydrated, or textured skin',
+        procedure: 'Cleansing, mild peeling, serum infusion, LED mask',
+        downtime: 'No downtime, instant glow',
+        expectedResults: 'Radiant, hydrated skin lasting 2-4 weeks',
+        price: 'From Rp 1,500,000'
+      },
+      {
+        name: 'Exosome Cellular Rejuvenation',
+        desc: 'Cutting-edge stem-cell-derived exosome therapy delivering active growth factors to repair damaged barriers and accelerate collagen synthesis.',
+        duration: '90 Mins',
+        keyBenefits: ['Cellular barrier repair', 'Anti-inflammatory', 'Elasticity recovery']
+      },
+      {
+        name: 'Deep Clarifying & Acne Detox',
+        desc: 'Ultrasonic cleansing, medical comedone extraction, salicylic clarifying solution, and anti-bacterial Blue LED light therapy.',
+        duration: '75 Mins',
+        keyBenefits: ['Calms active breakouts', 'Reduces excess sebum', 'Prevents post-acne marks']
+      },
+      {
+        name: 'Hydra-Oxygen Recharging Facial',
+        desc: 'Pressurized hyperbaric oxygen combined with pure hyaluronic acid to instantly revive tired, sun-exposed, and dehydrated skin.',
+        duration: '60 Mins',
+        keyBenefits: ['Deep oxygenation', 'Soothes sunburn', 'Plumps fine dehydration lines']
+      }
+    ]
+  },
+  {
+    id: 'injectables',
+    slug: 'injectables',
+    name: 'Injectables',
+    badge: 'Doctor Performed',
+    shortDesc: 'Master-injected neuromodulators, premium dermal fillers, polynucleotide biostimulators, and skin boosters for subtle, natural anatomical harmony.',
+    fullDesc: 'Performed exclusively by certified aesthetic physicians, our structural injectables prioritize facial balancing, safety, and undetectable natural enhancement that ages gracefully with you.',
+    img: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '8 Specialized Procedures',
+    whatsappMessage: 'Hello SHAZ Clinic, I would like to consult with a doctor regarding Injectables & Botox.',
+    featuredTreatments: [
+      {
+        name: 'Precision Neuromodulators & Botox',
+        desc: 'Targeted micro-dosing of FDA-approved neuromodulators to soften expression lines while preserving natural facial expressions.',
+        duration: '30 - 45 Mins',
+        keyBenefits: ['Softens crow\'s feet & forehead lines', 'Masseter jawline slimming', 'Zero downtime'],
+        tag: 'Doctor Exclusive',
+        suitableFor: 'Dynamic wrinkles, jaw clenching, anti-aging prevention',
+        procedure: 'Consultation, mapping, micro-injections',
+        downtime: 'No downtime (avoid rubbing area for 24h)',
+        expectedResults: 'Visible in 3-5 days, peaks at 14 days, lasts 3-6 months',
+        price: 'From Rp 80,000 / unit'
+      },
+      {
+        name: 'Hyaluronic Dermal Sculpting',
+        desc: 'Premium cohesive hyaluronic acid fillers to restore lost mid-face volume, refine jawlines, and enhance lip symmetry.',
+        duration: '45 - 60 Mins',
+        keyBenefits: ['Immediate structural lift', 'Restores facial contours', 'Natural, soft integration']
+      },
+      {
+        name: 'Profhilo & Deep Hydration Skin Boosters',
+        desc: 'Ultra-pure bio-remodeling hyaluronic acid that stimulates four types of collagen and elastin to firm skin laxity from within.',
+        duration: '30 Mins',
+        keyBenefits: ['Bio-remodeling', 'Improves skin firmness', 'Radiant lit-from-within glow']
+      },
+      {
+        name: 'Polynucleotide (Salmon DNA) Biostimulator',
+        desc: 'Highly purified DNA fragments that regenerate microvascular skin architecture, calm redness, and repair thinning under-eye skin.',
+        duration: '45 Mins',
+        keyBenefits: ['Tear-trough brightening', 'Tissue regeneration', 'Skin thickness enhancement']
+      }
+    ]
+  },
+  {
+    id: 'laser',
+    slug: 'laser',
+    name: 'Laser',
+    badge: 'Energy-Based Devices',
+    shortDesc: 'High-precision laser technology for targeted pigmentation removal, vascular correction, acne scar resurfacing, and total skin brightening.',
+    fullDesc: 'Harnessing advanced clinical energy devices and non-ablative wavelengths, our laser suite effectively clears melasma, sun spots, broken capillaries, and uneven texture with minimal downtime.',
+    img: 'https://images.unsplash.com/photo-1519014816548-bf5fe059c98b?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '5 Clinical Modalities',
+    whatsappMessage: 'Hello SHAZ Clinic, I would like to inquire about Laser treatments and skin resurfacing.',
+    featuredTreatments: [
+      {
+        name: 'PicoSure & Picosecond Precision Laser',
+        desc: 'Ultra-fast picosecond pulses shattering stubborn melanin and sun damage into microscopic dust without heating surrounding tissues.',
+        duration: '45 Mins',
+        keyBenefits: ['Tackles freckles & melasma', 'Refines enlarged pores', 'Promotes collagen toning'],
+        tag: 'Advanced Device'
+      },
+      {
+        name: 'Fractional Skin Resurfacing',
+        desc: 'Micro-fractional laser columns that stimulate deep dermal remodeling to smooth atrophic acne scars and rough skin texture.',
+        duration: '60 Mins',
+        keyBenefits: ['Acne scar reduction', 'Improves skin texture', 'Accelerates skin renewal']
+      },
+      {
+        name: 'Q-Switched Laser Toning',
+        desc: 'Gentle, uniform laser energy for holistic complexion brightening, reduction of diffuse erythema, and overall tone equalization.',
+        duration: '40 Mins',
+        keyBenefits: ['Zero downtime', 'Even skin tone', 'Gentle on sensitive skin']
+      },
+      {
+        name: 'Vascular & Redness Laser Therapy',
+        desc: 'Selectively targets hemoglobin to collapse broken facial veins, spider capillaries, and persistent rosacea redness.',
+        duration: '30 Mins',
+        keyBenefits: ['Clears spider veins', 'Reduces facial flushing', 'Restores calm skin']
+      }
+    ]
+  },
+  {
+    id: 'body',
+    slug: 'body',
+    name: 'Body',
+    badge: 'Contouring & Wellness',
+    shortDesc: 'Non-invasive body contouring, lymphatic drainage, radiofrequency skin tightening, and localized slimming protocols designed for your silhouette.',
+    fullDesc: 'Sculpt, tone, and firm your body with our non-surgical aesthetic wellness therapies that combine lymphatic detox, targeted fat metabolism, and deep collagen stimulation.',
+    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '4 Contouring Solutions',
+    whatsappMessage: 'Hello SHAZ Clinic, I would like to book a consultation for Body Contouring & Tightening.',
+    featuredTreatments: [
+      {
+        name: 'RF Multi-Polar Skin Tightening',
+        desc: 'Deep thermal radiofrequency heating that stimulates instant collagen contraction and long-term tissue remodeling across the abdomen, arms, and thighs.',
+        duration: '60 Mins',
+        keyBenefits: ['Tightens loose skin', 'Improves skin elasticity', 'Non-invasive & comfortable']
+      },
+      {
+        name: 'Targeted Lipolytic Contouring',
+        desc: 'Doctor-administered lipolytic micro-infusions targeting persistent localized fat deposits that resist diet and exercise.',
+        duration: '45 Mins',
+        keyBenefits: ['Pinpoint fat reduction', 'Refines contours', 'Gradual, natural results'],
+        tag: 'Targeted Sculpting'
+      },
+      {
+        name: 'Clinical Lymphatic Drainage Detox',
+        desc: 'Specialized pneumatic compression therapy that eliminates water retention, reduces toxin stagnation, and accelerates metabolic recovery.',
+        duration: '50 Mins',
+        keyBenefits: ['Reduces puffiness & bloating', 'Boosts circulation', 'Relieves heavy legs']
+      }
+    ]
+  },
+  {
+    id: 'hair',
+    slug: 'hair',
+    name: 'Hair',
+    badge: 'Scalp & Follicle Therapy',
+    shortDesc: 'Clinical scalp revitalizing protocols, medical hair restoration, PRP treatments, and regenerative follicle stimulation for thicker, healthier hair.',
+    fullDesc: 'Address thinning hair, receding hairlines, and stressed scalp microenvironments through scientifically proven regenerative therapies and customized medical serums.',
+    img: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '4 Restorative Protocols',
+    whatsappMessage: 'Hello SHAZ Clinic, I would like to consult about Hair & Scalp Restoration treatments.',
+    featuredTreatments: [
+      {
+        name: 'Autologous PRP Hair Restoration',
+        desc: 'Concentrated platelet-rich plasma derived from your own blood, packed with growth factors that reactivate dormant follicles and extend hair growth cycles.',
+        duration: '60 Mins',
+        keyBenefits: ['Reactivates dormant follicles', 'Increases hair shaft thickness', 'Natural biological therapy'],
+        tag: 'Regenerative'
+      },
+      {
+        name: 'Scalp Microneedling & Peptide Infusion',
+        desc: 'Controlled micro-channels delivering biomimetic hair peptides and vitamins directly into the scalp dermis for enhanced follicle nourishment.',
+        duration: '50 Mins',
+        keyBenefits: ['Enhances serum absorption', 'Strengthens hair roots', 'Improves scalp circulation']
+      },
+      {
+        name: 'Clinical Scalp Detox & Exfoliation',
+        desc: 'Deep scalp clarifying ritual removing sebum buildup, product residues, and dandruff while restoring a balanced microbiome.',
+        duration: '45 Mins',
+        keyBenefits: ['Clears congested pores', 'Soothes itchy scalp', 'Optimal base for hair growth']
+      }
+    ]
+  },
+  {
+    id: 'salon',
+    slug: 'salon',
+    name: 'Salon',
+    badge: 'Luxury Beauty & Hair',
+    shortDesc: 'Luxury salon rituals, bespoke hair styling, intensive hair repair treatments, scalp spa experiences, manicures, and brow grooming in a serene retreat.',
+    fullDesc: 'Immerse yourself in our premium salon sanctuary where master stylists and beauty artisans elevate hair vitality, custom blowouts, nourishing hair masks, and meticulous nail grooming.',
+    img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop',
+    treatmentsCount: '7 Salon Services',
+    whatsappMessage: 'Hello SHAZ Salon, I would like to book an appointment for Luxury Salon services.',
+    featuredTreatments: [
+      {
+        name: 'Bespoke Luxury Hair Ritual & Scalp Spa',
+        desc: 'Custom multi-step Japanese scalp cleansing, essential oil aromatherapeutic head massage, and deep nourishing botanical hair mask.',
+        duration: '75 Mins',
+        keyBenefits: ['Deep relaxation & stress relief', 'Intensive hair fiber repair', 'Silky, lightweight shine'],
+        tag: 'Signature Spa'
+      },
+      {
+        name: 'Keratin Smoothing & Intensive Repair',
+        desc: 'Formaldehyde-free keratin infusion that eliminates frizz, restores damaged cuticles from humidity, and seals in mirror-like smoothness.',
+        duration: '120 Mins',
+        keyBenefits: ['Frizz-free for up to 3 months', 'Humidity resistant', 'Drastically cuts styling time']
+      },
+      {
+        name: 'Signature Blowout & Styling',
+        desc: 'Volumizing wash, personalized scalp massage, and precision blowout styling for special events, dinners, or everyday luxury.',
+        duration: '45 Mins',
+        keyBenefits: ['Bouncy, long-lasting volume', 'Heat-protective finish', 'Flawless styling']
+      },
+      {
+        name: 'Spa Manicure & Pedicure Ritual',
+        desc: 'Gentle cuticle care, organic scrub exfoliation, soothing hand & foot massage, and long-lasting non-toxic polish application.',
+        duration: '60 Mins',
+        keyBenefits: ['Deep skin softening', 'Immaculate nail shaping', 'Relaxing hand & foot massage']
+      }
+    ]
+  }

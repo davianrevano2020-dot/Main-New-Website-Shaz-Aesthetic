@@ -1,0 +1,1607 @@
+[
+  {
+    "name": "SKIN",
+    "treatments": [
+      {
+        "name": "Glass & Glow Therapy (Skin Boost)",
+        "duration": "45 Mins",
+        "tag": "Most Popular",
+        "desc": "Skin Boost Therapy delivers a powerful surge of hydration, deeply nourishing the skin to enhance its texture and overall quality. Stimulates collagen and elastin production for long-term improvements in texture, tone, and resilience.",
+        "suitableFor": "Dull, dehydrated skin lacking elasticity",
+        "procedure": "Consultation, cleansing, hydration-boosting injectable/serum application, soothing mask",
+        "downtime": "Minimal downtime, slight redness possible",
+        "expectedResults": "Hydrated, radiant skin with improved elasticity over following weeks",
+        "price": "on consultation",
+        "keyBenefits": [
+          "Deep hydration",
+          "Collagen stimulation",
+          "Improved elasticity",
+          "Reduced fine lines"
+        ]
+      },
+      {
+        "name": "Age Reverse Therapy",
+        "duration": "30 Mins",
+        "desc": "A premier treatment designed to reduce the appearance of fine lines and wrinkles by relaxing targeted facial muscles, softening expression lines and rejuvenating the skin's overall look.",
+        "suitableFor": "Fine lines, wrinkles, expression lines",
+        "procedure": "Consultation, targeted muscle-relaxing injections",
+        "downtime": "Minimal downtime, possible mild swelling",
+        "expectedResults": "Smoother, more youthful complexion within days",
+        "price": "on consultation",
+        "keyBenefits": [
+          "Softened expression lines",
+          "Natural-looking results",
+          "Non-surgical"
+        ]
+      },
+      {
+        "name": "Deep Focus Intensif Face",
+        "duration": "60 Mins",
+        "desc": "An advanced treatment with RF microneedling technology designed to target and smooth deep lines and wrinkles. Infused with DNA and Hyaluronic Acid (HA) to promote skin repair, hydration, and relax facial muscles for expression lines.",
+        "suitableFor": "Deep wrinkles, expression lines, scars",
+        "procedure": "Numbing, RF microneedling pass, DNA/HA infusion",
+        "downtime": "1-2 days mild redness",
+        "expectedResults": "Long-lasting facial rejuvenation, smoother contours",
+        "price": "Rp 4.500.000",
+        "keyBenefits": [
+          "RF microneedling",
+          "Deep hydration",
+          "Facial contouring"
+        ]
+      },
+      {
+        "name": "Deep Focus Fractional Acne",
+        "duration": "45 Mins",
+        "desc": "Uses EndyMed's RF microneedling technology to effectively target and treat acne and acne scars, stimulating collagen production and promoting faster healing.",
+        "suitableFor": "Active acne and acne scars",
+        "procedure": "Cleansing, numbing, RF microneedling",
+        "downtime": "1-3 days redness/peeling",
+        "expectedResults": "Reduced breakouts, improved texture, minimized scarring",
+        "price": "Rp 3.000.000 / Rp 6.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Collagen stimulation",
+          "Scar reduction",
+          "Faster healing"
+        ]
+      },
+      {
+        "name": "Acne Injection",
+        "duration": "15 Mins",
+        "desc": "A quick and effective way to reduce inflammation and speed up the healing process of stubborn breakouts, delivering immediate relief by reducing swelling and redness.",
+        "suitableFor": "Inflamed, stubborn breakouts (1-5 spots)",
+        "procedure": "Spot injection into acne lesion(s)",
+        "downtime": "No downtime",
+        "expectedResults": "Visible reduction in swelling/redness within 24-48 hours",
+        "price": "Rp 250.000 (1-5 Spot)",
+        "keyBenefits": [
+          "Fast relief",
+          "Reduced inflammation",
+          "Targeted treatment"
+        ]
+      },
+      {
+        "name": "Subcision (Subsicion)",
+        "duration": "30 Mins",
+        "desc": "A minimally invasive treatment designed to break down the fibrotic tissue beneath acne scars, releasing the skin and allowing it to smooth out naturally.",
+        "suitableFor": "Depressed / rolling acne scars",
+        "procedure": "Numbing, subcision needle technique under scars",
+        "downtime": "2-5 days bruising/swelling possible",
+        "expectedResults": "Smoother, more even skin texture over following weeks",
+        "price": "Start from Rp 1.000.000",
+        "keyBenefits": [
+          "Targets root cause",
+          "Improved texture",
+          "Reduced scar depth"
+        ]
+      },
+      {
+        "name": "TCA Cross",
+        "duration": "30 Mins",
+        "desc": "Occurs during a TCA chemical peel, where the skin turns white as the acid penetrates, causing controlled protein coagulation. Signals the peel is actively exfoliating the skin, revealing smoother, more even-toned skin beneath.",
+        "suitableFor": "Acne scars, textured skin",
+        "procedure": "Cleansing, targeted TCA application to scars",
+        "downtime": "3-7 days peeling",
+        "expectedResults": "Reduced fine lines, improved texture, diminished acne scars",
+        "price": "Rp 350.000 (Small) / Rp 500.000 (Medium) / Rp 600.000 (Large)",
+        "keyBenefits": [
+          "Deep exfoliation",
+          "Scar improvement",
+          "Even tone"
+        ]
+      },
+      {
+        "name": "Keloid Therapy",
+        "duration": "20 Mins",
+        "desc": "Uses triamcinolone in intralesional injections to reduce the size and thickness of keloid scars, softening and flattening raised scars while minimizing discomfort.",
+        "suitableFor": "Keloid / hypertrophic scars",
+        "procedure": "Intralesional triamcinolone injection",
+        "downtime": "No downtime, may repeat over sessions",
+        "expectedResults": "Gradual reduction in keloid prominence over weeks",
+        "price": "Rp 500.000 (Small) / Rp 1.500.000 (Medium) / Rp 3.000.000 (Large)",
+        "keyBenefits": [
+          "Softens raised scars",
+          "Improves comfort",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Allure Facial \u2013 Calm & Balance",
+        "duration": "60 Mins",
+        "desc": "Designed to promote a calm, balanced complexion, offering gentle and soothing care for easily irritated or reactive skin types, reducing redness and inflammation while deeply hydrating.",
+        "suitableFor": "Sensitive, reactive skin",
+        "procedure": "Cleansing, gentle exfoliation, calming serum, mask",
+        "downtime": "No downtime",
+        "expectedResults": "Refreshed, soothed complexion with reduced irritation",
+        "price": "Rp 600.000 / Rp 1.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Calms redness",
+          "Deep hydration",
+          "Gentle formulation"
+        ]
+      },
+      {
+        "name": "Hermosa Facial \u2013 Balance & Clarity",
+        "duration": "60 Mins",
+        "desc": "Crafted to balance oil production, reduce inflammation, and promote clearer, healthier skin. Targets clogged pores and helps calm irritated, oily/acne-prone skin.",
+        "suitableFor": "Oily, acne-prone skin",
+        "procedure": "Cleansing, extraction, oil-balancing treatment, mask",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced shine, minimized breakouts, healthier glow",
+        "price": "Rp 600.000 / Rp 1.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Oil control",
+          "Pore clarity",
+          "Reduced breakouts"
+        ]
+      },
+      {
+        "name": "Palma Facial",
+        "duration": "60 Mins",
+        "desc": "Achieve a visibly younger look with Palma Facial. Specialized formula works to reduce the appearance of fine lines and wrinkles, leaving skin revitalized, smoother, and more radiant.",
+        "suitableFor": "Early signs of aging, dull skin",
+        "procedure": "Cleansing, anti-aging serum infusion, massage, mask",
+        "downtime": "No downtime",
+        "expectedResults": "Smoother, more radiant, revitalized skin",
+        "price": "Rp 700.000 / Rp 1.800.000 (Set of 3)",
+        "keyBenefits": [
+          "Reduces fine lines",
+          "Revitalizing",
+          "Radiance boost"
+        ]
+      },
+      {
+        "name": "Exosome Facial",
+        "duration": "75 Mins",
+        "tag": "Advanced",
+        "desc": "An innovative skin rejuvenation treatment combining gentle exfoliation, deep cleansing, and infusion of plant-derived antioxidants using nutrient-rich botanical exosomes to stimulate natural cellular regeneration.",
+        "suitableFor": "All skin types seeking regeneration",
+        "procedure": "Cleansing, exfoliation, exosome serum infusion, LED/mask",
+        "downtime": "No downtime",
+        "expectedResults": "Smoother, radiant, youthful-looking skin",
+        "price": "Rp 950.000 / Rp 2.250.000 (Set of 3)",
+        "keyBenefits": [
+          "Cellular regeneration",
+          "Antioxidant protection",
+          "Suitable for all skin types"
+        ]
+      },
+      {
+        "name": "Black Diamond Facial",
+        "duration": "75 Mins",
+        "tag": "Most Popular",
+        "desc": "A luxurious, high-performance treatment designed to combat signs of aging. Infused with shea butter and micro magnets, delivering intense nourishment while promoting skin rejuvenation and firmness.",
+        "suitableFor": "Aging, dull, dehydrated skin",
+        "procedure": "Deep cleansing, exfoliation, micro-magnet massage, hydration mask",
+        "downtime": "No downtime",
+        "expectedResults": "Deeply hydrated, smooth, youthful, radiant complexion",
+        "price": "Rp 850.000 / Rp 2.100.000 (Set of 3)",
+        "keyBenefits": [
+          "Deep cleansing",
+          "Intense nourishment",
+          "Anti-aging"
+        ]
+      },
+      {
+        "name": "Uplifting Facial with EndyMed",
+        "duration": "60 Mins",
+        "desc": "Uses advanced radiofrequency technology to lift, tighten, and firm the skin. Stimulates collagen production, improving elasticity and reducing the appearance of sagging.",
+        "suitableFor": "Sagging skin, loss of firmness",
+        "procedure": "Cleansing, EndyMed RF facial pass, soothing mask",
+        "downtime": "No downtime, mild warmth/redness",
+        "expectedResults": "More sculpted, lifted contour with firmer skin",
+        "price": "Rp 1.800.000 / Rp 4.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Skin tightening",
+          "Collagen boost",
+          "Lifted contour"
+        ]
+      },
+      {
+        "name": "Exosome Endymed Uplifting Facial",
+        "duration": "75 Mins",
+        "desc": "A facial with exosome to enhance healing followed by a picosecond laser treatment \u2014 a powerful combination for skin rejuvenation, evening out skin tone, breaking down pigmentation and boosting collagen and elastin production.",
+        "suitableFor": "Uneven tone, pigmentation, aging skin",
+        "procedure": "Exosome application, picosecond laser pass",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Rejuvenated, even-toned skin with boosted collagen",
+        "price": "Rp 2.000.000 / Rp 5.000.000 (Set of 3)",
+        "keyBenefits": [
+          "Combined exosome + laser",
+          "Even skin tone",
+          "Collagen boost"
+        ]
+      },
+      {
+        "name": "Exosome Picosecond Facial",
+        "duration": "75 Mins",
+        "desc": "A facial with exosome to enhance healing followed by a picosecond laser treatment \u2014 a powerful combination for skin rejuvenation, evening out skin tone, breaking down pigmentation and boosting collagen and elastin production.",
+        "suitableFor": "Pigmentation, uneven tone, aging skin",
+        "procedure": "Exosome application, picosecond laser pass",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Rejuvenated, even-toned, youthful skin",
+        "price": "Rp 3.000.000 / Rp 8.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Advanced regeneration",
+          "Pigmentation reduction",
+          "Collagen boost"
+        ]
+      },
+      {
+        "name": "Facial Acupressure Massage",
+        "duration": "45 Mins",
+        "desc": "A soothing treatment that stimulates key pressure points to promote circulation, reduce tension, and restore balance to the skin, improving lymphatic drainage and detoxifying the complexion.",
+        "suitableFor": "Tension, dull skin, poor circulation",
+        "procedure": "Pressure-point facial massage sequence",
+        "downtime": "No downtime",
+        "expectedResults": "Refreshed, rejuvenated skin with natural glow, deep relaxation",
+        "price": "Rp 250.000",
+        "keyBenefits": [
+          "Improved circulation",
+          "Lymphatic drainage",
+          "Relaxation"
+        ]
+      },
+      {
+        "name": "Mandelage Platinum Peel",
+        "duration": "30 Mins",
+        "desc": "A refined peeling therapy that combines the power of mandelic acid to gently exfoliate and renew the skin. Ideal for sensitive skin types, helps reduce mild acne and improve texture.",
+        "suitableFor": "Sensitive, acne-prone skin",
+        "procedure": "Cleansing, mandelic acid peel application, neutralization",
+        "downtime": "Minimal, slight flaking possible",
+        "expectedResults": "Smoother, more even complexion with healthy glow",
+        "price": "Rp 700.000",
+        "keyBenefits": [
+          "Gentle exfoliation",
+          "Reduces mild acne",
+          "Suitable for sensitive skin"
+        ]
+      },
+      {
+        "name": "Youth Skin Peel",
+        "duration": "30 Mins",
+        "desc": "An advanced peeling therapy designed to rejuvenate and refresh the complexion, utilizing a blend of potent ingredients to exfoliate dead skin cells and reveal a brighter, more youthful layer.",
+        "suitableFor": "Dull skin, fine lines, uneven texture",
+        "procedure": "Cleansing, chemical peel application, soothing finish",
+        "downtime": "1-3 days mild peeling",
+        "expectedResults": "Smoother, luminous complexion with renewed elasticity",
+        "price": "Rp 800.000",
+        "keyBenefits": [
+          "Cellular turnover",
+          "Diminishes fine lines",
+          "Enhanced vitality"
+        ]
+      },
+      {
+        "name": "Bright Advance Peel",
+        "duration": "30 Mins",
+        "desc": "An advanced peeling treatment designed to improve skin tone, texture, and early signs of aging. Formulated with glycolic acid, phytic acid, and prickly pear flower extract to reduce hyperpigmentation and soften fine lines.",
+        "suitableFor": "Rosacea-prone skin, hyperpigmentation",
+        "procedure": "Cleansing, layered acid peel application",
+        "downtime": "Minimal, mild redness",
+        "expectedResults": "Smoother, more radiant, refreshed, even-looking complexion",
+        "price": "Rp 800.000",
+        "keyBenefits": [
+          "Reduces hyperpigmentation",
+          "Soothes rosacea",
+          "Brightening"
+        ]
+      },
+      {
+        "name": "Body Peel",
+        "duration": "45 Mins",
+        "desc": "An effective peeling therapy designed to address mild to severe acne, uneven complexion, brightening, and fine lines on the body by exfoliating the skin's surface and promoting cellular turnover.",
+        "suitableFor": "Body acne, uneven tone (back)",
+        "procedure": "Cleansing, body chemical peel application",
+        "downtime": "2-5 days peeling",
+        "expectedResults": "Clearer, more radiant complexion with reduced blemishes",
+        "price": "Rp 1.000.000 (Half Back) / Rp 1.300.000 (Full Back)",
+        "keyBenefits": [
+          "Full-body exfoliation",
+          "Reduces blemishes",
+          "Improved texture"
+        ]
+      },
+      {
+        "name": "Booty Peel",
+        "duration": "30 Mins",
+        "desc": "Achieve smoother, brighter, and more even-toned skin with the Booty Peel treatment, specifically formulated for the delicate skin on the booty area, gently exfoliating and removing dead skin cells.",
+        "suitableFor": "Uneven complexion, acne on booty area",
+        "procedure": "Cleansing, targeted peel application",
+        "downtime": "2-4 days peeling",
+        "expectedResults": "Revitalized, glowing, more even-toned skin",
+        "price": "Rp 1.000.000",
+        "keyBenefits": [
+          "Even tone",
+          "Smooths texture",
+          "Long-lasting results"
+        ]
+      },
+      {
+        "name": "Body Extraction",
+        "duration": "45 Mins",
+        "desc": "Focused on white and blackhead extractions, designed to deeply cleanse and purify the skin, effectively targeting clogged pores and breakouts through gentle exfoliation and impurity removal.",
+        "suitableFor": "Body acne, congested pores",
+        "procedure": "Steam, manual extraction, soothing application",
+        "downtime": "1-2 days mild redness",
+        "expectedResults": "Refreshed, revitalized skin with visibly reduced blemishes",
+        "price": "Rp 600.000",
+        "keyBenefits": [
+          "Deep pore cleansing",
+          "Prevents future breakouts",
+          "Smoother texture"
+        ]
+      },
+      {
+        "name": "Cauter Therapy",
+        "duration": "20 Mins",
+        "desc": "A specialized procedure designed to remove skin imperfections such as warts, skin tags, and other benign lesions using heat-based technology, targeting unwanted growths without damaging surrounding skin.",
+        "suitableFor": "Warts, skin tags, benign lesions",
+        "procedure": "Local prep, cauterization of lesion(s)",
+        "downtime": "3-7 days scabbing/healing",
+        "expectedResults": "Clearer, more refined complexion with removed lesions",
+        "price": "Rp 450.000 (Small) / Rp 850.000 (Medium) / Rp 1.200.000 (Large)",
+        "keyBenefits": [
+          "Precise removal",
+          "Minimal scarring",
+          "Fast procedure"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "INJECTABLES",
+    "treatments": [
+      {
+        "name": "ExoMind Mind Therapy",
+        "duration": "30 Mins",
+        "tag": "New in Bali",
+        "desc": "A non-invasive neuromodulation treatment using advanced Transcranial Magnetic Stimulation (TMS) technology to stimulate targeted brain areas associated with mood, focus, motivation, and emotional well-being.",
+        "suitableFor": "Stress, low focus, mood support (non-clinical wellness use)",
+        "procedure": "Seated TMS session with magnetic pulse delivery",
+        "downtime": "No downtime, return to activities immediately",
+        "expectedResults": "Improved mental clarity, reduced stress, enhanced focus",
+        "price": "Rp 4.000.000 (Single) / Rp 10.000.000 (Set of 3) / Rp 16.000.000 (Set of 6)",
+        "keyBenefits": [
+          "FDA-cleared TMS technology",
+          "Non-invasive",
+          "No downtime"
+        ]
+      },
+      {
+        "name": "Innertrue Collagen Boost",
+        "duration": "45 Mins",
+        "tag": "Premium",
+        "desc": "Designed to revitalize your skin from within, promoting elasticity, hydration, and a natural glow. Supports the body's collagen production, reducing fine lines and wrinkles while enhancing overall skin health.",
+        "suitableFor": "Aging skin needing deep collagen support",
+        "procedure": "Consultation, injectable collagen-stimulating treatment",
+        "downtime": "Minimal, slight swelling possible",
+        "expectedResults": "Smoother, more youthful complexion over following weeks",
+        "price": "Rp 10.000.000",
+        "keyBenefits": [
+          "Collagen stimulation",
+          "Elasticity boost",
+          "Hydration"
+        ]
+      },
+      {
+        "name": "Profhilo (Super Hydration)",
+        "duration": "30 Mins",
+        "tag": "Most Popular",
+        "desc": "A breakthrough treatment designed to stimulate collagen and elastin production, providing intense hydration and restoring skin firmness for a natural, lifted look.",
+        "suitableFor": "Dehydrated, sagging skin",
+        "procedure": "Consultation, bio-remodeling injections (BAP-technique points)",
+        "downtime": "Minimal, small bumps resolve within hours-days",
+        "expectedResults": "Smoother, plumper, more youthful skin over 4-6 weeks",
+        "price": "Rp 7.700.000 / Rp 21.300.000 (Set of 3)",
+        "keyBenefits": [
+          "Deep hydration",
+          "Skin firmness",
+          "Natural lifted look"
+        ]
+      },
+      {
+        "name": "Nucleofill Strong",
+        "duration": "30 Mins",
+        "desc": "A powerful bio-stimulating treatment enriched with polynucleotide (PN), designed to deeply regenerate, lift, and protect the skin by stimulating collagen production and revitalizing skin cells.",
+        "suitableFor": "Aging skin needing structural support",
+        "procedure": "Consultation, PN injections across target area",
+        "downtime": "Minimal, slight swelling/redness",
+        "expectedResults": "Smoother, more youthful appearance with improved firmness",
+        "price": "Rp 5.500.000 / Rp 13.500.000 (Set of 3)",
+        "keyBenefits": [
+          "Bio-stimulation",
+          "Improved elasticity",
+          "Fewer injections needed"
+        ]
+      },
+      {
+        "name": "Mesomelasma",
+        "duration": "30 Mins",
+        "desc": "A specialized mesotherapy treatment designed to target melasma and other forms of hyperpigmentation by delivering potent skin-brightening agents directly into affected areas.",
+        "suitableFor": "Melasma, hyperpigmentation",
+        "procedure": "Consultation, mesotherapy micro-injections",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Lightened dark spots, more even skin tone over sessions",
+        "price": "Rp 1.500.000",
+        "keyBenefits": [
+          "Targets melasma",
+          "Brightening",
+          "Even skin tone"
+        ]
+      },
+      {
+        "name": "Growth Factor Therapy",
+        "duration": "45 Mins",
+        "desc": "A cutting-edge treatment that stimulates the skin's natural healing and regeneration process. Introduces bioactive proteins that promote cell renewal, boost collagen, and address anti-aging, scars, hyperpigmentation, dermatitis, and hair loss.",
+        "suitableFor": "Anti-aging, scars, hyperpigmentation, hair thinning",
+        "procedure": "Consultation, growth factor micro-injections",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Improved texture, radiance, and regeneration over weeks",
+        "price": "Rp 3.000.000",
+        "keyBenefits": [
+          "Cell renewal",
+          "Collagen boost",
+          "Multi-concern treatment"
+        ]
+      },
+      {
+        "name": "Restylane Vital Light",
+        "duration": "30 Mins",
+        "desc": "A hyaluronic acid-based treatment designed to restore the skin's natural hydration and radiance, delivering a subtle, natural-looking glow while smoothing fine lines. Effective for face, neck, and hands.",
+        "suitableFor": "Dehydrated skin on face, neck, hands",
+        "procedure": "Consultation, HA micro-injections",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Hydrated, plumper, more youthful-looking skin",
+        "price": "Rp 4.800.000",
+        "keyBenefits": [
+          "Deep hydration",
+          "Natural glow",
+          "Works on delicate areas"
+        ]
+      },
+      {
+        "name": "Glow and Shine Therapy",
+        "duration": "30 Mins",
+        "desc": "Encompasses a range of skin treatments designed to enhance radiance and luminosity, boosting hydration and addressing dullness for a healthier, more vibrant appearance.",
+        "suitableFor": "Dull, lackluster skin",
+        "procedure": "Consultation, hydrating/brightening injectable treatment",
+        "downtime": "Minimal",
+        "expectedResults": "Healthier, more vibrant, radiant appearance",
+        "price": "Rp 2.500.000",
+        "keyBenefits": [
+          "Radiance boost",
+          "Hydration",
+          "Addresses dullness"
+        ]
+      },
+      {
+        "name": "DNA Salmon PDRN + HA Meso Rejuve",
+        "duration": "30 Mins",
+        "desc": "Combines the regenerative power of salmon DNA with hyaluronic acid to deliver exceptional skin rejuvenation, promoting deep hydration, stimulating collagen production, and enhancing skin elasticity.",
+        "suitableFor": "Aging, dull, dehydrated skin",
+        "procedure": "Consultation, PDRN + HA mesotherapy injections",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Improved texture, reduced fine lines, radiant complexion",
+        "price": "Rp 1.500.000",
+        "keyBenefits": [
+          "Regenerative PDRN",
+          "Deep hydration",
+          "Collagen stimulation"
+        ]
+      },
+      {
+        "name": "Jelly Glow",
+        "duration": "30 Mins",
+        "desc": "A complex rejuvenator for intensive anti-aging, formulated with Defined Cell Culture Media 4 (DCCM4), Polynucleotide (PN), and Hyaluronic Acid (HA). Activates skin self-rejuvenation and improves elasticity and density.",
+        "suitableFor": "Intensive anti-aging needs",
+        "procedure": "Consultation, DCCM4/PN/HA injections",
+        "downtime": "Minimal, slight redness",
+        "expectedResults": "Smoother, repaired texture with improved density",
+        "price": "Rp 4.000.000",
+        "keyBenefits": [
+          "Triple-action formula",
+          "Deep moisture",
+          "Collagen stimulation"
+        ]
+      },
+      {
+        "name": "Botox Allergan",
+        "duration": "20 Mins",
+        "tag": "Premium",
+        "desc": "A renowned treatment designed to diminish the appearance of fine lines and wrinkles by temporarily relaxing muscles responsible for facial expressions \u2014 forehead, crow's feet, and frown lines.",
+        "suitableFor": "Forehead lines, crow's feet, frown lines",
+        "procedure": "Consultation, targeted muscle-relaxing injections",
+        "downtime": "Minimal, avoid lying down for 4 hours",
+        "expectedResults": "Smoother, more youthful appearance within 3-7 days",
+        "price": "Rp 95.000 (1 Unit)",
+        "keyBenefits": [
+          "Premium brand",
+          "Precise results",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Botox Korea",
+        "duration": "20 Mins",
+        "desc": "Korean botulinum toxin often used in aesthetic procedures, working by inhibiting nerve signals that move muscles, producing a smoothing and relaxing effect on the treated area.",
+        "suitableFor": "Fine lines, wrinkles, expression lines",
+        "procedure": "Consultation, targeted muscle-relaxing injections",
+        "downtime": "Minimal, avoid lying down for 4 hours",
+        "expectedResults": "Reduced fine lines and wrinkles within days",
+        "price": "Rp 50.000 (1 Unit)",
+        "keyBenefits": [
+          "Budget-friendly option",
+          "Smoothing effect",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "No Sweat Therapy \u2013 Underarm",
+        "duration": "30 Mins",
+        "desc": "A highly effective solution for managing underarm hyperhidrosis using Botox injections that temporarily block nerve signals responsible for overactive sweat glands.",
+        "suitableFor": "Underarm hyperhidrosis (excessive sweating)",
+        "procedure": "Consultation, targeted Botox injections in underarm area",
+        "downtime": "No downtime",
+        "expectedResults": "Dramatic decrease in sweating lasting months",
+        "price": "Rp 4.000.000",
+        "keyBenefits": [
+          "Long-lasting relief",
+          "No downtime",
+          "Confidence boost"
+        ]
+      },
+      {
+        "name": "No Sweat Therapy \u2013 Hand",
+        "duration": "30 Mins",
+        "desc": "An effective solution for palmar hyperhidrosis, using Botox injections that target overactive sweat glands in the palms by blocking nerve signals responsible for excess sweat production.",
+        "suitableFor": "Palmar hyperhidrosis (sweaty hands)",
+        "procedure": "Consultation, targeted Botox injections in palms",
+        "downtime": "Minimal downtime",
+        "expectedResults": "Noticeably drier hands with lasting results",
+        "price": "Rp 4.500.000",
+        "keyBenefits": [
+          "Improved comfort",
+          "Enhanced confidence",
+          "Lasting results"
+        ]
+      },
+      {
+        "name": "No Sweat Therapy \u2013 Feet",
+        "duration": "30 Mins",
+        "desc": "An effective treatment for plantar hyperhidrosis, using Botox injections to target overactive sweat glands in the feet, temporarily blocking nerve signals responsible for excess sweat production.",
+        "suitableFor": "Plantar hyperhidrosis (sweaty feet)",
+        "procedure": "Consultation, targeted Botox injections in feet",
+        "downtime": "Minimal discomfort",
+        "expectedResults": "Significantly drier feet with long-lasting results",
+        "price": "Rp 4.500.000",
+        "keyBenefits": [
+          "Long-lasting results",
+          "Improved comfort in shoes",
+          "Boosted confidence"
+        ]
+      },
+      {
+        "name": "Restylane Kysse (Lip Filler)",
+        "duration": "30 Mins",
+        "tag": "Most Popular",
+        "desc": "A dermal filler designed to enhance lip volume and smooth lines around the mouth, providing natural-looking, fuller lips while maintaining soft, flexible movement.",
+        "suitableFor": "Thin lips, lip asymmetry, lip lines",
+        "procedure": "Consultation, numbing, lip filler injection",
+        "downtime": "1-3 days swelling",
+        "expectedResults": "Beautifully plump, natural-finish lips",
+        "price": "Rp 4.800.000",
+        "keyBenefits": [
+          "Natural movement",
+          "Long-lasting",
+          "Defined lip shape"
+        ]
+      },
+      {
+        "name": "Restylane Lyft",
+        "duration": "30 Mins",
+        "desc": "A dermal filler designed to restore volume and lift to the cheeks and midface, smoothing wrinkles and providing a subtle lift to enhance facial contours.",
+        "suitableFor": "Volume loss in cheeks/midface",
+        "procedure": "Consultation, numbing, filler injection",
+        "downtime": "1-3 days swelling/bruising possible",
+        "expectedResults": "Natural-looking volume and youthful contour",
+        "price": "Rp 5.000.000",
+        "keyBenefits": [
+          "Volume restoration",
+          "Facial contouring",
+          "Long-lasting"
+        ]
+      },
+      {
+        "name": "Teosyal RHA \u2013 Ultra Deep",
+        "duration": "30 Mins",
+        "tag": "Premium",
+        "desc": "A premium dermal filler featuring Resilient Hyaluronic Acid technology, specially designed for deep facial areas, providing natural-looking volume while adapting to facial movements.",
+        "suitableFor": "Deep volume loss areas",
+        "procedure": "Consultation, numbing, deep-plane filler injection",
+        "downtime": "1-3 days swelling possible",
+        "expectedResults": "Natural-looking volume lasting up to 15 months",
+        "price": "Rp 6.000.000",
+        "keyBenefits": [
+          "Long-lasting up to 15 months",
+          "Adapts to movement",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Teosyal RHA 4",
+        "duration": "30 Mins",
+        "desc": "Premium dermal filler with Resilient Hyaluronic Acid technology for deep facial areas, providing natural-looking volume that adapts to facial movements.",
+        "suitableFor": "Deep volume loss areas",
+        "procedure": "Consultation, numbing, filler injection",
+        "downtime": "1-3 days swelling possible",
+        "expectedResults": "Natural-looking volume, long-lasting results",
+        "price": "Rp 5.500.000",
+        "keyBenefits": [
+          "Natural adaptability",
+          "Long-lasting",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Teosyal RHA 3",
+        "duration": "30 Mins",
+        "desc": "Premium dermal filler with Resilient Hyaluronic Acid technology, providing natural-looking volume with adaptability to facial expressions for moderate depth areas.",
+        "suitableFor": "Moderate volume loss areas",
+        "procedure": "Consultation, numbing, filler injection",
+        "downtime": "1-3 days swelling possible",
+        "expectedResults": "Natural-looking volume, long-lasting results",
+        "price": "Rp 5.300.000",
+        "keyBenefits": [
+          "Natural adaptability",
+          "Long-lasting",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Teosyal RHA 2",
+        "duration": "30 Mins",
+        "desc": "Premium dermal filler with Resilient Hyaluronic Acid technology, ideal for finer lines and lighter volume correction with natural movement.",
+        "suitableFor": "Fine lines, lighter volume correction",
+        "procedure": "Consultation, numbing, filler injection",
+        "downtime": "1-2 days swelling possible",
+        "expectedResults": "Natural, subtle volume correction",
+        "price": "Rp 5.000.000",
+        "keyBenefits": [
+          "Subtle natural results",
+          "Long-lasting",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Filler Dissolve \u2013 Small",
+        "duration": "20 Mins",
+        "desc": "Uses hyaluronidase to safely and effectively dissolve unwanted dermal fillers. Ideal for minor adjustments, targeting small areas to refine and restore natural look.",
+        "suitableFor": "Minor filler correction",
+        "procedure": "Consultation, hyaluronidase injection",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Smooth transition back to natural contours",
+        "price": "Rp 900.000",
+        "keyBenefits": [
+          "Precise correction",
+          "Quick procedure",
+          "Restores natural look"
+        ]
+      },
+      {
+        "name": "Filler Dissolve \u2013 Medium",
+        "duration": "20 Mins",
+        "desc": "Uses hyaluronidase to safely dissolve unwanted dermal fillers, suitable for moderate adjustments providing comprehensive removal for a balanced appearance.",
+        "suitableFor": "Moderate filler correction",
+        "procedure": "Consultation, hyaluronidase injection",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Balanced, natural appearance restored",
+        "price": "Rp 1.500.000",
+        "keyBenefits": [
+          "Comprehensive removal",
+          "Balanced results",
+          "Minimally invasive"
+        ]
+      },
+      {
+        "name": "Filler Dissolve \u2013 Large",
+        "duration": "30 Mins",
+        "desc": "Uses hyaluronidase to safely dissolve unwanted dermal fillers, suitable for moderate to large adjustments providing comprehensive removal for a balanced appearance.",
+        "suitableFor": "Large-area filler correction",
+        "procedure": "Consultation, hyaluronidase injection",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Comprehensive correction, balanced appearance",
+        "price": "Rp 2.000.000",
+        "keyBenefits": [
+          "Comprehensive removal",
+          "Full correction",
+          "Precise and tailored"
+        ]
+      },
+      {
+        "name": "Thread Lift \u2013 Premium",
+        "duration": "60 Mins",
+        "tag": "Premium",
+        "desc": "A sophisticated non-surgical procedure designed to rejuvenate and enhance appearance by lifting and tightening sagging skin, using dissolvable threads to stimulate natural collagen production.",
+        "suitableFor": "Sagging skin on face, neck, jawline",
+        "procedure": "Consultation, numbing, thread insertion (2 pcs)",
+        "downtime": "3-5 days mild swelling/bruising",
+        "expectedResults": "Refined, youthful contour with improved firmness",
+        "price": "Rp 2.500.000 (2 pcs)",
+        "keyBenefits": [
+          "Immediate lift",
+          "Collagen stimulation",
+          "Long-lasting"
+        ]
+      },
+      {
+        "name": "Nose Thread Lift",
+        "duration": "45 Mins",
+        "desc": "An advanced thread lift option offering a more pronounced lift and long-lasting results, designed to restore volume, improve skin elasticity, and create a more defined nose contour.",
+        "suitableFor": "Nose contouring, bridge definition",
+        "procedure": "Consultation, numbing, thread insertion",
+        "downtime": "3-5 days mild swelling",
+        "expectedResults": "More defined, lifted nose contour",
+        "price": "Rp 4.000.000",
+        "keyBenefits": [
+          "Non-surgical nose lift",
+          "Long-lasting",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "PRP Injection",
+        "duration": "45 Mins",
+        "desc": "A natural and effective way to revitalize skin using platelets derived from your own blood, stimulating collagen production and accelerating healing to smooth fine lines and improve texture.",
+        "suitableFor": "Fine lines, dull or tired-looking skin",
+        "procedure": "Blood draw, centrifuge separation, PRP injection",
+        "downtime": "1-2 days mild swelling",
+        "expectedResults": "Firmer, brighter, more radiant skin",
+        "price": "Rp 3.500.000 (Single) / Rp 6.000.000 (Set of 3)",
+        "keyBenefits": [
+          "Uses your own natural growth factors",
+          "Minimal downtime",
+          "Non-invasive"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LASER",
+    "treatments": [
+      {
+        "name": "PRP RF Microneedling",
+        "duration": "60 Mins",
+        "desc": "Deep Focus Fractional PRP Treatment combines advanced microneedling with PRP to rejuvenate and repair skin, using EndyMed's RF microneedling technology alongside PRP for accelerated healing.",
+        "suitableFor": "Fine lines, uneven texture, dullness",
+        "procedure": "Blood draw, RF microneedling, PRP application",
+        "downtime": "1-3 days redness",
+        "expectedResults": "Smoother, more youthful appearance with firmer skin",
+        "price": "Rp 5.000.000 (Single) / Rp 12.000.000 (Set of 3)",
+        "keyBenefits": [
+          "Combined RF + PRP",
+          "Collagen stimulation",
+          "Enhanced healing"
+        ]
+      },
+      {
+        "name": "Pico Laser \u2013 Rejuvenation",
+        "duration": "30 Mins",
+        "tag": "Most Popular",
+        "desc": "Offers a gentle yet powerful solution to revitalize skin. By targeting fine lines, pigmentation, and uneven texture, the laser stimulates collagen production and restores a youthful glow.",
+        "suitableFor": "Fine lines, pigmentation, uneven texture",
+        "procedure": "Cleansing, pico laser passes, soothing gel/mask",
+        "downtime": "Minimal, mild redness a few hours",
+        "expectedResults": "Smoother, brighter, more radiant skin",
+        "price": "Rp 3.000.000 (Single) / Rp 8.000.000 (Set of 3) / Rp 10.000.000 (Set of 5)",
+        "keyBenefits": [
+          "Collagen stimulation",
+          "Minimal downtime",
+          "Improved radiance"
+        ]
+      },
+      {
+        "name": "Pico Laser \u2013 Melasma",
+        "duration": "30 Mins",
+        "desc": "An advanced solution for treating melasma, effectively targeting and breaking down excess pigmentation without harming surrounding skin, reducing dark patches and restoring even skin tone.",
+        "suitableFor": "Melasma, dark patches",
+        "procedure": "Cleansing, targeted pico laser passes",
+        "downtime": "Minimal discomfort",
+        "expectedResults": "Clearer, brighter, more even skin over sessions",
+        "price": "Rp 3.000.000 (Single) / Rp 9.000.000 (Set of 3) / Rp 12.500.000 (Set of 5)",
+        "keyBenefits": [
+          "Targets melasma specifically",
+          "Minimal downtime",
+          "Even skin tone"
+        ]
+      },
+      {
+        "name": "Pico Laser \u2013 Tattoo Removal (Extra Small)",
+        "duration": "30 Mins",
+        "desc": "Uses ultrashort pulses to break down ink particles with precision, gradually fading unwanted tattoos while minimizing damage to surrounding skin.",
+        "suitableFor": "Small/extra-small tattoos",
+        "procedure": "Cleansing, pico laser passes over tattoo area",
+        "downtime": "Minimal, scabbing possible",
+        "expectedResults": "Gradual tattoo fading over multiple sessions",
+        "price": "Rp 800.000 (Single) / Rp 1.800.000 (Set of 3)",
+        "keyBenefits": [
+          "Precise ink breakdown",
+          "Fewer sessions needed",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Pico Laser \u2013 Tattoo Removal (Small)",
+        "duration": "30 Mins",
+        "desc": "Uses ultrashort pulses to break down ink particles with precision, gradually fading unwanted tattoos while minimizing damage to surrounding skin.",
+        "suitableFor": "Small tattoos",
+        "procedure": "Cleansing, pico laser passes over tattoo area",
+        "downtime": "Minimal, scabbing possible",
+        "expectedResults": "Gradual tattoo fading over multiple sessions",
+        "price": "Rp 1.500.000 (Single) / Rp 3.850.000 (Set of 3)",
+        "keyBenefits": [
+          "Precise ink breakdown",
+          "Efficient fading",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "Pico Laser \u2013 Tattoo Removal (Medium)",
+        "duration": "45 Mins",
+        "desc": "Uses ultrashort pulses to break down ink particles with precision, gradually fading unwanted tattoos while minimizing damage to surrounding skin.",
+        "suitableFor": "Medium-sized tattoos",
+        "procedure": "Cleansing, pico laser passes over tattoo area",
+        "downtime": "Minimal, scabbing possible",
+        "expectedResults": "Gradual tattoo fading over multiple sessions",
+        "price": "Rp 2.500.000 (Single) / Rp 6.400.000 (Set of 3)",
+        "keyBenefits": [
+          "Precise ink breakdown",
+          "Efficient fading",
+          "Minimal downtime"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "BODY",
+    "treatments": [
+      {
+        "name": "Pico Laser \u2013 Tattoo Removal (Large)",
+        "duration": "60 Mins",
+        "desc": "Uses ultrashort pulses to break down ink particles with precision, gradually fading unwanted tattoos while minimizing damage to surrounding skin.",
+        "suitableFor": "Large tattoos",
+        "procedure": "Cleansing, pico laser passes over tattoo area",
+        "downtime": "Minimal, scabbing possible",
+        "expectedResults": "Gradual tattoo fading over multiple sessions",
+        "price": "Rp 3.500.000 (Single) / Rp 8.950.000 (Set of 3)",
+        "keyBenefits": [
+          "Precise ink breakdown",
+          "Efficient fading",
+          "Minimal downtime"
+        ]
+      },
+      {
+        "name": "EMS Body Sculpting (Tummy, Booty, Arms)",
+        "duration": "30 Mins",
+        "tag": "Most Popular",
+        "desc": "EMS treatment effectively tones and sculpts the tummy, booty, and arms by stimulating muscle contractions, enhancing definition, and improving strength without downtime.",
+        "suitableFor": "Muscle toning, body contouring",
+        "procedure": "EMS device application over target muscle groups",
+        "downtime": "No downtime",
+        "expectedResults": "Firmer, more contoured body visible within a few sessions",
+        "price": "Rp 850.000 (Single) / Rp 2.400.000 (Set of 3) / Rp 3.500.000 (Set of 5) / Rp 6.500.000 (Set of 10)",
+        "keyBenefits": [
+          "Non-invasive muscle toning",
+          "No downtime",
+          "Visible results in weeks"
+        ]
+      },
+      {
+        "name": "Deep Focus Full Face Contouring",
+        "duration": "45 Mins",
+        "desc": "Powered by the EndyMed machine, offers a non-invasive way to lift and sculpt the face using radiofrequency technology, tightening skin and enhancing facial contours.",
+        "suitableFor": "Facial sagging, loss of definition",
+        "procedure": "Cleansing, EndyMed RF pass over full face",
+        "downtime": "No downtime, mild warmth",
+        "expectedResults": "More youthful, defined facial contour",
+        "price": "Rp 1.700.000 (Single) / Rp 4.500.000 (Set of 3) / Rp 6.000.000 (Set of 5)",
+        "keyBenefits": [
+          "Non-invasive lifting",
+          "Improved elasticity",
+          "Defined contours"
+        ]
+      },
+      {
+        "name": "Deep Focus Half/Lower Face Contouring",
+        "duration": "30 Mins",
+        "desc": "Non-invasive radiofrequency contouring focused on the lower/half face to tighten skin and enhance jawline and lower facial definition.",
+        "suitableFor": "Lower face sagging, jawline definition",
+        "procedure": "Cleansing, EndyMed RF pass over lower/half face",
+        "downtime": "No downtime",
+        "expectedResults": "More defined jawline and lower facial contour",
+        "price": "Rp 1.500.000 (Single) / Rp 3.600.000 (Set of 3) / Rp 5.000.000 (Set of 5)",
+        "keyBenefits": [
+          "Targeted contouring",
+          "Non-invasive",
+          "No downtime"
+        ]
+      },
+      {
+        "name": "Deep Focus Neck Contouring",
+        "duration": "30 Mins",
+        "desc": "Non-invasive radiofrequency treatment targeting the neck area to tighten skin, reduce sagging, and improve overall neck contour.",
+        "suitableFor": "Neck sagging, loose skin",
+        "procedure": "Cleansing, EndyMed RF pass over neck",
+        "downtime": "No downtime",
+        "expectedResults": "Tighter, more defined neck contour",
+        "price": "Rp 1.500.000 (Single) / Rp 4.000.000 (Set of 3)",
+        "keyBenefits": [
+          "Neck-specific tightening",
+          "Non-invasive",
+          "No downtime"
+        ]
+      },
+      {
+        "name": "Deep Focus Decolletage Contouring",
+        "duration": "30 Mins",
+        "desc": "Non-invasive radiofrequency treatment for the decolletage area to tighten skin and improve texture and firmness.",
+        "suitableFor": "Decolletage sagging, uneven texture",
+        "procedure": "Cleansing, EndyMed RF pass over decolletage",
+        "downtime": "No downtime",
+        "expectedResults": "Firmer, smoother decolletage skin",
+        "price": "Rp 1.100.000 (Single) / Rp 2.950.000 (Set of 3)",
+        "keyBenefits": [
+          "Targeted decolletage care",
+          "Non-invasive",
+          "No downtime"
+        ]
+      },
+      {
+        "name": "Deep Focus Body Contouring (Abs/Thigh/Arms/Butt/Calf)",
+        "duration": "45 Mins",
+        "desc": "Uses advanced radiofrequency technology to tighten skin and reduce stubborn fat in targeted areas, giving smoother, firmer skin and a more contoured silhouette with immediate results.",
+        "suitableFor": "Localized fat, loose skin on body",
+        "procedure": "EndyMed RF pass over target body area",
+        "downtime": "No downtime",
+        "expectedResults": "1-3 cm reduction in treated area, smoother contour",
+        "price": "Rp 2.500.000 (Single) / Rp 6.600.000 (Set of 3) / Rp 10.000.000 (Set of 5) / Rp 15.000.000 (Set of 10)",
+        "keyBenefits": [
+          "Immediate 1-3cm reduction",
+          "Non-invasive",
+          "Firmer skin"
+        ]
+      },
+      {
+        "name": "Deep Focus Brafat / Love Handle Contouring",
+        "duration": "30 Mins",
+        "desc": "Targeted radiofrequency body contouring designed for stubborn brafat and love handle areas, tightening skin and reducing localized fat for a more sculpted silhouette.",
+        "suitableFor": "Brafat, love handles",
+        "procedure": "EndyMed RF pass over target area",
+        "downtime": "No downtime",
+        "expectedResults": "Smoother, more sculpted silhouette",
+        "price": "Rp 1.500.000 (Single) / Rp 4.000.000 (Set of 3) / Rp 5.500.000 (Set of 5) / Rp 9.000.000 (Set of 10)",
+        "keyBenefits": [
+          "Targeted fat reduction",
+          "Non-invasive",
+          "No downtime"
+        ]
+      },
+      {
+        "name": "Diamond Contour / Meso Lipo \u2013 Contour Prime",
+        "duration": "30 Mins",
+        "desc": "Acts as a powerful fat burner targeting localized fat deposits through precise micro-injections that deliver active ingredients directly into problem areas, promoting fat cell breakdown.",
+        "suitableFor": "Localized fat deposits",
+        "procedure": "Consultation, micro-injection lipolytic treatment",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Slimmer, more sculpted silhouette over sessions",
+        "price": "Rp 900.000",
+        "keyBenefits": [
+          "Targeted fat breakdown",
+          "Non-invasive",
+          "Body contouring"
+        ]
+      },
+      {
+        "name": "Diamond Contour / Meso Lipo \u2013 Contour Platinum",
+        "duration": "45 Mins",
+        "desc": "An enhanced version of the Meso Lipo fat-burning treatment, using precise micro-injections for more comprehensive localized fat reduction and body contouring.",
+        "suitableFor": "Larger localized fat deposits",
+        "procedure": "Consultation, micro-injection lipolytic treatment",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Slimmer, more sculpted silhouette over sessions",
+        "price": "Rp 2.500.000",
+        "keyBenefits": [
+          "Enhanced fat breakdown",
+          "Body contouring",
+          "Confidence boost"
+        ]
+      },
+      {
+        "name": "Diamond Contour / Meso Lipo \u2013 Contour Super Platinum",
+        "duration": "60 Mins",
+        "tag": "Premium",
+        "desc": "The most intensive Meso Lipo option for maximum localized fat reduction, using precise micro-injections delivering active ingredients for comprehensive body contouring.",
+        "suitableFor": "Significant localized fat deposits",
+        "procedure": "Consultation, extensive micro-injection lipolytic treatment",
+        "downtime": "Minimal, slight swelling",
+        "expectedResults": "Maximum slimming and sculpting effect over sessions",
+        "price": "Rp 3.000.000",
+        "keyBenefits": [
+          "Maximum fat reduction",
+          "Comprehensive contouring",
+          "Confident silhouette"
+        ]
+      },
+      {
+        "name": "Foot Reflexology",
+        "duration": "30/60/90 Mins",
+        "desc": "A therapeutic treatment that focuses on stimulating specific pressure points on the feet corresponding to different areas of the body, promoting relaxation and improving circulation.",
+        "suitableFor": "Stress, tension, poor circulation",
+        "procedure": "Foot pressure-point massage sequence",
+        "downtime": "No downtime",
+        "expectedResults": "Calm, balanced feeling with reduced stress",
+        "price": "Rp 150.000 (30 Min) / Rp 250.000 (60 Min) / Rp 400.000 (90 Min)",
+        "keyBenefits": [
+          "Improved circulation",
+          "Deep relaxation",
+          "Stress relief"
+        ]
+      },
+      {
+        "name": "Balinese Massage",
+        "duration": "30/60/90/120 Mins",
+        "tag": "Most Popular",
+        "desc": "Combines gentle stretches, acupressure, and aromatherapy to restore balance and harmony to the body, working deeply to release tension and improve circulation.",
+        "suitableFor": "Muscle tension, stress, relaxation",
+        "procedure": "Traditional Balinese massage technique with aromatherapy oils",
+        "downtime": "No downtime",
+        "expectedResults": "Deep relaxation, eased muscle stiffness, renewed vitality",
+        "price": "Rp 180.000 (30 Min) / Rp 350.000 (60 Min) / Rp 450.000 (90 Min) / Rp 600.000 (120 Min)",
+        "keyBenefits": [
+          "Traditional technique",
+          "Aromatherapy",
+          "Deep relaxation"
+        ]
+      },
+      {
+        "name": "Sport Massage",
+        "duration": "60/90 Mins",
+        "desc": "A targeted therapy designed to relieve muscle tension, improve flexibility, and aid in the recovery process after physical activity, working to prevent injury and reduce soreness.",
+        "suitableFor": "Athletes, active individuals, muscle recovery",
+        "procedure": "Deep tissue massage technique targeting muscle groups",
+        "downtime": "No downtime",
+        "expectedResults": "Improved mobility, reduced fatigue, faster recovery",
+        "price": "Rp 450.000 (60 Min) / Rp 650.000 (90 Min)",
+        "keyBenefits": [
+          "Deep tissue relief",
+          "Injury prevention",
+          "Faster recovery"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Jet Lag Recovery",
+        "duration": "45 Mins",
+        "desc": "An IV drip therapy specifically designed to combat fatigue and disorientation from long-distance travel, delivering fluids, vitamins, and electrolytes to restore balance and boost energy.",
+        "suitableFor": "Post-travel fatigue",
+        "procedure": "IV line insertion, vitamin/electrolyte infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Refreshed, recharged, improved alertness",
+        "price": "Rp 1.100.000",
+        "keyBenefits": [
+          "Rapid rehydration",
+          "Boosted energy",
+          "Restored balance"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Pre-Party Boost",
+        "duration": "45 Mins",
+        "desc": "An invigorating IV drip therapy designed to prepare you for a night of celebration, delivering vitamins, minerals, and hydration to enhance energy and vitality.",
+        "suitableFor": "Pre-event energy boost",
+        "procedure": "IV line insertion, customized vitamin infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Revitalized, luminous complexion, increased stamina",
+        "price": "Rp 1.100.000",
+        "keyBenefits": [
+          "Energy boost",
+          "Luminous complexion",
+          "Increased stamina"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Hangover Recovery",
+        "duration": "45 Mins",
+        "tag": "Most Popular",
+        "desc": "An effective IV drip therapy designed to alleviate discomfort of post-celebration fatigue, replenishing fluids, electrolytes, and vitamins to combat dehydration.",
+        "suitableFor": "Hangover, dehydration",
+        "procedure": "IV line insertion, restorative electrolyte/vitamin infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Rapid relief from headaches and fatigue",
+        "price": "Rp 1.300.000",
+        "keyBenefits": [
+          "Fast relief",
+          "Rehydration",
+          "Renewed clarity"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Bali Belly Recovery",
+        "duration": "45 Mins",
+        "desc": "An essential IV drip therapy tailored to alleviate discomfort of digestive issues often experienced while traveling, delivering fluids, electrolytes, and nutrients to rehydrate the body.",
+        "suitableFor": "Digestive upset, traveler's illness",
+        "procedure": "IV line insertion, rehydration/electrolyte infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced nausea and bloating, restored energy",
+        "price": "Rp 1.500.000",
+        "keyBenefits": [
+          "Digestive relief",
+          "Rehydration",
+          "Restored energy"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Forever Young",
+        "duration": "45 Mins",
+        "desc": "A rejuvenating IV drip therapy designed to promote vitality and enhance natural glow, combining antioxidants, vitamins, and hydration to support skin health and combat aging.",
+        "suitableFor": "Anti-aging, skin vitality support",
+        "procedure": "IV line insertion, antioxidant/vitamin infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Invigorated feeling with radiant complexion",
+        "price": "Rp 900.000",
+        "keyBenefits": [
+          "Antioxidant boost",
+          "Radiant complexion",
+          "Youthful enthusiasm"
+        ]
+      },
+      {
+        "name": "IV Drip \u2013 Active Fit Boost",
+        "duration": "45 Mins",
+        "desc": "A dynamic IV drip therapy tailored for those seeking to enhance physical performance and recovery, delivering essential nutrients, electrolytes, and hydration to support muscle function.",
+        "suitableFor": "Athletes, active lifestyle support",
+        "procedure": "IV line insertion, nutrient/electrolyte infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Increased energy, reduced fatigue, improved recovery",
+        "price": "Rp 800.000",
+        "keyBenefits": [
+          "Muscle function support",
+          "Reduced fatigue",
+          "Faster recovery"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "HAIR",
+    "treatments": [
+      {
+        "name": "IV Drip \u2013 Slim & Fit",
+        "duration": "45 Mins",
+        "desc": "A specialized IV drip therapy designed to support weight management and fitness journey, combining vitamins, minerals, and nutrients that promote metabolism and boost energy.",
+        "suitableFor": "Weight management support",
+        "procedure": "IV line insertion, metabolism-supporting infusion",
+        "downtime": "No downtime",
+        "expectedResults": "Revitalized, improved stamina, renewed focus",
+        "price": "Rp 850.000",
+        "keyBenefits": [
+          "Metabolism support",
+          "Boosted energy",
+          "Hydration"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Areola",
+        "duration": "15 Mins",
+        "desc": "Laser Hair Removal offers a long-lasting solution to unwanted hair, using precise laser technology to target and reduce hair growth at the root for smoother, silkier skin over time.",
+        "suitableFor": "Unwanted hair on areola area",
+        "procedure": "Skin prep, targeted laser passes over area",
+        "downtime": "No downtime, mild redness possible",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Belly Button",
+        "duration": "15 Mins",
+        "desc": "Laser Hair Removal targets and reduces hair growth at the root around the belly button area, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted hair around belly button",
+        "procedure": "Skin prep, targeted laser passes over area",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Chin",
+        "duration": "15 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted chin hair growth at the root, leaving skin smoother and reducing ingrown hairs over time.",
+        "suitableFor": "Unwanted chin hair",
+        "procedure": "Skin prep, targeted laser passes over chin",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 350.000 (Single) / Rp 950.000 (Set 3) / Rp 1.500.000 (Set 5) / Rp 2.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Upper Lip",
+        "duration": "15 Mins",
+        "tag": "Most Popular",
+        "desc": "Laser Hair Removal targets and reduces unwanted upper lip hair growth at the root, leaving skin smoother with a sleek, hair-free look.",
+        "suitableFor": "Unwanted upper lip hair",
+        "procedure": "Skin prep, targeted laser passes over upper lip",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 400.000 (Single) / Rp 1.125.000 (Set 3) / Rp 1.750.000 (Set 5) / Rp 3.000.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Upper Lip & Chin",
+        "duration": "20 Mins",
+        "desc": "Combined laser hair removal for upper lip and chin, targeting and reducing hair growth at the root for smoother, hair-free skin.",
+        "suitableFor": "Unwanted upper lip and chin hair",
+        "procedure": "Skin prep, targeted laser passes over both areas",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 500.000 (Single) / Rp 1.350.000 (Set 3) / Rp 2.000.000 (Set 5) / Rp 3.500.000 (Set 10)",
+        "keyBenefits": [
+          "Combined treatment value",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Lower Face",
+        "duration": "20 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted hair growth across the lower face at the root, leaving skin smoother and more refined.",
+        "suitableFor": "Unwanted lower face hair",
+        "procedure": "Skin prep, targeted laser passes over lower face",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 650.000 (Single) / Rp 1.650.000 (Set 3) / Rp 2.500.000 (Set 5) / Rp 4.200.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Full Face",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted hair growth across the full face at the root, leaving skin smoother with a sleek, hair-free look.",
+        "suitableFor": "Unwanted full face hair",
+        "procedure": "Skin prep, targeted laser passes over full face",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 850.000 (Single) / Rp 2.400.000 (Set 3) / Rp 3.650.000 (Set 5) / Rp 6.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Complete coverage",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Underarm Woman",
+        "duration": "15 Mins",
+        "tag": "Most Popular",
+        "desc": "Laser Hair Removal targets and reduces unwanted underarm hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted underarm hair (woman)",
+        "procedure": "Skin prep, targeted laser passes over underarms",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 400.000 (Single) / Rp 1.100.000 (Set 3) / Rp 1.700.000 (Set 5) / Rp 3.000.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Underarm Man",
+        "duration": "15 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted underarm hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted underarm hair (man)",
+        "procedure": "Skin prep, targeted laser passes over underarms",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 400.000 (Single) / Rp 1.100.000 (Set 3) / Rp 1.700.000 (Set 5) / Rp 3.000.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Bikini Line Woman/Man",
+        "duration": "20 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted bikini line hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted bikini line hair",
+        "procedure": "Skin prep, targeted laser passes over bikini area",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 800.000 (Single) / Rp 2.250.000 (Set 3) / Rp 3.500.000 (Set 5) / Rp 6.000.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Brazilian Woman/Man",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal offers complete Brazilian-area hair reduction, targeting hair growth at the root for smoother, longer-lasting results than traditional hair removal methods.",
+        "suitableFor": "Unwanted Brazilian-area hair",
+        "procedure": "Skin prep, targeted laser passes over full area",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.000.000 (Single) / Rp 2.700.000 (Set 3) / Rp 4.250.000 (Set 5) / Rp 7.500.000 (Set 10)",
+        "keyBenefits": [
+          "Complete coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Chest Male",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted chest hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted chest hair (male)",
+        "procedure": "Skin prep, targeted laser passes over chest",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.000.000 (Single) / Rp 2.850.000 (Set 3) / Rp 4.500.000 (Set 5) / Rp 7.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Abs Male",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted abdominal hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted abs/stomach hair (male)",
+        "procedure": "Skin prep, targeted laser passes over abdomen",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.200.000 (Single) / Rp 3.300.000 (Set 3) / Rp 5.000.000 (Set 5) / Rp 9.000.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Back",
+        "duration": "40 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted back hair growth at the root, leaving skin smoother with fewer ingrown hairs over time.",
+        "suitableFor": "Unwanted back hair",
+        "procedure": "Skin prep, targeted laser passes over back",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.700.000 (Single) / Rp 4.500.000 (Set 3) / Rp 7.000.000 (Set 5) / Rp 12.000.000 (Set 10)",
+        "keyBenefits": [
+          "Full back coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Half Arm",
+        "duration": "20 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted arm hair growth at the root, leaving skin smoother and silkier over time.",
+        "suitableFor": "Unwanted half-arm hair",
+        "procedure": "Skin prep, targeted laser passes over half arm",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 850.000 (Single) / Rp 2.400.000 (Set 3) / Rp 3.600.000 (Set 5) / Rp 6.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Full Arm",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted arm hair growth at the root across the full arm, leaving skin smoother and silkier over time.",
+        "suitableFor": "Unwanted full-arm hair",
+        "procedure": "Skin prep, targeted laser passes over full arm",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.500.000 (Single) / Rp 4.000.000 (Set 3) / Rp 6.000.000 (Set 5) / Rp 10.000.000 (Set 10)",
+        "keyBenefits": [
+          "Full coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Full Leg",
+        "duration": "45 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted leg hair growth at the root across the full leg, leaving skin smoother and silkier over time.",
+        "suitableFor": "Unwanted full-leg hair",
+        "procedure": "Skin prep, targeted laser passes over full leg",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 2.500.000 (Single) / Rp 6.500.000 (Set 3) / Rp 10.000.000 (Set 5) / Rp 18.000.000 (Set 10)",
+        "keyBenefits": [
+          "Full coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Half Leg",
+        "duration": "30 Mins",
+        "desc": "Laser Hair Removal targets and reduces unwanted leg hair growth at the root, leaving skin smoother and silkier over time.",
+        "suitableFor": "Unwanted half-leg hair",
+        "procedure": "Skin prep, targeted laser passes over half leg",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth, smoother skin over sessions",
+        "price": "Rp 1.500.000 (Single) / Rp 3.600.000 (Set 3) / Rp 5.500.000 (Set 5) / Rp 9.500.000 (Set 10)",
+        "keyBenefits": [
+          "Long-lasting reduction",
+          "Precise targeting",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Laser Hair Removal \u2013 Full Body Man",
+        "duration": "90 Mins",
+        "tag": "Premium",
+        "desc": "Comprehensive Laser Hair Removal covering the full body for men, targeting and reducing hair growth at the root for smoother, silkier skin with results that last much longer than traditional methods.",
+        "suitableFor": "Full-body hair reduction (male)",
+        "procedure": "Skin prep, targeted laser passes across full body",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth across the body, smoother skin over sessions",
+        "price": "Rp 7.000.000 (Single) / Rp 20.400.000 (Set 3) / Rp 32.500.000 (Set 5) / Rp 50.000.000 (Set 10)",
+        "keyBenefits": [
+          "Complete full-body coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "SALON",
+    "treatments": [
+      {
+        "name": "Laser Hair Removal \u2013 Full Body Woman",
+        "duration": "90 Mins",
+        "tag": "Premium",
+        "desc": "Comprehensive Laser Hair Removal covering the full body for women, targeting and reducing hair growth at the root for smoother, silkier skin with results that last much longer than traditional methods.",
+        "suitableFor": "Full-body hair reduction (female)",
+        "procedure": "Skin prep, targeted laser passes across full body",
+        "downtime": "No downtime",
+        "expectedResults": "Reduced hair growth across the body, smoother skin over sessions",
+        "price": "Rp 6.000.000 (Single) / Rp 17.400.000 (Set 3) / Rp 27.500.000 (Set 5) / Rp 40.000.000 (Set 10)",
+        "keyBenefits": [
+          "Complete full-body coverage",
+          "Long-lasting reduction",
+          "Minimal maintenance"
+        ]
+      },
+      {
+        "name": "Bronze Membership Package",
+        "duration": "Membership",
+        "tag": "Package",
+        "desc": "An exclusive membership package valued at 16 million (total worth 20 million+), bundling facial and machine treatments with gym access and salon credit for ongoing value.",
+        "suitableFor": "Clients wanting bundled treatment + lifestyle perks",
+        "procedure": "1 Facial Treatment, 1 Machine Treatment, 1-Month Gym Membership, 500K Shaz Salon Voucher, 20% OFF Raw Caf\u00e9",
+        "downtime": "N/A (package)",
+        "expectedResults": "Ongoing access to treatments, gym, salon credit, and caf\u00e9 discount",
+        "price": "Rp 15.000.000",
+        "keyBenefits": [
+          "Best value bundle",
+          "Gym access",
+          "Salon voucher included",
+          "Caf\u00e9 discount"
+        ]
+      },
+      {
+        "name": "Silver Membership Package",
+        "duration": "Membership",
+        "tag": "Package",
+        "desc": "An exclusive membership package valued at 27 million (total worth 32 million+), bundling facial and machine treatments with extended gym access and higher salon credit.",
+        "suitableFor": "Clients wanting bundled treatment + lifestyle perks",
+        "procedure": "1 Facial Treatment, 1 Machine Treatment, 3-Month Gym Membership, 1 Mil Shaz Salon Voucher, 20% OFF Raw Caf\u00e9",
+        "downtime": "N/A (package)",
+        "expectedResults": "Ongoing access to treatments, gym, salon credit, and caf\u00e9 discount",
+        "price": "Rp 25.000.000",
+        "keyBenefits": [
+          "Extended gym access",
+          "Higher salon voucher",
+          "Great value",
+          "Caf\u00e9 discount"
+        ]
+      },
+      {
+        "name": "Gold Membership Package",
+        "duration": "Membership",
+        "tag": "Package",
+        "desc": "An exclusive membership package valued at 38 million (total worth 48 million+), bundling multiple facial and machine treatments with 6-month gym access and generous salon credit.",
+        "suitableFor": "Clients wanting premium bundled treatment + lifestyle perks",
+        "procedure": "2 Facial Treatments, 2 Machine Treatments, 6-Month Gym Membership, 2 Mil Shaz Salon Voucher, 20% OFF Raw Caf\u00e9",
+        "downtime": "N/A (package)",
+        "expectedResults": "Ongoing access to treatments, gym, salon credit, and caf\u00e9 discount",
+        "price": "Rp 35.000.000",
+        "keyBenefits": [
+          "More treatments included",
+          "6-month gym access",
+          "Generous salon voucher",
+          "Caf\u00e9"
+        ]
+      },
+      {
+        "name": "Platinum Membership Package",
+        "duration": "Membership",
+        "tag": "Package",
+        "desc": "An exclusive membership package valued at 55 million (total worth 75 million+), bundling multiple facial and machine treatments with a full year of gym access and personal training sessions.",
+        "suitableFor": "Clients wanting comprehensive treatment + fitness bundle",
+        "procedure": "3 Facial Treatments, 3 Machine Treatments, 1-Year Gym Membership, 5 Personal Training Sessions, 3 Mil Shaz Salon Voucher, 20% OFF Raw Caf\u00e9",
+        "downtime": "N/A (package)",
+        "expectedResults": "Full-year access to treatments, gym, personal training, and salon credit",
+        "price": "Rp 50.000.000",
+        "keyBenefits": [
+          "1-year gym membership",
+          "Personal training included",
+          "High-value bundle",
+          "Caf\u00e9"
+        ]
+      },
+      {
+        "name": "Royal Membership Package",
+        "duration": "Membership",
+        "tag": "Package \u00b7 Best Value",
+        "desc": "The most exclusive membership package valued at 82 million (total worth 120 million+), bundling extensive facial and machine treatments with 2 years of gym access and 10 personal training sessions.",
+        "suitableFor": "Clients wanting the ultimate treatment + fitness bundle",
+        "procedure": "5 Facial Treatments, 6 Machine Treatments, 2-Year Gym Membership, 10 Personal Training Sessions, 5 Mil Shaz Salon Voucher, 20% OFF Raw Caf\u00e9",
+        "downtime": "N/A (package)",
+        "expectedResults": "2-year access to treatments, gym, personal training, and salon credit",
+        "price": "Rp 75.000.000",
+        "keyBenefits": [
+          "Maximum treatments included",
+          "2-year gym membership",
+          "10 PT sessions",
+          "Highest"
+        ]
+      }
+    ]
+  }
+]
