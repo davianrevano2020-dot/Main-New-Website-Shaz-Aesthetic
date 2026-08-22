@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { 
+import { Download, FileSpreadsheet, 
   Save, 
   Upload, 
   Plus, 
@@ -19,7 +19,8 @@ import {
   ChevronUp
 } from 'lucide-react';
 import Link from 'next/link';
-import { DEFAULT_CATEGORIES, TreatmentCategory, TreatmentItem } from '../../treatment/ClientTreatmentPage';
+import Papa from 'papaparse';
+import { Download, FileSpreadsheet, DEFAULT_CATEGORIES, TreatmentCategory, TreatmentItem } from '../../treatment/ClientTreatmentPage';
 
 export default function BackOfficeTreatment() {
   const [activeTab, setActiveTab] = useState<'categories' | 'page_settings'>('categories');
@@ -108,6 +109,112 @@ export default function BackOfficeTreatment() {
     } finally {
       setIsSaving(false);
     }
+  };
+
+  
+  // CSV Import/Export
+  const handleExportCSV = () => {
+    const rows: any[] = [];
+    categories.forEach(cat => {
+      if (cat.featuredTreatments && cat.featuredTreatments.length > 0) {
+        cat.featuredTreatments.forEach(t => {
+          rows.push({
+            'Category ID': cat.id,
+            'Category Name': cat.name,
+            'Service Name': t.name || '',
+            'Duration': t.duration || '',
+            'Price': t.price || '',
+            'Tag': t.tag || '',
+            'Description': t.desc || '',
+            'Suitable For': t.suitableFor || '',
+            'Procedure': t.procedure || '',
+            'Downtime': t.downtime || '',
+            'Expected Results': t.expectedResults || '',
+            'Key Benefits': t.keyBenefits ? t.keyBenefits.join(', ') : ''
+          });
+        });
+      } else {
+        rows.push({
+          'Category ID': cat.id,
+          'Category Name': cat.name,
+          'Service Name': '',
+          'Duration': '',
+          'Price': '',
+          'Tag': '',
+          'Description': '',
+          'Suitable For': '',
+          'Procedure': '',
+          'Downtime': '',
+          'Expected Results': '',
+          'Key Benefits': ''
+        });
+      }
+    });
+
+    const csv = Papa.unparse(rows);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'treatments_data.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleImportCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    Papa.parse(file, {
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const data = results.data as any[];
+        const updatedCategories = [...categories];
+        
+        // Group by category ID
+        const catMap = new Map<string, TreatmentItem[]>();
+        data.forEach(row => {
+          const catId = row['Category ID'] || row['Category Name']?.toLowerCase().replace(/\s+/g, '-');
+          if (!catId) return;
+          
+          if (!catMap.has(catId)) {
+            catMap.set(catId, []);
+          }
+          
+          if (row['Service Name']) {
+            catMap.get(catId)?.push({
+              name: row['Service Name'],
+              desc: row['Description'] || '',
+              duration: row['Duration'] || '',
+              price: row['Price'] || '',
+              tag: row['Tag'] || '',
+              suitableFor: row['Suitable For'] || '',
+              procedure: row['Procedure'] || '',
+              downtime: row['Downtime'] || '',
+              expectedResults: row['Expected Results'] || '',
+              keyBenefits: row['Key Benefits'] ? row['Key Benefits'].split(',').map((s:string) => s.trim()).filter(Boolean) : []
+            });
+          }
+        });
+
+        updatedCategories.forEach(cat => {
+          if (catMap.has(cat.id)) {
+            cat.featuredTreatments = catMap.get(cat.id) || [];
+            cat.treatmentsCount = `${cat.featuredTreatments.length} Treatments`;
+          }
+        });
+
+        setCategories(updatedCategories);
+        setStatusMessage({ type: 'success', text: 'CSV imported! Please review and click Save Changes.' });
+        e.target.value = ''; // reset
+      },
+      error: function() {
+        setStatusMessage({ type: 'error', text: 'Failed to parse CSV file.' });
+      }
+    });
   };
 
   const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>, categoryIndex?: number, fieldKey?: string) => {
