@@ -18,6 +18,7 @@ export default function FooterSettings() {
     footer_explore_2_link: '',
     footer_explore_3_text: '',
     footer_explore_3_link: '',
+    global_whatsapp_number: '',
     footer_contact_whatsapp: '',
     footer_contact_whatsapp_link: '',
     footer_contact_email: '',
@@ -247,6 +248,12 @@ export default function FooterSettings() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h3 className="font-semibold text-gray-700">Contact Info</h3>
+              
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">Global WhatsApp Number</label>
+                <input type="text" name="global_whatsapp_number" value={content.global_whatsapp_number} onChange={handleChange} placeholder="e.g. 628113889999 (Used for dynamic inquire buttons)" className="w-full px-3 py-2 bg-white border border-brand-forest/30 rounded-lg text-sm" />
+                <p className="text-[10px] text-gray-400 mt-1">Used for "Inquire Service/Category" buttons across the site.</p>
+              </div>
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1">WhatsApp Label</label>
                 <input type="text" name="footer_contact_whatsapp" value={content.footer_contact_whatsapp} onChange={handleChange} placeholder="WhatsApp Us" className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />

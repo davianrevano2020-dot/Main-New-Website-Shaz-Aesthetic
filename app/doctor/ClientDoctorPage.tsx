@@ -211,8 +211,9 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
   // Helper to build booking WhatsApp URL
   const getBookingUrl = (doctorName?: string) => {
     if (!doctorName) return content.doctor_cta_button_link || WA_DEFAULT;
+    const waNumber = content.global_whatsapp_number || "628113889999";
     const text = `Hello SHAZ Aesthetic Clinic Seminyak, I would like to book a medical consultation with ${doctorName}.`;
-    return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
   };
 
   // Extract unique specializations for filter tabs

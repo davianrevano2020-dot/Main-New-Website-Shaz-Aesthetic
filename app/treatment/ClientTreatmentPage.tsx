@@ -1326,8 +1326,9 @@ export default function ClientTreatmentPage({ initialContent = {} }: ClientTreat
   }, []);
 
   const getWhatsAppUrl = (customMsg?: string) => {
+    const waNumber = initialContent?.global_whatsapp_number || "628113889999";
     const msg = customMsg || "Hello SHAZ Aesthetic Clinic, I would like to book a consultation for your treatments.";
-    return `https://wa.me/628113889999?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
   };
 
   return (

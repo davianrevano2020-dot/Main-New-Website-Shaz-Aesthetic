@@ -274,8 +274,9 @@ export default function ClientPackagesPage({ initialContent }: { initialContent:
   }, [activeCategoryModal]);
 
   const getWhatsAppUrl = (customMessage: string) => {
+    const waNumber = initialContent?.global_whatsapp_number || "628113889999";
     const encodedMessage = encodeURIComponent(customMessage);
-    return `https://wa.me/6281234567890?text=${encodedMessage}`;
+    return `https://wa.me/${waNumber}?text=${encodedMessage}`;
   };
 
   return (
