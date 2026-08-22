@@ -264,29 +264,29 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
         {/* ----------------------------------------------------------------------
             01. HERO
         ---------------------------------------------------------------------- */}
-        <section className="relative min-h-[95vh] flex items-center pt-32 pb-20 bg-brand-white overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center pt-28 md:pt-32 pb-16 md:pb-20 bg-brand-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
               
               {/* Left Column - Text */}
               <motion.div 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
                 className="max-w-xl"
               >
-                <h1 className="font-serif text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-brand-charcoal mb-8">
+                <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-brand-charcoal mb-6 md:mb-8">
                   {siteContent.hero_title ? (
                     <span dangerouslySetInnerHTML={{ __html: siteContent.hero_title }} />
                   ) : (
                     <>
-                      Premium <br/>
-                      <span className="italic font-light text-[#7C8B76]">Aesthetics</span>
+                      Beauty, Refined by <br/>
+                      <span className="italic font-light text-[#7C8B76]">Medical Expertise</span>
                     </>
                   )}
                 </h1>
-                <p className="text-lg md:text-xl text-brand-charcoal/60 mb-12 leading-relaxed font-light max-w-[90%]">
-                  {siteContent.hero_subtitle || 'Refined by Medical Expertise. Discover a sanctuary where advanced science meets personalized care.'}
+                <p className="text-base md:text-xl text-brand-charcoal/70 mb-8 md:mb-12 leading-relaxed font-light max-w-[90%]">
+                  {siteContent.hero_subtitle || 'PREMIUM AESTHETIC CLINIC IN SEMINYAK. Discover a sanctuary where advanced science meets personalized care.'}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -298,7 +298,7 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
                     {siteContent.hero_button1_text || 'Book Consultation'} <ArrowRight className="w-4 h-4" />
                   </a>
                   <a 
-                    href={siteContent.hero_button2_link || '#about'}
+                    href={siteContent.hero_button2_link || '/about'}
                     className="bg-transparent border border-[#EAE6E1] text-[#3A3632] px-8 py-4 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-[#EAE6E1]/50 transition-all duration-300 flex items-center justify-center sm:w-fit"
                   >
                     {siteContent.hero_button2_text || 'Discover SHAZ'}
@@ -308,10 +308,10 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
 
               {/* Right Column - Image */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, delay: 0.4 }}
-                className="relative w-full aspect-[4/3] lg:aspect-[1.2/1] rounded-[2.5rem] overflow-hidden bg-[#EFEFEA]"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative w-full aspect-[4/3] lg:aspect-[1.2/1] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-[#EFEFEA] shadow-sm"
               >
                 <img 
                   src={siteContent.hero_image || "https://img.shazaestheticbali.com/header-background-banner.jpg"} 
@@ -327,14 +327,14 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
         {/* ----------------------------------------------------------------------
             02. BRAND PHILOSOPHY
         ---------------------------------------------------------------------- */}
-        <section className="py-24 md:py-32 bg-[#F9F8F6] text-center px-6">
+        <section className="py-20 md:py-32 bg-[#F9F8F6] text-center px-6">
           <div className="max-w-4xl mx-auto">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] text-[#3A3632] leading-tight mb-8"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              
+              transition={{ duration: 0.7 }}
+              className="font-serif text-3xl md:text-5xl lg:text-[3.5rem] text-[#3A3632] leading-tight mb-8"
             >
               {siteContent.about_title ? (
                 <span dangerouslySetInnerHTML={{ __html: siteContent.about_title }} />
@@ -348,18 +348,18 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
             
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-16 h-[1px] bg-brand-charcoal/20 mx-auto mb-10"
+              animate={{ opacity: 1, scale: 1 }}
+              
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="w-16 h-[1px] bg-brand-charcoal/20 mx-auto mb-8 md:mb-10"
             />
             
             <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-[#3A3632]/60 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-[#3A3632]/70 text-base md:text-xl font-light leading-relaxed max-w-3xl mx-auto"
             >
               {siteContent.about_description ? (
                 <span dangerouslySetInnerHTML={{ __html: String(siteContent.about_description).replace(/\n/g, '<br/>') }} />
@@ -373,22 +373,22 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
         {/* ----------------------------------------------------------------------
             03. THE EXPERIENCE
         ---------------------------------------------------------------------- */}
-        <section id="about" className="py-24 md:py-32 bg-[#F9F8F6]">
+        <section id="about" className="py-20 md:py-32 bg-[#F9F8F6]">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
               
               {/* Left Column: Text */}
               <motion.div 
-                initial={{ opacity: 0, x: -30 }} 
-                whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ once: true, margin: "-100px" }} 
-                transition={{ duration: 1 }}
+                initial={{ opacity: 0, x: -20 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                 
+                transition={{ duration: 0.8 }}
                 className="w-full lg:w-5/12 lg:pr-10"
               >
-                <span className="text-[#7C8B76] font-bold tracking-[0.15em] text-[10px] uppercase mb-6 block">
+                <span className="text-[#7C8B76] font-bold tracking-[0.15em] text-[10px] uppercase mb-4 md:mb-6 block">
                   {siteContent.experience_kicker || "The Experience"}
                 </span>
-                <h2 className="font-serif text-5xl md:text-6xl lg:text-[4rem] text-[#3A3632] leading-[1.1] mb-8">
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-[4rem] text-[#3A3632] leading-[1.1] mb-6 md:mb-8">
                   {siteContent.experience_title ? (
                     <span dangerouslySetInnerHTML={{ __html: siteContent.experience_title }} />
                   ) : (
@@ -399,11 +399,11 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
                     </>
                   )}
                 </h2>
-                <p className="text-[#3A3632]/60 text-base md:text-lg font-light leading-relaxed mb-10 max-w-md">
+                <p className="text-[#3A3632]/70 text-base md:text-lg font-light leading-relaxed mb-8 md:mb-10 max-w-md">
                   {siteContent.experience_description || "From the moment you step through our doors, you are enveloped in an environment designed entirely for your comfort and peace of mind. We seamlessly merge clinical excellence with sensory luxury, ensuring every visit feels like a retreat."}
                 </p>
                 <a 
-                  href={siteContent.experience_button_link || "#locations"}
+                  href={siteContent.experience_button_link || "/locations"}
                   className="inline-flex items-center gap-2 text-[#3A3632] font-bold tracking-widest text-[11px] uppercase border-b border-[#3A3632]/30 pb-1.5 hover:border-[#3A3632] transition-colors group"
                 >
                   {siteContent.experience_button_text || "Explore Our Clinics"} 
@@ -413,22 +413,22 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
 
               {/* Right Column: Image Grid */}
               <motion.div 
-                initial={{ opacity: 0, x: 30 }} 
-                whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ once: true, margin: "-100px" }} 
-                transition={{ duration: 1 }}
+                initial={{ opacity: 0, x: 20 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                 
+                transition={{ duration: 0.8 }}
                 className="w-full lg:w-7/12 grid grid-cols-2 gap-4 md:gap-6"
               >
                 {/* Image Column 1 (Staggered Down) */}
-                <div className="flex flex-col gap-4 md:gap-6 pt-12 md:pt-16">
-                  <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-neutral-200">
+                <div className="flex flex-col gap-4 md:gap-6 pt-8 md:pt-16">
+                  <div className="aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-200">
                     <img 
                       src={siteContent.experience_image1 || "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"} 
                       alt="SHAZ Clinic Interior" 
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                     />
                   </div>
-                  <div className="aspect-square rounded-[2rem] overflow-hidden bg-neutral-200">
+                  <div className="aspect-square rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-200">
                     <img 
                       src={siteContent.experience_image2 || "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800&auto=format&fit=crop"} 
                       alt="Medical Expertise" 
@@ -439,14 +439,14 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
 
                 {/* Image Column 2 (Staggered Up) */}
                 <div className="flex flex-col gap-4 md:gap-6">
-                  <div className="aspect-square rounded-[2rem] overflow-hidden bg-neutral-200">
+                  <div className="aspect-square rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-200">
                     <img 
                       src={siteContent.experience_image3 || "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop"} 
                       alt="Aesthetic Treatment" 
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                     />
                   </div>
-                  <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-neutral-200">
+                  <div className="aspect-[4/5] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-neutral-200">
                     <img 
                       src={siteContent.experience_image4 || "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop"} 
                       alt="Treatment Room" 
@@ -463,40 +463,44 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
         {/* ----------------------------------------------------------------------
             04. FEATURED TREATMENTS
         ---------------------------------------------------------------------- */}
-        <section id="treatments" className="py-24 md:py-32 bg-brand-white border-t border-brand-beige/30">
+        <section id="treatments" className="py-20 md:py-32 bg-brand-white border-t border-brand-beige/30">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
               <div className="max-w-2xl">
                 <span className="text-brand-forest font-semibold tracking-[0.2em] text-xs uppercase mb-4 block">
                   Premium Services
                 </span>
-                <h2 className="font-serif text-4xl md:text-5xl text-brand-charcoal leading-tight">
+                <h2 className="font-serif text-3xl md:text-5xl text-brand-charcoal leading-tight">
                   Our Treatments
                 </h2>
               </div>
               <a 
-                href={siteContent.treatments_button_link || WA_LINK}
-                target="_blank" rel="noopener noreferrer"
+                href={siteContent.treatments_button_link || "/treatment"}
                 className="inline-flex items-center gap-3 text-brand-charcoal font-bold tracking-widest text-xs uppercase hover:text-brand-forest transition-colors group"
               >
                 {siteContent.treatments_button_text || "Explore Full Menu"}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
               {treatmentsList?.map((cat: any, i: number) => (
-                <motion.div 
-                  key={i} 
-                  initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8, delay: i * 0.1 }}
-                  className="group cursor-pointer"
+                <motion.a 
+                  key={i}
+                  href="/treatment"
+                  initial={{ opacity: 0, y: 20 }} 
+                  animate={{ opacity: 1, y: 0 }} 
+                   
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="group cursor-pointer block"
                 >
-                  <div className="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-brand-sage/10">
+                  <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-brand-sage/10 shadow-sm">
                     <img src={cat.img} alt={cat.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                   </div>
-                  <h3 className="font-serif text-2xl text-brand-forest mb-3 group-hover:text-brand-charcoal transition-colors">{cat.name}</h3>
-                  <p className="text-brand-charcoal/70 font-light text-sm mb-4">{cat.desc}</p>
+                  <h3 className="font-serif text-2xl text-brand-forest mb-2 group-hover:text-brand-charcoal transition-colors">{cat.name}</h3>
+                  <p className="text-brand-charcoal/70 font-light text-sm mb-4 line-clamp-2">{cat.desc}</p>
                   <div className="h-[1px] w-12 bg-brand-forest group-hover:w-full transition-all duration-500 ease-out" />
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </div>

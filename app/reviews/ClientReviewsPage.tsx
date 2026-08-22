@@ -173,8 +173,8 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
                 <motion.div
                   key={review.id}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-brand-white p-8 rounded-2xl border border-brand-beige relative group hover:border-[#D4AF37]/30 transition-colors flex flex-col"
                 >
@@ -220,8 +220,8 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
                 <motion.div
                   key={video.id}
                   initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="group cursor-pointer relative"
                   onClick={() => setActiveVideo(video.id)}
@@ -264,8 +264,8 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
                   <div key={caseStudy.id} className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                     <motion.div 
                       initial={{ opacity: 0, x: isEven ? 30 : -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
+                      animate={{ opacity: 1, x: 0 }}
+                      
                       transition={{ duration: 0.8 }}
                       className={`w-full lg:w-1/2 order-1 ${isEven ? 'lg:order-2' : ''}`}
                     >
@@ -277,8 +277,8 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
 
                     <motion.div 
                       initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
+                      animate={{ opacity: 1, x: 0 }}
+                      
                       transition={{ duration: 0.8 }}
                       className={`w-full lg:w-1/2 order-2 ${isEven ? 'lg:order-1' : ''}`}
                     >
@@ -316,8 +316,8 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-6">Ready to write your own story?</h2>

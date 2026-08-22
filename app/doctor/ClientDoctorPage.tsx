@@ -481,8 +481,8 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
                   <motion.div
                     key={doctor.id || index}
                     initial={{ opacity: 0, y: 25 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
+                    
                     transition={{ duration: 0.5, delay: index * 0.08 }}
                     className="bg-white rounded-3xl p-5 sm:p-6 border border-brand-beige shadow-sm hover:shadow-lg hover:border-brand-sage/40 transition-all duration-300 flex flex-col justify-between h-full group"
                   >

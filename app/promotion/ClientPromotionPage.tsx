@@ -192,8 +192,8 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
                 <motion.div 
                   key={promo.id || idx}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="group relative bg-[#FAF8F5] rounded-[2rem] border border-brand-beige overflow-hidden hover:border-[#D4AF37]/40 hover:shadow-2xl hover:shadow-[#D4AF37]/10 transition-all duration-500 flex flex-col"
                 >
@@ -265,8 +265,8 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div 
                 initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, x: 0 }}
+                
                 transition={{ duration: 0.7 }}
                 className="order-2 lg:order-1"
               >
@@ -310,8 +310,8 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
               
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, scale: 1 }}
+                
                 transition={{ duration: 0.7 }}
                 className="order-1 lg:order-2"
               >
@@ -396,8 +396,8 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
                   
                   <motion.div 
                     initial={{ rotate: -5, scale: 0.9, opacity: 0, y: 20 }}
-                    whileInView={{ rotate: 0, scale: 1, opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ rotate: 0, scale: 1, opacity: 1, y: 0 }}
+                    
                     whileHover={{ scale: 1.05, rotate: 2 }}
                     transition={{ type: "spring", stiffness: 100, damping: 15 }}
                     className="relative w-full max-w-md aspect-[1.6/1] rounded-2xl overflow-hidden shadow-2xl border border-white/30 cursor-pointer group"

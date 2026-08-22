@@ -361,10 +361,10 @@ export default function ClientPackagesPage({ initialContent }: { initialContent:
               {categories.map((category, index) => (
                 <motion.div
                   key={category.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
+                  transition={{ duration: 0.6, delay: index * 0.08 }}
                   className="group cursor-pointer flex flex-col h-full bg-[#FAF8F5] rounded-3xl overflow-hidden border border-brand-beige hover:border-brand-sage/60 hover:shadow-lg transition-all duration-500"
                   onClick={() => setActiveCategoryModal(category)}
                 >

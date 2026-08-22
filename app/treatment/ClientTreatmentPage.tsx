@@ -1509,8 +1509,8 @@ export default function ClientTreatmentPage({ initialContent = {} }: ClientTreat
               <motion.div
                 key={category.id}
                 initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 onClick={() => setActiveCategoryModal(category)}
                 className="bg-white rounded-3xl p-5 sm:p-6 border border-brand-beige shadow-sm hover:shadow-xl hover:border-brand-sage/40 transition-all duration-300 flex flex-col justify-between h-full group cursor-pointer"

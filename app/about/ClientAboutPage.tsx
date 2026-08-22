@@ -216,10 +216,10 @@ export default function ClientAboutPage({ initialContent = {} }: ClientAboutPage
               
               {/* Left Column: Visual Collage */}
               <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.9 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                
+                transition={{ duration: 0.8 }}
                 className="lg:col-span-6 grid grid-cols-2 gap-4 md:gap-6"
               >
                 <div className="space-y-4 md:space-y-6">
@@ -253,10 +253,10 @@ export default function ClientAboutPage({ initialContent = {} }: ClientAboutPage
 
               {/* Right Column: Text & Story */}
               <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.9 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                
+                transition={{ duration: 0.8 }}
                 className="lg:col-span-6 lg:pl-6"
               >
                 <span className="text-[#7C8B76] font-bold tracking-[0.2em] text-xs uppercase mb-4 block">
@@ -345,10 +345,10 @@ export default function ClientAboutPage({ initialContent = {} }: ClientAboutPage
               {valuesList.map((val: any, idx: number) => (
                 <motion.div 
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.7, delay: idx * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
+                  transition={{ duration: 0.6, delay: idx * 0.08 }}
                   className="bg-white/5 backdrop-blur-sm border border-white/15 rounded-3xl p-8 flex flex-col justify-between hover:bg-white/10 transition-all duration-300"
                 >
                   <div>
