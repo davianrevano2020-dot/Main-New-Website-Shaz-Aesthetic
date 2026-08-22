@@ -128,6 +128,12 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
         
         {/* HERO SECTION */}
         <section className="relative px-6 py-20 md:py-32 overflow-hidden">
+          {initialContent?.reviews_hero_image && (
+            <div className="absolute inset-0 pointer-events-none opacity-10">
+              <img src={initialContent.reviews_hero_image} alt="" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-brand-white/50 backdrop-blur-[2px]" />
+            </div>
+          )}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-brand-sage/5 blur-3xl" />
             <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#D4AF37]/5 blur-3xl" />
@@ -141,15 +147,25 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
             >
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="h-[1px] w-8 bg-[#D4AF37]" />
-                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em]">Client Stories</span>
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em]">
+                  {initialContent?.reviews_hero_badge || "Client Stories"}
+                </span>
                 <div className="h-[1px] w-8 bg-[#D4AF37]" />
               </div>
+
               <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal leading-tight mb-6">
-                Real Results, <br />
-                <span className="italic text-brand-charcoal/80">Real Radiance.</span>
+                {initialContent?.reviews_hero_title ? (
+                  <span dangerouslySetInnerHTML={{ __html: initialContent.reviews_hero_title }} />
+                ) : (
+                  <>
+                    Real Results, <br />
+                    <span className="italic text-brand-charcoal/80">Real Radiance.</span>
+                  </>
+                )}
               </h1>
+
               <p className="text-lg text-brand-charcoal/70 leading-relaxed max-w-2xl mx-auto">
-                Discover the transformative journeys of our clients. From subtle refinements to profound rejuvenation, their stories are a testament to our dedication to aesthetic excellence.
+                {initialContent?.reviews_hero_subtitle || "Discover the transformative journeys of our clients. From subtle refinements to profound rejuvenation, their stories are a testament to our dedication to aesthetic excellence."}
               </p>
             </motion.div>
           </div>
