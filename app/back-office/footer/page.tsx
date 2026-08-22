@@ -252,7 +252,7 @@ export default function FooterSettings() {
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1">Global WhatsApp Number</label>
                 <input type="text" name="global_whatsapp_number" value={content.global_whatsapp_number} onChange={handleChange} placeholder="e.g. 628113889999 (Used for dynamic inquire buttons)" className="w-full px-3 py-2 bg-white border border-brand-forest/30 rounded-lg text-sm" />
-                <p className="text-[10px] text-gray-400 mt-1">Used for "Inquire Service/Category" buttons across the site.</p>
+                <p className="text-[10px] text-gray-400 mt-1">Used for &quot;Inquire Service/Category&quot; buttons across the site.</p>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-gray-500 mb-1">WhatsApp Label</label>
