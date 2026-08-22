@@ -20,7 +20,7 @@ import { Download, FileSpreadsheet,
 } from 'lucide-react';
 import Link from 'next/link';
 import Papa from 'papaparse';
-import { Download, FileSpreadsheet, DEFAULT_CATEGORIES, TreatmentCategory, TreatmentItem } from '../../treatment/ClientTreatmentPage';
+import { DEFAULT_CATEGORIES, TreatmentCategory, TreatmentItem } from '../../treatment/ClientTreatmentPage';
 
 export default function BackOfficeTreatment() {
   const [activeTab, setActiveTab] = useState<'categories' | 'page_settings'>('categories');
