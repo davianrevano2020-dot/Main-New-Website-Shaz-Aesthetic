@@ -26,7 +26,7 @@ const DEFAULT_LOCATIONS = [
     hours: 'Monday - Sunday, 10:00 - 19:00',
     facilities: ['Aesthetic Rooms', 'VIP Suite', 'Product Boutique', 'Parking Area'],
     phone: '+62 811 388 8888',
-    image: 'https://images.unsplash.com/photo-1582885918730-221666e1471b?auto=format&fit=crop&q=80', // Premium clinic placeholder
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80', // Premium clinic placeholder
     mapQuery: 'Jl. Subak Sari No.1, Canggu, Bali',
   }
 ];
