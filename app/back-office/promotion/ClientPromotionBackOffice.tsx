@@ -60,11 +60,15 @@ export default function ClientPromotionBackOffice({ initialContent }: { initialC
   const [referTitle, setReferTitle] = useState(initialContent?.promo_refer_title || "Refer a Friend, \nShare the Radiance");
   const [referDesc, setReferDesc] = useState(initialContent?.promo_refer_desc || "At SHAZ Aesthetic Clinic, we believe that self-care is best shared. Introduce your friends to our premium treatments and you will both be rewarded with exclusive perks.");
   const [referImg, setReferImg] = useState(initialContent?.promo_refer_img || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop");
+  const [referBtnText, setReferBtnText] = useState(initialContent?.promo_refer_btn_text || "Join Referral Program");
+  const [referBtnLink, setReferBtnLink] = useState(initialContent?.promo_refer_btn_link || "");
 
   // Gift Voucher State
   const [giftTitle, setGiftTitle] = useState(initialContent?.promo_gift_title || "The Gift of \nTimeless Elegance");
   const [giftDesc, setGiftDesc] = useState(initialContent?.promo_gift_desc || "Looking for the perfect gift? SHAZ Aesthetic Clinic gift vouchers offer a luxurious experience and exceptional results. Treat your loved ones to bespoke aesthetic care.");
   const [giftImg, setGiftImg] = useState(initialContent?.promo_gift_img || "");
+  const [giftBtnText, setGiftBtnText] = useState(initialContent?.promo_gift_btn_text || "Purchase a Voucher");
+  const [giftBtnLink, setGiftBtnLink] = useState(initialContent?.promo_gift_btn_link || "");
 
   const [isUploading, setIsUploading] = useState(false);
 
@@ -109,9 +113,13 @@ export default function ClientPromotionBackOffice({ initialContent }: { initialC
         promo_refer_title: referTitle,
         promo_refer_desc: referDesc,
         promo_refer_img: referImg,
+        promo_refer_btn_text: referBtnText,
+        promo_refer_btn_link: referBtnLink,
         promo_gift_title: giftTitle,
         promo_gift_desc: giftDesc,
-        promo_gift_img: giftImg
+        promo_gift_img: giftImg,
+        promo_gift_btn_text: giftBtnText,
+        promo_gift_btn_link: giftBtnLink
       };
 
       const res = await fetch('/api/content', {
@@ -378,6 +386,26 @@ export default function ClientPromotionBackOffice({ initialContent }: { initialC
                       />
                     </label>
                   </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-brand-charcoal mb-2">Button Text</label>
+                  <input
+                    type="text"
+                    value={referBtnText}
+                    onChange={(e) => setReferBtnText(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-brand-beige focus:outline-none focus:ring-2 focus:ring-brand-sage/50 bg-brand-white"
+                    placeholder="Join Referral Program"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-brand-charcoal mb-2">Button Link</label>
+                  <input
+                    type="text"
+                    value={referBtnLink}
+                    onChange={(e) => setReferBtnLink(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-brand-beige focus:outline-none focus:ring-2 focus:ring-brand-sage/50 bg-brand-white"
+                    placeholder="e.g. https://wa.me/..."
+                  />
                 </div>
               </div>
               <div>
