@@ -323,7 +323,7 @@ export default function ClientDoctorPage({ initialContent = {} }: ClientDoctorPa
                   <img
                     src={content.doctor_hero_image || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop"}
                     alt="SHAZ Aesthetic Clinic Doctors & Specialists"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
