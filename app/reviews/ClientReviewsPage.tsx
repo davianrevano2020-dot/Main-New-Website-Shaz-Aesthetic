@@ -1,0 +1,377 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Star, Play, Quote, ArrowRight, User, X } from 'lucide-react';
+import GlobalHeader from '../components/GlobalHeader';
+import GlobalFooter from '../components/GlobalFooter';
+
+const WA_DEFAULT = "https://wa.link/o7f5yk";
+
+// Mock Data
+const GOOGLE_REVIEWS = [
+  {
+    id: 1,
+    name: "Amanda T.",
+    role: "Local Guide",
+    date: "2 weeks ago",
+    rating: 5,
+    text: "The absolute best aesthetic clinic in Bali. I had the signature facial and the results were immediate. The staff are so professional and the environment is just pure luxury.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    id: 2,
+    name: "Sarah Jenkins",
+    role: "Client",
+    date: "1 month ago",
+    rating: 5,
+    text: "Dr. Shaz is a true artist. She understood exactly what I wanted to achieve and the results are so natural. I couldn't be happier with my anti-aging treatment.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    id: 3,
+    name: "Elena V.",
+    role: "Client",
+    date: "2 months ago",
+    rating: 5,
+    text: "I was nervous about getting fillers for the first time, but the team here made me feel completely at ease. The clinic is pristine and the consultation was very thorough.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    id: 4,
+    name: "Michelle W.",
+    role: "Local Guide",
+    date: "3 months ago",
+    rating: 5,
+    text: "A sanctuary in Seminyak! I come here regularly for their glow-up treatments. Always top-notch service and my skin has literally never looked better.",
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?q=80&w=200&auto=format&fit=crop"
+  }
+];
+
+const VIDEO_TESTIMONIALS = [
+  {
+    id: 1,
+    title: "My Acne Scar Journey",
+    name: "Jessica M.",
+    thumbnail: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: 2,
+    title: "Non-Surgical Facelift Experience",
+    name: "Diana R.",
+    thumbnail: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    title: "Why I Choose SHAZ for Pigmentation",
+    name: "Chloe S.",
+    thumbnail: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop",
+  }
+];
+
+const SUCCESS_CASES = [
+  {
+    id: 1,
+    title: "Reversing Premature Aging",
+    client: "Anita, 42",
+    treatment: "Signature Lift & Hydration Protocol",
+    desc: "Anita came to us feeling her skin looked tired and older than her age due to sun exposure. Over a 3-month personalized protocol combining collagen stimulators and deep hydration therapies, we restored her skin's natural volume and luminosity. Today, she feels confident and radiant.",
+    image: "https://images.unsplash.com/photo-1516975080661-460d3d5761eb?q=80&w=1000&auto=format&fit=crop",
+    quote: "I look in the mirror and finally see myself again. The results are incredibly natural."
+  },
+  {
+    id: 2,
+    title: "Clearing Stubborn Pigmentation",
+    client: "Maria, 35",
+    treatment: "Advanced Laser & Peeling Course",
+    desc: "After years of struggling with melasma and uneven skin tone, Maria sought a definitive solution. Through a carefully calibrated series of gentle lasers and targeted peels, we successfully faded the hyperpigmentation, leaving her with a clear, even, and glowing complexion.",
+    image: "https://images.unsplash.com/photo-1596525141011-53644fcf24c6?q=80&w=1000&auto=format&fit=crop",
+    quote: "I no longer feel the need to wear heavy foundation every day. My skin is simply glowing."
+  }
+];
+
+export default function ClientReviewsPage({ initialContent }: { initialContent: any }) {
+  const parsedGoogleReviews = (() => {
+    if (initialContent?.reviews_google) {
+      try { return JSON.parse(initialContent.reviews_google); } catch(e) {}
+    }
+    return GOOGLE_REVIEWS;
+  })();
+
+  const parsedVideoTestimonials = (() => {
+    if (initialContent?.reviews_video) {
+      try { return JSON.parse(initialContent.reviews_video); } catch(e) {}
+    }
+    return VIDEO_TESTIMONIALS;
+  })();
+
+  const parsedSuccessCases = (() => {
+    if (initialContent?.reviews_cases) {
+      try { return JSON.parse(initialContent.reviews_cases); } catch(e) {}
+    }
+    return SUCCESS_CASES;
+  })();
+  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-brand-white selection:bg-[#D4AF37]/20 selection:text-brand-charcoal overflow-hidden">
+      <GlobalHeader initialContent={initialContent} />
+
+      <main className="pt-32 pb-20">
+        
+        {/* HERO SECTION */}
+        <section className="relative px-6 py-20 md:py-32 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-brand-sage/5 blur-3xl" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#D4AF37]/5 blur-3xl" />
+          </div>
+
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="h-[1px] w-8 bg-[#D4AF37]" />
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em]">Client Stories</span>
+                <div className="h-[1px] w-8 bg-[#D4AF37]" />
+              </div>
+              <h1 className="text-4xl md:text-6xl font-serif text-brand-charcoal leading-tight mb-6">
+                Real Results, <br />
+                <span className="italic text-brand-charcoal/80">Real Radiance.</span>
+              </h1>
+              <p className="text-lg text-brand-charcoal/70 leading-relaxed max-w-2xl mx-auto">
+                Discover the transformative journeys of our clients. From subtle refinements to profound rejuvenation, their stories are a testament to our dedication to aesthetic excellence.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* GOOGLE REVIEWS GRID */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif text-brand-charcoal mb-4">What They Say</h2>
+              <div className="flex items-center justify-center gap-1 mb-2">
+                {[1, 2, 3, 4, 5].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-[#D4AF37] text-[#D4AF37]" />
+                ))}
+              </div>
+              <p className="text-brand-charcoal/60 text-sm font-medium">5.0 / 5.0 from Google Reviews</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {parsedGoogleReviews.map((review, index) => (
+                <motion.div
+                  key={review.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-brand-white p-8 rounded-2xl border border-brand-beige relative group hover:border-[#D4AF37]/30 transition-colors flex flex-col"
+                >
+                  <Quote className="absolute top-6 right-6 w-8 h-8 text-[#D4AF37]/20 group-hover:text-[#D4AF37]/40 transition-colors" />
+                  
+                  <div className="flex items-center gap-1 mb-6">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
+                    ))}
+                  </div>
+
+                  <p className="text-brand-charcoal/80 text-sm leading-relaxed mb-8 relative z-10 italic flex-grow">
+                    &quot;{review.text}&quot;
+                  </p>
+
+                  <div className="flex items-center gap-4 mt-auto">
+                    <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" />
+                    <div>
+                      <h4 className="text-sm font-bold text-brand-charcoal">{review.name}</h4>
+                      <p className="text-xs text-brand-charcoal/50">{review.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* VIDEO TESTIMONIALS */}
+        <section className="py-24 bg-brand-charcoal text-brand-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-serif mb-4">Journey to Radiance</h2>
+                <p className="text-brand-white/70 max-w-lg">
+                  Watch our clients share their honest experiences and the confidence they&apos;ve gained through personalized care.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {parsedVideoTestimonials.map((video, index) => (
+                <motion.div
+                  key={video.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="group cursor-pointer relative"
+                  onClick={() => setActiveVideo(video.id)}
+                >
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6">
+                    <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-brand-charcoal/30 group-hover:bg-brand-charcoal/10 transition-colors duration-500" />
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] transition-all duration-300 shadow-xl">
+                        <Play className="w-6 h-6 text-white ml-1" />
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-serif mb-2 group-hover:text-[#D4AF37] transition-colors">{video.title}</h3>
+                  <p className="text-brand-white/60 text-sm flex items-center gap-2">
+                    <User className="w-4 h-4" /> {video.name}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SUCCESS CASES / CLIENT STORIES */}
+        <section className="py-24 bg-brand-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl md:text-5xl font-serif text-brand-charcoal mb-4">Success Cases</h2>
+              <p className="text-brand-charcoal/60 max-w-2xl mx-auto">
+                Detailed insights into how our tailored aesthetic protocols deliver transformative and lasting results.
+              </p>
+            </div>
+
+            <div className="space-y-32">
+              {parsedSuccessCases.map((caseStudy, index) => {
+                const isEven = index % 2 !== 0;
+                return (
+                  <div key={caseStudy.id} className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <motion.div 
+                      initial={{ opacity: 0, x: isEven ? 30 : -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8 }}
+                      className={`w-full lg:w-1/2 order-1 ${isEven ? 'lg:order-2' : ''}`}
+                    >
+                      <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                        <img src={caseStudy.image} alt={caseStudy.title} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-brand-charcoal/10" />
+                      </div>
+                    </motion.div>
+
+                    <motion.div 
+                      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8 }}
+                      className={`w-full lg:w-1/2 order-2 ${isEven ? 'lg:order-1' : ''}`}
+                    >
+                      <div className="inline-block px-4 py-1.5 rounded-full bg-brand-sage/10 text-brand-sage text-xs font-bold uppercase tracking-wider mb-6">
+                        {caseStudy.client}
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-serif text-brand-charcoal mb-4">
+                        {caseStudy.title}
+                      </h3>
+                      <div className="mb-6 pb-6 border-b border-brand-beige">
+                        <span className="text-xs uppercase tracking-wider text-brand-charcoal/50 font-bold block mb-1">Treatment Plan</span>
+                        <span className="text-brand-charcoal font-medium">{caseStudy.treatment}</span>
+                      </div>
+                      <p className="text-brand-charcoal/70 leading-relaxed mb-8 text-lg">
+                        {caseStudy.desc}
+                      </p>
+                      
+                      <div className="bg-white p-6 rounded-2xl border border-brand-beige relative">
+                        <Quote className="absolute top-6 left-6 w-6 h-6 text-[#D4AF37]/20" />
+                        <p className="text-brand-charcoal italic pl-10 relative z-10">
+                          &quot;{caseStudy.quote}&quot;
+                        </p>
+                      </div>
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA SECTION */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-brand-charcoal/5" />
+          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-serif text-brand-charcoal mb-6">Ready to write your own story?</h2>
+              <p className="text-lg text-brand-charcoal/70 mb-10 max-w-2xl mx-auto">
+                Schedule a personal consultation with our experts to design a treatment plan perfectly tailored to your unique beauty goals.
+              </p>
+              <a 
+                href={initialContent?.global_cta_link || WA_DEFAULT}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-brand-charcoal text-white rounded-full text-sm font-bold uppercase tracking-[0.2em] hover:bg-[#D4AF37] transition-all shadow-xl shadow-brand-charcoal/10 hover:shadow-[#D4AF37]/20"
+              >
+                {initialContent?.global_cta_text || "Book Your Consultation"}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
+          </div>
+        </section>
+
+      </main>
+
+      <GlobalFooter initialContent={initialContent} />
+
+      {/* Video Modal (Mock) */}
+      <AnimatePresence>
+        {activeVideo !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+          >
+            <div className="absolute inset-0 cursor-pointer" onClick={() => setActiveVideo(null)} />
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-4xl aspect-video bg-brand-charcoal rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center justify-center"
+            >
+              <button 
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              
+              <Play className="w-16 h-16 mb-4 opacity-50 text-white" />
+              <h3 className="text-2xl font-serif text-white mb-2">Video playback integration</h3>
+              <p className="text-white/50">In a production environment, this would embed a YouTube, Vimeo, or HTML5 video player.</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </div>
+  );
+}

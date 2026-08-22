@@ -12,7 +12,7 @@ const DEFAULT_MENU = [
   { id: '2', label: 'Treatments', url: '/#treatments', newTab: false },
   { id: '3', label: 'Packages', url: '/#packages', newTab: false },
   { id: '4', label: 'Doctors', url: '/doctor', newTab: false },
-  { id: '5', label: 'Reviews', url: '/#reviews', newTab: false },
+  { id: '5', label: 'Reviews', url: '/reviews', newTab: false },
 ];
 
 interface GlobalHeaderProps {
