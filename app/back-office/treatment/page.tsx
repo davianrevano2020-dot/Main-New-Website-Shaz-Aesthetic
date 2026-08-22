@@ -370,8 +370,20 @@ export default function BackOfficeTreatment() {
             <ExternalLink className="w-3.5 h-3.5" />
             <span>View /treatment Page</span>
           </Link>
+          
+          <button
+            onClick={handleExportCSV}
+            className="flex items-center gap-2 px-4 py-2.5 bg-white border border-brand-beige text-brand-charcoal rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-sand transition-all shadow-sm"
+          >
+            <span>Export CSV</span>
+          </button>
+          <label className="flex items-center gap-2 px-4 py-2.5 bg-white border border-brand-beige text-brand-charcoal rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-sand transition-all shadow-sm cursor-pointer">
+            <span>Import CSV</span>
+            <input type="file" accept=".csv" className="hidden" onChange={handleImportCSV} />
+          </label>
           <button
             onClick={handleSave}
+
             disabled={isSaving}
             className="flex items-center gap-2 px-6 py-2.5 bg-brand-forest text-white rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-charcoal transition-all shadow-sm disabled:opacity-50"
           >
