@@ -16,6 +16,7 @@ const DEFAULT_MENU = [
   { id: '6', label: 'Reviews', url: '/reviews', newTab: false },
   { id: '7', label: 'Locations', url: '/locations', newTab: false },
   { id: '8', label: 'Contact', url: '/contact', newTab: false },
+  { id: '9', label: 'FAQ', url: '/faq', newTab: false },
 ];
 
 interface GlobalHeaderProps {

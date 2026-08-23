@@ -19,7 +19,8 @@ import {
   Tag,
   Star,
   MapPin,
-  Phone
+  Phone,
+  HelpCircle
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -40,6 +41,7 @@ export default function BackOfficeLayout({
     { icon: Tag, label: 'Promotion', href: '/back-office/promotion' },
     { icon: MapPin, label: 'Locations', href: '/back-office/locations' },
     { icon: Phone, label: 'Contact Us', href: '/back-office/contact' },
+    { icon: HelpCircle, label: 'FAQ', href: '/back-office/faq' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },

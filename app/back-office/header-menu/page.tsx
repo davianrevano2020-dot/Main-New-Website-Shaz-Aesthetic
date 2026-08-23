@@ -49,6 +49,7 @@ export default function HeaderMenuSettings() {
                { id: '5', label: 'Reviews', url: '/reviews', newTab: false },
                { id: '6', label: 'Locations', url: '/locations', newTab: false },
                { id: '7', label: 'Contact', url: '/contact', newTab: false },
+               { id: '8', label: 'FAQ', url: '/faq', newTab: false },
              ]);
           }
         }
