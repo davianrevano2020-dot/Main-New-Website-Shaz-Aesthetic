@@ -43,10 +43,12 @@ export default function HeaderMenuSettings() {
              // defaults
              setMenuItems([
                { id: '1', label: 'About', url: '/about', newTab: false },
-               { id: '2', label: 'Treatments', url: '/#treatments', newTab: false },
-               { id: '3', label: 'Packages', url: '/#packages', newTab: false },
-               { id: '4', label: 'Doctors', url: '/#doctors', newTab: false },
-               { id: '5', label: 'Reviews', url: '/#reviews', newTab: false },
+               { id: '2', label: 'Treatments', url: '/treatment', newTab: false },
+               { id: '3', label: 'Packages', url: '/packages', newTab: false },
+               { id: '4', label: 'Doctors', url: '/doctor', newTab: false },
+               { id: '5', label: 'Reviews', url: '/reviews', newTab: false },
+               { id: '6', label: 'Locations', url: '/locations', newTab: false },
+               { id: '7', label: 'Contact', url: '/contact', newTab: false },
              ]);
           }
         }

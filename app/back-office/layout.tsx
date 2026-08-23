@@ -18,7 +18,8 @@ import {
   Gift,
   Tag,
   Star,
-  MapPin
+  MapPin,
+  Phone
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -35,10 +36,10 @@ export default function BackOfficeLayout({
     { icon: Stethoscope, label: 'Doctor', href: '/back-office/doctor' },
     { icon: Sparkles, label: 'Treatment', href: '/back-office/treatment' },
     { icon: Gift, label: 'Packages', href: '/back-office/packages' },
-    { icon: Star,
-  MapPin, MapPin, label: 'Reviews', href: '/back-office/reviews' },
+    { icon: Star, label: 'Reviews', href: '/back-office/reviews' },
     { icon: Tag, label: 'Promotion', href: '/back-office/promotion' },
     { icon: MapPin, label: 'Locations', href: '/back-office/locations' },
+    { icon: Phone, label: 'Contact Us', href: '/back-office/contact' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
