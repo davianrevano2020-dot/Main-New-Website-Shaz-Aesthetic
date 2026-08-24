@@ -139,6 +139,23 @@ exports.Prisma.SiteContentScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ArticleScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  featuredImage: 'featuredImage',
+  excerpt: 'excerpt',
+  content: 'content',
+  category: 'category',
+  author: 'author',
+  publishedDate: 'publishedDate',
+  status: 'status',
+  seoTitle: 'seoTitle',
+  seoDescription: 'seoDescription',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.TransactionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
@@ -175,6 +192,20 @@ exports.Prisma.SiteContentOrderByRelevanceFieldEnum = {
   value: 'value'
 };
 
+exports.Prisma.ArticleOrderByRelevanceFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  featuredImage: 'featuredImage',
+  excerpt: 'excerpt',
+  content: 'content',
+  category: 'category',
+  author: 'author',
+  status: 'status',
+  seoTitle: 'seoTitle',
+  seoDescription: 'seoDescription'
+};
+
 exports.Prisma.TransactionOrderByRelevanceFieldEnum = {
   id: 'id',
   userId: 'userId',
@@ -192,6 +223,7 @@ exports.Role = exports.$Enums.Role = {
 exports.Prisma.ModelName = {
   User: 'User',
   SiteContent: 'SiteContent',
+  Article: 'Article',
   Transaction: 'Transaction'
 };
 
