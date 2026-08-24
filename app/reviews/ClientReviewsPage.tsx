@@ -274,7 +274,7 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
             </div>
 
             <div className="space-y-32">
-              {parsedSuccessCases.map((caseStudy, index) => {
+              {parsedSuccessCases.map((caseStudy: any, index: number) => {
                 const isEven = index % 2 !== 0;
                 return (
                   <div key={caseStudy.id} className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

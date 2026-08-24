@@ -1,8 +1,7 @@
-import { Metadata } from 'next';
-import { getSiteContent } from '@/lib/content';
-import ClientPackagesPage from './ClientPackagesPage';
+const fs = require('fs');
+let code = fs.readFileSync('app/packages/page.tsx', 'utf8');
 
-export async function generateMetadata(): Promise<Metadata> {
+const generateMetadataCode = `export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   return {
     title: content.packages_meta_title || 'Exclusive Packages | SHAZ Aesthetic Clinic Seminyak Bali',
@@ -12,11 +11,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: content.packages_meta_description || 'Curated aesthetic packages combining our best treatments for optimal results and exceptional value.',
     }
   };
-}
+}`;
 
-export const dynamic = 'force-dynamic';
+code = code.replace(/export const metadata: Metadata = \{[\s\S]*?\};/, generateMetadataCode);
 
-export default async function PackagesPage() {
-  const initialContent = await getSiteContent();
-  return <ClientPackagesPage initialContent={initialContent} />;
-}
+fs.writeFileSync('app/packages/page.tsx', code);
+console.log('done packages page');
