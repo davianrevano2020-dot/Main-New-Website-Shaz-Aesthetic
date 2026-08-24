@@ -1,8 +1,8 @@
-import { Metadata } from 'next';
-import { getSiteContent } from '@/lib/content';
-import ClientTreatmentPage from './ClientTreatmentPage';
+const fs = require('fs');
+let code = fs.readFileSync('app/treatment/page.tsx', 'utf8');
 
-export async function generateMetadata(): Promise<Metadata> {
+// Replace static metadata with generateMetadata
+const generateMetadataCode = `export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   return {
     title: content.treatment_meta_title || 'Treatments & Services | SHAZ Aesthetic Clinic Seminyak Bali',
@@ -12,11 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: content.treatment_meta_description || 'Personalized aesthetic treatments and luxury salon rituals designed around your unique beauty goals in Seminyak, Bali.',
     }
   };
-}
+}`;
 
-export const dynamic = 'force-dynamic';
+code = code.replace(/export const metadata: Metadata = \{[\s\S]*?\};/, generateMetadataCode);
 
-export default async function TreatmentPage() {
-  const initialContent = await getSiteContent();
-  return <ClientTreatmentPage initialContent={initialContent} />;
-}
+fs.writeFileSync('app/treatment/page.tsx', code);
+console.log('done treatment page');

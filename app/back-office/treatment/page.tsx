@@ -31,6 +31,8 @@ export default function BackOfficeTreatment() {
 
   // Page Header settings
   const [pageSettings, setPageSettings] = useState({
+    treatment_meta_title: '',
+    treatment_meta_description: '',
     treatment_hero_badge: 'OUR TREATMENTS',
     treatment_hero_title: 'Treatments Designed Around You',
     treatment_hero_subtitle: 'Discover carefully curated aesthetic treatments designed to enhance your natural beauty and confidence.',
@@ -615,8 +617,36 @@ export default function BackOfficeTreatment() {
       {/* TAB 2: PAGE SETTINGS */}
       {activeTab === 'page_settings' && (
         <div className="bg-white rounded-2xl border border-brand-beige p-6 space-y-6">
+          
+          {/* Section 0: SEO Settings */}
+          <div className="pb-6 border-b border-brand-beige mb-6">
+            <h2 className="text-base font-serif font-bold text-brand-charcoal mb-4">0. SEO Settings</h2>
+            <div className="grid grid-cols-1 gap-6">
+              <div>
+                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Meta Title</label>
+                <input
+                  type="text"
+                  value={pageSettings.treatment_meta_title || ''}
+                  onChange={(e) => setPageSettings({ ...pageSettings, treatment_meta_title: e.target.value })}
+                  className="w-full px-3 py-2 bg-gray-50 border border-brand-beige rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
+                  placeholder="Treatments & Services | SHAZ Aesthetic Clinic Seminyak Bali"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Meta Description</label>
+                <textarea
+                  value={pageSettings.treatment_meta_description || ''}
+                  onChange={(e) => setPageSettings({ ...pageSettings, treatment_meta_description: e.target.value })}
+                  className="w-full px-3 py-2 bg-gray-50 border border-brand-beige rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
+                  rows={3}
+                  placeholder="Explore bespoke medical aesthetic treatments, master injectables..."
+                />
+              </div>
+            </div>
+          </div>
+
           <div>
-            <h2 className="text-base font-serif font-bold text-brand-charcoal">Hero Banner Content</h2>
+            <h2 className="text-base font-serif font-bold text-brand-charcoal">1. Hero Banner Content</h2>
             <p className="text-xs text-brand-charcoal/60">Manage the top section of the treatments page.</p>
           </div>
           

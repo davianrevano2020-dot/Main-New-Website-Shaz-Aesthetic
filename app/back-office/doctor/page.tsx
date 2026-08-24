@@ -183,6 +183,8 @@ export default function BackOfficeDoctor() {
 
   // Page Header & Banner form state
   const [pageSettings, setPageSettings] = useState({
+    doctor_meta_title: '',
+    doctor_meta_description: '',
     doctor_hero_badge: 'CERTIFIED MEDICAL EXPERTS',
     doctor_hero_title: 'Meet Our Certified Physicians & Dermatologists',
     doctor_hero_subtitle: "Bali's leading aesthetic practitioners combining evidence-based medical science, anatomical mastery, and delicate artistic precision.",
@@ -967,6 +969,36 @@ export default function BackOfficeDoctor() {
       {/* TAB 2: PAGE SETTINGS & HEADER BANNER */}
       {activeTab === 'page_settings' && (
         <div className="space-y-8 max-w-4xl">
+          
+          {/* Section 0: SEO Settings */}
+          <div className="bg-white p-6 rounded-2xl border border-brand-beige space-y-6">
+            <h2 className="text-lg font-serif font-bold text-brand-charcoal border-b border-brand-beige pb-3">
+              0. SEO Settings
+            </h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Meta Title</label>
+                <input
+                  type="text"
+                  value={pageSettings.doctor_meta_title || ''}
+                  onChange={(e) => setPageSettings({ ...pageSettings, doctor_meta_title: e.target.value })}
+                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                  placeholder="Our Doctors & Medical Specialists | SHAZ Aesthetic Clinic Seminyak"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-brand-charcoal uppercase mb-1">Meta Description</label>
+                <textarea
+                  value={pageSettings.doctor_meta_description || ''}
+                  onChange={(e) => setPageSettings({ ...pageSettings, doctor_meta_description: e.target.value })}
+                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm"
+                  rows={3}
+                  placeholder="Meet our team of certified aesthetic physicians..."
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Section 1: Hero Banner */}
           <div className="bg-white p-6 rounded-2xl border border-brand-beige space-y-6">
             <h2 className="text-lg font-serif font-bold text-brand-charcoal border-b border-brand-beige pb-3">

@@ -185,7 +185,7 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {parsedGoogleReviews.map((review, index) => (
+              {parsedGoogleReviews.map((review: any, index: number) => (
                 <motion.div
                   key={review.id}
                   initial={{ opacity: 0, y: 30 }}
@@ -232,7 +232,7 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {parsedVideoTestimonials.map((video, index) => (
+              {parsedVideoTestimonials.map((video: any, index: number) => (
                 <motion.div
                   key={video.id}
                   initial={{ opacity: 0, scale: 0.95 }}

@@ -1,8 +1,8 @@
-import { Metadata } from 'next';
-import { getSiteContent } from '@/lib/content';
-import ClientDoctorPage from './ClientDoctorPage';
+const fs = require('fs');
+let code = fs.readFileSync('app/doctor/page.tsx', 'utf8');
 
-export async function generateMetadata(): Promise<Metadata> {
+// Replace static metadata with generateMetadata
+const generateMetadataCode = `export async function generateMetadata(): Promise<Metadata> {
   const content = await getSiteContent();
   return {
     title: content.doctor_meta_title || 'Our Doctors & Medical Specialists | SHAZ Aesthetic Clinic Seminyak',
@@ -12,12 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
       description: content.doctor_meta_description || 'Certified aesthetic physicians and dermatologists dedicated to natural, medical-grade beauty in Seminyak, Bali.',
     }
   };
-}
+}`;
 
-export const revalidate = 0; // Fresh dynamic content from CMS
+code = code.replace(/export const metadata: Metadata = \{[\s\S]*?\};/, generateMetadataCode);
 
-export default async function DoctorPage() {
-  const content = await getSiteContent();
-
-  return <ClientDoctorPage initialContent={content} />;
-}
+fs.writeFileSync('app/doctor/page.tsx', code);
+console.log('done doctor page');
