@@ -40,7 +40,7 @@ export async function GET() {
     const articles = await Promise.race([checkPromise, timeoutPromise]);
     return NextResponse.json({ status: 'success', data: articles });
   } catch (error) {
-    console.log("Using fallback articles due to DB error");
+     // console.log("Using fallback articles due to DB error");
     const articles = getFallbackArticles();
     return NextResponse.json({ status: 'success', data: articles });
   }
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
     
     return NextResponse.json({ status: 'success', data: article });
   } catch (error) {
-    console.log("Using fallback articles (POST) due to DB error", error);
+     // console.log("Using fallback articles (POST) due to DB error", error);
     const body = await req.clone().json().catch(() => ({}));
     const articles = getFallbackArticles();
     

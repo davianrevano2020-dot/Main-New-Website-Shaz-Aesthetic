@@ -61,7 +61,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     
     return NextResponse.json({ status: 'success', data: article });
   } catch (error) {
-    console.log("Using fallback articles (PUT) due to DB error", error);
+     // console.log("Using fallback articles (PUT) due to DB error", error);
     const { id } = await params;
     const body = await req.clone().json().catch(() => ({}));
     let articles = getFallbackArticles();
@@ -96,7 +96,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     
     return NextResponse.json({ status: 'success' });
   } catch (error) {
-    console.log("Using fallback articles (DELETE) due to DB error", error);
+     // console.log("Using fallback articles (DELETE) due to DB error", error);
     const { id } = await params;
     let articles = getFallbackArticles();
     
