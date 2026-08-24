@@ -72,13 +72,28 @@ export default function GlobalFooter({ initialContent }: GlobalFooterProps) {
             {/* Links Grid */}
             <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
               
-              {/* Explore */}
+                            {/* Explore */}
               <div>
                 <h4 className="text-white font-bold tracking-widest text-xs uppercase mb-6">Explore</h4>
                 <ul className="space-y-4 text-sm font-light">
-                  <li><a href={content.footer_explore_1_link || "#treatments"} className="hover:text-white transition-colors">{content.footer_explore_1_text || "Treatments"}</a></li>
-                  <li><a href={content.footer_explore_2_link || "#packages"} className="hover:text-white transition-colors">{content.footer_explore_2_text || "Packages"}</a></li>
-                  <li><a href={content.footer_explore_3_link || "#doctors"} className="hover:text-white transition-colors">{content.footer_explore_3_text || "Our Doctors"}</a></li>
+                  {(() => {
+                    let links = [
+                      { text: content.footer_explore_1_text || "Treatments", link: content.footer_explore_1_link || "#treatments" },
+                      { text: content.footer_explore_2_text || "Packages", link: content.footer_explore_2_link || "#packages" },
+                      { text: content.footer_explore_3_text || "Our Doctors", link: content.footer_explore_3_link || "#doctors" }
+                    ];
+                    if (content.footer_explore_links) {
+                      try {
+                        const parsed = JSON.parse(content.footer_explore_links);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                          links = parsed;
+                        }
+                      } catch (e) {}
+                    }
+                    return links.map((link, i) => (
+                      <li key={i}><a href={link.link || "#"} className="hover:text-white transition-colors">{link.text || "Link"}</a></li>
+                    ));
+                  })()}
                 </ul>
               </div>
 

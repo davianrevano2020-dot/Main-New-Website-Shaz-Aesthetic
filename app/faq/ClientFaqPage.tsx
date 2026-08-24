@@ -213,7 +213,7 @@ export default function ClientFaqPage({ initialContent }: ClientFaqPageProps) {
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-brand-charcoal mb-4">{content.faq_cta_title || 'Still have questions?'}</h2>
             <p className="text-brand-charcoal/60 mb-8 max-w-lg mx-auto text-lg">
-              {content.faq_cta_description || "Can\"Can't find the answer you'rapos;t find the answer you\"Can't find the answer you'rapos;re looking for? Our team is always here to help you with any inquiries."}
+              {content.faq_cta_description || "Can't find the answer you're looking for? Our team is always here to help you with any inquiries."}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 

@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Loader2, CheckCircle2, AlertCircle, Upload } from 'lucide-react';
+import { Save, Loader2, CheckCircle2, AlertCircle, Upload , Plus, Trash2} from 'lucide-react';
 import Image from 'next/image';
 
 export default function FooterSettings() {
+  const [exploreLinks, setExploreLinks] = useState<any[]>([{ text: "Treatments", link: "#treatments" }, { text: "Packages", link: "#packages" }, { text: "Our Doctors", link: "#doctors" }]);
   const [content, setContent] = useState({
     footer_title: '',
     footer_subtitle: '',
@@ -229,14 +230,66 @@ export default function FooterSettings() {
               </div>
             </div>
 
-            <h3 className="font-semibold text-gray-700 mt-6 border-t pt-4">Explore Links</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="text" name="footer_explore_1_text" value={content.footer_explore_1_text} onChange={handleChange} placeholder="Link 1 Label (Treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_1_link" value={content.footer_explore_1_link} onChange={handleChange} placeholder="Link 1 URL (#treatments)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_2_text" value={content.footer_explore_2_text} onChange={handleChange} placeholder="Link 2 Label (Packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_2_link" value={content.footer_explore_2_link} onChange={handleChange} placeholder="Link 2 URL (#packages)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_3_text" value={content.footer_explore_3_text} onChange={handleChange} placeholder="Link 3 Label (Our Doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
-              <input type="text" name="footer_explore_3_link" value={content.footer_explore_3_link} onChange={handleChange} placeholder="Link 3 URL (#doctors)" className="w-full px-4 py-2 bg-gray-50 border rounded-lg text-sm" />
+                        <div className="flex items-center justify-between mt-6 border-t pt-4 mb-4">
+              <h3 className="font-semibold text-gray-700">Explore Links</h3>
+              <button
+                type="button"
+                onClick={() => setExploreLinks([...exploreLinks, { text: '', link: '' }])}
+                className="flex items-center gap-1 text-sm text-brand-forest font-medium hover:text-brand-charcoal transition-colors"
+              >
+                <Plus className="w-4 h-4" /> Add Link
+              </button>
+            </div>
+            
+            <div className="space-y-3">
+              {exploreLinks.map((link, index) => (
+                <div key={index} className="flex items-start gap-3 relative group">
+                  <div className="grid grid-cols-2 gap-3 flex-grow">
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">Label</label>
+                      <input 
+                        type="text" 
+                        value={link.text} 
+                        onChange={(e) => {
+                          const updated = [...exploreLinks];
+                          updated[index].text = e.target.value;
+                          setExploreLinks(updated);
+                        }} 
+                        placeholder="Link Label" 
+                        className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-500 mb-1">URL</label>
+                      <input 
+                        type="text" 
+                        value={link.link} 
+                        onChange={(e) => {
+                          const updated = [...exploreLinks];
+                          updated[index].link = e.target.value;
+                          setExploreLinks(updated);
+                        }} 
+                        placeholder="Link URL" 
+                        className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" 
+                      />
+                    </div>
+                  </div>
+                  <div className="pt-6">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const updated = [...exploreLinks];
+                        updated.splice(index, 1);
+                        setExploreLinks(updated);
+                      }}
+                      className="text-red-400 hover:text-red-600 p-2"
+                      title="Remove Link"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
