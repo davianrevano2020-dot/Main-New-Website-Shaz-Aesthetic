@@ -19,6 +19,7 @@ import {
   ChevronUp
 } from 'lucide-react';
 import Link from 'next/link';
+import Papa from 'papaparse';
 import { DEFAULT_PACKAGE_CATEGORIES, PackageCategory, PackageItem } from '../../packages/ClientPackagesPage';
 
 export default function BackOfficePackages() {
@@ -82,7 +83,97 @@ export default function BackOfficePackages() {
     fetchData();
   }, []);
 
+
+  const handleExportCSV = () => {
+    const rows: any[] = [];
+    categories.forEach(cat => {
+      if (cat.packages && cat.packages.length > 0) {
+        cat.packages.forEach(t => {
+          rows.push({
+            'Category ID': cat.id,
+            'Category Name': cat.name,
+            'Package Name': t.name || '',
+            'Duration': t.duration || '',
+            'Price': t.price || '',
+            'Savings': t.savings || '',
+            'Tag': t.tag || '',
+            'Description': t.desc || '',
+            'Treatments Included': t.treatmentsIncluded ? t.treatmentsIncluded.join(', ') : '',
+            'Key Benefits': t.keyBenefits ? t.keyBenefits.join(', ') : ''
+          });
+        });
+      }
+    });
+
+    if (rows.length === 0) {
+      alert("No packages to export");
+      return;
+    }
+
+    const csv = Papa.unparse(rows);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.setAttribute('download', 'shaz-packages.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleImportCSV = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    Papa.parse(file, {
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        const data = results.data as any[];
+        const updatedCategories = [...categories];
+        
+        // Group by category ID
+        const catMap = new Map<string, PackageItem[]>();
+        data.forEach(row => {
+          const catId = row['Category ID'] || row['Category Name']?.toLowerCase().replace(/\s+/g, '-');
+          if (!catId) return;
+          
+          if (!catMap.has(catId)) {
+            catMap.set(catId, []);
+          }
+          
+          if (row['Package Name']) {
+            catMap.get(catId)?.push({
+              name: row['Package Name'],
+              desc: row['Description'] || '',
+              duration: row['Duration'] || '',
+              price: row['Price'] || '',
+              savings: row['Savings'] || '',
+              tag: row['Tag'] || '',
+              treatmentsIncluded: row['Treatments Included'] ? row['Treatments Included'].split(',').map((s:string) => s.trim()).filter(Boolean) : [],
+              keyBenefits: row['Key Benefits'] ? row['Key Benefits'].split(',').map((s:string) => s.trim()).filter(Boolean) : []
+            });
+          }
+        });
+
+        updatedCategories.forEach(cat => {
+          if (catMap.has(cat.id)) {
+            cat.packages = catMap.get(cat.id) || [];
+            cat.packagesCount = `${cat.packages.length} Packages`;
+          }
+        });
+
+        setCategories(updatedCategories);
+        setStatusMessage({ type: 'success', text: 'CSV imported! Please review and click Save Changes.' });
+        e.target.value = ''; // reset
+      },
+      error: function() {
+        setStatusMessage({ type: 'error', text: 'Failed to parse CSV file.' });
+      }
+    });
+  };
+
   const handleSave = async () => {
+
     setIsSaving(true);
     setStatusMessage(null);
 
@@ -265,8 +356,20 @@ export default function BackOfficePackages() {
             <ExternalLink className="w-3.5 h-3.5" />
             <span>View /packages Page</span>
           </Link>
+          
+          <button
+            onClick={handleExportCSV}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-beige text-brand-charcoal text-xs font-bold uppercase tracking-wider hover:bg-brand-sand transition-all shadow-sm"
+          >
+            <span>Export CSV</span>
+          </button>
+          <label className="flex items-center gap-2 px-4 py-2 rounded-xl border border-brand-beige text-brand-charcoal text-xs font-bold uppercase tracking-wider hover:bg-brand-sand transition-all shadow-sm cursor-pointer">
+            <span>Import CSV</span>
+            <input type="file" accept=".csv" className="hidden" onChange={handleImportCSV} />
+          </label>
           <button
             onClick={handleSave}
+
             disabled={isSaving}
             className="flex items-center gap-2 px-6 py-2.5 bg-brand-forest text-white rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-brand-charcoal transition-all shadow-sm disabled:opacity-50"
           >
