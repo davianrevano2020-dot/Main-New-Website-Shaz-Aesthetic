@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export default function BackOfficeAbout() {
-  const [activeTab, setActiveTab] = useState<'hero' | 'story' | 'pillars' | 'facilities' | 'cta'>('hero');
+  const [activeTab, setActiveTab] = useState<'seo' | 'hero' | 'story' | 'pillars' | 'facilities' | 'cta'>('hero');
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [uploadingField, setUploadingField] = useState<string | null>(null);
@@ -26,6 +26,8 @@ export default function BackOfficeAbout() {
 
   // Form states
   const [formData, setFormData] = useState<Record<string, any>>({
+    about_meta_title: '',
+    about_meta_description: '',
     about_hero_badge: 'ABOUT SHAZ CLINIC & SALON',
     about_hero_title: 'Where Medical Science <br /><span class="italic font-light text-[#7C8B76]">Meets Luxury Artistry</span>',
     about_hero_subtitle: "Bali's sanctuary for advanced aesthetic medicine, bespoke dermatology protocols, and refined luxury care.",
@@ -234,6 +236,7 @@ export default function BackOfficeAbout() {
       {/* Tabs Navigation */}
       <div className="flex flex-wrap gap-2 border-b border-brand-beige pb-3">
         {[
+          { id: 'seo', label: 'SEO Settings', icon: Sparkles },
           { id: 'hero', label: 'Hero Banner', icon: Layers },
           { id: 'story', label: 'Story & Stats', icon: Sparkles },
           { id: 'pillars', label: '4 Core Pillars', icon: Award },
@@ -262,6 +265,41 @@ export default function BackOfficeAbout() {
       {/* TAB CONTENT */}
       <div className="bg-white rounded-2xl border border-brand-beige p-6 shadow-sm">
         
+        {/* 0. SEO TAB */}
+        {activeTab === 'seo' && (
+          <div className="space-y-6 max-w-4xl">
+            <h2 className="text-lg font-serif font-bold text-brand-charcoal border-b pb-3">SEO Settings</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
+                  Meta Title
+                </label>
+                <input
+                  type="text"
+                  name="about_meta_title"
+                  value={formData.about_meta_title || ''}
+                  onChange={handleInputChange}
+                  placeholder="About Us | SHAZ Clinic & Salon"
+                  className="w-full px-4 py-2.5 rounded-xl border border-brand-beige bg-brand-white focus:outline-none focus:ring-2 focus:ring-brand-sage text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-brand-charcoal/70 mb-2">
+                  Meta Description
+                </label>
+                <textarea
+                  name="about_meta_description"
+                  value={formData.about_meta_description || ''}
+                  onChange={handleInputChange}
+                  placeholder="Learn more about SHAZ Clinic & Salon..."
+                  rows={3}
+                  className="w-full px-4 py-2.5 rounded-xl border border-brand-beige bg-brand-white focus:outline-none focus:ring-2 focus:ring-brand-sage text-sm"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* 1. HERO TAB */}
         {activeTab === 'hero' && (
           <div className="space-y-6 max-w-4xl">
