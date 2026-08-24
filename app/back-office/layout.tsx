@@ -45,7 +45,7 @@ export default function BackOfficeLayout({
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
-    { icon: Settings, label: 'Settings', href: '#' },
+    { icon: Settings, label: 'Settings', href: '/back-office/settings' },
   ];
 
   return (

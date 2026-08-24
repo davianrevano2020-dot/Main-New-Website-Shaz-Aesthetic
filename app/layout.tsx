@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
+import { getSiteContent } from '@/lib/content';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -25,27 +26,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const content = await getSiteContent();
+  const gaId = content.google_analytics_id || 'G-G8N9PTDF15';
   return (
     <html suppressHydrationWarning lang="en" className={`scroll-smooth ${montserrat.variable} ${playfair.variable}`}>
       <head>
+        {content.google_site_verification && <meta name="google-site-verification" content={content.google_site_verification} />}
         <link rel="icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" type="image/jpeg" />
         <link rel="shortcut icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" type="image/jpeg" />
         <link rel="apple-touch-icon" href="https://shazaestheticbali.com/public/uploads/shaz-favico.jpg" />
       </head>
       <body className="font-sans bg-brand-white text-brand-charcoal antialiased" suppressHydrationWarning>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-G8N9PTDF15" strategy="afterInteractive" />
+        {gaId && <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />}
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-G8N9PTDF15');
+            gtag('config', '${gaId}');
           `}
         </Script>
         <Script id="wa-conversion-tracking" strategy="afterInteractive">
