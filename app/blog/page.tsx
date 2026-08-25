@@ -8,7 +8,7 @@ import GlobalHeader from '../components/GlobalHeader';
 import GlobalFooter from '../components/GlobalFooter';
 import { getSiteContent } from '@/lib/content';
 
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 function getFallbackArticles() {
   try {

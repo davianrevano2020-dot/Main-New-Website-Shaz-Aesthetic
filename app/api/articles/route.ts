@@ -33,7 +33,7 @@ export async function GET() {
   const fallback = getFallbackArticles();
   
   if (isDbDown()) {
-    return NextResponse.json(fallback);
+    return NextResponse.json({ status: 'success', data: fallback });
   }
 
   try {
@@ -46,10 +46,10 @@ export async function GET() {
     });
     
     const articles = await Promise.race([fetchPromise, timeoutPromise]);
-    return NextResponse.json(articles);
+    return NextResponse.json({ status: 'success', data: articles });
   } catch (error) {
     setDbDown(true);
-    return NextResponse.json(fallback);
+    return NextResponse.json({ status: 'success', data: fallback });
   }
 }
 
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     const newArticle = { ...body, id: Date.now().toString(), publishedDate: new Date().toISOString() };
     fallback.push(newArticle);
     saveFallbackArticles(fallback);
-    return NextResponse.json(newArticle, { status: 201 });
+    return NextResponse.json({ status: 'success', data: newArticle }, { status: 201 });
   }
 
   try {
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
     });
     
     const article = await Promise.race([fetchPromise, timeoutPromise]);
-    return NextResponse.json(article, { status: 201 });
+    return NextResponse.json({ status: 'success', data: article }, { status: 201 });
   } catch (error) {
     setDbDown(true);
     const body = await request.json().catch(() => ({}));
@@ -83,6 +83,6 @@ export async function POST(request: Request) {
     const newArticle = { ...body, id: Date.now().toString(), publishedDate: new Date().toISOString() };
     fallback.push(newArticle);
     saveFallbackArticles(fallback);
-    return NextResponse.json(newArticle, { status: 201 });
+    return NextResponse.json({ status: 'success', data: newArticle }, { status: 201 });
   }
 }
