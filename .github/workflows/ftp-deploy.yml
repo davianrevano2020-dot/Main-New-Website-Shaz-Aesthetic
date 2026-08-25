@@ -19,7 +19,7 @@ jobs:
           node-version: '20' # Disamakan dengan versi Node.js di DomaiNesia (20.20.2)
           
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
         
       - name: Generate Prisma Client
         run: npx prisma generate
