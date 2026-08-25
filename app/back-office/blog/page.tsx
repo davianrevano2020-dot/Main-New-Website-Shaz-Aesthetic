@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Plus, Edit3, Trash2, Image as ImageIcon, Save, CheckCircle2, 
-  AlertCircle, Loader2, ArrowLeft, Globe, FileText 
+  AlertCircle, Loader2, ArrowLeft, Globe, FileText, Upload 
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -34,7 +34,40 @@ export default function BackOfficeBlog() {
   });
   
   const [isSaving, setIsSaving] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    try {
+      setIsUploading(true);
+      setStatusMessage(null);
+      
+      const data = new FormData();
+      data.append('file', file);
+      
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: data
+      });
+      
+      const json = await res.json();
+      
+      if (json.success) {
+        setFormData(prev => ({ ...prev, featuredImage: json.url }));
+        setStatusMessage({ type: 'success', text: 'Image uploaded successfully!' });
+      } else {
+        setStatusMessage({ type: 'error', text: json.message || 'Failed to upload image.' });
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
+      setStatusMessage({ type: 'error', text: 'An error occurred during upload.' });
+    } finally {
+      setIsUploading(false);
+    }
+  };
 
   // Delete confirmation
   const [deletingId, setDeletingId] = useState<string | null>(null);
@@ -462,16 +495,46 @@ export default function BackOfficeBlog() {
 
                 <div>
                   {formData.featuredImage && (
-                    <img src={formData.featuredImage} alt="Featured" className="w-full h-40 object-cover rounded-xl mb-4 bg-gray-100 border border-brand-beige" />
+                    <div className="relative mb-4">
+                      <img src={formData.featuredImage} alt="Featured" className="w-full h-40 object-cover rounded-xl bg-gray-100 border border-brand-beige" />
+                      <button
+                        type="button"
+                        onClick={() => setFormData({...formData, featuredImage: ''})}
+                        className="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full text-red-500 hover:text-red-700 shadow-sm"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
                   )}
-                  <input
-                    type="text"
-                    value={formData.featuredImage || ''}
-                    onChange={e => setFormData({...formData, featuredImage: e.target.value})}
-                    className="w-full px-4 py-3 bg-gray-50 border border-brand-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-forest/20 text-sm"
-                    placeholder="Image URL (e.g. https://...)"
-                  />
-                  <p className="text-[10px] text-gray-500 mt-2">Paste a direct image URL.</p>
+                  
+                  <div className="space-y-4">
+                    <label className="flex items-center justify-center w-full px-4 py-3 bg-brand-forest/5 border border-brand-forest/20 text-brand-forest rounded-xl hover:bg-brand-forest/10 cursor-pointer transition-colors text-sm font-semibold">
+                      {isUploading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Upload className="w-4 h-4 mr-2" />}
+                      {isUploading ? 'Uploading...' : 'Upload Image'}
+                      <input 
+                        type="file" 
+                        accept="image/*"
+                        className="hidden" 
+                        onChange={handleImageUpload}
+                        disabled={isUploading}
+                      />
+                    </label>
+
+                    <div className="flex items-center gap-2">
+                      <div className="h-px bg-gray-200 flex-grow"></div>
+                      <span className="text-xs text-gray-400 font-medium">OR</span>
+                      <div className="h-px bg-gray-200 flex-grow"></div>
+                    </div>
+
+                    <input
+                      type="text"
+                      value={formData.featuredImage || ''}
+                      onChange={e => setFormData({...formData, featuredImage: e.target.value})}
+                      className="w-full px-4 py-3 bg-gray-50 border border-brand-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-forest/20 text-sm"
+                      placeholder="Image URL (e.g. https://...)"
+                    />
+                  </div>
+                  <p className="text-[10px] text-gray-500 mt-2">Upload a file or paste a direct image URL.</p>
                 </div>
               </div>
 
