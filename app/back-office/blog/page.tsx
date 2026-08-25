@@ -6,6 +6,10 @@ import {
   AlertCircle, Loader2, ArrowLeft, Globe, FileText, Upload 
 } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import 'react-quill/dist/quill.snow.css';
 
 interface Article {
   id: string;
@@ -397,14 +401,23 @@ export default function BackOfficeBlog() {
 
                 <div>
                   <label className="block text-xs font-bold text-brand-charcoal uppercase mb-2">Full Content *</label>
-                  <textarea
-                    required
-                    value={formData.content || ''}
-                    onChange={e => setFormData({...formData, content: e.target.value})}
-                    rows={15}
-                    className="w-full px-4 py-3 bg-gray-50 border border-brand-beige rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-forest/20 text-sm font-mono leading-relaxed"
-                    placeholder="Write your article content here (HTML/Markdown supported depending on your frontend setup)..."
-                  />
+                  <div className="bg-white rounded-xl overflow-hidden border border-brand-beige focus-within:border-brand-forest/30 focus-within:ring-1 focus-within:ring-brand-forest/20 [&_.quill]:min-h-[400px] [&_.ql-container]:min-h-[350px] [&_.ql-container]:text-base [&_.ql-container]:font-sans [&_.ql-editor]:min-h-[350px] [&_.ql-toolbar]:border-none [&_.ql-toolbar]:border-b [&_.ql-toolbar]:border-brand-beige [&_.ql-container]:border-none">
+                    <ReactQuill
+                      theme="snow"
+                      value={formData.content || ''}
+                      onChange={(value) => setFormData({...formData, content: value})}
+                      placeholder="Write your article content here..."
+                      modules={{
+                        toolbar: [
+                          [{ 'header': [1, 2, 3, false] }],
+                          ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                          [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+                          ['link', 'image'],
+                          ['clean']
+                        ]
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
 
