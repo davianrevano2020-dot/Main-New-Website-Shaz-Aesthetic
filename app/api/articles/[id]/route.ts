@@ -32,8 +32,8 @@ function saveFallbackArticles(articles: any[]) {
 }
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  if (isDbDown()) throw new Error("DB is down");
   try {
+    if (isDbDown()) throw new Error("DB is down");
     const { id } = await params;
     const body = await req.json();
     const prisma = getPrismaClient();
@@ -85,8 +85,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 }
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  if (isDbDown()) throw new Error("DB is down");
   try {
+    if (isDbDown()) throw new Error("DB is down");
     const { id } = await params;
     const prisma = getPrismaClient();
     

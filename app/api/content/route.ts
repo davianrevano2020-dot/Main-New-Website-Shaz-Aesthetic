@@ -15,9 +15,9 @@ export async function GET() {
 
 export async function POST(req: Request) {
   let body: any = {};
-  if (isDbDown()) throw new Error("DB is down");
   try {
     body = await req.json();
+    if (isDbDown()) throw new Error("DB is down");
     const prisma = getPrismaClient();
     const checkPromise = prisma.siteContent.findFirst();
     const timeoutPromise = new Promise((_, reject) => {
