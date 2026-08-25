@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { getPrismaClient } from '../../../prisma';
+import { getPrismaClient, isDbDown, setDbDown } from '../../../prisma';
 import fs from 'fs';
 import path from 'path';
 import { getFallbackData, getSiteContent } from '@/lib/content';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 
 const dataFilePath = path.join(process.cwd(), 'data', 'content.json');
 
@@ -15,6 +15,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   let body: any = {};
+  if (isDbDown()) throw new Error("DB is down");
   try {
     body = await req.json();
     const prisma = getPrismaClient();
@@ -36,6 +37,7 @@ export async function POST(req: Request) {
     
     return NextResponse.json({ status: 'success', message: 'Konten berhasil diperbarui' });
   } catch (error: any) {
+    setDbDown(true);
     const currentData = getFallbackData();
     for (const [key, value] of Object.entries(body)) {
       if (typeof value === 'string') {

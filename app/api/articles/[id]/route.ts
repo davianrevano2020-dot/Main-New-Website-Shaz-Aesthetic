@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { getPrismaClient } from '../../../../prisma';
+import { getPrismaClient, isDbDown, setDbDown } from '../../../../prisma';
 import fs from 'fs';
 import path from 'path';
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
 const dataFilePath = path.join(process.cwd(), 'data', 'articles.json');
 
 function getFallbackArticles() {
@@ -13,6 +13,7 @@ function getFallbackArticles() {
       return JSON.parse(fileData) || [];
     }
   } catch (error) {
+    setDbDown(true);
     console.error("Failed to read articles.json", error);
   }
   return [];
@@ -25,11 +26,13 @@ function saveFallbackArticles(articles: any[]) {
     }
     fs.writeFileSync(dataFilePath, JSON.stringify(articles, null, 2), 'utf8');
   } catch (error) {
+    setDbDown(true);
     console.error("Failed to write to articles.json", error);
   }
 }
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (isDbDown()) throw new Error("DB is down");
   try {
     const { id } = await params;
     const body = await req.json();
@@ -61,6 +64,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     
     return NextResponse.json({ status: 'success', data: article });
   } catch (error) {
+    setDbDown(true);
      // console.log("Using fallback articles (PUT) due to DB error", error);
     const { id } = await params;
     const body = await req.clone().json().catch(() => ({}));
@@ -81,6 +85,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 }
 
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (isDbDown()) throw new Error("DB is down");
   try {
     const { id } = await params;
     const prisma = getPrismaClient();
@@ -96,6 +101,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     
     return NextResponse.json({ status: 'success' });
   } catch (error) {
+    setDbDown(true);
      // console.log("Using fallback articles (DELETE) due to DB error", error);
     const { id } = await params;
     let articles = getFallbackArticles();

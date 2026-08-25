@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
-import { getPrismaClient } from '../../../prisma';
+import { getPrismaClient, isDbDown, setDbDown } from '../../../prisma';
 
 export async function GET() {
+  if (isDbDown()) throw new Error("DB is down");
   try {
     const prisma = getPrismaClient();
     // Mencoba melakukan koneksi dan query sederhana

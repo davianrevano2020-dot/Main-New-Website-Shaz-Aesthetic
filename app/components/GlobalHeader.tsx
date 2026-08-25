@@ -15,7 +15,8 @@ const DEFAULT_MENU = [
   { id: '5', label: 'Doctors', url: '/doctor', newTab: false },
   { id: '6', label: 'Reviews', url: '/reviews', newTab: false },
   { id: '7', label: 'Locations', url: '/locations', newTab: false },
-  { id: '8', label: 'Contact', url: '/contact', newTab: false },
+  { id: '8', label: 'Journal', url: '/blog', newTab: false },
+  { id: '10', label: 'Contact', url: '/contact', newTab: false },
   { id: '9', label: 'FAQ', url: '/faq', newTab: false },
 ];
 
