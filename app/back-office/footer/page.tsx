@@ -45,6 +45,11 @@ export default function FooterSettings() {
         
         if (json.status === 'success' && json.data) {
           setContent(prev => ({ ...prev, ...json.data }));
+          if (json.data.footer_explore_links) {
+            try {
+              setExploreLinks(JSON.parse(json.data.footer_explore_links));
+            } catch (e) {}
+          }
         }
       } catch (err) {
         console.log('Using default content');
@@ -95,12 +100,17 @@ export default function FooterSettings() {
     setMessage({ type: '', text: '' });
 
     try {
+      const payload = {
+        ...content,
+        footer_explore_links: JSON.stringify(exploreLinks)
+      };
+
       const res = await fetch('/api/content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(content),
+        body: JSON.stringify(payload),
       });
 
       const result = await res.json();
