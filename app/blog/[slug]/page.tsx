@@ -27,7 +27,7 @@ function getFallbackArticles() {
 async function getArticleBySlug(slug: string) {
   if (isDbDown()) {
     const articles = getFallbackArticles();
-    return articles.find((a: any) => a.slug === slug && a.status === 'Published');
+    return articles.find((a: any) => a.slug === slug && a.status === 'PUBLISHED');
   }
 
   try {
@@ -42,13 +42,13 @@ async function getArticleBySlug(slug: string) {
     
     const article = await Promise.race([fetchPromise, timeoutPromise]);
     
-    if (article && article.status !== 'Published') {
+    if (article && article.status !== 'PUBLISHED') {
       return null;
     }
     return article;
   } catch (err) {
     const articles = getFallbackArticles();
-    return articles.find((a: any) => a.slug === slug && a.status === 'Published');
+    return articles.find((a: any) => a.slug === slug && a.status === 'PUBLISHED');
   }
 }
 

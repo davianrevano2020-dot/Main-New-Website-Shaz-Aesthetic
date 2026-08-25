@@ -25,13 +25,13 @@ function getFallbackArticles() {
 
 async function getArticles() {
   if (isDbDown()) {
-    return getFallbackArticles().filter((a: any) => a.status === 'Published');
+    return getFallbackArticles().filter((a: any) => a.status === 'PUBLISHED');
   }
 
   try {
     const prisma = getPrismaClient();
     const fetchPromise = prisma.article.findMany({
-      where: { status: 'Published' },
+      where: { status: 'PUBLISHED' },
       orderBy: { publishedDate: 'desc' },
     });
     
@@ -41,7 +41,7 @@ async function getArticles() {
     
     return await Promise.race([fetchPromise, timeoutPromise]);
   } catch (err) {
-    return getFallbackArticles().filter((a: any) => a.status === 'Published');
+    return getFallbackArticles().filter((a: any) => a.status === 'PUBLISHED');
   }
 }
 
