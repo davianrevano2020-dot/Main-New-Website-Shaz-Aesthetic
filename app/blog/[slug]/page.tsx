@@ -126,8 +126,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       )}
 
       {/* Content */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="prose prose-lg prose-headings:font-serif prose-headings:font-medium prose-a:text-[#4C5C44] max-w-none">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="prose prose-lg prose-headings:font-serif prose-headings:font-medium prose-a:text-[#4C5C44] max-w-none break-words">
           <div dangerouslySetInnerHTML={{ __html: article.content }} />
         </div>
 
