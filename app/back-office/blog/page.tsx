@@ -76,13 +76,9 @@ export default function BackOfficeBlog() {
   // Delete confirmation
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchArticles();
-  }, []);
-
-  const fetchArticles = async () => {
+  const fetchArticles = async (showLoading = true) => {
     try {
-      setIsLoading(true);
+      if (showLoading) setIsLoading(true);
       const res = await fetch('/api/articles');
       const json = await res.json();
       if (json.status === 'success') {
@@ -94,6 +90,11 @@ export default function BackOfficeBlog() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    fetchArticles(false);
+  }, []);
 
   const generateSlug = (title: string) => {
     return title
@@ -254,7 +255,7 @@ export default function BackOfficeBlog() {
                   ) : articles.length === 0 ? (
                     <tr>
                       <td colSpan={6} className="px-6 py-12 text-center text-brand-charcoal/60">
-                        No articles found. Click "Add Article" to create one.
+                        No articles found. Click &quot;Add Article&quot; to create one.
                       </td>
                     </tr>
                   ) : (
