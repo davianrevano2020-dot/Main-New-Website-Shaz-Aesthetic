@@ -93,7 +93,7 @@ export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <Link href="/" aria-label="SHAZ Home" className="relative z-50">
+        <Link href="/" aria-label="SHAZ Home" className="relative z-50 shrink-0">
           <img 
             src={logo} 
             alt="SHAZ Logo" 
@@ -101,21 +101,21 @@ export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
           />
         </Link>
         
-        <nav className="hidden lg:flex items-center gap-10 text-xs font-bold tracking-widest uppercase">
+        <nav className="hidden xl:flex items-center gap-3 xl:gap-6 text-[10px] xl:text-xs font-bold tracking-widest uppercase shrink">
           {menuItems.map(item => (
             <a 
               key={item.id}
               href={item.url} 
               target={item.newTab ? "_blank" : undefined}
               rel={item.newTab ? "noopener noreferrer" : undefined}
-              className="hover:text-brand-sage transition-colors"
+              className="hover:text-brand-sage transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block shrink-0">
           <a 
             href={ctaLink}
             target="_blank" rel="noopener noreferrer"
@@ -126,7 +126,7 @@ export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
         </div>
 
         <button 
-          className="lg:hidden p-2 -mr-2 relative z-50 text-brand-charcoal"
+          className="xl:hidden p-2 -mr-2 relative z-50 text-brand-charcoal"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >

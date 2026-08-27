@@ -72,7 +72,7 @@ export default function ClientContactPage({ initialContent }: ClientContactPageP
 
   return (
     <div className="min-h-screen bg-brand-white selection:bg-[#D4AF37]/20 selection:text-brand-charcoal flex flex-col">
-      <GlobalHeader />
+      <GlobalHeader initialContent={content} />
 
       <main className="flex-grow pt-32 pb-20">
         
@@ -385,7 +385,7 @@ export default function ClientContactPage({ initialContent }: ClientContactPageP
 
       </main>
 
-      <GlobalFooter />
+      <GlobalFooter initialContent={content} />
     </div>
   );
 }
