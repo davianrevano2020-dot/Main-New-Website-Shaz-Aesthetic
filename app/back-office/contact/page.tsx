@@ -29,7 +29,7 @@ export default function ContactSettings() {
     contact_emergency_phone: '+62 811 388 8889',
     contact_instagram_link: 'https://instagram.com',
     contact_facebook_link: 'https://facebook.com',
-    contact_notification_email: 'hello@shazaestheticbali.com'
+    contact_notification_email: 'davianrevano2020@gmail.com'
   });
   
   const [isLoading, setIsLoading] = useState(true);

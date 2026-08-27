@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
     // Get the destination email from the back-office settings
     const content = await getSiteContent();
-    const notificationEmail = content.contact_notification_email;
+    const notificationEmail = content.contact_notification_email || 'davianrevano2020@gmail.com';
 
     if (!notificationEmail) {
       return NextResponse.json(

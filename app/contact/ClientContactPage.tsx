@@ -49,10 +49,10 @@ export default function ClientContactPage({ initialContent }: ClientContactPageP
       
       // Reset success message after 5 seconds
       setTimeout(() => setIsSuccess(false), 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
-      alert('Failed to send message. Please try again later.');
+      alert(error.message || 'Failed to send message. Please try again later.');
     }
   };
 
