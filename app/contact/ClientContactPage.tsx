@@ -26,18 +26,34 @@ export default function ClientContactPage({ initialContent }: ClientContactPageP
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Mock API call
-    setTimeout(() => {
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+      
       setIsSubmitting(false);
       setIsSuccess(true);
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setIsSubmitting(false);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

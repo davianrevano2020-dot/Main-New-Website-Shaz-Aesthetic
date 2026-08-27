@@ -28,7 +28,8 @@ export default function ContactSettings() {
     contact_emergency_text: 'For urgent medical concerns after treatment.',
     contact_emergency_phone: '+62 811 388 8889',
     contact_instagram_link: 'https://instagram.com',
-    contact_facebook_link: 'https://facebook.com'
+    contact_facebook_link: 'https://facebook.com',
+    contact_notification_email: 'hello@shazaestheticbali.com'
   });
   
   const [isLoading, setIsLoading] = useState(true);
@@ -137,6 +138,14 @@ export default function ContactSettings() {
 
         {/* Contact Information & Links */}
         <div className="bg-white p-6 rounded-xl shadow-sm border border-brand-beige">
+          <h2 className="text-xl font-serif text-brand-charcoal mb-4">Contact Form Configuration</h2>
+          <div className="space-y-4 mb-6 pb-6 border-b border-gray-200">
+            <div>
+              <label className="block text-sm font-medium text-brand-charcoal mb-1">Notification Receiver Email <span className="text-xs text-gray-500 font-normal">(Where the form submissions will be sent)</span></label>
+              <input type="email" name="contact_notification_email" value={content.contact_notification_email || ''} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50 border rounded-lg" placeholder="e.g. your_email@gmail.com" />
+            </div>
+          </div>
+          
           <h2 className="text-xl font-serif text-brand-charcoal mb-4">General Contact Info</h2>
           <div className="space-y-4">
              <div className="grid grid-cols-2 gap-4">
