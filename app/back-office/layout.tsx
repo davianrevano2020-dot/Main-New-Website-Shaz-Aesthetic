@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, 
   Settings, 
@@ -30,7 +30,22 @@ export default function BackOfficeLayout({
   children: React.ReactNode;
 }) {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+      router.push('/login');
+      router.refresh();
+    } catch (error) {
+      console.error('Logout failed', error);
+      setIsLoggingOut(false);
+    }
+  };
+
 
   const menuItems = [
     { icon: LayoutDashboard, label: 'Home Page', href: '/back-office' },
@@ -94,9 +109,13 @@ export default function BackOfficeLayout({
         </nav>
 
         <div className="p-4 border-t border-white/20">
-          <button className="flex items-center gap-3 px-3 py-3 rounded-lg text-white/90 hover:bg-red-500 hover:text-white transition-colors w-full">
+          <button 
+            onClick={handleLogout}
+            disabled={isLoggingOut}
+            className="flex items-center gap-3 px-3 py-3 rounded-lg text-white/90 hover:bg-red-500 hover:text-white transition-colors w-full disabled:opacity-50"
+          >
             <LogOut className="w-5 h-5 shrink-0" />
-            {!isSidebarCollapsed && <span>Logout</span>}
+            {!isSidebarCollapsed && <span>{isLoggingOut ? 'Logging out...' : 'Logout'}</span>}
           </button>
         </div>
       </aside>
