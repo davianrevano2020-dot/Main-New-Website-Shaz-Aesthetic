@@ -6,7 +6,8 @@ import { Save, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 export default function GeneralSettings() {
   const [content, setContent] = useState<Record<string, string>>({
     google_analytics_id: '',
-    google_site_verification: ''
+    google_site_verification: '',
+    resend_api_key: ''
   });
   
   const [isLoading, setIsLoading] = useState(true);
@@ -116,6 +117,26 @@ export default function GeneralSettings() {
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
               />
               <p className="text-xs text-gray-500 mt-2">Enter the content value of the HTML tag provided by Google Search Console.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* API Keys */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h2 className="text-xl font-serif text-brand-charcoal mb-6 border-b pb-4">API Keys & Integrations</h2>
+          
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">Resend API Key</label>
+              <input
+                type="password"
+                name="resend_api_key"
+                value={content.resend_api_key || ''}
+                onChange={handleChange}
+                placeholder="re_XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20"
+              />
+              <p className="text-xs text-gray-500 mt-2">Required for sending contact form emails. Get this from your Resend.com dashboard.</p>
             </div>
           </div>
         </div>

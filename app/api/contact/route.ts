@@ -24,15 +24,17 @@ export async function POST(req: Request) {
     }
     
     // Safety check for API key
-    if (!process.env.RESEND_API_KEY) {
+    const resendApiKey = process.env.RESEND_API_KEY || content.resend_api_key;
+    
+    if (!resendApiKey) {
       return NextResponse.json(
-        { error: 'RESEND_API_KEY is not configured on the server. Please add it to the Environment Variables in the settings.' },
+        { error: 'Resend API Key is missing. Please add it to the Back-Office Settings > API Keys section, or as an Environment Variable.' },
         { status: 500 }
       );
     }
 
     // Initialize Resend lazily inside the handler to prevent build crashes
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const resend = new Resend(resendApiKey);
 
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
