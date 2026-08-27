@@ -363,20 +363,7 @@ export default function ClientContactPage({ initialContent }: ClientContactPageP
                   </div>
                 </div>
 
-                <hr className="border-brand-beige" />
 
-                {/* Social Media */}
-                <div>
-                  <h4 className="font-semibold text-brand-charcoal mb-4">Follow Our Journey</h4>
-                  <div className="flex gap-4">
-                    <a href={content.contact_instagram_link || 'https://instagram.com'} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-charcoal text-white flex items-center justify-center hover:bg-[#D4AF37] transition-colors">
-                      <Instagram className="w-4 h-4" />
-                    </a>
-                    <a href={content.contact_facebook_link || 'https://facebook.com'} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-brand-charcoal text-white flex items-center justify-center hover:bg-[#D4AF37] transition-colors">
-                      <Facebook className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
 
               </motion.div>
             </div>
