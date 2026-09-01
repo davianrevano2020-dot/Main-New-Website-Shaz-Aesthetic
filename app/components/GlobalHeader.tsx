@@ -141,7 +141,7 @@ export default function GlobalHeader({ initialContent }: GlobalHeaderProps) {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-full left-0 w-full h-screen bg-brand-white border-t border-brand-beige shadow-2xl flex flex-col pt-10 px-6 pb-32"
+            className="xl:hidden absolute top-full left-0 w-full h-screen bg-brand-white border-t border-brand-beige shadow-2xl flex flex-col pt-10 px-6 pb-32"
           >
             <nav className="flex flex-col gap-8 text-2xl font-serif text-brand-charcoal">
               {menuItems.map(item => (
