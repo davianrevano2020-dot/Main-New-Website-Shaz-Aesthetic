@@ -90,6 +90,33 @@ const SUCCESS_CASES = [
   }
 ];
 
+const CollapsibleReviewText = ({ text }: { text: string }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const maxLength = 130;
+
+  if (text.length <= maxLength) {
+    return (
+      <p className="text-brand-charcoal/80 text-sm leading-relaxed mb-8 relative z-10 italic flex-grow">
+        &quot;{text}&quot;
+      </p>
+    );
+  }
+
+  return (
+    <div className="mb-8 relative z-10 flex-grow flex flex-col items-start">
+      <p className="text-brand-charcoal/80 text-sm leading-relaxed italic">
+        &quot;{isExpanded ? text : `${text.substring(0, maxLength).trim()}...`}&quot;
+      </p>
+      <button 
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="mt-2 text-xs font-semibold text-[#D4AF37] hover:text-brand-charcoal transition-colors uppercase tracking-wider"
+      >
+        {isExpanded ? 'Show Less' : 'Read More'}
+      </button>
+    </div>
+  );
+};
+
 export default function ClientReviewsPage({ initialContent }: { initialContent: any }) {
   const parsedGoogleReviews = (() => {
     if (initialContent?.reviews_google) {
@@ -202,9 +229,7 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
                     ))}
                   </div>
 
-                  <p className="text-brand-charcoal/80 text-sm leading-relaxed mb-8 relative z-10 italic flex-grow">
-                    &quot;{review.text}&quot;
-                  </p>
+                  <CollapsibleReviewText text={review.text} />
 
                   <div className="flex items-center gap-4 mt-auto">
                     <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" />
