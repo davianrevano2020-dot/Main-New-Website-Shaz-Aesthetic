@@ -85,6 +85,7 @@ export default function ClientReviewsBackOffice() {
     reviews_hero_title: 'Stories of Transformation',
     reviews_hero_subtitle: 'Read what our clients have to say about their journey with SHAZ Aesthetic Clinic.',
     reviews_hero_image: 'https://img.shazaestheticbali.com/header-background-banner.jpg',
+    reviews_google_link: '',
   });
 
   const [googleReviews, setGoogleReviews] = useState<any[]>(DEFAULT_GOOGLE_REVIEWS);
@@ -103,6 +104,7 @@ export default function ClientReviewsBackOffice() {
             reviews_hero_title: json.data.reviews_hero_title || prev.reviews_hero_title,
             reviews_hero_subtitle: json.data.reviews_hero_subtitle || prev.reviews_hero_subtitle,
             reviews_hero_image: json.data.reviews_hero_image || prev.reviews_hero_image,
+            reviews_google_link: json.data.reviews_google_link || prev.reviews_google_link,
           }));
 
           if (json.data.reviews_google) {
@@ -403,11 +405,30 @@ export default function ClientReviewsBackOffice() {
         </div>
       )}
 
-      {activeTab === 'google_reviews' && renderList(
-        googleReviews, 
-        setGoogleReviews, 
-        'Google Reviews', 
-        { name: '', role: 'Client', date: 'Just now', rating: 5, text: '', image: '' }
+      {activeTab === 'google_reviews' && (
+        <div className="space-y-6">
+          <div className="bg-white rounded-xl shadow-sm border border-brand-beige overflow-hidden">
+            <div className="p-6 border-b border-brand-beige">
+              <h3 className="text-xl font-serif text-brand-charcoal">Google Maps Link</h3>
+            </div>
+            <div className="p-6">
+              <label className="block text-sm font-medium text-brand-charcoal mb-2">Link for "View all reviews on Google" Button</label>
+              <input
+                type="text"
+                value={pageSettings.reviews_google_link || ''}
+                onChange={(e) => setPageSettings({ ...pageSettings, reviews_google_link: e.target.value })}
+                className="w-full px-4 py-2 border border-brand-beige rounded-lg focus:outline-none focus:border-brand-charcoal focus:ring-1 focus:ring-brand-charcoal"
+                placeholder="https://maps.google.com/..."
+              />
+            </div>
+          </div>
+          {renderList(
+            googleReviews, 
+            setGoogleReviews, 
+            'Google Reviews', 
+            { name: '', role: 'Client', date: 'Just now', rating: 5, text: '', image: '' }
+          )}
+        </div>
       )}
 
       {activeTab === 'video_testimonials' && renderList(

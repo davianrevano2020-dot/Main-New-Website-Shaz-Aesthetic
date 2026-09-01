@@ -266,7 +266,7 @@ export default function ClientReviewsPage({ initialContent }: { initialContent: 
               )}
 
               <a 
-                href={initialContent?.contact_google_map_link || "#"}
+                href={initialContent?.reviews_google_link || "#"}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 px-6 py-4 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg hover:shadow-brand-forest/5 transition-all group border border-transparent hover:border-gray-200"
