@@ -345,10 +345,6 @@ export default function FooterSettings() {
                 <label className="block text-xs font-semibold text-gray-500 mb-1">TikTok URL</label>
                 <input type="text" name="footer_social_tiktok_link" value={content.footer_social_tiktok_link} onChange={handleChange} placeholder="https://tiktok.com/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-gray-500 mb-1">Facebook URL</label>
-                <input type="text" name="footer_social_facebook_link" value={content.footer_social_facebook_link} onChange={handleChange} placeholder="https://facebook.com/..." className="w-full px-3 py-2 bg-gray-50 border rounded-lg text-sm" />
-              </div>
             </div>
           </div>
         </div>

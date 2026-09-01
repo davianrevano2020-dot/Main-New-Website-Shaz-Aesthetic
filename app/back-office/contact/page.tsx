@@ -191,10 +191,6 @@ export default function ContactSettings() {
                 <label className="block text-sm font-medium text-brand-charcoal mb-1">Instagram Link</label>
                 <input type="text" name="contact_instagram_link" value={content.contact_instagram_link || ''} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50 border rounded-lg" />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-brand-charcoal mb-1">Facebook Link</label>
-                <input type="text" name="contact_facebook_link" value={content.contact_facebook_link || ''} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50 border rounded-lg" />
-              </div>
             </div>
           </div>
         </div>

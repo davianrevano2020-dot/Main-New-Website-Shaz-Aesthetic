@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, MouseEvent, TouchEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
-  MessageCircle, Instagram, Facebook, Star, MapPin, Phone, Menu, X, ArrowRight,
+  MessageCircle, Instagram, Star, MapPin, Phone, Menu, X, ArrowRight,
   CheckCircle2, Play, ChevronLeft, ChevronRight, Activity, Syringe, Zap, Scissors, Flower2, Stethoscope, Sparkles, HeartPulse, Coffee, Quote
 } from 'lucide-react';
 import GlobalHeader from './components/GlobalHeader';

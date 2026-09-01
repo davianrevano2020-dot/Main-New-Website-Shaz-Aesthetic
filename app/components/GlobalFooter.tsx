@@ -113,7 +113,6 @@ export default function GlobalFooter({ initialContent }: GlobalFooterProps) {
                 <ul className="space-y-4 text-sm font-light">
                   <li><a href={content.footer_social_instagram_link || "#"} className="hover:text-white transition-colors">Instagram</a></li>
                   <li><a href={content.footer_social_tiktok_link || "#"} className="hover:text-white transition-colors">TikTok</a></li>
-                  <li><a href={content.footer_social_facebook_link || "#"} className="hover:text-white transition-colors">Facebook</a></li>
                 </ul>
               </div>
               

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {
   MapPin, Phone, Mail, Clock, MessageCircle, AlertCircle, 
-  Instagram, Facebook, Send, Loader2, CheckCircle2
+  Instagram, Send, Loader2, CheckCircle2
 } from 'lucide-react';
 import GlobalHeader from '../components/GlobalHeader';
 import GlobalFooter from '../components/GlobalFooter';
