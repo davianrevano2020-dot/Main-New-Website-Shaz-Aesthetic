@@ -22,7 +22,8 @@ import {
   Phone,
   HelpCircle,
   FileText,
-  ShieldCheck
+  ShieldCheck,
+  FileCheck
 } from 'lucide-react';
 
 export default function BackOfficeLayout({
@@ -61,6 +62,7 @@ export default function BackOfficeLayout({
     { icon: HelpCircle, label: 'FAQ', href: '/back-office/faq' },
     { icon: FileText, label: 'Blog', href: '/back-office/blog' },
     { icon: ShieldCheck, label: 'Privacy Policy', href: '/back-office/privacy-policy' },
+    { icon: FileCheck, label: 'Terms & Conditions', href: '/back-office/term-conditions' },
     { icon: Menu, label: 'Header Menu', href: '/back-office/header-menu' },
     { icon: LayoutDashboard, label: 'Footer', href: '/back-office/footer' },
     { icon: Globe, label: 'View Website', href: '/' },
