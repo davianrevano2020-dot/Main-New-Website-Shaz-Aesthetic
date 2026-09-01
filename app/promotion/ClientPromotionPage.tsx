@@ -394,37 +394,40 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
                   {/* Glowing backdrop for the card */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#D4AF37]/20 blur-[100px] rounded-full pointer-events-none" />
                   
-                  <motion.div 
+                    <motion.div 
                     initial={{ rotate: -5, scale: 0.9, opacity: 0, y: 20 }}
                     animate={{ rotate: 0, scale: 1, opacity: 1, y: 0 }}
                     
                     whileHover={{ scale: 1.05, rotate: 2 }}
                     transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                    className="relative w-full max-w-md aspect-[1.6/1] rounded-2xl overflow-hidden shadow-2xl border border-white/30 cursor-pointer group"
+                    className="relative w-full max-w-md aspect-[1.6/1] rounded-2xl overflow-hidden shadow-2xl border border-white/30 cursor-pointer group transform-gpu"
                   >
                     {/* Animated Shine Effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/40 to-transparent z-20 skew-x-12" />
 
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#E5E0D8] to-[#C5B39A]" />
                     {initialContent?.promo_gift_img ? (
                       <img 
                         src={initialContent.promo_gift_img}
-                        alt=""
-                        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30"
+                        alt="Gift Card"
+                        className="absolute inset-0 w-full h-full object-cover"
                       />
-                    ) : null}
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.2) 1px, transparent 0)', backgroundSize: '12px 12px' }} />
-                    <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
-                      <div className="flex justify-between items-start">
-                        <span className="font-serif text-3xl text-brand-charcoal font-bold tracking-tight">SHAZ</span>
-                        <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-bold text-brand-charcoal/60 bg-white/40 px-3 py-1 rounded-full backdrop-blur-sm">Gift Card</span>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="h-0.5 w-16 bg-brand-charcoal/30 mb-5" />
-                        <p className="font-serif text-brand-charcoal text-xl">Aesthetic Experience</p>
-                        <p className="text-brand-charcoal/60 text-[10px] uppercase tracking-widest font-bold">For Your Loved Ones</p>
-                      </div>
-                    </div>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#E5E0D8] to-[#C5B39A]" />
+                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.2) 1px, transparent 0)', backgroundSize: '12px 12px' }} />
+                        <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between z-10">
+                          <div className="flex justify-between items-start">
+                            <span className="font-serif text-2xl md:text-3xl text-brand-charcoal font-bold tracking-tight">SHAZ</span>
+                            <span className="font-sans text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-brand-charcoal/80 bg-white/60 px-3 py-1 rounded-full">Gift Card</span>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="h-0.5 w-12 md:w-16 bg-brand-charcoal/30 mb-3 md:mb-5" />
+                            <p className="font-serif text-brand-charcoal text-lg md:text-xl leading-tight">Aesthetic Experience</p>
+                            <p className="text-brand-charcoal/70 text-[9px] md:text-[10px] uppercase tracking-widest font-bold">For Your Loved Ones</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </motion.div>
                 </div>
               </div>
