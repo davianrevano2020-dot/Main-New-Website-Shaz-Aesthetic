@@ -283,7 +283,7 @@ export default function ClientPromotionPage({ initialContent }: { initialContent
                   {[
                     { title: "Invite Your Friends", desc: "Share your unique referral code or link with friends who are new to SHAZ Clinic." },
                     { title: "They Get a Discount", desc: "Your friends will receive an exclusive 15% off their first signature treatment with us." },
-                    { title: "You Get Rewarded", desc: "Once they complete their visit, you'll instantly receive Rp 500.000 in clinic credit." }
+                    { title: "You Get Rewarded", desc: "Chat us for more detail ongoing referral program." }
                   ].map((step, i) => (
                     <motion.div 
                       key={i}
