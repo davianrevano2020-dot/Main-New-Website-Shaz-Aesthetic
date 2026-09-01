@@ -450,13 +450,26 @@ export default function ClientPromotionBackOffice({ initialContent }: { initialC
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-brand-charcoal mb-2">Card Overlay Image URL (Optional)</label>
-                  <input
-                    type="text"
-                    value={giftImg}
-                    onChange={(e) => setGiftImg(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-brand-beige focus:outline-none focus:ring-2 focus:ring-brand-sage/50 bg-brand-white"
-                    placeholder="e.g. background pattern or specific image"
-                  />
+                  <div className="flex gap-3">
+                    <input
+                      type="text"
+                      value={giftImg}
+                      onChange={(e) => setGiftImg(e.target.value)}
+                      className="flex-1 px-4 py-3 rounded-xl border border-brand-beige focus:outline-none focus:ring-2 focus:ring-brand-sage/50 bg-brand-white"
+                      placeholder="e.g. background pattern or specific image"
+                    />
+                    <label className="flex items-center justify-center gap-2 px-4 py-3 bg-brand-sage text-white rounded-xl cursor-pointer hover:bg-brand-forest transition-colors whitespace-nowrap min-w-[120px]">
+                      {isUploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Upload className="w-5 h-5" />}
+                      <span>{isUploading ? 'Uploading...' : 'Upload'}</span>
+                      <input 
+                        type="file" 
+                        accept="image/*" 
+                        className="hidden" 
+                        onChange={(e) => handleImageUpload(e, setGiftImg)} 
+                        disabled={isUploading}
+                      />
+                    </label>
+                  </div>
                 </div>
               </div>
               <div>
