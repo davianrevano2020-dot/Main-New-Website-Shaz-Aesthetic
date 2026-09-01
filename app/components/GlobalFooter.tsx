@@ -123,7 +123,7 @@ export default function GlobalFooter({ initialContent }: GlobalFooterProps) {
           <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light">
             <p>{content.footer_copyright || "© 2026 SHAZ Aesthetic Clinic. All rights reserved."}</p>
             <div className="flex items-center gap-6">
-              <a href={content.footer_privacy_link || "#"} className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href={content.footer_privacy_link || "/privacy-policy"} className="hover:text-white transition-colors">Privacy Policy</a>
               <a href={content.footer_terms_link || "#"} className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
