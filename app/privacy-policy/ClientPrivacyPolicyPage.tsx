@@ -34,7 +34,9 @@ const BulletList = ({ items }: { items: React.ReactNode[] }) => (
   </ul>
 );
 
-export default function ClientPrivacyPolicyPage() {
+export default function ClientPrivacyPolicyPage({ initialContent }: { initialContent?: any }) {
+  const content = initialContent || {};
+
   return (
     <div className="min-h-screen bg-brand-white selection:bg-brand-sage/20 selection:text-brand-forest overflow-hidden flex flex-col font-sans">
       <GlobalHeader transparent={false} />
@@ -48,14 +50,14 @@ export default function ClientPrivacyPolicyPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-charcoal mb-6">
-              Privacy Policy
+              {content.privacy_hero_title || 'Privacy Policy'}
             </h1>
             <p className="text-brand-charcoal/70 text-lg md:text-xl font-light max-w-2xl mx-auto">
-              How we collect, use, and protect your personal and medical information
+              {content.privacy_hero_subtitle || 'How we collect, use, and protect your personal and medical information'}
             </p>
             <div className="mt-8 pt-8 border-t border-brand-charcoal/10 inline-block">
               <p className="text-xs font-bold tracking-widest text-brand-charcoal/60 uppercase">
-                Effective Date: 1 September 2026
+                {content.privacy_effective_date ? `Effective Date: ${content.privacy_effective_date}` : 'Effective Date: 1 September 2026'}
               </p>
             </div>
           </motion.div>
@@ -220,12 +222,12 @@ export default function ClientPrivacyPolicyPage() {
                 information, please contact us:
               </p>
               <BulletList items={[
-                <><strong>Email:</strong> <a href="mailto:shazaestheticbali@gmail.com" className="text-[#D4AF37] hover:text-brand-charcoal transition-colors">shazaestheticbali@gmail.com</a></>,
-                <><strong>WhatsApp / Phone:</strong> <a href="https://wa.me/6282342176585" target="_blank" rel="noreferrer" className="text-[#D4AF37] hover:text-brand-charcoal transition-colors">+62 823-4217-6585</a></>,
-                <><strong>Clinic Address:</strong> Seminyak, Bali, Indonesia</>
+                <><strong>Email:</strong> <a href={`mailto:${content.privacy_contact_email || 'shazaestheticbali@gmail.com'}`} className="text-[#D4AF37] hover:text-brand-charcoal transition-colors">{content.privacy_contact_email || 'shazaestheticbali@gmail.com'}</a></>,
+                <><strong>WhatsApp / Phone:</strong> <a href={`https://wa.me/${(content.privacy_contact_phone || '+62 823-4217-6585').replace(/\D/g,'')}`} target="_blank" rel="noreferrer" className="text-[#D4AF37] hover:text-brand-charcoal transition-colors">{content.privacy_contact_phone || '+62 823-4217-6585'}</a></>,
+                <><strong>Clinic Address:</strong> {content.privacy_contact_address || 'Seminyak, Bali, Indonesia'}</>
               ]} />
               <p className="mt-8 pt-6 border-t border-brand-charcoal/10 text-sm italic text-brand-charcoal/60">
-                Last updated: 1 September 2026
+                Last updated: {content.privacy_last_updated || '1 September 2026'}
               </p>
             </Section>
 
