@@ -364,7 +364,6 @@ export default function ClientAboutPage({ initialContent = {} }: ClientAboutPage
                   </div>
                   <div className="mt-8 pt-6 border-t border-white/10 text-xs font-bold tracking-widest text-[#EAE6E1] uppercase flex items-center justify-between">
                     <span>PILLAR 0{idx + 1}</span>
-                    <ChevronRight className="w-4 h-4 text-white/60" />
                   </div>
                 </motion.div>
               ))}
