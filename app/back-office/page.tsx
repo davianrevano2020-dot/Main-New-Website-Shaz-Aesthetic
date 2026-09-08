@@ -1667,16 +1667,6 @@ export default function BackOffice() {
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                   />
                 </div>
-                <div className="sm:col-span-2">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Promotion Description</label>
-                  <textarea
-                    name="promo_description"
-                    value={content.promo_description}
-                    onChange={handleChange}
-                    rows={3}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
-                  ></textarea>
-                </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Validity Text (e.g. VALID UNTIL 31 AUGUST 2026)</label>
                   <input
@@ -1707,36 +1697,6 @@ export default function BackOffice() {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-forest/20 transition-all"
                     />
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-gray-100">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Promo Photo</label>
-                <div className="flex items-start gap-6">
-                  <div className="w-48 h-48 bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center overflow-hidden shrink-0 relative">
-                    {content.promo_image ? (
-                      <>
-                        <img src={content.promo_image} alt="Promo" className="w-full h-full object-cover" />
-                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                          <label className="cursor-pointer text-white flex flex-col items-center">
-                            <Upload className="w-6 h-6 mb-1" />
-                            <span className="text-xs font-semibold">Change Photo</span>
-                            <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'promo_image')} className="hidden" disabled={isUploading} />
-                          </label>
-                        </div>
-                      </>
-                    ) : (
-                      <label className="cursor-pointer text-gray-400 hover:text-brand-forest transition-colors flex flex-col items-center">
-                        <Upload className="w-8 h-8 mb-2" />
-                        <span className="text-sm font-medium text-center">Upload Photo</span>
-                        <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e, 'promo_image')} className="hidden" disabled={isUploading} />
-                      </label>
-                    )}
-                  </div>
-                  <div className="flex-1 text-sm text-gray-500">
-                    <p className="mb-2"><strong>Recommended dimensions:</strong> 800 x 800 px (Square or portrait ratio).</p>
-                    <p>Supported formats: JPG, PNG, WEBP.</p>
                   </div>
                 </div>
               </div>

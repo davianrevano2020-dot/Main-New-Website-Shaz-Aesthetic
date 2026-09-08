@@ -744,34 +744,23 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
         ---------------------------------------------------------------------- */}
         <section id="promo" className="py-24 md:py-32 bg-[#F9F8F6]">
           <div className="max-w-6xl mx-auto px-6 lg:px-12">
-            <div className="bg-[#4C5C44] rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-xl">
-              <div className="md:w-1/2 relative min-h-[300px] md:min-h-full">
-                <img 
-                  src={siteContent.promo_image || "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"} 
-                  alt="Special Offer" 
-                  className="absolute inset-0 w-full h-full object-cover" 
-                />
-              </div>
-              <div className="md:w-1/2 p-10 md:p-16 lg:p-20 text-white flex flex-col justify-center">
-                <span className="text-[#EAE6E1] font-semibold tracking-[0.2em] text-xs uppercase mb-4 block">
-                  {siteContent.promo_kicker || "LIMITED TIME OFFER"}
+            <div className="bg-[#4C5C44] rounded-[2rem] px-8 md:px-12 py-12 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-xl">
+              <div className="text-white flex-1">
+                <span className="inline-block bg-white/20 px-4 py-1.5 rounded-full text-white font-bold tracking-wider text-xs md:text-sm mb-4 uppercase">
+                  [{siteContent.promo_kicker || "LIMITED TIME OFFER"}]
                 </span>
-                <h2 className="font-serif text-4xl lg:text-5xl mb-6 leading-tight text-white">
+                <h2 className="font-serif text-4xl lg:text-5xl mb-3 text-white">
                   {siteContent.promo_title || "Botox – 10% OFF"}
                 </h2>
-                <p className="text-[#EAE6E1]/80 text-base md:text-lg font-light mb-10 leading-relaxed">
-                  {siteContent.promo_description || "Experience smoother skin and a refreshed look with our signature precision Botox treatments. Secure this exclusive offer before it expires."}
+                <p className="text-white/90 text-lg font-light">
+                  {siteContent.promo_validity || "Valid until 31 August 2026."}
                 </p>
-                
-                <div className="border border-white/20 rounded-xl px-6 py-4 mb-10 bg-white/5 inline-block self-start">
-                  <span className="font-semibold tracking-wider text-sm">
-                    {siteContent.promo_validity || "VALID UNTIL 31 AUGUST 2026"}
-                  </span>
-                </div>
-                
+              </div>
+              
+              <div className="shrink-0 w-full md:w-auto mt-4 md:mt-0">
                 <a 
                   href={siteContent.promo_button_link || "#"}
-                  className="px-8 py-4 rounded-full bg-white text-[#4C5C44] text-sm font-semibold hover:bg-[#EAE6E1] transition-colors self-start shadow-md"
+                  className="inline-flex justify-center w-full md:w-auto px-8 py-4 rounded-full bg-white text-[#4C5C44] text-base font-medium hover:bg-[#F9F8F6] transition-colors shadow-md whitespace-nowrap"
                 >
                   {siteContent.promo_button_text || "Claim Offer"}
                 </a>
