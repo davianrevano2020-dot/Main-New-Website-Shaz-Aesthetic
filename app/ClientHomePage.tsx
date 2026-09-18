@@ -324,6 +324,38 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
           </div>
         </section>
 
+        
+
+        {/* ----------------------------------------------------------------------
+            01B. PROMO / OFFER
+        ---------------------------------------------------------------------- */}
+        <section id="promo" className="py-24 md:py-32 bg-[#F9F8F6]">
+          <div className="max-w-6xl mx-auto px-6 lg:px-12">
+            <div className="bg-[#4C5C44] rounded-[2rem] px-8 md:px-12 py-12 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-xl">
+              <div className="text-white flex-1">
+                <span className="inline-block bg-white/20 px-4 py-1.5 rounded-full text-white font-bold tracking-wider text-xs md:text-sm mb-4 uppercase">
+                  [{siteContent.promo_kicker || "LIMITED TIME OFFER"}]
+                </span>
+                <h2 className="font-serif text-4xl lg:text-5xl mb-3 text-white">
+                  {siteContent.promo_title || "Botox – 10% OFF"}
+                </h2>
+                <p className="text-white/90 text-lg font-light">
+                  {siteContent.promo_validity || "Valid until 31 August 2026."}
+                </p>
+              </div>
+              
+              <div className="shrink-0 w-full md:w-auto mt-4 md:mt-0">
+                <a 
+                  href={siteContent.promo_button_link || "#"}
+                  className="inline-flex justify-center w-full md:w-auto px-8 py-4 rounded-full bg-white text-[#4C5C44] text-base font-medium hover:bg-[#F9F8F6] transition-colors shadow-md whitespace-nowrap"
+                >
+                  {siteContent.promo_button_text || "Claim Offer"}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ----------------------------------------------------------------------
             02. BRAND PHILOSOPHY
         ---------------------------------------------------------------------- */}
@@ -735,36 +767,6 @@ export default function ClientHomePage({ initialContent = {} }: ClientHomePagePr
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ----------------------------------------------------------------------
-            10. PROMO / OFFER
-        ---------------------------------------------------------------------- */}
-        <section id="promo" className="py-24 md:py-32 bg-[#F9F8F6]">
-          <div className="max-w-6xl mx-auto px-6 lg:px-12">
-            <div className="bg-[#4C5C44] rounded-[2rem] px-8 md:px-12 py-12 md:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-xl">
-              <div className="text-white flex-1">
-                <span className="inline-block bg-white/20 px-4 py-1.5 rounded-full text-white font-bold tracking-wider text-xs md:text-sm mb-4 uppercase">
-                  [{siteContent.promo_kicker || "LIMITED TIME OFFER"}]
-                </span>
-                <h2 className="font-serif text-4xl lg:text-5xl mb-3 text-white">
-                  {siteContent.promo_title || "Botox – 10% OFF"}
-                </h2>
-                <p className="text-white/90 text-lg font-light">
-                  {siteContent.promo_validity || "Valid until 31 August 2026."}
-                </p>
-              </div>
-              
-              <div className="shrink-0 w-full md:w-auto mt-4 md:mt-0">
-                <a 
-                  href={siteContent.promo_button_link || "#"}
-                  className="inline-flex justify-center w-full md:w-auto px-8 py-4 rounded-full bg-white text-[#4C5C44] text-base font-medium hover:bg-[#F9F8F6] transition-colors shadow-md whitespace-nowrap"
-                >
-                  {siteContent.promo_button_text || "Claim Offer"}
-                </a>
-              </div>
             </div>
           </div>
         </section>
