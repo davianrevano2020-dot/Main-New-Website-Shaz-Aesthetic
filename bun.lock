@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "ai-studio-applet",
+      "name": "shaz-aesthetic-clinic",
       "dependencies": {
         "@google/genai": "^2.4.0",
         "@prisma/adapter-mariadb": "^7.9.1",
